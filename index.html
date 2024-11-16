@@ -112,6 +112,39 @@
             const allData = await Promise.all(csvFiles.map(loadCSV));
             const tablesContainer = document.getElementById('tables-container');
             
+            // Calculate top artists
+            const artistCounts = new Map();
+            allData.forEach(data => {
+                if (!data || !data.lines) return;
+                
+                // Skip header row and count artist appearances
+                data.lines.slice(1).forEach(line => {
+                    const parsed = parseCSVRow(line);
+                    if (!parsed || !parsed.artist) return;
+                    
+                    const artist = parsed.artist.trim();
+                    artistCounts.set(artist, (artistCounts.get(artist) || 0) + 1);
+                });
+            });
+
+            // Sort artists by submission count
+            const sortedArtists = Array.from(artistCounts.entries())
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 50);  // Get top 50
+
+            // Populate top artists table
+            const artistsTable = document.getElementById('artists-table').getElementsByTagName('tbody')[0];
+            sortedArtists.forEach((artist, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${artist[0]}</td>
+                    <td>${artist[1]}</td>
+                `;
+                artistsTable.appendChild(tr);
+            });
+
+            // Create tables for each CSV file
             allData.forEach(data => {
                 if (!data || !data.lines) return;
                 
@@ -133,9 +166,8 @@
                 
                 // Create table body
                 const tbody = document.createElement('tbody');
-                // Skip header row and process all other rows
                 data.lines.slice(1).forEach(line => {
-                    if (!line.trim()) return; // Skip empty lines
+                    if (!line.trim()) return;
                     const parsed = parseCSVRow(line);
                     if (!parsed) return;
                     
