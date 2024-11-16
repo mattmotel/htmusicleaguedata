@@ -68,17 +68,20 @@
         function parseCSVRow(row) {
             try {
                 const columns = parseCSVLine(row);
-                return {
-                    spotifyUri: columns[0] || '',
-                    title: columns[1] || '',
-                    album: columns[2] || '',
-                    artist: columns[3] || '',
-                    submitterId: columns[4] || '',
-                    created: columns[5] || '',
-                    comment: columns[6] || '',
-                    roundId: columns[7] || '',
-                    visible: columns[8] || ''
-                };
+                if (columns.length >= 9 && columns[0].startsWith('spotify:track:')) {
+                    return {
+                        spotifyUri: columns[0] || '',
+                        title: columns[1] || '',
+                        album: columns[2] || '',
+                        artist: columns[3] || '',
+                        submitterId: columns[4] || '',
+                        created: columns[5] || '',
+                        comment: columns[6] || '',
+                        roundId: columns[7] || '',
+                        visible: columns[8] || ''
+                    };
+                }
+                return null;
             } catch (error) {
                 console.error('Error parsing row:', row, error);
                 return null;
