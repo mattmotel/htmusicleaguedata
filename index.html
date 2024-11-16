@@ -9,25 +9,75 @@
         body {
             font-family: -apple-system, system-ui, sans-serif;
             padding: 20px;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            font-size: 14px;
+            line-height: 1.4;
         }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 30px 0 20px;
+        }
+
+        /* Top 50 Artists Table */
+        #top-artists {
+            margin-bottom: 40px;
+        }
+
+        #artists-table {
+            background-color: #fffbeb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* All Tables */
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f5f5f5;
+
+        caption {
+            font-size: 20px;
             font-weight: bold;
+            text-align: left;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #dee2e6;
         }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
         tr:hover {
-            background-color: #f9f9f9;
+            background-color: #f8f9fa;
+        }
+
+        /* Add spacing between submission tables */
+        #tables-container table {
+            margin-bottom: 40px;
+        }
+
+        /* Make the content tables slightly smaller */
+        #tables-container td {
+            font-size: 13px;
         }
     </style>
 </head>
