@@ -1,0 +1,94 @@
+body {
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.4;
+    background-color: #121212;
+    color: #e1e1e1;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 30px 0 20px;
+    font-weight: 600;
+}
+
+/* Top 50 Artists Table */
+#top-artists {
+    margin-bottom: 40px;
+}
+
+#artists-table {
+    background-color: rgba(255, 251, 235, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* All Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #1e1e1e;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+caption {
+    padding: 15px;
+    background-color: #252525;
+    border-bottom: 2px solid #333;
+}
+
+.caption-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.caption-subtitle {
+    font-size: 13px;
+    color: #888;
+    font-weight: normal;
+}
+
+th, td {
+    padding: 8px 15px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    background-color: #252525;
+    font-weight: 500;
+    font-size: 15px;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #252525;
+}
+
+/* Add spacing between submission tables */
+#tables-container table {
+    margin-bottom: 40px;
+}
+
+/* Make the content tables slightly smaller */
+#tables-container td {
+    font-size: 13px;
+    color: #e1e1e1;
+} 

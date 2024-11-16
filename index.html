@@ -6,112 +6,7 @@
     <title>Hard Times Music League Data</title>
     <link rel="icon" href="data:,">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', -apple-system, system-ui, sans-serif;
-            padding: 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-            font-size: 14px;
-            line-height: 1.4;
-            background-color: #121212;
-            color: #e1e1e1;
-        }
-
-        h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .subtitle {
-            font-size: 16px;
-            color: #888;
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-size: 24px;
-            margin: 30px 0 20px;
-            font-weight: 600;
-        }
-
-        /* Top 50 Artists Table */
-        #top-artists {
-            margin-bottom: 40px;
-        }
-
-        #artists-table {
-            background-color: rgba(255, 251, 235, 0.05);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        /* All Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #1e1e1e;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-        }
-
-        caption {
-            font-size: 20px;
-            font-weight: 600;
-            text-align: left;
-            padding: 15px;
-            background-color: #252525;
-            border-bottom: 2px solid #333;
-        }
-
-        th, td {
-            padding: 8px 15px;
-            text-align: left;
-            border-bottom: 1px solid #333;
-        }
-
-        th {
-            background-color: #252525;
-            font-weight: 500;
-            font-size: 15px;
-            color: #fff;
-        }
-
-        tr:hover {
-            background-color: #252525;
-        }
-
-        /* Add spacing between submission tables */
-        #tables-container table {
-            margin-bottom: 40px;
-        }
-
-        /* Make the content tables slightly smaller */
-        #tables-container td {
-            font-size: 13px;
-            color: #e1e1e1;
-        }
-
-        /* Add these new styles */
-        .caption-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .caption-subtitle {
-            font-size: 13px;
-            color: #888;
-            font-weight: normal;
-        }
-
-        caption {
-            padding: 15px;
-            background-color: #252525;
-            border-bottom: 2px solid #333;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>🥾 Hard Times Music League Data</h1>
@@ -162,7 +57,6 @@
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const text = await response.text();
-                // Split by newlines and filter out empty lines
                 const lines = text.split('\n').filter(line => line.trim());
                 return { lines, filename };
             } catch (error) {
@@ -200,7 +94,6 @@
             allData.forEach(data => {
                 if (!data || !data.lines) return;
                 
-                // Skip header row and count artist appearances
                 data.lines.slice(1).forEach(line => {
                     const parsed = parseCSVRow(line);
                     if (!parsed || !parsed.artist) return;
@@ -213,7 +106,7 @@
             // Sort artists by submission count
             const sortedArtists = Array.from(artistCounts.entries())
                 .sort((a, b) => b[1] - a[1])
-                .slice(0, 50);  // Get top 50
+                .slice(0, 50);
 
             // Populate top artists table
             const artistsTable = document.getElementById('artists-table').getElementsByTagName('tbody')[0];
@@ -233,7 +126,7 @@
                 
                 const table = document.createElement('table');
                 
-                // Extract round number from filename (e.g., "submissions1.csv" -> "1")
+                // Extract round number from filename
                 const roundNumber = data.filename.match(/submissions(\d+)\.csv/)[1];
                 
                 // Create caption with main title and subtitle
@@ -244,7 +137,6 @@
                 `;
                 table.appendChild(caption);
                 
-                // Create table header
                 const thead = document.createElement('thead');
                 thead.innerHTML = `
                     <tr>
@@ -255,7 +147,6 @@
                 `;
                 table.appendChild(thead);
                 
-                // Create table body
                 const tbody = document.createElement('tbody');
                 data.lines.slice(1).forEach(line => {
                     if (!line.trim()) return;
