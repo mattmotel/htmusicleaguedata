@@ -79,7 +79,9 @@
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const text = await response.text();
-                return { text, filename };
+                // Split by newlines and filter out empty lines
+                const lines = text.split('\n').filter(line => line.trim());
+                return { lines, filename };
             } catch (error) {
                 console.error(`Error loading ${filename}:`, error);
                 return null;
@@ -106,107 +108,48 @@
             }
         }
 
-        function createTable(data, filename) {
-            const container = document.getElementById('tables-container');
-            
-            // Add file header
-            const fileHeader = document.createElement('h2');
-            fileHeader.textContent = `Songs from ${filename}`;
-            container.appendChild(fileHeader);
-            
-            // Create table
-            const table = document.createElement('table');
-            const thead = document.createElement('thead');
-            thead.innerHTML = `
-                <tr>
-                    <th>Song</th>
-                    <th>Artist</th>
-                    <th>Round ID</th>
-                </tr>
-            `;
-            
-            const tbody = document.createElement('tbody');
-            
-            try {
-                // Parse CSV and add rows
-                const rows = data.split('\n');
-                if (rows.length > 1) { // Check if we have data rows
-                    rows.slice(1).forEach(row => { // Skip header row
-                        if (!row.trim()) return;
-                        
-                        const rowData = parseCSVRow(row);
-                        if (!rowData) return;
-                        if (rowData.visible?.trim() === 'No') return;
-
-                        if (rowData.title && rowData.artist) {
-                            const tr = document.createElement('tr');
-                            tr.innerHTML = `
-                                <td>${rowData.title.replace(/"/g, '')}</td>
-                                <td>${rowData.artist.replace(/"/g, '')}</td>
-                                <td>${rowData.roundId ? rowData.roundId.slice(0, 8) : ''}</td>
-                            `;
-                            tbody.appendChild(tr);
-                        }
-                    });
-                }
-            } catch (error) {
-                console.error('Error creating table:', error);
-                const errorRow = document.createElement('tr');
-                errorRow.innerHTML = `<td colspan="3">Error loading data</td>`;
-                tbody.appendChild(errorRow);
-            }
-
-            table.appendChild(thead);
-            table.appendChild(tbody);
-            container.appendChild(table);
-        }
-
-        function displayTopArtists(allData) {
-            const artistCounts = new Map();
-            
-            // Count appearances of each artist
-            allData.forEach(data => {
-                if (!data || !data.text) return;
-                
-                const rows = data.text.split('\n');
-                rows.slice(1).forEach(row => {
-                    if (!row.trim()) return;
-                    
-                    const rowData = parseCSVRow(row);
-                    if (!rowData || rowData.visible?.trim() === 'No') return;
-                    
-                    const artist = rowData.artist.replace(/"/g, '').trim();
-                    if (artist) {
-                        artistCounts.set(artist, (artistCounts.get(artist) || 0) + 1);
-                    }
-                });
-            });
-            
-            // Sort artists by count
-            const sortedArtists = Array.from(artistCounts.entries())
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 50);
-            
-            // Display results
-            const tbody = document.querySelector('#artists-table tbody');
-            sortedArtists.forEach(([artist, count], index) => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${artist}</td>
-                    <td>${count}</td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
         async function init() {
             const allData = await Promise.all(csvFiles.map(loadCSV));
-            displayTopArtists(allData);
+            const tablesContainer = document.getElementById('tables-container');
+            
             allData.forEach(data => {
-                if (data && data.text) {
-                    createTable(data.text, data.filename);
-                }
+                if (!data || !data.lines) return;
+                
+                const table = document.createElement('table');
+                const caption = document.createElement('caption');
+                caption.textContent = `Songs from ${data.filename}`;
+                table.appendChild(caption);
+                
+                // Create table header
+                const thead = document.createElement('thead');
+                thead.innerHTML = `
+                    <tr>
+                        <th>Song</th>
+                        <th>Artist</th>
+                        <th>Round ID</th>
+                    </tr>
+                `;
+                table.appendChild(thead);
+                
+                // Create table body
+                const tbody = document.createElement('tbody');
+                // Skip header row and process all other rows
+                data.lines.slice(1).forEach(line => {
+                    if (!line.trim()) return; // Skip empty lines
+                    const parsed = parseCSVRow(line);
+                    if (!parsed) return;
+                    
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${parsed.title}</td>
+                        <td>${parsed.artist}</td>
+                        <td>${parsed.roundId}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+                table.appendChild(tbody);
+                
+                tablesContainer.appendChild(table);
             });
         }
 
