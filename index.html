@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music League Songs</title>
+    <link rel="icon" href="data:,">
+    <style>
+        body {
+            font-family: -apple-system, system-ui, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Music League Submissions</h1>
+    
+    <div id="top-artists">
+        <h2>Top 50 Most Submitted Artists</h2>
+        <table id="artists-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Artist</th>
+                    <th>Submissions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+    <div id="tables-container"></div>
+
+    <script>
+        const csvFiles = ['csv/submissions1.csv', 'csv/submissions2.csv', 'csv/submissions3.csv', 'csv/submissions4.csv', 'csv/submissions5.csv', 'csv/submissions6.csv', 'csv/submissions7.csv', 'csv/submissions8.csv', 'csv/submissions9.csv', 'csv/submissions10.csv', 'csv/submissions11.csv', 'csv/submissions12.csv', 'csv/submissions13.csv', 'csv/submissions14.csv', 'csv/submissions15.csv', 'csv/submissions16.csv', 'csv/submissions17.csv', 'csv/submissions18.csv', 'csv/submissions19.csv'];
+
+        function parseCSVLine(text) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+            
+            for (let char of text) {
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current);
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            result.push(current);
+            return result;
+        }
+
+        async function loadCSV(filename) {
+            try {
+                const response = await fetch(filename);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const text = await response.text();
+                return { text, filename };
+            } catch (error) {
+                console.error(`Error loading ${filename}:`, error);
+                return null;
+            }
+        }
+
+        function parseCSVRow(row) {
+            try {
+                const columns = parseCSVLine(row);
+                return {
+                    spotifyUri: columns[0] || '',
+                    title: columns[1] || '',
+                    album: columns[2] || '',
+                    artist: columns[3] || '',
+                    submitterId: columns[4] || '',
+                    created: columns[5] || '',
+                    comment: columns[6] || '',
+                    roundId: columns[7] || '',
+                    visible: columns[8] || ''
+                };
+            } catch (error) {
+                console.error('Error parsing row:', row, error);
+                return null;
+            }
+        }
+
+        function createTable(data, filename) {
+            const container = document.getElementById('tables-container');
+            
+            // Add file header
+            const fileHeader = document.createElement('h2');
+            fileHeader.textContent = `Songs from ${filename}`;
+            container.appendChild(fileHeader);
+            
+            // Create table
+            const table = document.createElement('table');
+            const thead = document.createElement('thead');
+            thead.innerHTML = `
+                <tr>
+                    <th>Song</th>
+                    <th>Artist</th>
+                    <th>Round ID</th>
+                </tr>
+            `;
+            
+            const tbody = document.createElement('tbody');
+            
+            try {
+                // Parse CSV and add rows
+                const rows = data.split('\n');
+                if (rows.length > 1) { // Check if we have data rows
+                    rows.slice(1).forEach(row => { // Skip header row
+                        if (!row.trim()) return;
+                        
+                        const rowData = parseCSVRow(row);
+                        if (!rowData) return;
+                        if (rowData.visible?.trim() === 'No') return;
+
+                        if (rowData.title && rowData.artist) {
+                            const tr = document.createElement('tr');
+                            tr.innerHTML = `
+                                <td>${rowData.title.replace(/"/g, '')}</td>
+                                <td>${rowData.artist.replace(/"/g, '')}</td>
+                                <td>${rowData.roundId ? rowData.roundId.slice(0, 8) : ''}</td>
+                            `;
+                            tbody.appendChild(tr);
+                        }
+                    });
+                }
+            } catch (error) {
+                console.error('Error creating table:', error);
+                const errorRow = document.createElement('tr');
+                errorRow.innerHTML = `<td colspan="3">Error loading data</td>`;
+                tbody.appendChild(errorRow);
+            }
+
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            container.appendChild(table);
+        }
+
+        function displayTopArtists(allData) {
+            const artistCounts = new Map();
+            
+            // Count appearances of each artist
+            allData.forEach(data => {
+                if (!data || !data.text) return;
+                
+                const rows = data.text.split('\n');
+                rows.slice(1).forEach(row => {
+                    if (!row.trim()) return;
+                    
+                    const rowData = parseCSVRow(row);
+                    if (!rowData || rowData.visible?.trim() === 'No') return;
+                    
+                    const artist = rowData.artist.replace(/"/g, '').trim();
+                    if (artist) {
+                        artistCounts.set(artist, (artistCounts.get(artist) || 0) + 1);
+                    }
+                });
+            });
+            
+            // Sort artists by count
+            const sortedArtists = Array.from(artistCounts.entries())
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 50);
+            
+            // Display results
+            const tbody = document.querySelector('#artists-table tbody');
+            sortedArtists.forEach(([artist, count], index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${artist}</td>
+                    <td>${count}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        async function init() {
+            const allData = await Promise.all(csvFiles.map(loadCSV));
+            displayTopArtists(allData);
+            allData.forEach(data => {
+                if (data && data.text) {
+                    createTable(data.text, data.filename);
+                }
+            });
+        }
+
+        init();
+    </script>
+</body>
+</html> 
