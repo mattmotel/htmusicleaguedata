@@ -92,6 +92,25 @@
             font-size: 13px;
             color: #e1e1e1;
         }
+
+        /* Add these new styles */
+        .caption-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .caption-subtitle {
+            font-size: 13px;
+            color: #888;
+            font-weight: normal;
+        }
+
+        caption {
+            padding: 15px;
+            background-color: #252525;
+            border-bottom: 2px solid #333;
+        }
     </style>
 </head>
 <body>
@@ -213,8 +232,16 @@
                 if (!data || !data.lines) return;
                 
                 const table = document.createElement('table');
+                
+                // Extract round number from filename (e.g., "submissions1.csv" -> "1")
+                const roundNumber = data.filename.match(/submissions(\d+)\.csv/)[1];
+                
+                // Create caption with main title and subtitle
                 const caption = document.createElement('caption');
-                caption.textContent = `Songs from ${data.filename}`;
+                caption.innerHTML = `
+                    <div class="caption-title">Songs from Round ${roundNumber}</div>
+                    <div class="caption-subtitle">${data.filename}</div>
+                `;
                 table.appendChild(caption);
                 
                 // Create table header
