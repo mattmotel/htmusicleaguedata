@@ -13,7 +13,7 @@
     <div class="subtitle">A collection of submissions from the Hard Times Music League</div>
     
     <div id="top-artists">
-        <h2>Top 50 Most Submitted Artists</h2>
+        <h2>Top 100 Most Submitted Artists</h2>
         <table id="artists-table">
             <thead>
                 <tr>
@@ -106,10 +106,10 @@
                 });
             });
 
-            // Sort artists by submission count
+            // Sort artists by submission count and get top 100 (changed from 50)
             const sortedArtists = Array.from(artistCounts.entries())
                 .sort((a, b) => b[1] - a[1])
-                .slice(0, 50);
+                .slice(0, 100);  // Changed from 50 to 100
 
             // Populate top artists table
             const artistsTable = document.getElementById('artists-table').getElementsByTagName('tbody')[0];
