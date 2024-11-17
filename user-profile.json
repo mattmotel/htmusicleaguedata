@@ -1,0 +1,75 @@
+{
+  "user": {
+    "name": "Matt McInerney",
+    "role": "Partner & Designer",
+    "preferences": {
+      "communicationStyle": "direct", 
+      "expertise": "expert",
+      "interests": ["design", "music", "podcasting", "typography", "branding"],
+      "timeZone": "America/New_York",
+      "contactPreference": "email",
+      "availabilityHours": "9am-5pm ET"
+    },
+    "history": {
+      "previousPurchases": [],
+      "favoriteProducts": [],
+      "dietaryRestrictions": [],
+      "lastLogin": "2024-02-14T10:30:00Z",
+      "accountCreated": "2023-01-01T00:00:00Z",
+      "interactionHistory": []
+    },
+    "settings": {
+      "language": "en",
+      "notifications": true,
+      "theme": "dark",
+      "twoFactorEnabled": true,
+      "emailSubscriptions": {
+        "newsletter": true,
+        "productUpdates": false,
+        "marketingOffers": false
+      }
+    },
+    "work": {
+      "current": {
+        "company": "Township",
+        "role": "Partner",
+        "description": "Digital product agency",
+        "location": "New York, NY",
+        "startDate": "2020-01-01",
+        "department": "Design",
+        "teamSize": 12
+      },
+      "past": {
+        "companies": ["Pentagram"],
+        "notable_projects": [
+          "College Football Playoff National Championship Trophy & Identity",
+          "Big Ten Conference Identity", 
+          "Pepsi Gate at MetLife Stadium",
+          "Rainbow Room",
+          "Top of the Rock Observation Deck",
+          "Raleway Font"
+        ],
+        "skills": ["Brand Design", "Typography", "Digital Design", "Art Direction"]
+      },
+      "social": {
+        "twitter": "@mattmc",
+        "spotify": "https://spoti.fi/3mUdcqY",
+        "podcasts": [
+          "Matt and Andy Talk with You about Joe Pera Talks with You",
+          "Good Bad Show",
+          "Working File", 
+          "On the Grid"
+        ],
+        "linkedin": "linkedin.com/in/mattmcinerney",
+        "github": "github.com/mattmc",
+        "behance": "behance.net/mattmc"
+      }
+    },
+    "analytics": {
+      "averageResponseTime": "2h",
+      "activeHours": ["9-12", "14-17"],
+      "engagementScore": 8.5,
+      "lastActive": "2024-02-14T15:45:00Z"
+    }
+  }
+}
