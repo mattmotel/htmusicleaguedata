@@ -1,0 +1,2233 @@
+🥾 Hard Times Music League Data
+A collection of submissions from the Hard Times Music League
+Top 100 Most Submitted Artists
+Rank	Artist	Submissions
+1	Radiohead	10
+2	Eels	8
+3	Kate Bush	8
+4	David Bowie	8
+5	PUP	8
+6	The Smiths	7
+7	Bob Dylan	7
+8	Pixies	7
+9	Fleetwood Mac	6
+10	Against Me!	6
+11	Beastie Boys	6
+12	Descendents	6
+13	Bad Religion	6
+14	The Cure	6
+15	Fall Out Boy	6
+16	My Chemical Romance	5
+17	Death Cab for Cutie	5
+18	Kendrick Lamar	5
+19	Taylor Swift	5
+20	R.E.M.	5
+21	The Smashing Pumpkins	5
+22	MGMT	5
+23	Tom Waits	5
+24	The B-52's	5
+25	Jawbreaker	5
+26	Weezer	5
+27	Robyn	4
+28	Charli xcx	4
+29	Depeche Mode	4
+30	Sufjan Stevens	4
+31	Godspeed You! Black Emperor	4
+32	LCD Soundsystem	4
+33	The White Stripes	4
+34	Siouxsie and the Banshees	4
+35	boygenius, Julien Baker, Phoebe Bridgers, Lucy Dacus	4
+36	blink-182	4
+37	Limp Bizkit	4
+38	Rilo Kiley	4
+39	Nirvana	4
+40	Mitski	4
+41	Toadies	4
+42	Bruce Springsteen	4
+43	Alkaline Trio	4
+44	IDLES	4
+45	Saves The Day	4
+46	Dolly Parton	4
+47	John Prine	4
+48	Coldplay	4
+49	Direct Hit!	4
+50	Harry Styles	4
+51	Green Day	4
+52	Chappell Roan	4
+53	MIKA	3
+54	Counting Crows	3
+55	Bon Iver	3
+56	Pink Floyd	3
+57	Julien Baker	3
+58	Billy Joel	3
+59	Orville Peck	3
+60	Lucy Dacus	3
+61	Catfish and the Bottlemen	3
+62	The Offspring	3
+63	Gorillaz	3
+64	Smash Mouth	3
+65	The Antlers	3
+66	The Who	3
+67	Murder By Death	3
+68	Florence + The Machine	3
+69	The Flaming Lips	3
+70	Fleet Foxes	3
+71	Hole	3
+72	DILLY DALLY	3
+73	Man Man	3
+74	Johnny Cash	3
+75	Elliott Smith	3
+76	The Weakerthans	3
+77	SOPHIE	3
+78	Modest Mouse	3
+79	Cocteau Twins	3
+80	Sleater-Kinney	3
+81	Car Seat Headrest	3
+82	NOFX	3
+83	Bright Eyes	3
+84	The Clash	3
+85	mewithoutYou	3
+86	The Darkness	3
+87	Sincere Engineer	3
+88	AJJ	3
+89	Future Islands	3
+90	Black Sabbath	3
+91	The Damned	3
+92	Talking Heads	3
+93	Sylvan Esso	3
+94	Run The Jewels, El-P, Killer Mike	3
+95	Mac Miller	3
+96	Vampire Weekend	3
+97	Primus	3
+98	Stevie Wonder	3
+99	Jonathan Richman	3
+100	The Blood Brothers	3
+Songs from Season 1
+data/1/submissions.csv
+Song	Artist	Round
+The Boy In the Bubble	Paul Simon	Listen, I was 14, ok?
+Wait and Bleed	Slipknot	Listen, I was 14, ok?
+Right Now	SR-71	Listen, I was 14, ok?
+Steal My Sunshine	LEN	Listen, I was 14, ok?
+Post Acid	Wavves	Listen, I was 14, ok?
+For All the Cows	Foo Fighters	Listen, I was 14, ok?
+House of Wolves	My Chemical Romance	Listen, I was 14, ok?
+Popular Song	MIKA	Listen, I was 14, ok?
+Walking On Sunshine	Katrina & The Waves	The least “Hard Times”-y song that you love
+Really Really	Kevin Gates	The least “Hard Times”-y song that you love
+F Cancer (Boosie) [feat. Quavo]	Young Thug, Quavo	The least “Hard Times”-y song that you love
+Super Natural (feat. Carly Rae Jepsen)	Danny L Harle, Carly Rae Jepsen	The least “Hard Times”-y song that you love
+Naacho Naacho (From RRR)	Vishal Mishra, Rahul Sipligunj, M. M. Keeravaani, Riya Mukherjee	The least “Hard Times”-y song that you love
+Call Your Girlfriend	Robyn	The least “Hard Times”-y song that you love
+Rinconcito En El Cielo	Ramon Ayala Y Sus Bravos Del Norte	The least “Hard Times”-y song that you love
+Once Bitten, Twice Shy	Ian Hunter	The least “Hard Times”-y song that you love
+Party All the Time	Eddie Murphy	The least “Hard Times”-y song that you love
+How You Like That	BLACKPINK	The least “Hard Times”-y song that you love
+Mr. Jones	Counting Crows	The least “Hard Times”-y song that you love
+Vroom Vroom	Charli xcx	The least “Hard Times”-y song that you love
+Go Cubs Go	Steve Goodman	The least “Hard Times”-y song that you love
+Church of Disgust	Nunslaughter	Your wrestling entrance music
+Red Right Hand - 2011 Remastered Version	Nick Cave & The Bad Seeds	Your wrestling entrance music
+Banned in D.C.	Bad Brains	Your wrestling entrance music
+Hands All Over	Soundgarden	Your wrestling entrance music
+Ma Digital	U.S. Maple	Your wrestling entrance music
+Fathers Right Hand	Embrace The End	Your wrestling entrance music
+Antagonist	Nova Twins	Your wrestling entrance music
+For Whom The Bell Tolls (Remastered)	Metallica	Your wrestling entrance music
+I Stand Alone	Godsmack	Your wrestling entrance music
+I Don't Get Tired (#IDGT) (feat. August Alsina)	Kevin Gates, August Alsina	Your wrestling entrance music
+Strength Through Wounding	AFI	Your wrestling entrance music
+All This Money	Injury Reserve	Your wrestling entrance music
+Creep	Radiohead	Your wrestling entrance music
+There Will Be Blood	Kim Petras	Your wrestling entrance music
+96 Quite Bitter Beings	CKY	Your wrestling entrance music
+Nightfall - Remastered 2007	Blind Guardian	Your wrestling entrance music
+Welcome To The Jungle	Guns N' Roses	Unfortunately, your parents probably had sex to this song
+Sara	Fleetwood Mac	Unfortunately, your parents probably had sex to this song
+Bang A Gong (Get It On) (Electric Version)	T. Rex	Unfortunately, your parents probably had sex to this song
+Take My Breath Away - Love Theme from Top Gun	Berlin	Unfortunately, your parents probably had sex to this song
+My Sharona	The Knack	Unfortunately, your parents probably had sex to this song
+Hail, Holy Queen Enthroned Above	The Cathedral Singers, Stefan Engels	Unfortunately, your parents probably had sex to this song
+4'33''	John Cage	Unfortunately, your parents probably had sex to this song
+Peg	Steely Dan	Unfortunately, your parents probably had sex to this song
+Green Earrings	Steely Dan	Unfortunately, your parents probably had sex to this song
+Between the Sheets	The Isley Brothers	Unfortunately, your parents probably had sex to this song
+Ghostbusters	Ray Parker Jr.	Unfortunately, your parents probably had sex to this song
+Keep on Loving You	REO Speedwagon	Unfortunately, your parents probably had sex to this song
+Sopa de Caracol	Banda Blanca	Unfortunately, your parents probably had sex to this song
+I Can't Dance	Genesis	Unfortunately, your parents probably had sex to this song
+Theme (From The Facts of Life)	Jen Sygit, Evan Jolly, London Music Works	Unfortunately, your parents probably had sex to this song
+Personal Jesus - 2006 Remaster	Depeche Mode	Unfortunately, your parents probably had sex to this song
+Casey Jones - 2013 Remaster	Grateful Dead	Unfortunately, your parents probably had sex to this song
+One Sweet Day	Mariah Carey, Boyz II Men	Unfortunately, your parents probably had sex to this song
+Sierra	Cursive	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+8 (circle)	Bon Iver	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+So Let Go	The Good Life	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+I Can't Wait	Unbelievable Truth	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+Bixby Canyon Bridge	Death Cab for Cutie	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+When the Tigers Broke Free	Pink Floyd	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+John Wayne Gacy, Jr.	Sufjan Stevens	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+Brittle Boned	Julien Baker	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+Mr. Peterson	Perfume Genius	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+The Bagman's Gambit	The Decemberists	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+Moon Song	Phoebe Bridgers	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+Two-Headed Boy Pt. 2	Neutral Milk Hotel	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+Transgender Dysphoria Blues	Against Me!	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+Goodnight Saigon	Billy Joel	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+Soy Infeliz	Lola Beltrán	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+Must've Never Met You	Luke Combs	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+Now Only	Mount Eerie	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+Death with Dignity	Sufjan Stevens	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+Styrofoam Plates	Death Cab for Cutie	Depressive jams you listen to when depressed despite the fact you have absolutely no way of relating to what that song is about
+Go Forth and Die	Metalocalypse: Dethklok	Great songs by fictional bands
+Threshold	Sex Bob-Omb	Great songs by fictional bands
+Finest Girl (Bin Laden Song)	The Lonely Island	Great songs by fictional bands
+Werewolf Bar Mitzvah	Jeff Richmond, Tracy Morgan	Great songs by fictional bands
+Walk Hard	John C. Reilly	Great songs by fictional bands
+Mustang Sally	The Commitments, Andrew Strong	Great songs by fictional bands
+Angry Inch	Stephen Trask	Great songs by fictional bands
+Killer Tofu (Extended Mix)	Doug & The Beets	Great songs by fictional bands
+Drive It Like You Stole It	Sing Street	Great songs by fictional bands
+Pretend to Be Nice	Josie and the Pussycats	Great songs by fictional bands
+Big Bottom	Spinal Tap	Great songs by fictional bands
+Dwarf Invasion	Reggie And The Full Effect	Great songs by fictional bands
+That Thing You Do!	The Wonders	Great songs by fictional bands
+Cantina Band	John Williams, London Symphony Orchestra	Great songs by fictional bands
+Just You	Angelo Badalamenti, David Lynch	Great songs by fictional bands
+Degenerated	The Lone Joey Gs	Great songs by fictional bands
+Two People	Bob's Burgers, John Roberts, Larry Murphy	Great songs by fictional bands
+Equal Rights	The Lonely Island, P!nk	Great songs by fictional bands
+Dead of Night	Orville Peck	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+Blue in Green (feat. John Coltrane & Bill Evans)	Miles Davis, John Coltrane, Bill Evans	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+N95	Kendrick Lamar	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+Dopesmoker - 2022 Remastered Version	Sleep	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+Fuck the Pain Away	Peaches	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+MAKE U 3 ME	Alice Longyu Gao	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+Monster Mash	Bobby Boris Pickett, The Crypt-Kickers	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+Storm	Godspeed You! Black Emperor	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+Forever & Always (Taylor’s Version)	Taylor Swift	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+You Dropped A Bomb On Me	The Gap Band	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+Wet Dream	Wet Leg	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+Bear Hands	Private Island	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+new body rhumba (from the film White Noise)	LCD Soundsystem	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+6L GTR	The Chats	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+Urantia	Deftones	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+NEW TRICKS: ART, AESTHETICS, AND MONEY	Kilo Kish, Vince Staples	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+May Brigade	Horse Lords	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+I Don't Wanna Be Funny Anymore	Lucy Dacus	Songs you’re really sad weren’t featured on your Spotify Wrapped playlist
+Braineaters	Misfits	Fun Size
+I Lied (Interlude)	Banoffee	Fun Size
+Intermission	Catfish and the Bottlemen	Fun Size
+5-Piece Chicken Dinner	Beastie Boys	Fun Size
+Sealab 2021 Theme	King of Summer	Fun Size
+Little Room	The White Stripes	Fun Size
+Disclaimer	The Offspring	Fun Size
+!!!!!!!	The Roots	Fun Size
+Kicker Of Elves	Guided By Voices	Fun Size
+Pulse	Bloodyminded	Fun Size
+The Orange County Lumber Truck - Live, 1988	Frank Zappa	Fun Size
+Bomb	Turnstile	Fun Size
+Interlude	My Chemical Romance	Fun Size
+She Broke My Dick	All	Fun Size
+You Suffer	Napalm Death	Fun Size
+Fertilizer	Frank Ocean	Fun Size
+Coffee Mug	Descendents	Fun Size
+Gossip	Tame Impala	Fun Size
+Sidestepping Versus Splitting Heirs	The Cambiata	You Wouldn't Have Heard of Them
+Tinseltown Swimming in Blood	Destroyer	You Wouldn't Have Heard of Them
+This Machine Kills Pacifists	Endless Mike and the Beagle Club	You Wouldn't Have Heard of Them
+Seaside Tony	7minds	You Wouldn't Have Heard of Them
+Sizing You Up	Wonderful Broken Thing	You Wouldn't Have Heard of Them
+Sunday Suit	Tyne-James Organ	You Wouldn't Have Heard of Them
+Affection is Nice	Porkboii	You Wouldn't Have Heard of Them
+Punka	Kenickie	You Wouldn't Have Heard of Them
+profound yet self-aware midwest emo song title that has you in stitches	Wasted Space	You Wouldn't Have Heard of Them
+Broad Strokes	After Ours	You Wouldn't Have Heard of Them
+EIO (During the Flood)	Pow Wow's	You Wouldn't Have Heard of Them
+Honk + Wave	Limbeck	You Wouldn't Have Heard of Them
+There's a Leak in the Shielding	Saajtak	You Wouldn't Have Heard of Them
+Straight Edge Is Fun (Until You're 21)	The Whatleys	You Wouldn't Have Heard of Them
+Sharpshooter	From Monument To Masses	You Wouldn't Have Heard of Them
+Grime Boss	BRAT	You Wouldn't Have Heard of Them
+It's Only Us	Monophonics, Kelly Finnigan	You Wouldn't Have Heard of Them
+Everyone Says	Pyyramids	You Wouldn't Have Heard of Them
+Prisencolinensinainciusol	Adriano Celentano	Not in English, still slaps
+Tea-plucking and Catching Butterflies	Lily Chao	Not in English, still slaps
+Statement of freedom	envy	Not in English, still slaps
+Muzika Dlya Fil'ma	Persephone's Bees	Not in English, still slaps
+Roi	Videoclub	Not in English, still slaps
+Radio Capital	La Vida Bohème	Not in English, still slaps
+Mittageisen	Siouxsie and the Banshees	Not in English, still slaps
+Agua Dulce De Pulpo	Omar Rodríguez-López	Not in English, still slaps
+Raum Der Zeit	Wizo	Not in English, still slaps
+Y Bluen Eira	The Joy Formidable	Not in English, still slaps
+Je veux te voir	Yelle	Not in English, still slaps
+Latin Simone (Que Pasa Contigo)	Gorillaz	Not in English, still slaps
+Ecchymose	Palatine	Not in English, still slaps
+Aline	Jarvis Cocker	Not in English, still slaps
+Por ti volarè	Endo Rivera	Not in English, still slaps
+CORALINE	Måneskin	Not in English, still slaps
+Prada	Arca	Not in English, still slaps
+Пиво с друзьями	Пекинский Велосипед	Not in English, still slaps
+Songs from Season 2
+data/2/submissions.csv
+Song	Artist	Round
+Smooth (feat. Rob Thomas)	Santana, Rob Thomas	The 90s radio hit that you have to stop yourself from singing along to
+Intergalactic	Beastie Boys	The 90s radio hit that you have to stop yourself from singing along to
+Wannabe	Spice Girls	The 90s radio hit that you have to stop yourself from singing along to
+Fly Away	Lenny Kravitz	The 90s radio hit that you have to stop yourself from singing along to
+Wonderwall	Oasis	The 90s radio hit that you have to stop yourself from singing along to
+The Impression That I Get	The Mighty Mighty Bosstones	The 90s radio hit that you have to stop yourself from singing along to
+Every Morning	Sugar Ray	The 90s radio hit that you have to stop yourself from singing along to
+Losing My Religion	R.E.M.	The 90s radio hit that you have to stop yourself from singing along to
+Santa Monica	Everclear	The 90s radio hit that you have to stop yourself from singing along to
+...Baby One More Time	Britney Spears	The 90s radio hit that you have to stop yourself from singing along to
+Semi-Charmed Life	Third Eye Blind	The 90s radio hit that you have to stop yourself from singing along to
+Come To My Window	Melissa Etheridge	The 90s radio hit that you have to stop yourself from singing along to
+Hey Jealousy	Gin Blossoms	The 90s radio hit that you have to stop yourself from singing along to
+Spiderwebs	No Doubt	The 90s radio hit that you have to stop yourself from singing along to
+Tubthumping	Chumbawamba	The 90s radio hit that you have to stop yourself from singing along to
+Iris	The Goo Goo Dolls	The 90s radio hit that you have to stop yourself from singing along to
+Flagpole Sitta	Harvey Danger	The 90s radio hit that you have to stop yourself from singing along to
+Zombie	The Cranberries	The 90s radio hit that you have to stop yourself from singing along to
+A Disappearing Act	Coheed and Cambria	Best songs by a band that definitely play one genre but pretend to play a different genre
+My Blue Heaven	The Smashing Pumpkins	Best songs by a band that definitely play one genre but pretend to play a different genre
+Golden Brown	The Stranglers	Best songs by a band that definitely play one genre but pretend to play a different genre
+Enter Sandman	Pat Boone	Best songs by a band that definitely play one genre but pretend to play a different genre
+Courtney, just relax	Static Dress	Best songs by a band that definitely play one genre but pretend to play a different genre
+Shakedown Street	Grateful Dead	Best songs by a band that definitely play one genre but pretend to play a different genre
+Doritos & Fritos	100 gecs	Best songs by a band that definitely play one genre but pretend to play a different genre
+Stealth	Bad Religion	Best songs by a band that definitely play one genre but pretend to play a different genre
+Tamarack's Gold Returns	Panopticon	Best songs by a band that definitely play one genre but pretend to play a different genre
+Alone	Weedeater	Best songs by a band that definitely play one genre but pretend to play a different genre
+Heart Attack Man	Beastie Boys	Best songs by a band that definitely play one genre but pretend to play a different genre
+Beer Goggles	Smash Mouth	Best songs by a band that definitely play one genre but pretend to play a different genre
+Corpse Rotting In Hell	Guttermouth	Best songs by a band that definitely play one genre but pretend to play a different genre
+SUMMER	BROCKHAMPTON	Best songs by a band that definitely play one genre but pretend to play a different genre
+NEW HEART DESIGN	Turnstile	Best songs by a band that definitely play one genre but pretend to play a different genre
+All We Ever Wanted Was Everything	MGMT	Best songs by a band that definitely play one genre but pretend to play a different genre
+Foil	Weird Al Yankovic	The Switch-Up
+L'Via L'Viaquez	The Mars Volta	The Switch-Up
+Tyrants	Catfish and the Bottlemen	The Switch-Up
+Dance Yrself Clean	LCD Soundsystem	The Switch-Up
+Hocus Pocus	Focus	The Switch-Up
+Title Track	The Callous Daoboys	The Switch-Up
+I've Seen All Good People: a. Your Move, b. All Good People - 2003 Remaster	Yes	The Switch-Up
+Kettering	The Antlers	The Switch-Up
+A Quick One While He's Away - Remastered 2018	The Who	The Switch-Up
+The Lotus Eater	Opeth	The Switch-Up
+The Prophet	Sunny Day Real Estate	The Switch-Up
+Hospital Fat Bags	Gaza	The Switch-Up
+I've Got a Theory / Bunnies / If We're Together	Buffy the Vampire Slayer Cast	The Switch-Up
+Paranoid Android	Radiohead	The Switch-Up
+27 Questions	black midi	The Switch-Up
+Pitch Black	Heart Attack Man	The Switch-Up
+Comin' Home	Murder By Death	The song that will play at the end of your biopic
+PAWG	Big Papi Sosa	The song that will play at the end of your biopic
+Town Called Malice	The Jam	The song that will play at the end of your biopic
+Devil Knows You're Dead	Delta Spirit, Elijah Thomson, Bo Koster	The song that will play at the end of your biopic
+What I've Done	Linkin Park	The song that will play at the end of your biopic
+A Real Hero	College, Electric Youth	The song that will play at the end of your biopic
+Memoriam	Russian Circles	The song that will play at the end of your biopic
+Bury Me in Analog	Mischief Brew	The song that will play at the end of your biopic
+You Can't Put Your Arms Round a Memory	Johnny Thunders	The song that will play at the end of your biopic
+King	Florence + The Machine	The song that will play at the end of your biopic
+...And Ever	Titus Andronicus	The song that will play at the end of your biopic
+The Body is True	Extra Life	The song that will play at the end of your biopic
+Me & My Dog	boygenius, Julien Baker, Phoebe Bridgers, Lucy Dacus	The song that will play at the end of your biopic
+You're Wondering Now	Amy Winehouse	The song that will play at the end of your biopic
+It's A Motherfucker	Eels	The song that will play at the end of your biopic
+Joy	Against Me!	The song that will play at the end of your biopic
+Out of Touch	Daryl Hall & John Oates	The song that will play at the end of your biopic
+Guts	Math The Band	Terrifying Songs from Non-Terrifying Genres
+Subway Song - 2005 Remaster	The Cure	Terrifying Songs from Non-Terrifying Genres
+The Earth Died Screaming	Tom Waits	Terrifying Songs from Non-Terrifying Genres
+Every Breath You Take	The Police	Terrifying Songs from Non-Terrifying Genres
+Horses	David Byrne	Terrifying Songs from Non-Terrifying Genres
+Tip Toe Thru' the Tulips with Me	Tiny Tim	Terrifying Songs from Non-Terrifying Genres
+Threnody to the Victims of Hiroshima	Krzysztof Penderecki, Cracow Philharmonic Orchestra, Wojciech Czepiel	Terrifying Songs from Non-Terrifying Genres
+Hello Ma' Baby	Paul Eakins' Mortier Belgian Band Organ	Terrifying Songs from Non-Terrifying Genres
+Do You Realize??	The Flaming Lips	Terrifying Songs from Non-Terrifying Genres
+Climbing Up the Walls	Radiohead	Terrifying Songs from Non-Terrifying Genres
+Don't Explain	Xiu Xiu	Terrifying Songs from Non-Terrifying Genres
+Christmas Don't Be Late	Norah Jones	Terrifying Songs from Non-Terrifying Genres
+Complicated Game - 2001 Digital Remaster	XTC	Terrifying Songs from Non-Terrifying Genres
+Dog At The Door	Aesop Rock	Terrifying Songs from Non-Terrifying Genres
+Planet Claire	The B-52's	Terrifying Songs from Non-Terrifying Genres
+My Limb	Hayley Williams	Terrifying Songs from Non-Terrifying Genres
+Goodbye Horses	Q Lazzarus	Terrifying Songs from Non-Terrifying Genres
+Holiday	The Get Up Kids	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+White Winter Hymnal	Fleet Foxes	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+Merry Muthafuckin' Xmas	Eazy-E, Dolemite, Atban Klann, Buckwheat, Menajahtwa	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+God Rest Ye Merry Gentlemen	Bad Religion	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+The Power Of Love	Frankie Goes To Hollywood	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+Gutless	Hole	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+A Long December	Counting Crows	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+Reindeer	The Knife	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+New Year's Day	U2	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+Always Something There to Remind Me - 2018 Remaster	Naked Eyes	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+Oi To The World	No Doubt	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+Happy Holidays, You Bastard	blink-182	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+Joy	Apollo 100, Tom Parker	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+Oi To The World!	The Vandals	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+Christmas Card From A Hooker In Minneapolis	Tom Waits	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+The Night Santa Went Crazy	Weird Al Yankovic	I’d sooner step on a bear trap than listen to Christmas music, so if I’m forced to put on a Christmas song I skirt the rules by playing this
+Immanuel	Rock Kills Kid	Great song, absolutely terrible band name
+In Green	Volcano, I'm Still Excited!!	Great song, absolutely terrible band name
+Play The Game	Sloppy Meateaters	Great song, absolutely terrible band name
+Driver's Seat	Sniff 'n' The Tears	Great song, absolutely terrible band name
+Ghost With A Boner	Diarrhea Planet	Great song, absolutely terrible band name
+So American	Portugal. The Man	Great song, absolutely terrible band name
+Another Morning Stoner	...And You Will Know Us by the Trail of Dead	Great song, absolutely terrible band name
+Sharks	Test Icicles	Great song, absolutely terrible band name
+Levitation	Let's Eat Grandma	Great song, absolutely terrible band name
+Modernbaseballiswar	Worlds Scariest Police Chases	Great song, absolutely terrible band name
+Bad Biology	DILLY DALLY	Great song, absolutely terrible band name
+Homeless in Heathrow	Fartbarf	Great song, absolutely terrible band name
+Gay's Okay - Millienium Edition	The Clitboys	Great song, absolutely terrible band name
+Break Stuff	Limp Bizkit	Great song, absolutely terrible band name
+I Love You 'Cause I Have To	Dogs Die In Hot Cars	Great song, absolutely terrible band name
+At the Turf Field Behind My Parents' House	Giraffes? Giraffes!	Great song, absolutely terrible band name
+Hunters	Man Man	Great song, absolutely terrible band name
+Miniskirt	Braids	Song that makes you cry
+Something Right	Microwave	Song that makes you cry
+in a breath	Pinkshift	Song that makes you cry
+Hurt	Johnny Cash	Song that makes you cry
+What Sarah Said	Death Cab for Cutie	Song that makes you cry
+I Know It's Over - 2011 Remaster	The Smiths	Song that makes you cry
+My Chasm	Mount Eerie	Song that makes you cry
+I Wish I Was the Moon	Neko Case	Song that makes you cry
+Your Hand In Mine - Remastered	Explosions In The Sky	Song that makes you cry
+The Biggest Lie	Elliott Smith	Song that makes you cry
+Casimir Pulaski Day	Sufjan Stevens	Song that makes you cry
+Virtute the Cat Explains Her Departure	The Weakerthans	Song that makes you cry
+Nude	Radiohead	Song that makes you cry
+The Concept	Teenage Fanclub	Song that makes you cry
+Vera	Pink Floyd	Song that makes you cry
+King Park	La Dispute	Song that makes you cry
+Don't light my fire	Otoboke Beaver	Borderline unlistenable
+Get Crazy	LMFAO	Borderline unlistenable
+My Pal Foot Foot	The Shaggs	Borderline unlistenable
+Elimidate	Coughs	Borderline unlistenable
+Sugar Coated Sour	The Dillinger Escape Plan	Borderline unlistenable
+Sometimes She Tasted Like Burning Plastic Smells	The Sawtooth Grin	Borderline unlistenable
+String Around a Stick	Bob Log III	Borderline unlistenable
+Ponyboy	SOPHIE	Borderline unlistenable
+Waking The Witch - 2018 Remaster	Kate Bush	Borderline unlistenable
+Ventolin - Video Edit	Aphex Twin	Borderline unlistenable
+Da Ya Think I'm Sexy?	Rod Stewart	Borderline unlistenable
+I Keep Mine Hidden	The Smiths	Borderline unlistenable
+Freak	Swans	Borderline unlistenable
+The 20th Century Was Entirely Mine	Fear Before The March Of Flames	Borderline unlistenable
+Paper Planes	Black Dresses	Borderline unlistenable
+Walking the Cow	Daniel Johnston	Borderline unlistenable
+Note to Self	From First To Last	Borderline unlistenable
+Hey Guy, Story of My Life, Ya Know?	Rescue	You Wouldn't Have Heard of Them Part 2
+Jan 9	Dog Faced Hermans	You Wouldn't Have Heard of Them Part 2
+Ghosts	Cerce	You Wouldn't Have Heard of Them Part 2
+Slaughter House	Sematary	You Wouldn't Have Heard of Them Part 2
+Velvet Cave	Silver Apples	You Wouldn't Have Heard of Them Part 2
+Haunted House	Candy Smokes	You Wouldn't Have Heard of Them Part 2
+Seeds of Gold	Closure in Moscow	You Wouldn't Have Heard of Them Part 2
+Is This How You Feel?	The Preatures	You Wouldn't Have Heard of Them Part 2
+No Money	Chalmers	You Wouldn't Have Heard of Them Part 2
+See You Later, I'm Gone	Robert Lester Folsom	You Wouldn't Have Heard of Them Part 2
+Ctrl + Art + Delete	Blood Command	You Wouldn't Have Heard of Them Part 2
+Jambalaya	Red Animal War	You Wouldn't Have Heard of Them Part 2
+BRAINS	Mega Emotion	You Wouldn't Have Heard of Them Part 2
+Killing Texas	Eksi Ekso	You Wouldn't Have Heard of Them Part 2
+Vertigo Jane	Wallpaper	You Wouldn't Have Heard of Them Part 2
+Possible Pod Bot	Absolutely	You Wouldn't Have Heard of Them Part 2
+Up All Night	Suburban Legends	You Wouldn't Have Heard of Them Part 2
+Songs from Season 3
+data/3/submissions.csv
+Song	Artist	Round
+Sleep	Godspeed You! Black Emperor	Auditory Xanax
+The Light	The Album Leaf	Auditory Xanax
+A Walk	Tycho	Auditory Xanax
+Porcelain	Men I Trust	Auditory Xanax
+Between the Bars	Elliott Smith	Auditory Xanax
+Pink Moon	Nick Drake	Auditory Xanax
+I Want It That Way	LAV8	Auditory Xanax
+The World At Large	Modest Mouse	Auditory Xanax
+Fotzepolitic	Cocteau Twins	Auditory Xanax
+Let Go	JJ	Auditory Xanax
+Up in the Air	Emeralds	Auditory Xanax
+Girls Like Musicians, Right?	Josh Gondelman	Auditory Xanax
+Central Reservation - Original Version	Beth Orton	Auditory Xanax
+Little Fluffy Clouds	The Orb	Auditory Xanax
+Paper Thin	Lianne La Havas	Auditory Xanax
+Still Ill - 2011 Remaster	The Smiths	My coming of age anthem
+Chesterfield King	Jawbreaker	My coming of age anthem
+Protest Song '68	Refused	My coming of age anthem
+Haunted	Laura Les	My coming of age anthem
+Ironclad	Sleater-Kinney	My coming of age anthem
+Spectrum (Say My Name)	Florence + The Machine	My coming of age anthem
+Call Me Maybe	Carly Rae Jepsen	My coming of age anthem
+Understanding In A Car Crash	Thursday	My coming of age anthem
+The Good Life	Weezer	My coming of age anthem
+Time to Pretend	MGMT	My coming of age anthem
+Snails	The Format	My coming of age anthem
+Portions for Foxes	Rilo Kiley	My coming of age anthem
+Deadbolt	Thrice	My coming of age anthem
+Mushaboom	Feist	My coming of age anthem
+The Seed (2.0)	The Roots, Cody Chesnutt	My coming of age anthem
+Last Nite	The Strokes	My coming of age anthem
+Let's Make Love and Listen to Death From Above	CSS	The dance floor is empty—you have one song to change that—GO
+Doot Doot Pause Doot Doot	Reggie And The Full Effect	The dance floor is empty—you have one song to change that—GO
+Dance This Mess Around	The B-52's	The dance floor is empty—you have one song to change that—GO
+Hey Ya!	Outkast	The dance floor is empty—you have one song to change that—GO
+I Wanna Dance with Somebody (Who Loves Me)	Whitney Houston	The dance floor is empty—you have one song to change that—GO
+Heads Will Roll	Yeah Yeah Yeahs	The dance floor is empty—you have one song to change that—GO
+Timber	Pitbull, Kesha	The dance floor is empty—you have one song to change that—GO
+Let's Groove	Earth, Wind & Fire	The dance floor is empty—you have one song to change that—GO
+Dancing On My Own	Robyn	The dance floor is empty—you have one song to change that—GO
+XS	Rina Sawayama	The dance floor is empty—you have one song to change that—GO
+Girls Just Want to Have Fun	STRFKR	The dance floor is empty—you have one song to change that—GO
+Knee Deep - Deep As A Mutha Funker Remix	Funkadelic, Digital Underground	The dance floor is empty—you have one song to change that—GO
+Get Lucky (feat. Pharrell Williams and Nile Rodgers)	Daft Punk, Pharrell Williams, Nile Rodgers	The dance floor is empty—you have one song to change that—GO
+Mother Popcorn - Pt. 1	James Brown	The dance floor is empty—you have one song to change that—GO
+Back That Azz Up	JUVENILE, Lil Wayne, Mannie Fresh	The dance floor is empty—you have one song to change that—GO
+Us V Them	LCD Soundsystem	The dance floor is empty—you have one song to change that—GO
+Love Will Tear Us Apart	Fall Out Boy	Cover better than the original—no boring answers
+The Mercy Seat	Johnny Cash	Cover better than the original—no boring answers
+99 Red Balloons	Goldfinger	Cover better than the original—no boring answers
+This Wheel's On Fire	Siouxsie and the Banshees	Cover better than the original—no boring answers
+Fuckin' Problems	Xavier Dunn	Cover better than the original—no boring answers
+Maniac	Carpenter Brut, Yann Ligner	Cover better than the original—no boring answers
+Zero	Vanna	Cover better than the original—no boring answers
+Lay Lady Lay	U.S. Maple	Cover better than the original—no boring answers
+Where Did You Sleep Last Night - Live	Nirvana	Cover better than the original—no boring answers
+1985	Bowling For Soup	Cover better than the original—no boring answers
+So Lonely	Limbeck	Cover better than the original—no boring answers
+Game of Pricks	My Vitriol	Cover better than the original—no boring answers
+Weird Fishes	Lianne La Havas	Cover better than the original—no boring answers
+Miss You	The Concretes	Cover better than the original—no boring answers
+Jealous Guy - Live	Donny Hathaway	Cover better than the original—no boring answers
+Jumpin' Jack Flash	Alex Chilton	Cover better than the original—no boring answers
+Boing Beat	Danny L Harle, MC Boing	Time Machine
+bloodstainedeyes	SeeYouSpaceCowboy..., If I Die First	Time Machine
+Love Tomorrow	The Cactus Blossoms	Time Machine
+Wife Eyes (bonus track)	The Coathangers	Time Machine
+Little Dark Age	MGMT	Time Machine
+Butter	BTS	Time Machine
+Kaisarion	Ghost	Time Machine
+Lost Angel	Black Lips	Time Machine
+Love Me More	Mitski	Time Machine
+The Only Heartbreaker	Mitski	Time Machine
+4 American Dollars	U.S. Girls	Time Machine
+I've Made Up My Mind to Give Myself to You	Bob Dylan	Time Machine
+Fine to Me	Pokey LaFarge	Time Machine
+Through The Gate	Nicholas Elert	Time Machine
+Mi Amor La Luna	Tiger Army	Time Machine
+Black Qualls	Thundercat, Steve Lacy, Steve Arrington, Childish Gambino	Time Machine
+Won't Get Fooled Again - Original Album Version	The Who	Song with best build up and climax
+I Know The End	Phoebe Bridgers	Song with best build up and climax
+Fuck Me (Interlude) - Interlude; 2005 Remaster	The Notorious B.I.G.	Song with best build up and climax
+It's U - Pearl Version	Himera, Petal Supply	Song with best build up and climax
+Books About Miles Davis	The Ergs!	Song with best build up and climax
+Postcard From 1952	Explosions In The Sky	Song with best build up and climax
+Transatlanticism	Death Cab for Cutie	Song with best build up and climax
+Untitled #8 - 2022 Remaster	Sigur Rós	Song with best build up and climax
+Only In Dreams	Weezer	Song with best build up and climax
+A.M. Gothic	Save Face, Geoff Rickly	Song with best build up and climax
+Welcome Home	Coheed and Cambria	Song with best build up and climax
+505	Arctic Monkeys	Song with best build up and climax
+Karma Police	Radiohead	Song with best build up and climax
+Drunk Drivers/Killer Whales	Car Seat Headrest	Song with best build up and climax
+You And Whose Army?	Radiohead	Song with best build up and climax
+A Gallant Gentleman	We Lost The Sea	Song with best build up and climax
+Thoroughfare	Ethel Cain	Best long song
+Social Distancing	Vomir	Best long song
+2112: Overture / The Temples Of Syrinx / Discovery / Presentation / Oracle / Soliloquy / Grand Finale - Medley	Rush	Best long song
+Accident Prone	Jawbreaker	Best long song
+Monoliths	Maserati	Best long song
+The Decline	NOFX	Best long song
+Like a Rolling Stone	Bob Dylan	Best long song
+Let's Dance - 2018 Remaster	David Bowie	Best long song
+falkor	Covet	Best long song
+Maw Maw Song	The Joy Formidable	Best long song
+Pyramids	Frank Ocean	Best long song
+Thinking of a Place	The War On Drugs	Best long song
+Timothy	As Cities Burn	Best long song
+Yearning	MONO	Best long song
+Your Fake Name Is Good Enough for Me	Iron & Wine	Best long song
+Marquee Moon	Television	Best long song
+Red Right Hand - 2011 Remastered Version	Nick Cave & The Bad Seeds	Let’s get this party ended
+The Calendar Hung Itself…	Bright Eyes	Let’s get this party ended
+What Would You Do?	City High	Let’s get this party ended
+Night Shift	Lucy Dacus	Let’s get this party ended
+A Fond Farewell	Elliott Smith	Let’s get this party ended
+I Get Overwhelmed	Dark Rooms	Let’s get this party ended
+Something To Remember Me By	The Horrors	Let’s get this party ended
+Can't Stop Partying - Polow Version	Weezer	Let’s get this party ended
+I want you Back	Hobo Johnson	Let’s get this party ended
+Arizona	Pedro The Lion	Let’s get this party ended
+Tears in Heaven - 2015 Remaster	Eric Clapton	Let’s get this party ended
+Possum Kingdom	Toadies	Let’s get this party ended
+Styrofoam Plates	Death Cab for Cutie	Let’s get this party ended
+Everybody Hurts	R.E.M.	Let’s get this party ended
+I Fall To Pieces - Single Version	Patsy Cline, The Jordanaires	Let’s get this party ended
+QKThr	Aphex Twin	Let’s get this party ended
+London - 2011 Remaster	The Smiths	Songs named after cities
+Frances Farmer Will Have Her Revenge On Seattle	Nirvana	Songs named after cities
+London Calling	The Clash	Songs named after cities
+Portland, Maine	Donovan Woods	Songs named after cities
+Atlantic City	Bruce Springsteen	Songs named after cities
+Glasgow	Catfish and the Bottlemen	Songs named after cities
+Winnipeg Is A Dogshit Dildo - Original Mix	Venetian Snares	Songs named after cities
+Ketchum, ID	boygenius, Julien Baker, Phoebe Bridgers, Lucy Dacus	Songs named after cities
+Palmyra	Low Skies	Songs named after cities
+Werewolves of London	Warren Zevon	Songs named after cities
+San Francisco	Alkaline Trio	Songs named after cities
+Glendora	Rilo Kiley	Songs named after cities
+Suffragette City - 2012 Remaster	David Bowie	Songs named after cities
+New York	St. Vincent	Songs named after cities
+New York, I Love You but You're Bringing Me Down	LCD Soundsystem	Songs named after cities
+San Pedro	Mogwai	Songs named after cities
+Contempt	Olde Tigers	Artists with less than 300 monthly listeners on Spotify
+The Milgram Reality	the lightsleeper	Artists with less than 300 monthly listeners on Spotify
+Little More Time	Taylor Link	Artists with less than 300 monthly listeners on Spotify
+They Call Her Echo	Fire When Ready	Artists with less than 300 monthly listeners on Spotify
+Hey Jealousy	Unmatched	Artists with less than 300 monthly listeners on Spotify
+Came	Sexual Jeremy	Artists with less than 300 monthly listeners on Spotify
+Beach Ball	Meet Arthur	Artists with less than 300 monthly listeners on Spotify
+Deception	IKARASS	Artists with less than 300 monthly listeners on Spotify
+Back In the Day	AudioInflux	Artists with less than 300 monthly listeners on Spotify
+Wallace & Vomit	Lord Friday the 13th	Artists with less than 300 monthly listeners on Spotify
+Please Come Back	Catfish Haven	Artists with less than 300 monthly listeners on Spotify
+Rose Garden	PLRLS	Artists with less than 300 monthly listeners on Spotify
+What's It Take	Danger Inc.	Artists with less than 300 monthly listeners on Spotify
+When Will I Be Queen?	Bearsuit	Artists with less than 300 monthly listeners on Spotify
+Songs from Season 4
+data/4/submissions.csv
+Song	Artist	Round
+Integral - 2017 Remaster	Pet Shop Boys	Phone-a-friend
+Shinunoga E-Wa	Fujii Kaze	Phone-a-friend
+Dancing On My Own	Robyn	Phone-a-friend
+Sweet Nothing	Taylor Swift	Phone-a-friend
+XS	Rina Sawayama	Phone-a-friend
+No Good	Knuckle Puck	Phone-a-friend
+Them Bones (2022 Remaster)	Alice In Chains	Phone-a-friend
+Jams Runs Free	Sonic Youth	Phone-a-friend
+Dammit (After Dark)	Dead On A Sunday	Phone-a-friend
+Silk Chiffon	MUNA, Phoebe Bridgers	Phone-a-friend
+Hark! to the Music	Ezra Furman	Phone-a-friend
+Torches Together	mewithoutYou	Phone-a-friend
+Feel It Still	Portugal. The Man	Phone-a-friend
+Art of Motion	Andy McKee	404: vocals not found
+G.O.A.T.	Polyphia	404: vocals not found
+Adventure	Disasterpeace	404: vocals not found
+SPACED OUT	Alice Gas	404: vocals not found
+YYZ	Rush	404: vocals not found
+Don't Waste Time Doing Things You Hate	And So I Watch You from Afar	404: vocals not found
+Ghostwriter	RJD2	404: vocals not found
+Come To Dust	Boards of Canada	404: vocals not found
+Having An Average Weekend	Shadowy Men On A Shadowy Planet	404: vocals not found
+Hummingbirds Eat	Pele	404: vocals not found
+Color & Data	Droid Bishop	404: vocals not found
+January 1979	mewithoutYou	The plot of this song would make an awesome movie
+All Caps	Madvillain, Madlib, MF DOOM	The plot of this song would make an awesome movie
+Tom Cat Goodby	Laura Nyro	The plot of this song would make an awesome movie
+Paul Revere	Beastie Boys	The plot of this song would make an awesome movie
+Brother	Murder By Death	The plot of this song would make an awesome movie
+Blood and Thunder	Mastodon	The plot of this song would make an awesome movie
+The Mystic Crystal	Ninja Sex Party	The plot of this song would make an awesome movie
+Triple Dog Dare	Lucy Dacus	The plot of this song would make an awesome movie
+Does He Love You?	Rilo Kiley	The plot of this song would make an awesome movie
+Eisenhower Is the Father	Best Friends Forever	The plot of this song would make an awesome movie
+Waiting to Hit	Lift To Experience	The plot of this song would make an awesome movie
+Bruce Lee Vs. The Kiss Army	Guttermouth	The plot of this song would make an awesome movie
+Space Oddity - 2015 Remaster	David Bowie	The plot of this song would make an awesome movie
+Never Fight A Man With A Perm	IDLES	The plot of this song would make an awesome movie
+Rock Lobster	The B-52's	Looking camp right in the eye
+Fashion - 2017 Remaster	David Bowie	Looking camp right in the eye
+Beating Heart Baby	Head Automatica	Looking camp right in the eye
+Return Of The Fly	Misfits	Looking camp right in the eye
+Gimme! Gimme! Gimme! (A Man After Midnight)	ABBA	Looking camp right in the eye
+Alice's Restaurant Massacree	Arlo Guthrie	Looking camp right in the eye
+Planet Claire	The B-52's	Looking camp right in the eye
+Classy Plastic Lumber	Modest Mouse	Looking camp right in the eye
+Get Out Of My House	Kate Bush	Looking camp right in the eye
+Marciano (I Turned Into A Martian)	Molotov	Looking camp right in the eye
+Stars Are Blind	Paris Hilton	Looking camp right in the eye
+I Believe in a Thing Called Love	The Darkness	Looking camp right in the eye
+Grace Kelly	MIKA	Looking camp right in the eye
+The Kids Can Eat A Bag Of Dicks	A Wilhelm Scream	Extremely misleading song titles
+Leif Erikson	Interpol	Extremely misleading song titles
+This Is Hardcore	Pulp	Extremely misleading song titles
+A Little Piece of Heaven	Avenged Sevenfold	Extremely misleading song titles
+The Happiest Days of Our Lives	Pink Floyd	Extremely misleading song titles
+Baba O'Riley	The Who	Extremely misleading song titles
+Spritz!!!Spritz!!!	Minus the Bear	Extremely misleading song titles
+Best Song Ever	One Direction	Extremely misleading song titles
+Common Sense	J Hus	Extremely misleading song titles
+Irreplaceable	Beyoncé	Extremely misleading song titles
+Sorry	Nerf Herder	Extremely misleading song titles
+Morbid Stuff	PUP	🇨🇦 O Canada
+Sprawl II (Mountains Beyond Mountains)	Arcade Fire	🇨🇦 O Canada
+Neighborhood #1 (Tunnels)	Arcade Fire	🇨🇦 O Canada
+Longitudinal Centre	John K. Samson	🇨🇦 O Canada
+The House That Heaven Built	Japandroids	🇨🇦 O Canada
+Chelsea Hotel #2	Leonard Cohen	🇨🇦 O Canada
+fineshrine	Purity Ring	🇨🇦 O Canada
+Dead Disco	Metric	🇨🇦 O Canada
+Back to the Motor League	Propagandhi	🇨🇦 O Canada
+Circle With Me	Spiritbox	🇨🇦 O Canada
+I'm Just a Kid	Simple Plan	🇨🇦 O Canada
+One Great City!	The Weakerthans	🇨🇦 O Canada
+Lola Stars and Stripes	The Stills	🇨🇦 O Canada
+Exit Music (For A Film)	Radiohead	Lyrics In Your AIM Away Message
+Sophomore Slump Or Comeback Of The Year	Fall Out Boy	Lyrics In Your AIM Away Message
+La Dolly Vita - Remastered	The Smashing Pumpkins	Lyrics In Your AIM Away Message
+Fade Into You	Mazzy Star	Lyrics In Your AIM Away Message
+26	Paramore	Lyrics In Your AIM Away Message
+Counterfeit	Limp Bizkit	Lyrics In Your AIM Away Message
+All Star	Smash Mouth	Lyrics In Your AIM Away Message
+The Pros and Cons of Breathing	Fall Out Boy	Lyrics In Your AIM Away Message
+Stupid Kid	Alkaline Trio	Lyrics In Your AIM Away Message
+Complicated	Avril Lavigne	Lyrics In Your AIM Away Message
+Cute Without The 'E' (Cut From The Team) - Remastered 2019	Taking Back Sunday	Lyrics In Your AIM Away Message
+Rusholme Ruffians - 2011 Remaster	The Smiths	Lyrics In Your AIM Away Message
+You Vandal	Saves The Day	Lyrics In Your AIM Away Message
+Oakland Nights (feat. Sia)	The Unauthorized Bash Brothers Experience, The Lonely Island, Sia	Almost picks
+To Old Friends and New	Titus Andronicus	Almost picks
+Changes	Charles Bradley, The Budos Band	Almost picks
+Who are you?	Bad Omens	Almost picks
+Country Death Song	Violent Femmes	Almost picks
+Into You	Julia Michaels	Almost picks
+I'm going home	Pat The Bunny	Almost picks
+An Idea For A Movie	The Vandals	Almost picks
+Providence	Godspeed You! Black Emperor	Almost picks
+I'm On Fire	Electrelane	Almost picks
+Go Home	Julien Baker	Almost picks
+Ceremony	The Appleseed Cast	Almost picks
+Diana - Remastered	Paul Anka	Best gratuitous sax solo
+Run Away	Sunstroke Project, Olia Tira	Best gratuitous sax solo
+Feels Pretty Good	TWRP	Best gratuitous sax solo
+____45_____	Bon Iver	Best gratuitous sax solo
+Miasma	Ghost	Best gratuitous sax solo
+Modern Love - 2018 Remaster	David Bowie	Best gratuitous sax solo
+Moanin' Lisa Blues	The Simpsons	Best gratuitous sax solo
+Scenes from an Italian Restaurant	Billy Joel	Best gratuitous sax solo
+Rio - 2009 Remaster	Duran Duran	Best gratuitous sax solo
+Midnight City	M83	Best gratuitous sax solo
+Baker Street	Gerry Rafferty	Best gratuitous sax solo
+Summertime Gladness	Dance Gavin Dance	Best gratuitous sax solo
+Born to Run	Bruce Springsteen	Best gratuitous sax solo
+A Night like This - 2006 Remaster	The Cure	Best gratuitous sax solo
+Kingsnake	Judge Bitch	You _Probably_ Haven't Heard Of Them
+Untethered	PVA	You _Probably_ Haven't Heard Of Them
+Alone And Unaware, The Landscape Was Transformed In Front Of Our Eyes	Red Sparowes	You _Probably_ Haven't Heard Of Them
+Toasty	Hailaker, Lowswimmer, Jemima Coulter	You _Probably_ Haven't Heard Of Them
+Thin Flesh	Traitrs	You _Probably_ Haven't Heard Of Them
+Corn Dog Sonnet No. 7	Sincere Engineer	You _Probably_ Haven't Heard Of Them
+Famously Alive	Guerilla Toss	You _Probably_ Haven't Heard Of Them
+Dark Science	Coyote Kid	You _Probably_ Haven't Heard Of Them
+Domino Effect	Ozma	You _Probably_ Haven't Heard Of Them
+Spitshine	Smino	You _Probably_ Haven't Heard Of Them
+Talking In Code	Margot & The Nuclear So And So's	You _Probably_ Haven't Heard Of Them
+Add It On	Bully	You _Probably_ Haven't Heard Of Them
+Presumably Dead Arm (617 Sessions)	Sidney Gish	You _Probably_ Haven't Heard Of Them
+Грустная сука	IC3PEAK	You _Probably_ Haven't Heard Of Them
+Songs from Season 5
+data/5/submissions.csv
+Song	Artist	Round
+The Baby Panda	AJJ	Song you just heard recently and were like “whoa this is cool” and now you’re excited to share
+Get In The Robot	Ogbert the Nerd	Song you just heard recently and were like “whoa this is cool” and now you’re excited to share
+A Cruel Angel's Thesis - Director's Edit Version	Shiro SAGISU, Yoko Takahashi	Song you just heard recently and were like “whoa this is cool” and now you’re excited to share
+No Face	Haley Heynderickx	Song you just heard recently and were like “whoa this is cool” and now you’re excited to share
+Annie Blue	Launder	Song you just heard recently and were like “whoa this is cool” and now you’re excited to share
+Bad Fun	The Cult	Song you just heard recently and were like “whoa this is cool” and now you’re excited to share
+Easter Sunday	Zelooperz, Earl Sweatshirt	Song you just heard recently and were like “whoa this is cool” and now you’re excited to share
+Mean	The Nychillharmonic	Song you just heard recently and were like “whoa this is cool” and now you’re excited to share
+NECTA_ (V.5)	BABii, Pholo	Song you just heard recently and were like “whoa this is cool” and now you’re excited to share
+Hit Parade	Mutemath	Song you just heard recently and were like “whoa this is cool” and now you’re excited to share
+Pisces	Anjimile	Song you just heard recently and were like “whoa this is cool” and now you’re excited to share
+Separate Ways (Worlds Apart)	Daughtry, Lzzy Hale	Song you just heard recently and were like “whoa this is cool” and now you’re excited to share
+Passenger - Mike Shinoda Remix	Deftones, Mike Shinoda	A GOOD remix
+Complicated	Olivia O'Brien	A GOOD remix
+19-2000 - Soulchild Remix	Gorillaz	A GOOD remix
+Electric Feel - Justice Remix	MGMT, Justice	A GOOD remix
+Fantasy (feat. O.D.B.)	Mariah Carey, Ol' Dirty Bastard	A GOOD remix
+Bed Head - Local Natives Version	Manchester Orchestra, Local Natives	A GOOD remix
+Love Is Lost - Hello Steve Reich Mix by James Murphy for the DFA	David Bowie	A GOOD remix
+Mr. Brightside - Jacques Lu Cont's Thin White Duke Mix	The Killers, Jacques Lu Cont	A GOOD remix
+gecgecgec (Remix) [feat. Lil West and Tony Velour]	100 gecs, Lil West, Tony Velour	A GOOD remix
+California Girls - Remix	NoMBe, Sonny Alven	A GOOD remix
+Let's Get It On - LOVRA Remix	Marvin Gaye, LOVRA	A GOOD remix
+Blame It on Your Love (feat. Lizzo) [Dylan Brady Remix]	Charli xcx, Lizzo, Dylan Brady	A GOOD remix
+Gangsta's Paradise	Coolio, L.V.	Song you’ve always secretly wanted to sing at karaoke but never have
+Cut Your Ribbon	Sparta	Song you’ve always secretly wanted to sing at karaoke but never have
+Teenage Dirtbag	Wheatus	Song you’ve always secretly wanted to sing at karaoke but never have
+I Never	Rilo Kiley	Song you’ve always secretly wanted to sing at karaoke but never have
+Breath of Life - 7 Mix	Erasure	Song you’ve always secretly wanted to sing at karaoke but never have
+Breaking the Law	Judas Priest	Song you’ve always secretly wanted to sing at karaoke but never have
+New Noise	Refused	Song you’ve always secretly wanted to sing at karaoke but never have
+Skinny Love	Bon Iver	Song you’ve always secretly wanted to sing at karaoke but never have
+I Want You	Savage Garden	Song you’ve always secretly wanted to sing at karaoke but never have
+Destination	Nickel Creek	Song you’ve always secretly wanted to sing at karaoke but never have
+New Romantics	Taylor Swift	Song you’ve always secretly wanted to sing at karaoke but never have
+Bats	Cerce	Fun size round 2 - funner size
+Lake Street Is For Lovers	Lifter Puller	Fun size round 2 - funner size
+Murder The Government	NOFX	Fun size round 2 - funner size
+Arbeit Macht Frei	The Libertines	Fun size round 2 - funner size
+Kids	Descendents	Fun size round 2 - funner size
+marypan	Lisa Germano	Fun size round 2 - funner size
+Nazi Punks Fuck Off	Dead Kennedys	Fun size round 2 - funner size
+Boggo Breakout	The Chats	Fun size round 2 - funner size
+You Are (The Government)	Bad Religion	Fun size round 2 - funner size
+Nazi Punks Fuck Off	Napalm Death	Fun size round 2 - funner size
+Do What You Want	Bad Religion	Fun size round 2 - funner size
+Surfer Girl	Home Grown	Goofy act, but this is a jam
+The Night Josh Tillman Came To Our Apt.	Father John Misty	Goofy act, but this is a jam
+My Daughter	Egghead	Goofy act, but this is a jam
+Choose me	BAND-MAID	Goofy act, but this is a jam
+Here (In Your Arms)	Hellogoodbye	Goofy act, but this is a jam
+Baby Bitch	Ween	Goofy act, but this is a jam
+metal	food house, Gupi, Fraxiom	Goofy act, but this is a jam
+Brian Wilson - Live	Barenaked Ladies, Michael Phillip Wojewoda	Goofy act, but this is a jam
+Mr Experience	Donny Benét	Goofy act, but this is a jam
+X-RAY	Tommy Cash	Goofy act, but this is a jam
+The Most Beautiful Girl (In The Room)	Flight of the Conchords	Goofy act, but this is a jam
+Love Me Like I'm Not Made of Stone	Lykke Li	Songs that make you cry but No Radiohead, No Deathcab and affiliates, No boygenius and affiliates, No Smiths, No Elliott Smith
+Last Summer	Mike Felumlee	Songs that make you cry but No Radiohead, No Deathcab and affiliates, No boygenius and affiliates, No Smiths, No Elliott Smith
+Promised Land	Chuck Berry	Songs that make you cry but No Radiohead, No Deathcab and affiliates, No boygenius and affiliates, No Smiths, No Elliott Smith
+Putting The Dog To Sleep	The Antlers	Songs that make you cry but No Radiohead, No Deathcab and affiliates, No boygenius and affiliates, No Smiths, No Elliott Smith
+No Longer Making Time	Slowdive	Songs that make you cry but No Radiohead, No Deathcab and affiliates, No boygenius and affiliates, No Smiths, No Elliott Smith
+Miss World	Hole	Songs that make you cry but No Radiohead, No Deathcab and affiliates, No boygenius and affiliates, No Smiths, No Elliott Smith
+Revelator	Gillian Welch	Songs that make you cry but No Radiohead, No Deathcab and affiliates, No boygenius and affiliates, No Smiths, No Elliott Smith
+No Hero	Benton Falls	Songs that make you cry but No Radiohead, No Deathcab and affiliates, No boygenius and affiliates, No Smiths, No Elliott Smith
+Cover Me Up	Jason Isbell	Songs that make you cry but No Radiohead, No Deathcab and affiliates, No boygenius and affiliates, No Smiths, No Elliott Smith
+Breathe Me	Sia	Songs that make you cry but No Radiohead, No Deathcab and affiliates, No boygenius and affiliates, No Smiths, No Elliott Smith
+Thrill	Future Islands	Songs that make you cry but No Radiohead, No Deathcab and affiliates, No boygenius and affiliates, No Smiths, No Elliott Smith
+I Against I	Massive Attack, Mos Def	Unlikely collaborations that work surprisingly well
+Somos Más Americanos	Los Tigres Del Norte, Zack De La Rocha	Unlikely collaborations that work surprisingly well
+Friends (feat. Bon Iver)	Francis and the Lights, Bon Iver	Unlikely collaborations that work surprisingly well
+Little Know It All	Iggy Pop, Sum 41	Unlikely collaborations that work surprisingly well
+Rabbit In Your Headlights	UNKLE, Thom Yorke	Unlikely collaborations that work surprisingly well
+Old Town Road (feat. Billy Ray Cyrus) - Remix	Lil Nas X, Billy Ray Cyrus	Unlikely collaborations that work surprisingly well
+Hangover	PSY, Snoop Dogg	Unlikely collaborations that work surprisingly well
+Dinner for Two	David Byrne, St. Vincent	Unlikely collaborations that work surprisingly well
+25 Bucks (feat. Purity Ring)	Danny Brown, Purity Ring	Unlikely collaborations that work surprisingly well
+Walk This Way (feat. Aerosmith)	Run–D.M.C., Aerosmith	Unlikely collaborations that work surprisingly well
+Save Rock And Roll	Fall Out Boy, Elton John	Unlikely collaborations that work surprisingly well
+Black Sabbath - 2014 Remaster	Black Sabbath	Song You Wish You Could Go Back In Time And Claim It Yourself
+Running Up That Hill (A Deal With God) - 2018 Remaster	Kate Bush	Song You Wish You Could Go Back In Time And Claim It Yourself
+Seven Nation Army	The White Stripes	Song You Wish You Could Go Back In Time And Claim It Yourself
+Dark Horse	Converge	Song You Wish You Could Go Back In Time And Claim It Yourself
+Thin Blue Flame	Josh Ritter	Song You Wish You Could Go Back In Time And Claim It Yourself
+Heroes - Single Version; 2002 Remaster	David Bowie	Song You Wish You Could Go Back In Time And Claim It Yourself
+New Rose	The Damned	Song You Wish You Could Go Back In Time And Claim It Yourself
+Pick up the Phone	The Notwist	Song You Wish You Could Go Back In Time And Claim It Yourself
+Coxton Yard	Title Fight	Song You Wish You Could Go Back In Time And Claim It Yourself
+Just like Heaven	The Cure	Song You Wish You Could Go Back In Time And Claim It Yourself
+L'Elisir d'amore: Una furtiva lagrima	Gaetano Donizetti, Enrico Caruso, Vienna Radio Symphony Orchestra, Gottfried Rabl	Song You Wish You Could Go Back In Time And Claim It Yourself
+Dead of Night	Orville Peck	A great song from a genre you usually can’t stand
+If Your Gonna Be Dumb, You Gotta Be Tough	Roger Alan Wade	A great song from a genre you usually can’t stand
+Sanctuary (Lord Prepare Me)	Oasis Worship, Randy Rothwell	A great song from a genre you usually can’t stand
+Dust in a Baggie	Billy Strings	A great song from a genre you usually can’t stand
+The Closest	Vex Red	A great song from a genre you usually can’t stand
+9 to 5	Dolly Parton	A great song from a genre you usually can’t stand
+good 4 u	Olivia Rodrigo	A great song from a genre you usually can’t stand
+Little Worlds	Watchhouse	A great song from a genre you usually can’t stand
+Hard To Impress	Catch 22	A great song from a genre you usually can’t stand
+Good Time	Alan Jackson	A great song from a genre you usually can’t stand
+You Win Again	Hank Williams	A great song from a genre you usually can’t stand
+Burning at Both Ends	Black Flak and the Nightmare Fighters	“Perhaps you haven’t heard of them, but if you have that’s totally cool too”
+Criminal	Clair De Lune	“Perhaps you haven’t heard of them, but if you have that’s totally cool too”
+The Man Who Sold The World - Cover Version	Jeremy Deller	“Perhaps you haven’t heard of them, but if you have that’s totally cool too”
+Love Is a Different Pain	Long Island	“Perhaps you haven’t heard of them, but if you have that’s totally cool too”
+Brainless	Free Kittens & Bread	“Perhaps you haven’t heard of them, but if you have that’s totally cool too”
+Voodoo	Spiral Beach	“Perhaps you haven’t heard of them, but if you have that’s totally cool too”
+Sakura	Kiki Machine	“Perhaps you haven’t heard of them, but if you have that’s totally cool too”
+Mozart's Sister	Mozart's Sister	“Perhaps you haven’t heard of them, but if you have that’s totally cool too”
+Starstruck	Flow Resale	“Perhaps you haven’t heard of them, but if you have that’s totally cool too”
+Closing Time At The Distortion Factory	Marathon	“Perhaps you haven’t heard of them, but if you have that’s totally cool too”
+Songs from Season 6
+data/6/submissions.csv
+Song	Artist	Round
+Life During Wartime - Live	Talking Heads	One of your favorite songs that you have somehow not submitted yet
+Tiger Kit	Sleigh Bells	One of your favorite songs that you have somehow not submitted yet
+City's Full	Savages	One of your favorite songs that you have somehow not submitted yet
+Coffee	Sylvan Esso	One of your favorite songs that you have somehow not submitted yet
+The Secret Life of Arabia - 2017 Remaster	David Bowie	One of your favorite songs that you have somehow not submitted yet
+Living Decorations	Maps & Atlases	One of your favorite songs that you have somehow not submitted yet
+My Brother Isn't Dying	The Taxpayers	One of your favorite songs that you have somehow not submitted yet
+With One's Heart in One's Mouth	Moving Mountains	One of your favorite songs that you have somehow not submitted yet
+Enamoured in the Throes of Death	Devil Master	One of your favorite songs that you have somehow not submitted yet
+King Kunta	Kendrick Lamar	Submit a song from a genre you don’t often submit
+oui	Jeremih	Submit a song from a genre you don’t often submit
+Phony Rappers	A Tribe Called Quest	Submit a song from a genre you don’t often submit
+Rella (feat. Hodgy, Domo Genesis & Tyler, The Creator)	Odd Future, Hodgy, Domo Genesis, Tyler, The Creator	Submit a song from a genre you don’t often submit
+Hard to Find	The American Analog Set	Submit a song from a genre you don’t often submit
+Morbid Obsessions	We Are The Union	Submit a song from a genre you don’t often submit
+Crazy	Doechii	Submit a song from a genre you don’t often submit
+RideOut	enjo	Submit a song from a genre you don’t often submit
+Cruel Mistress	Crazy P	Submit a song from a genre you don’t often submit
+Gravity Falls Main Title Theme (from Gravity Falls)	Brad Breeck	90s/00s TV theme songs that are actually jams
+Hey Sandy	Polaris	90s/00s TV theme songs that are actually jams
+ATHF Theme (remix)	Schoolly D	90s/00s TV theme songs that are actually jams
+Buffy The Vampire Slayer - The Theme Music	TV Themes	90s/00s TV theme songs that are actually jams
+California - Tchad Blake Mix	Phantom Planet	90s/00s TV theme songs that are actually jams
+Mr. Belvedere	TV Tunesters	90s/00s TV theme songs that are actually jams
+At Least It Was Here (Community Main Title) [Full Length Version]	The 88	90s/00s TV theme songs that are actually jams
+Family Matters (Intro)	Da Family	90s/00s TV theme songs that are actually jams
+Twin Peaks Theme - Instrumental	Angelo Badalamenti	90s/00s TV theme songs that are actually jams
+Run Boy Run	Woodkid	Songs to rob a bank to
+Run The Jewels	Run The Jewels, El-P, Killer Mike	Songs to rob a bank to
+Vacation	The Go-Go's	Songs to rob a bank to
+Blockbuster Night, Pt. 1	Run The Jewels, El-P, Killer Mike	Songs to rob a bank to
+Paper Planes	M.I.A.	Songs to rob a bank to
+The Four Horsemen (Remastered)	Metallica	Songs to rob a bank to
+There Goes A Tenner	Kate Bush	Songs to rob a bank to
+Ace of Spades	Motörhead	Songs to rob a bank to
+If Drinkin' Don't Kill Me (Her Memory Will)	George Jones	No Red Solo Cups, No Applebee's
+I Can't Help It (If I'm Still In Love With You)	The Breeders	No Red Solo Cups, No Applebee's
+Just Be Simple	Songs: Ohia, Jason Molina	No Red Solo Cups, No Applebee's
+Sam Stone	John Prine	No Red Solo Cups, No Applebee's
+Raise Hell	Brandi Carlile	No Red Solo Cups, No Applebee's
+Ship Me Off To Hell	The Hill Country Devil, GemsOnVHS	No Red Solo Cups, No Applebee's
+Maggie	The Cowmen	No Red Solo Cups, No Applebee's
+Rot - Single Version	Northlane	Best Australian Music
+Corner Of The Sky	Cut Copy	Best Australian Music
+Get Free	The Vines	Best Australian Music
+The Opener	Camp Cope	Best Australian Music
+doom	daine	Best Australian Music
+Tieduprightnow	Parcels	Best Australian Music
+Depreston	Courtney Barnett	Best Australian Music
+Don't Dream It's Over	Crowded House	Best Australian Music
+Helter Skelter	Siouxsie and the Banshees	A cover that totally changes the vibe of the original but it works
+Such Great Heights	Streetlight Manifesto	A cover that totally changes the vibe of the original but it works
+Airbag	Easy Star All-Stars, Horace Andy	A cover that totally changes the vibe of the original but it works
+Graceland	Justin Townes Earle	A cover that totally changes the vibe of the original but it works
+Hey Ya	Sleep Token	A cover that totally changes the vibe of the original but it works
+Credit In The Straight World	Hole	A cover that totally changes the vibe of the original but it works
+Comfortably Numb	Scissor Sisters	A cover that totally changes the vibe of the original but it works
+Going to Georgia	Atom And His Package	A cover that totally changes the vibe of the original but it works
+Superstar	Sonic Youth	A cover that totally changes the vibe of the original but it works
+Someday - triple j Like A Version	Julia Jacklin	A cover that totally changes the vibe of the original but it works
+English Lane	Mac Miller	Sure it’s just an interlude but it’s a jam
+IMAVOLCANO	Fishboy	Sure it’s just an interlude but it’s a jam
+Intro	Aaliyah	Sure it’s just an interlude but it’s a jam
+Wolves (Intro)	Dead Prez	Sure it’s just an interlude but it’s a jam
+Tamagotchi (intermission)	Lolo Zouaï	Sure it’s just an interlude but it’s a jam
+Bivouac	Jawbreaker	Sure it’s just an interlude but it’s a jam
+Intro	The xx	Sure it’s just an interlude but it’s a jam
+B.I.T.M.	SIAMES	Sure it’s just an interlude but it’s a jam
+Mexican Hairless	Toadies	Sure it’s just an interlude but it’s a jam
+Frosti	Björk	Sure it’s just an interlude but it’s a jam
+Dani California	Red Hot Chili Peppers	Songs that contain other songs
+To the East	Electrelane	Songs that contain other songs
+movies for guys	Jane Remover	Songs that contain other songs
+Alex Chilton - 2008 Remaster	The Replacements	Songs that contain other songs
+After Forever - 2014 Remaster	Black Sabbath	Songs that contain other songs
+Hang Out / Hang Ten	Math The Band	Songs that contain other songs
+Survival Song	AJJ	Songs that contain other songs
+Taurus	Spirit	Songs that contain other songs
+I Don't Wanna Go Out	Wet Leg	Songs that contain other songs
+Really Bees	Ovlov	You _Probably_ Haven't Heard Of Them Again
+Goon Squad	Ripe	You _Probably_ Haven't Heard Of Them Again
+Militaristic Kitchen	The Taxpayers	You _Probably_ Haven't Heard Of Them Again
+About Work The Dancefloor	Georgia	You _Probably_ Haven't Heard Of Them Again
+Why	Dominic Fike	You _Probably_ Haven't Heard Of Them Again
+As It Was	Matty Greg	You _Probably_ Haven't Heard Of Them Again
+Push / Pull	bdrmm	You _Probably_ Haven't Heard Of Them Again
+Green Honda	BENEE	You _Probably_ Haven't Heard Of Them Again
+Kinko's field trip 2006	underscores	You _Probably_ Haven't Heard Of Them Again
+Songs from Season 7
+data/7/submissions.csv
+Song	Artist	Round
+Mr. E's Beautiful Blues	Eels	That First Touch of Natural Vitamin D in the Spring
+The Divine Chord	The Avalanches, MGMT, Johnny Marr	That First Touch of Natural Vitamin D in the Spring
+In Love Again	Mannequin Pussy	That First Touch of Natural Vitamin D in the Spring
+still feel.	half•alive	That First Touch of Natural Vitamin D in the Spring
+Welcome To My Island	Caroline Polachek	That First Touch of Natural Vitamin D in the Spring
+Deceptacon	Le Tigre	That First Touch of Natural Vitamin D in the Spring
+Apollo	St. Paul & The Broken Bones	That First Touch of Natural Vitamin D in the Spring
+Holiday	Vampire Weekend	That First Touch of Natural Vitamin D in the Spring
+Single Fins & Safety Pins	Japanese Motors	That First Touch of Natural Vitamin D in the Spring
+Two Trucks	Lemon Demon	Songs about cars
+Greased Lightnin' - From “Grease”	John Travolta, Jeff Conaway	Songs about cars
+Car Song	Elastica	Songs about cars
+Car Song	Woody Guthrie	Songs about cars
+Mabu	PUP	Songs about cars
+Monkey!!!Knife!!!Fight!!!	Minus the Bear	Songs about cars
+Vroom Vroom	Charli xcx	Songs about cars
+Brand New Cadillac	The Clash	Songs about cars
+Rhiannon	Fleetwood Mac	Hard Times Music League passes the Bechdel Test
+Clever Girl	The Doubleclicks	Hard Times Music League passes the Bechdel Test
+Oh!	The Linda Lindas	Hard Times Music League passes the Bechdel Test
+SAD GIRLZ LUV MONEY	Amaarae, Moliy	Hard Times Music League passes the Bechdel Test
+Clock Song	Scrawl	Hard Times Music League passes the Bechdel Test
+Rebel Girl	Bikini Kill	Hard Times Music League passes the Bechdel Test
+Girls Like Us	The Julie Ruin	Hard Times Music League passes the Bechdel Test
+Halfway To Hell	Sheppard	Hard Times Music League passes the Bechdel Test
+Me Against the Music (feat. Madonna) - LP Version / Video Mix	Britney Spears, Madonna	Hard Times Music League passes the Bechdel Test
+Move on Up - Single Edit	Curtis Mayfield	Friday after Work Songs!
+Drinking Song From The Home Stretch	Mischief Brew	Friday after Work Songs!
+Super 8	Jason Isbell	Friday after Work Songs!
+Cherry Street	Tijuana Panthers	Friday after Work Songs!
+Don't Stop Me Now	Queen	Friday after Work Songs!
+Long Tall Sally (The Thing)	Little Richard	Friday after Work Songs!
+T.O.R.N.A.D.O	The Go! Team	Friday after Work Songs!
+Keep Moving	Jungle	Friday after Work Songs!
+Immaterial	SOPHIE	Friday after Work Songs!
+Clay Pigeons	Michael Cera	Wait, THEY released song?
+Our Little Visionary	DOGSTAR	Wait, THEY released song?
+Shpadoinkle	Trey Parker	Wait, THEY released song?
+Stars & Satellites	Minnie Driver	Wait, THEY released song?
+Thief	Ansel Elgort	Wait, THEY released song?
+Malmo	Mook	Wait, THEY released song?
+T5	Swet Shop Boys, Riz Ahmed, Heems	Wait, THEY released song?
+Antibodies (Do You Have The)	Nicholas Braun	Wait, THEY released song?
+She's Like the Wind (feat. Wendy Fraser) - From Dirty Dancing Soundtrack	Patrick Swayze, Wendy Fraser	Wait, THEY released song?
+We Sell Drugs	Tribe Society	Amazing Music, Terrible Lyrics
+Brown Sugar	The Rolling Stones	Amazing Music, Terrible Lyrics
+Egg Shaped Fred - Remastered	Mansun	Amazing Music, Terrible Lyrics
+DONTTRUSTME	3OH!3	Amazing Music, Terrible Lyrics
+Rattlesnake	King Gizzard & The Lizard Wizard	Amazing Music, Terrible Lyrics
+Father Stretch My Hands Pt. 1	Kanye West	Amazing Music, Terrible Lyrics
+Go	The Apples In Stereo	Amazing Music, Terrible Lyrics
+Where Is My Mind?	Pixies	Greatest non-original soundtrack song
+Lust For Life	Iggy Pop	Greatest non-original soundtrack song
+Running Up That Hill (A Deal With God) - 2018 Remaster	Kate Bush	Greatest non-original soundtrack song
+The Mighty Rio Grande	This Will Destroy You	Greatest non-original soundtrack song
+These Days	Nico	Greatest non-original soundtrack song
+Neat Neat Neat	The Damned	Greatest non-original soundtrack song
+I'm Shipping Up To Boston	Dropkick Murphys	Greatest non-original soundtrack song
+Bellbottoms	The Jon Spencer Blues Explosion	Greatest non-original soundtrack song
+Fear & Force	Vagabon	Secretly Not Canadian Records
+Die Young	Sylvan Esso	Secretly Not Canadian Records
+Caring Is Creepy - 2021 Remaster	The Shins	Secretly Not Canadian Records
+My Sacrifice	Creed	Secretly Not Canadian Records
+Penelope	of Montreal	Secretly Not Canadian Records
+Two of Many	The Happy Fits	Secretly Not Canadian Records
+Bee Kind To The Bugs	Culture Abuse	Secretly Not Canadian Records
+The Future Freaks Me Out	Motion City Soundtrack	Secretly Not Canadian Records
+Punk Rocker	Crazy & the Brains	Quiet is the new loud
+Constance - Acoustic	Spiritbox	Quiet is the new loud
+1612	Vulfpeck	Quiet is the new loud
+When He Calls Me Kitten	Kelley Deal 6000	Quiet is the new loud
+Tamarack's Gold Returns	Panopticon	Quiet is the new loud
+Sore Thumb	We Were Promised Jetpacks	Quiet is the new loud
+Me & My Dog	boygenius, Julien Baker, Phoebe Bridgers, Lucy Dacus	Quiet is the new loud
+Drunk Drivers/Killer Whales	Car Seat Headrest	Quiet is the new loud
+Evergreen	Windhand	Quiet is the new loud
+Shiver	Coldplay	I liked them before they got big
+Overdue	Muse	I liked them before they got big
+Back Here Again	The After Hours	I liked them before they got big
+Ghost	Mystery Skulls	I liked them before they got big
+Zebra	Beach House	I liked them before they got big
+Perfection Through Silence	Finch	I liked them before they got big
+Comin' Round Again (Live from SXSW 2015)	Houndmouth	I liked them before they got big
+Sex, Drugs, Etc.	Beach Weather	I liked them before they got big
+Songs from Season 8
+data/8/submissions.csv
+Song	Artist	Round
+Tainted Love	Soft Cell	Songs that have you singing the bass line instead of the lyrics
+Hey	Pixies	Songs that have you singing the bass line instead of the lyrics
+Good Ones	Charli xcx	Songs that have you singing the bass line instead of the lyrics
+Good Times - 2018 Remaster	CHIC	Songs that have you singing the bass line instead of the lyrics
+Seven Nation Army	The White Stripes	Songs that have you singing the bass line instead of the lyrics
+My Name Is Mud	Primus	Songs that have you singing the bass line instead of the lyrics
+The Chain - 2004 Remaster	Fleetwood Mac	Songs that have you singing the bass line instead of the lyrics
+Walk That Walk	Bakermat, Nic Hanson	Songs that have you singing the bass line instead of the lyrics
+To the Hellfire	Lorna Shore	The all-time greatest vocal performance
+Under Pressure	Queen, David Bowie	The all-time greatest vocal performance
+Stormy Weather	Lena Horne, Lou Bring	The all-time greatest vocal performance
+Hurt	Johnny Cash	The all-time greatest vocal performance
+Try a Little Tenderness	Otis Redding	The all-time greatest vocal performance
+I Will Always Love You	Whitney Houston	The all-time greatest vocal performance
+Sugar	Stevie Wonder	The all-time greatest vocal performance
+Purple Rain	Prince	The all-time greatest vocal performance
+Dream Brother - Live at Club Logo, Hamburg, Germany - Feb 1995	Jeff Buckley	The all-time greatest vocal performance
+Over The Cliff	Old 97's	Happy music, sad lyrics
+Like the Weather	10,000 Maniacs	Happy music, sad lyrics
+Jet Boy Jet Girl	Elton Motello	Happy music, sad lyrics
+Going Fetal	Eels	Happy music, sad lyrics
+Misery	Veronica Falls	Happy music, sad lyrics
+The Less I Know The Better	Tame Impala	Happy music, sad lyrics
+Sweet Talk	Saint Motel	Happy music, sad lyrics
+H.Y.C.Y.BH	Tom Cardy	The best joke you can find on Spotify
+Stromboli	Paul F. Tompkins	The best joke you can find on Spotify
+Grapes vs. Grapefruit	Gary Gulman	The best joke you can find on Spotify
+Fugazi	Todd Barry	The best joke you can find on Spotify
+Birthday Party	Kumail Nanjiani	The best joke you can find on Spotify
+Rappers + Drugs = Comedy	Hannibal Buress	The best joke you can find on Spotify
+Sandwiches	Mitch Hedberg	The best joke you can find on Spotify
+Ad Space Sold	Hampton Yount	The best joke you can find on Spotify
+Smoking	Bill Hicks	The best joke you can find on Spotify
+I Think I'm Paranoid	Garbage	Bands that don’t get enough credit
+We Lived Alone	Connie Converse	Bands that don’t get enough credit
+Semantics	The Mynabirds	Bands that don’t get enough credit
+Racing Stripes	Aesop Rock	Bands that don’t get enough credit
+Somewhere in the Between	Streetlight Manifesto	Bands that don’t get enough credit
+Can You Feel It?	The Apples In Stereo	Bands that don’t get enough credit
+Reprobate!	Serena-Maneesh	Bands that don’t get enough credit
+Mater Dolores	Screamers	Bands that don’t get enough credit
+Worked Up So Sexual	The Faint	Bands that don’t get enough credit
+The Color Of Money	Bury Your Dead	Close Out Your Mixtape
+Rocksteady	Wild Belle	Close Out Your Mixtape
+Because Her Beauty Is Raw And Wild	Jonathan Richman	Close Out Your Mixtape
+Laser Life	The Blood Brothers	Close Out Your Mixtape
+In My Life - Remastered 2009	The Beatles	Close Out Your Mixtape
+Everywhere - 2017 Remaster	Fleetwood Mac	Close Out Your Mixtape
+Piano Concerto No. 2 in F Major, Op. 102: II. Andante	Dmitri Shostakovich, Leonard Bernstein, New York Philharmonic	Close Out Your Mixtape
+I Go to Sleep	Pretenders	Close Out Your Mixtape
+Happy Birthday	Stevie Wonder	You can’t afford the rights to play the happy birthday song at your party. What are you playing instead?
+Jerk It Out	Caesars	You can’t afford the rights to play the happy birthday song at your party. What are you playing instead?
+Where'd All the Time Go?	Dr. Dog	You can’t afford the rights to play the happy birthday song at your party. What are you playing instead?
+Happy Birthday Don't Die	Rhett Miller	You can’t afford the rights to play the happy birthday song at your party. What are you playing instead?
+D.A.N.C.E	Justice	You can’t afford the rights to play the happy birthday song at your party. What are you playing instead?
+Got Old	The Babies	You can’t afford the rights to play the happy birthday song at your party. What are you playing instead?
+soiree!	Yung Gravy	You can’t afford the rights to play the happy birthday song at your party. What are you playing instead?
+Whatever Happened to Pong?	Frank Black	You can’t afford the rights to play the happy birthday song at your party. What are you playing instead?
+Seventeen	Ladytron	You can’t afford the rights to play the happy birthday song at your party. What are you playing instead?
+Fire	Boy Sim	This isn’t a diss track but if it were it would be devastating
+Bring Da Ruckus	Wu-Tang Clan	This isn’t a diss track but if it were it would be devastating
+Brandy (You're a Fine Girl)	Looking Glass	This isn’t a diss track but if it were it would be devastating
+The Cactus Where Your Heart Should Be	The Magnetic Fields	This isn’t a diss track but if it were it would be devastating
+Positively 4th Street - Single Version	Bob Dylan	This isn’t a diss track but if it were it would be devastating
+F.E.A.R.	Joywave	This isn’t a diss track but if it were it would be devastating
+Jellyfish	Laura Stevenson	This isn’t a diss track but if it were it would be devastating
+The Mummy	Benji Hughes	This isn’t a diss track but if it were it would be devastating
+Bathroom Bitch	HOLYCHILD	NSFW - a smutty song that you'd be embarrassed to find was being played to the whole office if your bluetooth headphones disconnected
+American Beauty	Girlpool	NSFW - a smutty song that you'd be embarrassed to find was being played to the whole office if your bluetooth headphones disconnected
+Thick Niggas and Anime Tiddies	Dbangz	NSFW - a smutty song that you'd be embarrassed to find was being played to the whole office if your bluetooth headphones disconnected
+Closer	Nine Inch Nails	NSFW - a smutty song that you'd be embarrassed to find was being played to the whole office if your bluetooth headphones disconnected
+Stroker Ace	Lovage, Mike Patton, Jennifer Charles, Nathaniel Merriweather	NSFW - a smutty song that you'd be embarrassed to find was being played to the whole office if your bluetooth headphones disconnected
+Ursula Finally Has Tits	The Queers	NSFW - a smutty song that you'd be embarrassed to find was being played to the whole office if your bluetooth headphones disconnected
+Lipgloss (feat. CupcakKe)	Charli xcx, cupcakKe	NSFW - a smutty song that you'd be embarrassed to find was being played to the whole office if your bluetooth headphones disconnected
+Acquainted	The Weeknd	NSFW - a smutty song that you'd be embarrassed to find was being played to the whole office if your bluetooth headphones disconnected
+Clocks	Coldplay	The inverse of you probably haven't heard of them
+All I Want for Christmas Is You	Mariah Carey	The inverse of you probably haven't heard of them
+Bones	Imagine Dragons	The inverse of you probably haven't heard of them
+Enjoy the Silence	Depeche Mode	The inverse of you probably haven't heard of them
+Levitating	Dua Lipa	The inverse of you probably haven't heard of them
+Smells Like Teen Spirit	Nirvana	The inverse of you probably haven't heard of them
+Started From the Bottom	Drake	The inverse of you probably haven't heard of them
+Downtown (feat. Melle Mel, Grandmaster Caz, Kool Moe Dee & Eric Nally)	Macklemore & Ryan Lewis, Macklemore, Ryan Lewis, Grandmaster Melle Mel, Grandmaster Caz, Kool Moe Dee, Eric Nally	The inverse of you probably haven't heard of them
+Songs from Season 9
+data/9/submissions.csv
+Song	Artist	Round
+Message In A Bottle	The Police	Songs your dad made you listen to in the car
+I Walk The Line - Single Version	Johnny Cash, The Tennessee Two	Songs your dad made you listen to in the car
+Call Your Girlfriend	Robyn	Songs your dad made you listen to in the car
+Money For Nothing	Dire Straits	Songs your dad made you listen to in the car
+Michelle - Remastered 2009	The Beatles	Songs your dad made you listen to in the car
+Boots of Spanish Leather	Bob Dylan	Songs your dad made you listen to in the car
+Kashmir - Remaster	Led Zeppelin	Songs your dad made you listen to in the car
+Communist Daughter	Neutral Milk Hotel	Songs you love getting really pedantic about
+In The Air Tonight - 2015 Remastered	Phil Collins	Songs you love getting really pedantic about
+Just	Radiohead	Songs you love getting really pedantic about
+Stuck In The Middle With You	Stealers Wheel	Songs you love getting really pedantic about
+Deep Red Bells	Neko Case	Songs you love getting really pedantic about
+A Better Place	clipping.	Songs you love getting really pedantic about
+I Never Told You What I Do for a Living	My Chemical Romance	Songs you love getting really pedantic about
+Face to Face	Daft Punk	Songs you love getting really pedantic about
+Know Yourself	DILLY DALLY	Almost picks (take 2)
+dlp 1.1	William Basinski	Almost picks (take 2)
+Love My Way	The Psychedelic Furs	Almost picks (take 2)
+Vampire	Nitemayor	Almost picks (take 2)
+United States Of Whatever	Liam Lynch	Almost picks (take 2)
+Hair of Dog	Die Spitz	Almost picks (take 2)
+The Secret Life Of Plants	Stevie Wonder	Songs that have a story behind them
+You're so Cool (Main Title)	Hans Zimmer	Songs that have a story behind them
+We Are Nowhere and It's Now	Bright Eyes	Songs that have a story behind them
+Pull Out The Pin	Kate Bush	Songs that have a story behind them
+Vodkasodaburg	Birdcloud	Songs that have a story behind them
+Jackson Cannery	Ben Folds Five	Songs that have a story behind them
+I Wanna Be Your Dog - 2019 Remaster	The Stooges	Songs that have a story behind them
+Blossom	Curtis Roach	A jam under 2 minutes
+LEMONADE	SOPHIE	A jam under 2 minutes
+Emergency House Party	American Steel	A jam under 2 minutes
+She Doesn't Belong to Me	Pete And The Pirates	A jam under 2 minutes
+Who's Ready for Tomorrow	RAT BOY, IBDY	A jam under 2 minutes
+Please, Please, Please, Let Me Get What I Want - 2011 Remaster	The Smiths	A jam under 2 minutes
+Man	Yeah Yeah Yeahs	A jam under 2 minutes
+Get Off My Dick And Tell Yo Bitch To Come Here	Ice Cube	A jam under 2 minutes
+Far From Over	Frank Stallone	Songs by Overshadowed Siblings
+Brillo Hunt	Kelley Deal 6000	Songs by Overshadowed Siblings
+A Whatever Life	Haylie Duff	Songs by Overshadowed Siblings
+I Lied	Electric Century	Songs by Overshadowed Siblings
+Losing You	Solange	Songs by Overshadowed Siblings
+Neat Little Box of Chaos	Michael Schneeweis	Songs by Overshadowed Siblings
+Shake It	Metro Station	Songs by Overshadowed Siblings
+F2F	SZA	Songs you could almost get away with playing at a child’s birthday party
+If U Seek Amy	Britney Spears	Songs you could almost get away with playing at a child’s birthday party
+Breezeblocks	alt-J	Songs you could almost get away with playing at a child’s birthday party
+Brand New Key	Melanie	Songs you could almost get away with playing at a child’s birthday party
+Not Fair	Lily Allen	Songs you could almost get away with playing at a child’s birthday party
+Brick	Ben Folds Five	Songs you could almost get away with playing at a child’s birthday party
+Ladybug	The Presidents Of The United States Of America	Songs you could almost get away with playing at a child’s birthday party
+When I Rule the World	LIZ	Songs you could almost get away with playing at a child’s birthday party
+DON'T TELL THE BOYS	Petey	Song you wrote about in a Hard Times article
+NBTSA	Joyce Manor	Song you wrote about in a Hard Times article
+New Years	Asobi Seksu	Song you wrote about in a Hard Times article
+Diane Young	Vampire Weekend	Great song despite having a pun in the title
+Cliché Guevara	Against Me!	Great song despite having a pun in the title
+Champagne For My Real Friends, Real Pain For My Sham Friends	Fall Out Boy	Great song despite having a pun in the title
+We'rewolf	Every Time I Die	Great song despite having a pun in the title
+Regina's Specter	Two Knights	Great song despite having a pun in the title
+Built 4 Love	TWRP, Ninja Sex Party	Great song despite having a pun in the title
+I Second That Emotion	Smokey Robinson & The Miracles	Great song despite having a pun in the title
+Animal Nitrate (Remastered)	Suede	Great song despite having a pun in the title
+Clarinet	FES	You probably haven’t heard of them
+Fourth of July	Quiet Light	You probably haven’t heard of them
+Sailor	Sharks Keep Moving	You probably haven’t heard of them
+Our Mutual Friend	Daisy Chapman	You probably haven’t heard of them
+Good Reason	Seafood	You probably haven’t heard of them
+New Dance	Deerpeople	You probably haven’t heard of them
+Underwater	Babel Map	You probably haven’t heard of them
+Bye You	Let's Get Out Of This Terrible Sandwich Shop	You probably haven’t heard of them
+Songs from Season 10
+data/10/submissions.csv
+Song	Artist	Round
+Sink Is Busted	JUNE OF 44	A song that lets you express an annoying opinion
+Musical Preference	The Homeless Gospel Choir	A song that lets you express an annoying opinion
+Soul Kitchen - 2017 Remaster	The Doors	A song that lets you express an annoying opinion
+Von	Sigur Rós	A song that lets you express an annoying opinion
+Hussy Bowler	Doo Rag	A song that lets you express an annoying opinion
+The Living Daylights	a-ha	A song that lets you express an annoying opinion
+Bee Kind To The Bugs	Culture Abuse	A song that lets you express an annoying opinion
+Obstacle 2	Interpol	A song that lets you express an annoying opinion
+Greater Omaha	Desaparecidos	A song that lets you express an annoying opinion
+Lost Stars	Adam Levine	A song that lets you express an annoying opinion
+Home	Edward Sharpe & The Magnetic Zeros	A song that lets you express an annoying opinion
+Sharp Dressed Man	Xiu Xiu	Songs With Grammatical Errors or Super Awkwardly Constructed Lines that Drive You Nuts
+All My Best Friends Are Metalheads	Less Than Jake	Songs With Grammatical Errors or Super Awkwardly Constructed Lines that Drive You Nuts
+36 Degrees	Placebo	Songs With Grammatical Errors or Super Awkwardly Constructed Lines that Drive You Nuts
+Human	The Killers	Songs With Grammatical Errors or Super Awkwardly Constructed Lines that Drive You Nuts
+ABCs	3OH!3	Songs With Grammatical Errors or Super Awkwardly Constructed Lines that Drive You Nuts
+Kids	PUP	Songs With Grammatical Errors or Super Awkwardly Constructed Lines that Drive You Nuts
+Anything You Want	JAWNY	Songs With Grammatical Errors or Super Awkwardly Constructed Lines that Drive You Nuts
+For You and I	Keren Ann	Songs With Grammatical Errors or Super Awkwardly Constructed Lines that Drive You Nuts
+SpongeBob SquarePants Theme Song	Spongebob Squarepants	Songs With Grammatical Errors or Super Awkwardly Constructed Lines that Drive You Nuts
+Fields Of Gold	Sting	Songs we love despite being Grade A bully material
+Try Sleeping with a Broken Heart	Alicia Keys	Songs we love despite being Grade A bully material
+Samurai Sword	Chad VanGaalen	Songs we love despite being Grade A bully material
+Losing Grip	Avril Lavigne	Songs we love despite being Grade A bully material
+All Star	Smash Mouth	Songs we love despite being Grade A bully material
+Accidentally In Love	Counting Crows	Songs we love despite being Grade A bully material
+Back for Good	Take That	Songs we love despite being Grade A bully material
+Re-Arranged	Limp Bizkit	Songs we love despite being Grade A bully material
+Sexy Train	The Northern Boys	Songs we love despite being Grade A bully material
+I Was so Alone	The Rocket Summer	Songs we love despite being Grade A bully material
+Speed Drive	Charli xcx	Songs we love despite being Grade A bully material
+Sunshine, Lollipops And Rainbows	Lesley Gore	Songs that are the Equivalent of a Refreshing Sorbet after an Over-the-Top Heavy Meal
+Don't Ask Me to Explain	of Montreal	Songs that are the Equivalent of a Refreshing Sorbet after an Over-the-Top Heavy Meal
+galore - french version	Oklou, Pomme, Danny L Harle	Songs that are the Equivalent of a Refreshing Sorbet after an Over-the-Top Heavy Meal
+Light & Day / Reach for the Sun	The Polyphonic Spree	Songs that are the Equivalent of a Refreshing Sorbet after an Over-the-Top Heavy Meal
+About A Girl - Live	Nirvana	Songs that are the Equivalent of a Refreshing Sorbet after an Over-the-Top Heavy Meal
+I'll Never Make It	Cut Worms	Songs that are the Equivalent of a Refreshing Sorbet after an Over-the-Top Heavy Meal
+Cherry Blossom Girl	Air	Songs that are the Equivalent of a Refreshing Sorbet after an Over-the-Top Heavy Meal
+On the Lookout	NEIL FRANCES, Raffaella	Songs that are the Equivalent of a Refreshing Sorbet after an Over-the-Top Heavy Meal
+Herside Story	GoldLink, Hare Squead	Songs that are the Equivalent of a Refreshing Sorbet after an Over-the-Top Heavy Meal
+Run Away With Me	Carly Rae Jepsen	Songs that are the Equivalent of a Refreshing Sorbet after an Over-the-Top Heavy Meal
+Sour Candy	Melt	Songs that are the Equivalent of a Refreshing Sorbet after an Over-the-Top Heavy Meal
+Keep Your Dreams - 2021 - Remaster	Suicide	Songs that are the Equivalent of a Refreshing Sorbet after an Over-the-Top Heavy Meal
+Shaking Like an Animal	Crash Kings	Song that should’ve been on Tony Hawk Pro Skater but wasn’t
+Whatever Happened to the Likely Lads	Snuff	Song that should’ve been on Tony Hawk Pro Skater but wasn’t
+Kung Fu	Ash	Song that should’ve been on Tony Hawk Pro Skater but wasn’t
+Cool Kids	Screeching Weasel	Song that should’ve been on Tony Hawk Pro Skater but wasn’t
+Get off My Back	Screeching Weasel	Song that should’ve been on Tony Hawk Pro Skater but wasn’t
+I Got Punched in the Nose for Sticking My Face in Other People's Business	Boys Night Out	Song that should’ve been on Tony Hawk Pro Skater but wasn’t
+let me drown	Pinkshift	Song that should’ve been on Tony Hawk Pro Skater but wasn’t
+Outdoor Miner - 2006 Remastered Version	Wire	Song that should’ve been on Tony Hawk Pro Skater but wasn’t
+2 Morro Morro Land	Lightning Bolt	Song that should’ve been on Tony Hawk Pro Skater but wasn’t
+Cult of Personality	Living Colour	Song that should’ve been on Tony Hawk Pro Skater but wasn’t
+Princes and Princesses	Cay	Song that should’ve been on Tony Hawk Pro Skater but wasn’t
+This Is How You Spell HAHAHA, We Destroyed The Hopes And Dreams Of A Generation Of Faux-Romantics	Los Campesinos!	The most pretentious, overly long song title in the world
+Look Down (Because The Ground Is Easier To Understand And Doesn't Take So Much WorkToFigureOutButI'dRatherNotKnowWhereI'mStandingAndHaveAnIdeaOfWhatLifeIsAllAbout)	Algernon Cadwallader	The most pretentious, overly long song title in the world
+If We Can Land A Man On The Moon, Surely I Can Win Your Heart	Beulah	The most pretentious, overly long song title in the world
+Let's Walk Across This Forest, I Can Feel Everything Being Real Again	In Love With a Ghost	The most pretentious, overly long song title in the world
+Invading the World of the Guilty as a Spirit of Vengeance	The World Is A Beautiful Place & I Am No Longer Afraid To Die	The most pretentious, overly long song title in the world
+A Woman A Man Walked By / The Crow Knows Where All The Little Children Go	PJ Harvey, John Parish	The most pretentious, overly long song title in the world
+Get Busy Living Or Get Busy Dying (Do Your Part To Save The Scene And Stop Going To Shows)	Fall Out Boy	The most pretentious, overly long song title in the world
+It's So Much Darker When a Light Goes Out than It Would Have Been If It Had Never Shone	empire! empire! (i was a lonely estate)	The most pretentious, overly long song title in the world
+I'm Going to Stop Pretending That I Didn't Break Your Heart	Eels	The most pretentious, overly long song title in the world
+You Won't Meet a Girl Sat in Your Room Listening to Music (But Some Songs Can Still Give You Butterflies)	Crywank	The most pretentious, overly long song title in the world
+Suck A Caribou's Ass	Wesley Willis	Songs that Reference Body Parts of Animals
+Claws in Your Back	Julien Baker	Songs that Reference Body Parts of Animals
+Shake A Tail Feather	Ike & Tina Turner	Songs that Reference Body Parts of Animals
+Shake a Tail Feather	The Five Du-Tones	Songs that Reference Body Parts of Animals
+Panda Eyes	Sing-Sing	Songs that Reference Body Parts of Animals
+Bullet With Butterfly Wings - Remastered 2012	The Smashing Pumpkins	Songs that Reference Body Parts of Animals
+Mammal	They Might Be Giants	Songs that Reference Body Parts of Animals
+Needles In The Camel's Eye - 2004 Digital Remaster	Brian Eno	Songs that Reference Body Parts of Animals
+You Oughta Know	Alanis Morissette	A song you misheard a lyric in for many years and even though you finally learned the correct one, you still think yours is much better
+Sitting in My Room - 2002 Remaster	Ramones	A song you misheard a lyric in for many years and even though you finally learned the correct one, you still think yours is much better
+A Dream of You and Me	Future Islands	A song you misheard a lyric in for many years and even though you finally learned the correct one, you still think yours is much better
+Tenth Avenue Freeze-Out	Bruce Springsteen	A song you misheard a lyric in for many years and even though you finally learned the correct one, you still think yours is much better
+Sex & Candy	Marcy Playground	A song you misheard a lyric in for many years and even though you finally learned the correct one, you still think yours is much better
+Nude As the News	Cat Power	A song you misheard a lyric in for many years and even though you finally learned the correct one, you still think yours is much better
+Fire Back About Your New Baby's Sex	Don Caballero	Eternal faves: A song you loved when you were 18 that you still love/listen to regularly
+There Is a Light That Never Goes Out - 2011 Remaster	The Smiths	Eternal faves: A song you loved when you were 18 that you still love/listen to regularly
+Special	Garbage	Eternal faves: A song you loved when you were 18 that you still love/listen to regularly
+Black Mission Goggles	Man Man	Eternal faves: A song you loved when you were 18 that you still love/listen to regularly
+Anchorless	The Weakerthans	Eternal faves: A song you loved when you were 18 that you still love/listen to regularly
+Homesick	Doll Skin	Eternal faves: A song you loved when you were 18 that you still love/listen to regularly
+Stutter	Elastica	Eternal faves: A song you loved when you were 18 that you still love/listen to regularly
+Dreaming of You	The Coral	Eternal faves: A song you loved when you were 18 that you still love/listen to regularly
+Her Lazer Light Eyes	Nullsleep	Eternal faves: A song you loved when you were 18 that you still love/listen to regularly
+Voices To Be Heard	The Usaisamonster	You probably haven’t heard of them
+Woah!	Palomar	You probably haven’t heard of them
+Hellos	Geometrist	You probably haven’t heard of them
+Little by Little	Pattern Is Movement	You probably haven’t heard of them
+Mummy Beach	Hot Lava	You probably haven’t heard of them
+Culture Shock Treatment	Round Eye	You probably haven’t heard of them
+None	Pratley	You probably haven’t heard of them
+Canopy	Killed by Kiwis	You probably haven’t heard of them
+Songs from Season 11
+data/11/submissions.csv
+Song	Artist	Round
+Love Comes Crushing	Floor	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+Curicó	Kiltro	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+In a River	Rostam	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+Candy Bars & Men	Mal Blum	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+Seer	Witch	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+Sim Sala Bim	Fleet Foxes	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+The Ramblin' Boys of Pleasure	The Lawrence Arms	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+Illegal Smile	John Prine	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+The Pot	TOOL	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+Skins, Punx and Drunx	Lars Frederiksen and the Bastards	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+Oskus Urug	Radik Tyulush	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+Out of Reach	The Get Up Kids	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+So Long	Hot Apple Band	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+Shut Up Kiss Me	Angel Olsen	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+The Ghost I Used to Be	Pallbearer	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+Paranoid Android	Radiohead	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+Burn - Live	The Cure	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+Built On Ashes	Zeal & Ardor	A song that is the equivalent of a rich, spicy, heavy stew after you’ve been starving all day
+Bless the Telephone	Labi Siffre	Songs you can show to both your grandma and your friends
+Graceland	Paul Simon	Songs you can show to both your grandma and your friends
+Hoover Dam	Sugar	Songs you can show to both your grandma and your friends
+Once in a Lifetime - 2005 Remaster	Talking Heads	Songs you can show to both your grandma and your friends
+Flower Glass	Hand Habits	Songs you can show to both your grandma and your friends
+Be Yourself	Audioslave	Songs you can show to both your grandma and your friends
+Railroad Man	Eels	Songs you can show to both your grandma and your friends
+Sweet City Woman	Stampeders	Songs you can show to both your grandma and your friends
+Cariño	The Marías	Songs you can show to both your grandma and your friends
+Deepthroat	cupcakKe	Songs you can show to both your grandma and your friends
+Clean-Up Crew	Spanish Love Songs	Songs you can show to both your grandma and your friends
+I'd Rather Be a Cowboy (Lady's Chains)	John Denver	Songs you can show to both your grandma and your friends
+Death with Dignity	Sufjan Stevens	Songs you can show to both your grandma and your friends
+I Wanna Be a Cowboy, Baby!	CMAT	Songs you can show to both your grandma and your friends
+I Love Hot Nights	Jonathan Richman, The Modern Lovers	Songs you can show to both your grandma and your friends
+Pour Some Sugar On Me - Remastered 2017	Def Leppard	A song you would never listen to but love to play
+Fly Away	Lenny Kravitz	A song you would never listen to but love to play
+Hot N Cold	Katy Perry	A song you would never listen to but love to play
+Paralyzer	Finger Eleven	A song you would never listen to but love to play
+The Sinister Minister	Béla Fleck and the Flecktones	A song you would never listen to but love to play
+Livin' On A Prayer	Bon Jovi	A song you would never listen to but love to play
+Satch Boogie	Joe Satriani	A song you would never listen to but love to play
+Everlong - Acoustic Version	Foo Fighters	A song you would never listen to but love to play
+Rocky Top - Live	Dolly Parton	A song you would never listen to but love to play
+Don't Stop Believin'	Journey	A song you would never listen to but love to play
+Old Time Rock & Roll	Bob Seger	A song you would never listen to but love to play
+Wynona's Big Brown Beaver	Primus	A song you would never listen to but love to play
+Red River Rock	Silicon Teens	A song you would never listen to but love to play
+Gives You Hell	The All-American Rejects	A song you would never listen to but love to play
+I Am Going To Kill The President Of The United States Of America	Leathermouth	A song you would never listen to but love to play
+Take Me Home Tonight	Eddie Money	A song you would never listen to but love to play
+Back In Black	AC/DC	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+Semicircle Song	The Go! Team	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+Hair Of The Dog	Nazareth	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+Another One Bites The Dust	Queen	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+The Puppy Song	Harry Nilsson	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+So They Say	Kenny Beats	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+Choke	I DONT KNOW HOW BUT THEY FOUND ME	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+Cholla	Jerry Paper	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+Nervous Breakdown	Black Flag	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+The Little Rascals	The TV Theme Players	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+You're The Best	Joe Bean Esposito	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+Man! I Feel Like A Woman!	Shania Twain	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+Genius of Love	Tom Tom Club	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+Tv - Entertainment Tonight Theme	Bobby Morganstein	The song you’d request the house band play as your walk-out music if you were the guest on a late night talk show
+Widdershins	Houseghost	The Law and Orderly Round
+Shooting Up, Breaking Down (feat. Jesse Sendejas)	Chad Hates George, Jesse Sendejas	The Law and Orderly Round
+Boots	Pretty Happy	The Law and Orderly Round
+Caramel	Piglet	The Law and Orderly Round
+My Better Half	One Last Wish	The Law and Orderly Round
+Dream Lover	Slut Magic	The Law and Orderly Round
+Hit the Breaks	PLOSIVS	The Law and Orderly Round
+Princess Skullface Sings	Neon Blonde	The Law and Orderly Round
+Cold Toes	Mt. Pocono	The Law and Orderly Round
+Angry Bong Rips	Russian Girlfriends	The Law and Orderly Round
+How'm I Supposed to Wake Up in the Morning	Hank Wood and the Hammerheads	The Law and Orderly Round
+Dirty Laundry	Cayetana	The Law and Orderly Round
+Plume	Ghetto Amaretto	The Law and Orderly Round
+Ghost Dance	DBH	The Law and Orderly Round
+Morning Light	DILLY DALLY	The Law and Orderly Round
+Little Fang	Avey Tare's Slasher Flicks, Avey Tare	The Law and Orderly Round
+Diggin	Ohtis	The Law and Orderly Round
+Another Girl Another Planet	The Only Ones	How the hell is this the song that’s stuck in my head?
+Foxey Lady	Jimi Hendrix	How the hell is this the song that’s stuck in my head?
+Loop de Loop	Ween	How the hell is this the song that’s stuck in my head?
+Paint The Town Red	Doja Cat	How the hell is this the song that’s stuck in my head?
+Different	Ximena Sariñana	How the hell is this the song that’s stuck in my head?
+Burnt Rice (feat. Yung GEMMY)	Shawn Wasabi, YDG, Yung GEMMY	How the hell is this the song that’s stuck in my head?
+You Were On My Mind	We Five	How the hell is this the song that’s stuck in my head?
+Brimful of Asha - Norman Cook Remix Single Version	Cornershop, Norman Cook	How the hell is this the song that’s stuck in my head?
+Colonel Hathi's March (The Elephant Song)	J. Pat O'Malley, Disney Studio Chorus	How the hell is this the song that’s stuck in my head?
+Doja - Sped Up Version	sped up nightcore	How the hell is this the song that’s stuck in my head?
+Gig Life	The World Is A Beautiful Place & I Am No Longer Afraid To Die	How the hell is this the song that’s stuck in my head?
+Dammit	blink-182	How the hell is this the song that’s stuck in my head?
+All I Want	The Offspring	How the hell is this the song that’s stuck in my head?
+California Girls	The Magnetic Fields	song by a band you were super late to but you want to talk about them now
+We Came to Dance	Ultravox	song by a band you were super late to but you want to talk about them now
+L.G. FUAD	Motion City Soundtrack	song by a band you were super late to but you want to talk about them now
+Gold Dust Woman - 2004 Remaster	Fleetwood Mac	song by a band you were super late to but you want to talk about them now
+Victoria	Joyce Manor	song by a band you were super late to but you want to talk about them now
+Christmas in Prison	John Prine	song by a band you were super late to but you want to talk about them now
+This Must Be the Place (Naive Melody) - 2005 Remaster	Talking Heads	song by a band you were super late to but you want to talk about them now
+Caroline, Please Kill Me	Coma Cinema	song by a band you were super late to but you want to talk about them now
+Well Done	IDLES	song by a band you were super late to but you want to talk about them now
+IMpossible	Figurine	song by a band you were super late to but you want to talk about them now
+Allison	Pixies	shortest song that’s actually enjoyable and worth listening to
+Shop	Jack Stauber's Micropop	shortest song that’s actually enjoyable and worth listening to
+Hush Rattle	Hiatus Kaiyote	shortest song that’s actually enjoyable and worth listening to
+Short Songs	Dead Kennedys	shortest song that’s actually enjoyable and worth listening to
+Bluff	Kelela	shortest song that’s actually enjoyable and worth listening to
+Kicker Of Elves	Guided By Voices	shortest song that’s actually enjoyable and worth listening to
+Four Chords Pt. II: Five Chords	PUP	shortest song that’s actually enjoyable and worth listening to
+Crackity Jones	Pixies	shortest song that’s actually enjoyable and worth listening to
+Take Flight	Louie Zong	shortest song that’s actually enjoyable and worth listening to
+The Supine	Andrew Bird	shortest song that’s actually enjoyable and worth listening to
+Happy Holidays, You Bastard	blink-182	shortest song that’s actually enjoyable and worth listening to
+Megameanie	Fight Like Apes	shortest song that’s actually enjoyable and worth listening to
+The Positive Aspect of Negative Thinking	Bad Religion	shortest song that’s actually enjoyable and worth listening to
+I'm Always Tired	Joyce Manor	shortest song that’s actually enjoyable and worth listening to
+I Like Food	Descendents	shortest song that’s actually enjoyable and worth listening to
+Loosie	Earl Sweatshirt	shortest song that’s actually enjoyable and worth listening to
+Guitarmy	The Blood Brothers	shortest song that’s actually enjoyable and worth listening to
+Heavy Boots	Nicole Atkins	Favorite song about an inanimate object
+Where's My Juul?? (feat. Lil Mariko)	Full Tac, Lil Mariko	Favorite song about an inanimate object
+Galaxy 500	The Reverend Horton Heat	Favorite song about an inanimate object
+Why Does the Sun Really Shine? (The Sun Is a Miasma of Incandescent Plasma)	They Might Be Giants	Favorite song about an inanimate object
+My Bully Is Dead	Private Function	Favorite song about an inanimate object
+The Combine Harvester (Brand New Key)	The Wurzels	Favorite song about an inanimate object
+Bitchin' Camaro	The Dead Milkmen	Favorite song about an inanimate object
+Mabu	PUP	Favorite song about an inanimate object
+Telephone Book	Violent Femmes	Favorite song about an inanimate object
+Apple TV Remote	Petey	Favorite song about an inanimate object
+Jailbreak the Tesla (feat. Aminé)	Injury Reserve, Aminé	Favorite song about an inanimate object
+Peaches	The Presidents Of The United States Of America	Favorite song about an inanimate object
+I Love My Shirt	Donovan	Favorite song about an inanimate object
+Plastic Jesus	Tia Blake	Favorite song about an inanimate object
+Leopard-Skin Pill-Box Hat	Bob Dylan	Favorite song about an inanimate object
+Musette And Drums	Cocteau Twins	Favorite song about an inanimate object
+My My Metrocard	Le Tigre	Favorite song about an inanimate object
+The Boat Dreams from the Hill	Jawbreaker	Favorite song about an inanimate object
+Fuck That Shit	Holliday Howe	You don’t know them like I do
+Give It Up	The Sloppy Boys	You don’t know them like I do
+You've Got Friends	Brian Damage	You don’t know them like I do
+Antichrist Complex	Joe Baughman + The Righteous Few	You don’t know them like I do
+Snickers or Reese's	Direct Hit!	You don’t know them like I do
+Sometimes	Ours	You don’t know them like I do
+Normal	The Homeless Gospel Choir	You don’t know them like I do
+Dirty Rotten (Dirty)	Killium	You don’t know them like I do
+Your Ideal	Cinema Hearts	You don’t know them like I do
+Don't Take It from Me	Podge Lane	You don’t know them like I do
+Nightmare	Bad Cop, Bad Cop	You don’t know them like I do
+Flyover	Ringularity	You don’t know them like I do
+Arrows	Fireworks	You don’t know them like I do
+WAY 2 GOOD	The Current Year	You don’t know them like I do
+Songs from Season 12
+data/12/submissions.csv
+Song	Artist	Round
+Not Strong Enough	boygenius, Julien Baker, Phoebe Bridgers, Lucy Dacus	I'm still with it
+Dumbest Girl Alive	100 gecs	I'm still with it
+Ask The Community	Timber Timbre	I'm still with it
+Crossed that Line	Ratboys	I'm still with it
+Bus Stop	Tee Vee Repairmann	I'm still with it
+My Love Mine All Mine	Mitski	I'm still with it
+Fair Warning	Mac Krol, Mike Krol, Mac McCaughan	I'm still with it
+Main Character	Tebi Rex	I'm still with it
+Polacrilex Kid	Protomartyr	I'm still with it
+Peaches	Jack Black	I'm still with it
+Autonomy Shop	Thank You, I'm Sorry	I'm still with it
+Poison - Club Shy mix	Shygirl	I'm still with it
+Oligarchy	Teen Mortgage	I'm still with it
+Bottom Line	Dom Fera	I'm still with it
+Goodbye Albert	Blur	I'm still with it
+Fireplace	Sincere Engineer	I'm still with it
+People Are Toys to You	Joanna Sternberg	I'm still with it
+Sister Rosetta Goes Before Us	Robert Plant, Alison Krauss	A legit spooky playlist
+Waking The Witch	Kate Bush	A legit spooky playlist
+State Trooper	Bruce Springsteen	A legit spooky playlist
+The Circus of Deaf	I Monster	A legit spooky playlist
+Monster - Remix	Boy Sim, JACKIE EXTREME, Cory Liner, AlexZone, Holliday Howe, FIA	A legit spooky playlist
+Buried Alive	Direct Hit!	A legit spooky playlist
+The Coast	PUP	A legit spooky playlist
+A Forest	The Cure	A legit spooky playlist
+Puppet Loosely Strung	The Correspondents	A legit spooky playlist
+Possum Kingdom	Toadies	A legit spooky playlist
+Solar Warden	Terror Forms	A legit spooky playlist
+This Could Be Love	Alkaline Trio	A legit spooky playlist
+A Quick One Before the Eternal Worm Devours Appalachia	Lizard in the Spring	A legit spooky playlist
+Found Love In A Graveyard	Veronica Falls	A legit spooky playlist
+It's just a burning memory	The Caretaker	A legit spooky playlist
+Reach Out I'll Be There	Four Tops	A legit spooky playlist
+Lost in IKEA	CLIFFDIVER	A song you've never heard before
+Drag My Body	Hot Water Music	A song you've never heard before
+Khala My Friend	Amanaz	A song you've never heard before
+My Girlfriend Is a Witch	October Country	A song you've never heard before
+Судно (Борис Рижий)	Molchat Doma	A song you've never heard before
+Tony Wilson Said	Badly Drawn Boy	A song you've never heard before
+We Will Dare	Dwarves, Madd Lucas	A song you've never heard before
+She's A Nightmare	Honeyblood	A song you've never heard before
+Anesthesia	Bad Religion	A song you've never heard before
+dullscythe	Porter Robinson	A song you've never heard before
+Corazón	Kogarashi	A song you've never heard before
+The Tower	Knuckle Puck	A song you've never heard before
+My New Green Coat	A. Savage	A song you've never heard before
+Driveway to Driveway	Superchunk	A song you've never heard before
+Yes	Coldplay	Worst song with one redeeming quality that makes it good
+Boing Beat	Danny L Harle, MC Boing	Worst song with one redeeming quality that makes it good
+Cotton Eye Joe	Rednex	Worst song with one redeeming quality that makes it good
+Mull Of Kintyre	Wings	Worst song with one redeeming quality that makes it good
+Pretty Fly (For A White Guy)	The Offspring	Worst song with one redeeming quality that makes it good
+Colossus	IDLES	Worst song with one redeeming quality that makes it good
+As It Was	Harry Styles	Worst song with one redeeming quality that makes it good
+If Only	Dave Matthews Band	Worst song with one redeeming quality that makes it good
+Legend In My Spare Time	Bloodhound Gang	Worst song with one redeeming quality that makes it good
+Raspberry Beret	Prince	Worst song with one redeeming quality that makes it good
+Life in the Fast Lane - 2013 Remaster	Eagles	Worst song with one redeeming quality that makes it good
+Maldito Alcohol (Pitbull vs. Afrojack)	Pitbull, AFROJACK	Worst song with one redeeming quality that makes it good
+Walking Through That Door	Future Islands	Why don’t people talk about this band more? Because I think they’re legendary
+Ivy League College	J Church	Why don’t people talk about this band more? Because I think they’re legendary
+Trains	The Vapors	Why don’t people talk about this band more? Because I think they’re legendary
+Timeline	Apes of the State	Why don’t people talk about this band more? Because I think they’re legendary
+Hey, Runner!	The Arcadian Wild	Why don’t people talk about this band more? Because I think they’re legendary
+Like I Used To	Summer Cannibals	Why don’t people talk about this band more? Because I think they’re legendary
+Black Mold	Prince Daddy & the Hyena	Why don’t people talk about this band more? Because I think they’re legendary
+Nighttime/Anytime (It's Alright)	Constantines	Why don’t people talk about this band more? Because I think they’re legendary
+Waiting to Know You	The Fiery Furnaces	Why don’t people talk about this band more? Because I think they’re legendary
+Lumpy Dough	Fight Like Apes	Why don’t people talk about this band more? Because I think they’re legendary
+Die Like a Dog	Curve	Why don’t people talk about this band more? Because I think they’re legendary
+Wedding Dress	Breaking Pangaea	Why don’t people talk about this band more? Because I think they’re legendary
+Black Heart	Calexico	Why don’t people talk about this band more? Because I think they’re legendary
+Beautiful Blue Sky	Ought	Why don’t people talk about this band more? Because I think they’re legendary
+Texas	James Ivy	Why don’t people talk about this band more? Because I think they’re legendary
+The Bogey Man	The Moontrekkers	Songs that could feature a skeleton that plays itself like a xylophone
+A Shark In Jets Clothing - Remastered 2001	Blondie	Songs that could feature a skeleton that plays itself like a xylophone
+The Nurse	The White Stripes	Songs that could feature a skeleton that plays itself like a xylophone
+Dead Man's Party	Oingo Boingo	Songs that could feature a skeleton that plays itself like a xylophone
+Dead Ghosts	Dead Ghosts	Songs that could feature a skeleton that plays itself like a xylophone
+Danger and Dread	Brown Bird	Songs that could feature a skeleton that plays itself like a xylophone
+Them Bones (2022 Remaster)	Alice In Chains	Songs that could feature a skeleton that plays itself like a xylophone
+In The Room Where You Sleep	Dead Man's Bones	Songs that could feature a skeleton that plays itself like a xylophone
+Party Till I Die	Kim Petras	Songs that could feature a skeleton that plays itself like a xylophone
+Engwish Bwudd	Man Man	Songs that could feature a skeleton that plays itself like a xylophone
+Werewolves of London	Warren Zevon	Songs that could feature a skeleton that plays itself like a xylophone
+The Earth Died Screaming - 2023 Remaster	Tom Waits	Songs that could feature a skeleton that plays itself like a xylophone
+Burn The Witch	Queens of the Stone Age	Songs that could feature a skeleton that plays itself like a xylophone
+Hard Times	Paramore	Mind Games
+Big Victory	Points	Mind Games
+Peace of Mind	The Men	Mind Games
+Mind Games - Remastered 2010	John Lennon	Mind Games
+Satan's a Woman	Twin Temple	Mind Games
+I Know Where You Live	Purple Palace	Mind Games
+That's Life	Frank Sinatra	Mind Games
+I Don’t Wanna Go	Coco Hames	Mind Games
+Still Not a Player (feat. Joe)	Big Pun, Joe	Mind Games
+KICK BACK (Salsa Ver.)	Tricker	Mind Games
+Spongebob, Patrick, Squidward, Sandy	Jack Caunter, roastfellow	Mind Games
+Take My Hand	Matt Berry	Mind Games
+True Trans Soul Rebel	Against Me!	Mind Games
+Reality TV	Mal Blum	Anti-party songs
+More Of The Same	Caroline Rose	Anti-party songs
+Here Comes Garfield	Lou Rawls	Anti-party songs
+Feel Like Doing Nothing	Kate Bollinger	Anti-party songs
+Single	Pony Club	Anti-party songs
+Zen (with K.Flay & grandson)	X Ambassadors, K.Flay, grandson	Anti-party songs
+U Got The Look	JEFF The Brotherhood	Anti-party songs
+In The Garage	Weezer	Anti-party songs
+Sweatpants	Terror Jr	Anti-party songs
+Nobody Really Cares If You Don't Go to the Party	Courtney Barnett	Anti-party songs
+Man On The Moon	R.E.M.	Anti-party songs
+Season 2 Episode 3	Glass Animals	Anti-party songs
+Nothing with You	Descendents	Anti-party songs
+House of Leaves (Me Alone)	Dollar Signs	Anti-party songs
+Coffee & TV	Blur	Anti-party songs
+The Beginning	RandomBeats, Rifti Beats	Anti-party songs
+Moonlight Sonata (Act 3)	Exmortus	Old-ass songs
+Strange Fruit	Billie Holiday	Old-ass songs
+La Bamba - Single Version	Ritchie Valens	Old-ass songs
+Tell Me Ma	Good Friend	Old-ass songs
+House of the Risin' Sun	Bob Dylan	Old-ass songs
+In the Pines	The Kossoy Sisters	Old-ass songs
+Castor et Pollux, RCT 32, Acte I, Scène III: Prélude - Air accompagné Tristes apprêts	Jean-Philippe Rameau, Teodor Currentzis	Old-ass songs
+Tear The Facists Down	Woody Guthrie	Old-ass songs
+Riders in the Sky	Vaughn Monroe	Old-ass songs
+Nobody But You	Dee Clark	Old-ass songs
+I'm a Member of the Midnight Crew (1909)	Eddie Morton	Old-ass songs
+Who Takes Care of the Caretaker's Daughter?	Cliff Edwards	Old-ass songs
+Smokey Joe's Cafe	The Coasters	Old-ass songs
+Lying in the Grass	Natural Sway	You probably haven't heard of them
+Dive	Trophie	You probably haven't heard of them
+Tornado Love	Blacktop	You probably haven't heard of them
+Surf Ghost	Surf Ghost	You probably haven't heard of them
+Last Bus (Change)	Bad Luck.	You probably haven't heard of them
+Please Waste My Time	Miss June	You probably haven't heard of them
+Leviathan	Wafflehouse*	You probably haven't heard of them
+Throw Me Away	Diamond In A Lotus, Hanna Winters	You probably haven't heard of them
+H.O.O.D	KNEECAP	You probably haven't heard of them
+Mrs. Bean	The Essex Green	You probably haven't heard of them
+Angel Eyes and Basketball	Foot Ox	You probably haven't heard of them
+Linoleum	Trophy Wife	You probably haven't heard of them
+SCARED TO DIE	Clowns	You probably haven't heard of them
+Pointy Boots	Sailor Poon	You probably haven't heard of them
+The Look	Metronomy	You probably haven't heard of them
+Don't Fall Apart	Overcoast	You probably haven't heard of them
+Songs from Season 13
+data/13/submissions.csv
+Song	Artist	Round
+Superman	Lazlo Bane	Songs that make you feel old as shit
+Pass The Dutchie	Musical Youth	Songs that make you feel old as shit
+Polar Bear Club	Silent Majority	Songs that make you feel old as shit
+The Moon Is Down	Further Seems Forever	Songs that make you feel old as shit
+Visiting Hours	The Future Kings of Nowhere	Songs that make you feel old as shit
+Siva - Remastered 2011	The Smashing Pumpkins	Songs that make you feel old as shit
+Skylines and Turnstiles	My Chemical Romance	Songs that make you feel old as shit
+Time to Pretend	MGMT	Songs that make you feel old as shit
+That Summer Feeling	Jonathan Richman	Songs that make you feel old as shit
+1985	Bowling For Soup	Songs that make you feel old as shit
+Stingin' Belle	Biffy Clyro	Songs that make you feel old as shit
+Hello in There	John Prine	Songs that make you feel old as shit
+Private Life	Oingo Boingo	song by a band with simultaneously the best and worst band name
+How. Many. People?	Diaper	song by a band with simultaneously the best and worst band name
+Perfect	Mannequin Pussy	song by a band with simultaneously the best and worst band name
+他們說我是沒有用的年輕人	Good Band	song by a band with simultaneously the best and worst band name
+This Is the Day	The The	song by a band with simultaneously the best and worst band name
+Rudy X 3	The Tony Danza Tapdance Extravaganza	song by a band with simultaneously the best and worst band name
+Sunshine	Samiam	song by a band with simultaneously the best and worst band name
+Mirror Mirror	Blood People	song by a band with simultaneously the best and worst band name
+Peer Mediator	Sega Genocide	song by a band with simultaneously the best and worst band name
+Queen Sophie for President	The World Is A Beautiful Place & I Am No Longer Afraid To Die	song by a band with simultaneously the best and worst band name
+Get That Rhythm Right	!!!	song by a band with simultaneously the best and worst band name
+Sober to Death	Car Seat Headrest	song by a band with simultaneously the best and worst band name
+Beer (Song)	Mustard Plug	song by a band with simultaneously the best and worst band name
+The Anthem	Good Charlotte	I am free
+Livin' la Vida Loca	Ricky Martin	I am free
+All the Tired Horses	Lisa O'Neill	I am free
+KATAMARI	femtanyl	I am free
+Love Is Only a Feeling	The Darkness	I am free
+John Travolta, Man of the Jumprope (Live at Zin Records)	Kirk Fogg's African Adventure	I am free
+Wrecking Ball	Miley Cyrus	I am free
+For the Beauty of the Earth	The Tabernacle Choir at Temple Square, Orchestra at Temple Square	I am free
+New Utensils	Fever Ray	I am free
+Can't Stop Thinking About You	Tobias Jesso Jr.	I am free
+Promise	Eve 6	I am free
+Ghost Town	Kanye West, PARTYNEXTDOOR	I am free
+Scotland	McCafferty	A song that gives you anxiety but you like it anyway
+Overbite	Sincere Engineer	A song that gives you anxiety but you like it anyway
+Vital Beach	The Blood Brothers	A song that gives you anxiety but you like it anyway
+Making Plans For Nigel	XTC	A song that gives you anxiety but you like it anyway
+Detroit	Disasterpeace	A song that gives you anxiety but you like it anyway
+Never Let Me Down Again	Depeche Mode	A song that gives you anxiety but you like it anyway
+Lullaby - 2010 Remaster	The Cure	A song that gives you anxiety but you like it anyway
+Their Helicopters Sing	Godspeed You! Black Emperor	A song that gives you anxiety but you like it anyway
+Other	S U R V I V E	A song that gives you anxiety but you like it anyway
+Cow At The Sacrifice	Jad Fair, Daniel Johnston	A song that gives you anxiety but you like it anyway
+Goodbye To A World	Porter Robinson	A song that gives you anxiety but you like it anyway
+Laura Palmer's Theme - Instrumental	Angelo Badalamenti	A song that gives you anxiety but you like it anyway
+Your English Is Good	Tokyo Police Club	Mind Games Take 2
+Bowling Trophies	Foxygen	Mind Games Take 2
+Peanut Butter (feat. Big Freedia)	RuPaul	Mind Games Take 2
+Rock N Roll McDonalds	Wesley Willis	Mind Games Take 2
+bodybags	Happyalone.	Mind Games Take 2
+Protect Ya Neck	Wu-Tang Clan	Mind Games Take 2
+Money	Lime Cordiale	Mind Games Take 2
+Solidarity Forever - The Jordan Lake Sessions Volume 4	The Mountain Goats	Mind Games Take 2
+Once Was Enough Once Is Enough	Phyllis Divens	Mind Games Take 2
+Bite It You Scum	GG Allin	Mind Games Take 2
+White Winter Hymnal	Fleet Foxes	Songs that feel like sipping some hot cocoa while curled up on the couch
+Coffee	Sylvan Esso	Songs that feel like sipping some hot cocoa while curled up on the couch
+Our House	Crosby, Stills, Nash & Young	Songs that feel like sipping some hot cocoa while curled up on the couch
+She	Saves The Day	Songs that feel like sipping some hot cocoa while curled up on the couch
+Seems Like	Thee Sinseers	Songs that feel like sipping some hot cocoa while curled up on the couch
+I Want a Little Sugar In My Bowl	Nina Simone	Songs that feel like sipping some hot cocoa while curled up on the couch
+Daddy's Groove	Röyksopp	Songs that feel like sipping some hot cocoa while curled up on the couch
+We Will Always Love You	The Avalanches, Blood Orange	Songs that feel like sipping some hot cocoa while curled up on the couch
+Better With Time	Emily Scott Robinson	Songs that feel like sipping some hot cocoa while curled up on the couch
+Believe In Me	Sally Shapiro	Songs that feel like sipping some hot cocoa while curled up on the couch
+Time After Time	Iron & Wine	Songs that feel like sipping some hot cocoa while curled up on the couch
+Falls on me	Sylvie	Songs that feel like sipping some hot cocoa while curled up on the couch
+The Moon Song - Studio Version Duet	Karen O, Ezra Koenig	Songs that feel like sipping some hot cocoa while curled up on the couch
+Festive Lobby Music	Diamond Core	Songs that feel like sipping some hot cocoa while curled up on the couch
+Yonkers	Tyler, The Creator	a fun hip hop round: songs you play loudly in traffic to tell everyone else in traffic that you are cool
+Nookie	Limp Bizkit	a fun hip hop round: songs you play loudly in traffic to tell everyone else in traffic that you are cool
+Swamp Bitches (with Rico Nasty)	Doechii, Rico Nasty	a fun hip hop round: songs you play loudly in traffic to tell everyone else in traffic that you are cool
+BILLIE EILISH.	Armani White	a fun hip hop round: songs you play loudly in traffic to tell everyone else in traffic that you are cool
+Backseat Freestyle	Kendrick Lamar	a fun hip hop round: songs you play loudly in traffic to tell everyone else in traffic that you are cool
+Supersonic	J.J. Fad	a fun hip hop round: songs you play loudly in traffic to tell everyone else in traffic that you are cool
+Turpentine	Boldy James, The Alchemist	a fun hip hop round: songs you play loudly in traffic to tell everyone else in traffic that you are cool
+Skwod	Nadia Rose	a fun hip hop round: songs you play loudly in traffic to tell everyone else in traffic that you are cool
+Steve Biko (Stir It Up)	A Tribe Called Quest	a fun hip hop round: songs you play loudly in traffic to tell everyone else in traffic that you are cool
+Hypnotize - 2007 Remaster	The Notorious B.I.G.	a fun hip hop round: songs you play loudly in traffic to tell everyone else in traffic that you are cool
+Hood2Hood	Nas	a fun hip hop round: songs you play loudly in traffic to tell everyone else in traffic that you are cool
+Oh Mama	Run The Jewels, El-P, Killer Mike	a fun hip hop round: songs you play loudly in traffic to tell everyone else in traffic that you are cool
+Corn Maze	Malibu Ken, Aesop Rock, TOBACCO	a fun hip hop round: songs you play loudly in traffic to tell everyone else in traffic that you are cool
+Better Go	Mal Blum	Underrated Music Videos
+Weatherman	Dead Sara	Feral feminine violence
+Rack of His	Fiona Apple	Feral feminine violence
+Plate Glass Apology	Apes of the State	Feral feminine violence
+Societys Reject	The Soap Girls	Feral feminine violence
+FAIRY METAL	Banshee	Feral feminine violence
+Spit	Poppy	Feral feminine violence
+Successful	Young M.A	Feral feminine violence
+Reincarnate	Witch Fever	Feral feminine violence
+Hippie Vomit Inhaler	Surfbort	Feral feminine violence
+Monster	CXLOE	Feral feminine violence
+Freaks To The Front	Amyl and The Sniffers	Feral feminine violence
+Fuck Around	Scowl	Feral feminine violence
+Psilocybin	Mehtah	You probably haven't heard of them: hip hop edition
+Chip On My Shoulder	Ruckus Garvey	You probably haven't heard of them: hip hop edition
+watermelon sunrise	Bobby Feeno, Jack Freeman	You probably haven't heard of them: hip hop edition
+Petrin Hill	Smack One, Ariez Baby, Jords, Jay Amo	You probably haven't heard of them: hip hop edition
+Blacking Out (feat. Tino)	MOIRA, TINO	You probably haven't heard of them: hip hop edition
+The Solution	Abstract Rude, Slug, Brother Ali	You probably haven't heard of them: hip hop edition
+Say the Name	clipping.	You probably haven't heard of them: hip hop edition
+Health Is Wealth	Bob Vylan	You probably haven't heard of them: hip hop edition
+Goddess Gang	Sa-Roc	You probably haven't heard of them: hip hop edition
+FEELS	Nick Ewing, Dephree	You probably haven't heard of them: hip hop edition
+The Keys to Survival	SkyBlew, Pabzzz	You probably haven't heard of them: hip hop edition
+Songs from Season 14
+data/14/submissions.csv
+Song	Artist	Round
+Selling Jesus	Skunk Anansie	A Very Non-Obvious Winter Holiday Playlist
+Merry Christmas (I Don't Want To Fight Tonight)	Asobi Seksu	A Very Non-Obvious Winter Holiday Playlist
+Lullaby	Mree	A Very Non-Obvious Winter Holiday Playlist
+New Year's Prayer	Jeff Buckley	A Very Non-Obvious Winter Holiday Playlist
+Chiron Beta Prime	Jonathan Coulton	A Very Non-Obvious Winter Holiday Playlist
+Christmas Is Going To The Dogs	Eels	A Very Non-Obvious Winter Holiday Playlist
+Happy Holidays, You Bastard	blink-182	A Very Non-Obvious Winter Holiday Playlist
+Merry Christmas Mr. Lawrence	Ryuichi Sakamoto, Jaques Morelenbaum, Everton Nelson	A Very Non-Obvious Winter Holiday Playlist
+Christmas Card From A Hooker In Minneapolis	Tom Waits	A Very Non-Obvious Winter Holiday Playlist
+A Christmas Duel	The Hives, Cyndi Lauper	A Very Non-Obvious Winter Holiday Playlist
+Michigan	The Milk Carton Kids	A Very Non-Obvious Winter Holiday Playlist
+Winter Bird	Lady Juniper	A Very Non-Obvious Winter Holiday Playlist
+Christmas Laughing Waltz (Including Jingle Bells)	The Flaming Lips	A Very Non-Obvious Winter Holiday Playlist
+You	Gold Panda	Secret santa!
+Age of Consent - 2015 Remaster	New Order	Secret santa!
+Rid Of Me	PJ Harvey	Secret santa!
+Overbite - Single Edit	THUMPER	Secret santa!
+You Me	Adebisi Shank	Secret santa!
+Rules - 2005 Remaster	Pennywise	Secret santa!
+Centurion	Sluice	Secret santa!
+Pretty Okay	Screaming Females	Secret santa!
+Search and Destroy [2023 Remaster] - Iggy Mix	The Stooges	what is the most rockingest rock song of all of rock time?
+Get Your Hands off My Woman	The Darkness	what is the most rockingest rock song of all of rock time?
+Someday	Chumped	what is the most rockingest rock song of all of rock time?
+War Pigs	Black Sabbath	what is the most rockingest rock song of all of rock time?
+Cochise	Audioslave	what is the most rockingest rock song of all of rock time?
+Johnny B. Goode	Chuck Berry	what is the most rockingest rock song of all of rock time?
+Barracuda	Heart	what is the most rockingest rock song of all of rock time?
+Thunderstruck	AC/DC	what is the most rockingest rock song of all of rock time?
+Through the Fire and Flames	DragonForce	what is the most rockingest rock song of all of rock time?
+Fear The Future	St. Vincent	this song is my resolution
+Let's Make Love and Listen to Death From Above	CSS	this song is my resolution
+Absolute Lithops Effect	Carrie Elkin	this song is my resolution
+Everyday I Write The Book	Elvis Costello & The Attractions	this song is my resolution
+Smokin'	AJJ	this song is my resolution
+Self Care	Mac Miller	this song is my resolution
+Harder, Better, Faster, Stronger	Daft Punk	this song is my resolution
+Rasputin	Majestic, Boney M.	Something that doesn’t sound like any previous submission
+Wele Cuba - feat. Madera Limpia	Bassekou Kouyate, Ngoni ba, Madera Limpia	Something that doesn’t sound like any previous submission
+Misbehavin' (1989)	Aimee-Leigh, BABY BILLY	Something that doesn’t sound like any previous submission
+Fancy	Orville Peck	Something that doesn’t sound like any previous submission
+take a trip	ceo@business.net, jungle bobby, bbno$, lentra	Something that doesn’t sound like any previous submission
+David De La Hoz	The Chariot	Something that doesn’t sound like any previous submission
+Adrift	Austin Wintory, Laura Bailey, Ashley Johnson	Something that doesn’t sound like any previous submission
+PLPH	Lutalo	Something that doesn’t sound like any previous submission
+Freak Me Out	Weezer	wait.. what did you think that song was about?!
+Lonely Boy	Becca Mancari	wait.. what did you think that song was about?!
+dirty laundry	blackbear	wait.. what did you think that song was about?!
+Never Tear Us Apart	Paloma Faith	wait.. what did you think that song was about?!
+Speedy Marie	Frank Black	wait.. what did you think that song was about?!
+Daniel	Bat For Lashes	wait.. what did you think that song was about?!
+Teddy Bear's Picnic	Henry Hall, The BBC Dance Orchestra	wait.. what did you think that song was about?!
+Hey Jude - Remastered 2015	The Beatles	Musical equivalent of a joke that needs to be explained
+I'm a Squash Man	The Eradicator	Musical equivalent of a joke that needs to be explained
+The Wolf	SIAMES	Musical equivalent of a joke that needs to be explained
+Brighter!	Cass McCombs	Musical equivalent of a joke that needs to be explained
+Congratulations, John, on Joining Every Time I Die	Bomb the Music Industry!	Musical equivalent of a joke that needs to be explained
+I Love Being Alive	World Peace, Beaver House First Nation	Musical equivalent of a joke that needs to be explained
+I Will Always Love You	Dolly Parton	Musical equivalent of a joke that needs to be explained
+A2Z	Logic	Musical equivalent of a joke that needs to be explained
+Root Down	Beastie Boys	ur problematic fav
+Thief	Ansel Elgort	ur problematic fav
+Kiss Me More (feat. SZA)	Doja Cat, SZA	ur problematic fav
+Immigrants & Hypocrites	Star Fucking Hipsters	ur problematic fav
+Trap Queen	Fetty Wap	ur problematic fav
+What's Up Fatlip?	Fatlip	ur problematic fav
+Revenge	XXXTENTACION	ur problematic fav
+Model Village	IDLES	ur problematic fav
+212	Azealia Banks, Lazy Jay	ur problematic fav
+Treat People With Kindness	Harry Styles	some wholesome content
+My Life Is Better With You - My Brother, My Brother and Me Podcast Theme Song	Montaigne	some wholesome content
+Sweet Baby James - 2019 Remaster	James Taylor	some wholesome content
+Our House	Crosby, Stills, Nash & Young	some wholesome content
+Shut Up and Dance	WALK THE MOON	some wholesome content
+Eternal Flame	The Bangles	some wholesome content
+All I Want Is You	Barry Louis Polisar	some wholesome content
+Mother's Milk	Sunrise Skater Kids	some wholesome content
+Mine	Bazzi	some wholesome content
+Out Of Time	ROSHIMA	You probably haven’t heard of them
+El Sicko	DANA	You probably haven’t heard of them
+October	Herb & Hanson	You probably haven’t heard of them
+People on TV	Julia Mark	You probably haven’t heard of them
+Sirens	Ms. John Soda	You probably haven’t heard of them
+Palm Tree	Ghostking Is Dead	You probably haven’t heard of them
+Sleeping For Free	Neil Hamburger, A.J. Lambert	You probably haven’t heard of them
+Fuck Bobby	Buzzed Lightbeer	You probably haven’t heard of them
+A Happening	hyperstory	You probably haven’t heard of them
+Songs from Season 15
+data/15/submissions.csv
+Song	Artist	Round
+How Sway	Thundercat	Sounds Like Mario Kart
+Astro Soda	meganeko, Rymdkraft	Sounds Like Mario Kart
+Lightning Lipgloss Life	Life Sim	Sounds Like Mario Kart
+Walking	The Rosebuds	Sounds Like Mario Kart
+Highway to Hell	AC/DC	Sounds Like Mario Kart
+Was It the Acid?	Direct Hit!	Sounds Like Mario Kart
+Music For a Sushi Restaurant	Harry Styles	Sounds Like Mario Kart
+JACK DA FUNK	Hideki Naganuma	Sounds Like Mario Kart
+Instrumental	Black Country, New Road	Sounds Like Mario Kart
+Death By Glamour	Toby Fox	Sounds Like Mario Kart
+My Alien	Simple Plan	Listen, I was 14, ok? (The Sequel)
+Love to Hate You (2019 - Remaster)	Erasure	Listen, I was 14, ok? (The Sequel)
+Zoot Suit Riot	Cherry Poppin' Daddies	Listen, I was 14, ok? (The Sequel)
+Break Me Shake Me	Savage Garden	Listen, I was 14, ok? (The Sequel)
+Honeybee	Steam Powered Giraffe	Listen, I was 14, ok? (The Sequel)
+Just Over a Year	Jody Has A Hitlist	Listen, I was 14, ok? (The Sequel)
+Drunk	Ed Sheeran	Listen, I was 14, ok? (The Sequel)
+Gives You Hell	The All-American Rejects	Listen, I was 14, ok? (The Sequel)
+Karkalicious	Broadway Homestuck	Listen, I was 14, ok? (The Sequel)
+Singing In My Sleep	Semisonic	Listen, I was 14, ok? (The Sequel)
+Rock Me Amadeus	Falco	Non-English songs (The Sequel)
+Évidemment	La Zarra	Non-English songs (The Sequel)
+Oro Sé Do Bheatha' Bhaile	The Dubliners	Non-English songs (The Sequel)
+C't'au boute	Population II	Non-English songs (The Sequel)
+Nos corps	Jimmy Hunt	Non-English songs (The Sequel)
+Dans Deur Die Donker	Fokofpolisiekar	Non-English songs (The Sequel)
+The Council of Elrond (feat. Aniron) [Theme for Aragorn and Arwen]	Howard Shore, Enya	Non-English songs (The Sequel)
+Welcome トゥ 混沌	(K)NoW_NAME	Non-English songs (The Sequel)
+HARLEY QUINN	Fuerza Regida, Marshmello	Non-English songs (The Sequel)
+No Te Oye	Jonathan Richman	Non-English songs (The Sequel)
+I Just Don't Know What To Do With Myself	Dusty Springfield	Alternate Reality Groundhog Day
+Another Day in Paradise - 2016 Remaster	Phil Collins	Alternate Reality Groundhog Day
+Only Wanna Be With You	Hootie & The Blowfish	Alternate Reality Groundhog Day
+Do You Believe in Magic?	The Lovin' Spoonful	Alternate Reality Groundhog Day
+Penis Music	Portamento	Alternate Reality Groundhog Day
+Chop Suey!	System Of A Down	Alternate Reality Groundhog Day
+Everyday	Buddy Holly, The Crickets	Alternate Reality Groundhog Day
+Fly Like An Eagle	Steve Miller Band	Alternate Reality Groundhog Day
+We Gotta Get Out Of This Place - UK Single Version	The Animals	Alternate Reality Groundhog Day
+Honeypie	JAWNY	technically radio-friendly
+Cape Cod Kwassa Kwassa	Vampire Weekend	technically radio-friendly
+The First Taste	Fiona Apple	technically radio-friendly
+She Bop	Cyndi Lauper	technically radio-friendly
+Whistle	Flo Rida	technically radio-friendly
+Gigantic - 2007 Remaster	Pixies	technically radio-friendly
+Sweetness	Toadies	technically radio-friendly
+Honey	Mariah Carey	technically radio-friendly
+Poker Face	Lady Gaga	technically radio-friendly
+Pull Up To The Bumper	Grace Jones	technically radio-friendly
+Beyond The Sea (La Mer)	Django Reinhardt	Songs you try to convince yourself you can listen to while you write/concentrate... but you can't
+The Calendar Hung Itself…	Bright Eyes	Songs you try to convince yourself you can listen to while you write/concentrate... but you can't
+Alive	Daft Punk	Songs you try to convince yourself you can listen to while you write/concentrate... but you can't
+Banana Clipper	Run The Jewels, El-P	Songs you try to convince yourself you can listen to while you write/concentrate... but you can't
+The Safety Dance	Sleeping At Last	Songs you try to convince yourself you can listen to while you write/concentrate... but you can't
+Can You Hear The Music	Ludwig Göransson	Songs you try to convince yourself you can listen to while you write/concentrate... but you can't
+oranges in winter	Bassti	Songs you try to convince yourself you can listen to while you write/concentrate... but you can't
+The Earth	The Chariot	Songs you try to convince yourself you can listen to while you write/concentrate... but you can't
+Hounds of Love	The Futureheads	Songs you try to convince yourself you can listen to while you write/concentrate... but you can't
+Fallout	Yo La Tengo	new song by an old band
+I swear, I Really Wanted To Make A Rap Album But This Is Literally The Way The Wind Blew Me This Time	André 3000	new song by an old band
+Losing My Grip (Feat. Jason Aalon Butler of Fever 333)	Enter Shikari, Jason Aalon Butler, FEVER 333	new song by an old band
+Say It Like You Mean It	Sleater-Kinney	new song by an old band
+The Night	Ladytron	new song by an old band
+Will Of The People	Muse	new song by an old band
+Baby Queen	Gorillaz	new song by an old band
+There's A Moon On	Pixies	new song by an old band
+No Return - Extended Version From The Original Series “Yellowjackets”	Alanis Morissette	new song by an old band
+Living in the '20s	Green Day	new song by an old band
+World Spin	Kool Keith	new song by an old band
+Cincinnati Harmony	The Dopamines	friday songs
+i	Kendrick Lamar	friday songs
+New Birth in New England	Phosphorescent	friday songs
+Working for the Weekend	Loverboy	friday songs
+Heaven Is A Place On Earth	Belinda Carlisle	friday songs
+Witches	Alice Phoebe Lou	friday songs
+(Your Love Keeps Lifting Me) Higher & Higher	Jackie Wilson	friday songs
+I Hate My Fucking Job	M.O.T.O.	friday songs
+Melrose Place	Cayucas	friday songs
+Out of Touch	Daryl Hall & John Oates	friday songs
+Anthems For A Seventeen Year-Old Girl	Broken Social Scene	a song that could be a country's national anthem
+A Spoonful Weighs a Ton - 2017 Remaster	The Flaming Lips	a song that could be a country's national anthem
+Take Me Home, Country Roads - Original Version	John Denver	a song that could be a country's national anthem
+Like a Virgin	Madonna	a song that could be a country's national anthem
+'Merican	Descendents	a song that could be a country's national anthem
+Only Anarchists Are Pretty	World / Inferno Friendship Society	a song that could be a country's national anthem
+Scythian Suite, Op. 20 - Ala and Lolly: 2. The Evil God And Dance Of The Pagan Monsters	Sergei Prokofiev, London Philharmonic Orchestra, Walter Weller	a song that could be a country's national anthem
+A Thousand Miles	Vanessa Carlton	a song that could be a country's national anthem
+Dancin (feat. Luvli) - Krono Remix	Aaron Smith, Krono, Luvli	a song that could be a country's national anthem
+Leaky Head	Sleep Fleet	You probably haven’t heard of them
+someone like that	Brunchs	You probably haven’t heard of them
+Bratcore	VCR	You probably haven’t heard of them
+Day Of The Child	Le Galaxie	You probably haven’t heard of them
+Bringer Of Brine	jellyskin	You probably haven’t heard of them
+Kala	Black Mare	You probably haven’t heard of them
+You've Got Red On You	Seglock, David Phantom, Wretched Graverobber	You probably haven’t heard of them
+Dead to Me	Eel Valley	You probably haven’t heard of them
+Molotov Trail	Torch the Hive	You probably haven’t heard of them
+Songs from Season 16
+data/16/submissions.csv
+Song	Artist	Round
+Sabotage	Beastie Boys	Your Wrestling Entrance Music (redux)
+Get Ready	2 Unlimited	Your Wrestling Entrance Music (redux)
+Maneater	Nelly Furtado	Your Wrestling Entrance Music (redux)
+No Money To Love You	Brick + Mortar	Your Wrestling Entrance Music (redux)
+Dog House	Slayyyter	Your Wrestling Entrance Music (redux)
+Neat Neat Neat	The Damned	Your Wrestling Entrance Music (redux)
+Murder In My Mind	Kordhell	Your Wrestling Entrance Music (redux)
+Redundant	Green Day	Best vibe fit music video
+Right Back to It	Waxahatchee, MJ Lenderman	Best vibe fit music video
+3005	Childish Gambino	Best vibe fit music video
+Lose Yourself to Dance (feat. Pharrell Williams)	Daft Punk, Pharrell Williams	Best vibe fit music video
+Holding Out for a Hero - From Footloose Soundtrack	Bonnie Tyler	Best vibe fit music video
+Papillon	The Sonder Bombs	Best vibe fit music video
+Working Class Hero	Green Day	How did I not know this song existed?
+Needle in the Hay	Murder By Death	How did I not know this song existed?
+Llorando Se Fue	Los Kjarkas	How did I not know this song existed?
+Cotton Eyed Joe - Mono; Single Edit; 2017 Remaster	Nina Simone	How did I not know this song existed?
+Time Machine	Logic	How did I not know this song existed?
+The First Cut is the Deepest	P.P. Arnold	How did I not know this song existed?
+Northern Whale	The Good, the Bad & the Queen	How did I not know this song existed?
+Under Pressure	My Chemical Romance, The Used	How did I not know this song existed?
+Frosty The Snowman	Cocteau Twins	How did I not know this song existed?
+Dog Problems	The Format	How did I not know this song existed?
+Scatman & Hatman	Scatman John, Lou Bega	How did I not know this song existed?
+The Killing Moon - MTV Unplugged	a-ha, Ian McCulloch	How did I not know this song existed?
+This Here Giraffe	The Flaming Lips, Peter Mokran	songs about animals
+Rock Lobster	The B-52's	songs about animals
+The Snake	Al Wilson	songs about animals
+A Wolf At the Door	Radiohead	songs about animals
+The Fox, The Crow And The Cookie	mewithoutYou	songs about animals
+Party Dog	Tom Cardy	songs about animals
+Pony	Tom Waits	songs about animals
+Sleep In The Heat	PUP	songs about animals
+Cracker Jack	Dolly Parton	songs about animals
+I Feel Better	Oxford Collapse	You probably haven’t heard this cover
+Redbone	Karim Kamar	You probably haven’t heard this cover
+Go Your Own Way	Zak Vortex, Young Empress	You probably haven’t heard this cover
+He's a Whore	White Flag	You probably haven’t heard this cover
+Mr. Know-It-All	Kerrin Connolly	You probably haven’t heard this cover
+Range Life	JR Slayer	You probably haven’t heard this cover
+Dreams	Irish Women In Harmony	You probably haven’t heard this cover
+Hell of a Ride	Nourished by Time	guest submission redux
+Disco 2000	Pulp	guest submission redux
+Don't Change	INXS	guest submission redux
+As It Was	Harry Styles	guest submission redux
+Re-Make/Re-Model	Roxy Music	guest submission redux
+It's Only Make Believe - 1976 Version	Conway Twitty	guest submission redux
+Cheerleader	Porter Robinson	guest submission redux
+Superfast Jellyfish (feat. Gruff Rhys and De La Soul)	Gorillaz, Gruff Rhys, De La Soul, Dave Jolicoeur, Kelvin Mercer, Vincent Mason	A song that is the equivalent of a Saturday morning bowl of cereal
+Harvey	Her's	A song that is the equivalent of a Saturday morning bowl of cereal
+Haley	Big Thief	A song that is the equivalent of a Saturday morning bowl of cereal
+Grace Kelly	MIKA	A song that is the equivalent of a Saturday morning bowl of cereal
+Welcome to My World	Nerf Herder	A song that is the equivalent of a Saturday morning bowl of cereal
+Sunshine Superman	Donovan	A song that is the equivalent of a Saturday morning bowl of cereal
+HEAVEN TO ME	Tyler, The Creator	A song that is the equivalent of a Saturday morning bowl of cereal
+Big Time Sensuality	Björk	A song that is the equivalent of a Saturday morning bowl of cereal
+Kool Aid & Frozen Pizza	Mac Miller	A song that is the equivalent of a Saturday morning bowl of cereal
+Mama	My Chemical Romance	Song with a surprise
+Something Right	Microwave	Song with a surprise
+Running	Menomena	Song with a surprise
+Savior	Kendrick Lamar, Baby Keem, Sam Dew	Song with a surprise
+I Feel Better Tonight	The Ergs!	Song with a surprise
+Heads We're Dancing	Kate Bush	Song with a surprise
+Self Medication (feat. Seth MacFarlane, Redman, & Statik Selektah)	Logic, Seth MacFarlane, Redman, DJ Statik Selektah	Song with a surprise
+Spiracle	Flower Face	Song with a surprise
+Jane	Girlpool	Song with a surprise
+Girls	Doechii	Song with a surprise
+Capable	Nicola Leel	A Song That Just Came Out That Isn’t Taylor Swift
+Good Luck, Babe!	Chappell Roan	A Song That Just Came Out That Isn’t Taylor Swift
+Starburster	Fontaines D.C.	A Song That Just Came Out That Isn’t Taylor Swift
+Creatures in Heaven	Glass Animals	A Song That Just Came Out That Isn’t Taylor Swift
+lust	Glixen	A Song That Just Came Out That Isn’t Taylor Swift
+The Late Show (feat. Jay Som)	Meyru, Jay Som	A Song That Just Came Out That Isn’t Taylor Swift
+44ever	Logic	A Song That Just Came Out That Isn’t Taylor Swift
+Soulbreaker	A. G. Cook	A Song That Just Came Out That Isn’t Taylor Swift
+She knows	The Monumentals	A Song That Just Came Out That Isn’t Taylor Swift
+Waiting For You (feat. Lucius)	T Bone Burnett, Lucius	A Song That Just Came Out That Isn’t Taylor Swift
+Man, Love Sure Does Make People Do Some Stupid Shit	Shelter Cat	A Song That Just Came Out That Isn’t Taylor Swift
+Terrible Hands	Soda Blonde	You Wouldn't Have Heard of Them Classic
+Smells Like Content	The Books	You Wouldn't Have Heard of Them Classic
+Don't Tread on Me	Kai Straw	You Wouldn't Have Heard of Them Classic
+Cream Cheese	HappyHappy	You Wouldn't Have Heard of Them Classic
+ES	Crying	You Wouldn't Have Heard of Them Classic
+Heart of Glass	Nick Shoulders	You Wouldn't Have Heard of Them Classic
+Hulahoop Daydream	TROTT	You Wouldn't Have Heard of Them Classic
+Hey Hey Honey	Owie Zowie, Wes Weisbaum, Rodney Van Mitchell, Sol Crow	You Wouldn't Have Heard of Them Classic
+Keep It Movin'	JustAMan	You Wouldn't Have Heard of Them Classic
+Songs from Season 17
+data/17/submissions.csv
+Song	Artist	Round
+The King of Rock 'N' Roll	Prefab Sprout	Songs to welcome the end of the world
+Crawl out Through the Fallout	Sheldon Allman	Songs to welcome the end of the world
+Neverender	Justice, Tame Impala	Songs to welcome the end of the world
+Quick Death	Transplants	Songs to welcome the end of the world
+Out for Blood	Heart Attack Man	Songs to welcome the end of the world
+Destroy Everything You Touch	Ladytron	Songs to welcome the end of the world
+Apocalypse	The Correspondents	Songs to welcome the end of the world
+I Don't Want To Set The World On Fire	The Ink Spots	Songs to welcome the end of the world
+How Deep Is Your Love?	The Rapture	Songs to welcome the end of the world
+You're Wondering Now	Amy Winehouse	Songs to welcome the end of the world
+Zombie (Acoustic Version)	The Cranberries	Songs By Moms
+Hot Stuff	Donna Summer	Songs By Moms
+Mandinka	Sinéad O'Connor	Songs By Moms
+Piss Factory	Patti Smith	Songs By Moms
+Two Coffins	Against Me!	Songs By Moms
+Don't Think About Me	Laura Stevenson	Songs By Moms
+Ya'aburnee	Halsey	Songs By Moms
+Must've Run All Day	Glassjaw	should've been the single
+Age of Consent - 2015 Remaster	New Order	should've been the single
+Bamboo Bones	Against Me!	should've been the single
+Silent Hill	Kendrick Lamar, Kodak Black	should've been the single
+Dr Strangeluv	Blonde Redhead	should've been the single
+Oyster	Jawbreaker	should've been the single
+Fäuste hoch	Irie Révoltés	Give us your elevator pitch for this band
+I’m Downright Amazed At What I Can Destroy With Just A Hammer	Atom And His Package	Give us your elevator pitch for this band
+Big God	Florence + The Machine	Give us your elevator pitch for this band
+All Over	CRUISR	Give us your elevator pitch for this band
+Frontier Psychiatrist	The Avalanches	Give us your elevator pitch for this band
+RENTAL	BROCKHAMPTON	Give us your elevator pitch for this band
+No Surprises	Vitamin String Quartet	Submit Radiohead without submitting Radiohead
+Glory Box	Portishead	Submit Radiohead without submitting Radiohead
+Rodeohead	Super Seed	Submit Radiohead without submitting Radiohead
+Radio Head - 2005 Remaster	Talking Heads, Jerry Harrison	Submit Radiohead without submitting Radiohead
+Creep	Arcano	Submit Radiohead without submitting Radiohead
+When Love Breaks Down	Snow Patrol	Submit Radiohead without submitting Radiohead
+Don't Judge Me	Janelle Monáe	Submit Radiohead without submitting Radiohead
+Nightmare Logic	Power Trip	Submit a song that you would use to name your band
+Candy Castle	Glass Candy	Submit a song that you would use to name your band
+Bleed It Out	Linkin Park	Submit a song that you would use to name your band
+Moon Theory	Miami Horror	Submit a song that you would use to name your band
+The Brews	NOFX	Submit a song that you would use to name your band
+Saturday Nights	Khalid	Submit a song that you would use to name your band
+Bring on the Dancing Horses	Echo & the Bunnymen	Submit a song that you would use to name your band
+Feel So Close - Radio Edit	Calvin Harris	Songs that would be the soundtrack to your happy and unbothered life before you get stalked and murdered by an unknown force
+So Happy I Could Die	Lady Gaga	Songs that would be the soundtrack to your happy and unbothered life before you get stalked and murdered by an unknown force
+I’m Alive (Life Sounds Like)	Michael Franti & Spearhead	Songs that would be the soundtrack to your happy and unbothered life before you get stalked and murdered by an unknown force
+Vampire Lessons	Forgetters	Songs that would be the soundtrack to your happy and unbothered life before you get stalked and murdered by an unknown force
+Best Day Of My Life	American Authors	Songs that would be the soundtrack to your happy and unbothered life before you get stalked and murdered by an unknown force
+To Have and to Have Not	Billy Bragg	Songs that would be the soundtrack to your happy and unbothered life before you get stalked and murdered by an unknown force
+La Pregunta	Left Alone	regular duets
+Midnight Ride	Orville Peck, Kylie Minogue, Diplo	regular duets
+One Big Beautiful Sound	Johnny Manchild and the Poor Bastards	regular duets
+How Not To Drown	CHVRCHES, Robert Smith	regular duets
+Love Lies (with Normani)	Khalid, Normani	regular duets
+Let's Duet	John C. Reilly, Angela Correa	regular duets
+What Have I Done to Deserve This? (with Dusty Springfield)	Pet Shop Boys, Dusty Springfield	regular duets
+Punk's Dead	SOFT PLAY	songs-that-are-funny-but-not-joke-songs
+If I Had $1,000,000	Barenaked Ladies	songs-that-are-funny-but-not-joke-songs
+Still Waiting	Jazz Emu	songs-that-are-funny-but-not-joke-songs
+Cbat	Hudson Mohawke	songs-that-are-funny-but-not-joke-songs
+I Don't Like My Mind	Mitski	songs-that-are-funny-but-not-joke-songs
+I WANNA SEE SOME ASS (feat. jetsonmade)	Jack Harlow, jetsonmade	songs-that-are-funny-but-not-joke-songs
+Jehovah's Witness - Non-LP Version	Eels	songs-that-are-funny-but-not-joke-songs
+bad idea right?	Olivia Rodrigo	songs-that-are-funny-but-not-joke-songs
+Summer Song	The Crayon Set	You probably haven't heard of them
+Sentient Beer	Escape From The Zoo	You probably haven't heard of them
+Forty Shades of Grey	CHEWIE	You probably haven't heard of them
+Notice You	The Last Generation on Film	You probably haven't heard of them
+Songs from Season 18
+data/18/submissions.csv
+Song	Artist	Round
+Paper Planes	M.I.A.	Best Music to Be Chased by Mall Security While Rollerblading
+TV Dinner	Scooped Up!	Best Music to Be Chased by Mall Security While Rollerblading
+Fat Lip	Sum 41	Best Music to Be Chased by Mall Security While Rollerblading
+Close Your Eyes (And Count to Fuck) (feat. Zack de la Rocha)	Run The Jewels, Zack De La Rocha	Best Music to Be Chased by Mall Security While Rollerblading
+Thorn In My Side	Quicksand	Best Music to Be Chased by Mall Security While Rollerblading
+Shout Bamalama	The Detroit Cobras	Best Music to Be Chased by Mall Security While Rollerblading
+Bitch, Don’t Kill My Vibe	Kendrick Lamar	Best Music to Be Chased by Mall Security While Rollerblading
+Diamonds And Guns	Transplants	Best Music to Be Chased by Mall Security While Rollerblading
+Death By Glamour	Toby Fox	Best Music to Be Chased by Mall Security While Rollerblading
+Bad Reputation	Joan Jett & the Blackhearts	Best Music to Be Chased by Mall Security While Rollerblading
+Stuart	The Dead Milkmen	Comment must be formatted like a Hard Times headline
+Alec Eiffel	Pixies	Comment must be formatted like a Hard Times headline
+Duel of the Fates	John Williams, London Symphony Orchestra	Comment must be formatted like a Hard Times headline
+Anywhere With You	Saves The Day	Comment must be formatted like a Hard Times headline
+Quarry	Wednesday	Comment must be formatted like a Hard Times headline
+Off Deez (with J. Cole)	JID, J. Cole	Comment must be formatted like a Hard Times headline
+Peek-A-Boo	Siouxsie and the Banshees	Comment must be formatted like a Hard Times headline
+Prayer Of The Refugee	Rise Against	Comment must be formatted like a Hard Times headline
+Cult Boyfriend	Jeffrey Lewis	Comment must be formatted like a Hard Times headline
+You Might Think He Loves You for Your Money but I Know What He Really Loves You for It's Your Brand New Leopard Skin Pillbox Hat	Death Grips	Comment must be formatted like a Hard Times headline
+Heat Waves	Glass Animals	Comment must be formatted like a Hard Times headline
+OK COMMUTER	Eichlers, Sadtitled	Songs you’ve been too embarrassed to submit before out of shame
+Death By A Thousand Cuts	Taylor Swift	Songs you’ve been too embarrassed to submit before out of shame
+キタカゼ	SIX LOUNGE	Songs you’ve been too embarrassed to submit before out of shame
+Lovers in Japan	Coldplay	Songs you’ve been too embarrassed to submit before out of shame
+Femininomenon	Chappell Roan	Songs you’ve been too embarrassed to submit before out of shame
+Sweet Caroline	Neil Diamond	Songs you’ve been too embarrassed to submit before out of shame
+Narcissistic Cannibal (feat. Skrillex & Kill the Noise)	Korn, Skrillex, Kill The Noise	Songs you’ve been too embarrassed to submit before out of shame
+Let's Get It On	Marvin Gaye	a song that isn't a duet but should be
+Every Morning	Sugar Ray	a song that isn't a duet but should be
+Should I Stay or Should I Go - Remastered	The Clash	a song that isn't a duet but should be
+Little Too Close (feat. Veronika Redd)	WRLD, Veronika Redd	a song that isn't a duet but should be
+Teenage Dirtbag	Wheatus	a song that isn't a duet but should be
+Putting The Dog To Sleep	The Antlers	a song that isn't a duet but should be
+No Stars	Rebekah Del Rio	a song that isn't a duet but should be
+Perfect Day	Lou Reed	a song that isn't a duet but should be
+Hope	Descendents	a song that isn't a duet but should be
+Floating	Jape	low key round
+Born Under A Bad Sign	Richard Hawley	low key round
+Trip Sitter	Jeffrey Silverstein	low key round
+Slayer on a Sunny Day	My Best Unbeaten Brother	low key round
+Work It Out	Matt Watson	low key round
+I Got High	Owen	low key round
+Walk That Walk	Bakermat, Nic Hanson	low key round
+My Idea of Fun	Wingnut Dishwashers Union	low key round
+Red Thread	Lisa Germano	low key round
+(You) On My Arm	Leith Ross	low key round
+Silver And Gold	Joe Strummer, The Mescaleros	low key round
+You Think You're (John Fucking Lennon)	Glassjaw	Aliens have invaded the earth! You have time to play one song on the off chance that it will make their heads explode.
+Good Luck, Babe!	Chappell Roan	Aliens have invaded the earth! You have time to play one song on the off chance that it will make their heads explode.
+Purple Haze	Jimi Hendrix	Aliens have invaded the earth! You have time to play one song on the off chance that it will make their heads explode.
+Clock Catcher	Flying Lotus	Aliens have invaded the earth! You have time to play one song on the off chance that it will make their heads explode.
+Song For The Dead	Queens of the Stone Age	Aliens have invaded the earth! You have time to play one song on the off chance that it will make their heads explode.
+Free Bird	Lynyrd Skynyrd	Aliens have invaded the earth! You have time to play one song on the off chance that it will make their heads explode.
+Heretic Pride	The Mountain Goats	Aliens have invaded the earth! You have time to play one song on the off chance that it will make their heads explode.
+Syd Barrett	La La Superstar	Aliens have invaded the earth! You have time to play one song on the off chance that it will make their heads explode.
+Bangarang (feat. Sirah)	Skrillex, Sirah	Aliens have invaded the earth! You have time to play one song on the off chance that it will make their heads explode.
+GigaChad Theme - Phonk House Version	g3ox_em	Aliens have invaded the earth! You have time to play one song on the off chance that it will make their heads explode.
+Live to Tell	Madonna	Hot Take round
+Holiday / Boulevard of Broken Dreams	Green Day	Hot Take round
+All The Things She Said	Poppy	Hot Take round
+Float On	Modest Mouse	Hot Take round
+Choke	I DONT KNOW HOW BUT THEY FOUND ME	Hot Take round
+Golden	My Morning Jacket	Hot Take round
+Please Please Please	Sabrina Carpenter	Hot Take round
+Loser	Beck	Hot Take round
+Rapture	Blondie	Hot Take round
+Them Changes	Thundercat	Hot Take round
+DVP	PUP	a song that would be a perfect roller coaster soundtrack piped in the seat speakers
+Blind	Korn	a song that would be a perfect roller coaster soundtrack piped in the seat speakers
+Keep It Up Back There You Kids, and I'll Turn This Rollercoaster Around and Take Us All Back Home Right Now	Shelter Cat	a song that would be a perfect roller coaster soundtrack piped in the seat speakers
+Free Tibet - Vini Vici Remix	Hilight Tribe, Vini Vici	a song that would be a perfect roller coaster soundtrack piped in the seat speakers
+Japan Air (feat. meesh)	Anamanaguchi, meesh	a song that would be a perfect roller coaster soundtrack piped in the seat speakers
+On A Mountain	Danny L Harle, DJ Danny	a song that would be a perfect roller coaster soundtrack piped in the seat speakers
+If You Wanna	The Vaccines	a song that would be a perfect roller coaster soundtrack piped in the seat speakers
+Do the Sick	Direct Hit!	a song that would be a perfect roller coaster soundtrack piped in the seat speakers
+Strawberry Letter 23	The Brothers Johnson	song that is the equivalent of a big ice cream sundae with whole chocolate bars and sparklers sticking out of it
+Expensive City	Ravenna Golden	song that is the equivalent of a big ice cream sundae with whole chocolate bars and sparklers sticking out of it
+Tummy Hurts	Reneé Rapp	song that is the equivalent of a big ice cream sundae with whole chocolate bars and sparklers sticking out of it
+We'll Be There (feat. Estelle) - Extended Version	We Bare Bears, Estelle	song that is the equivalent of a big ice cream sundae with whole chocolate bars and sparklers sticking out of it
+Dance Mode	Bluey, Joff Bush	song that is the equivalent of a big ice cream sundae with whole chocolate bars and sparklers sticking out of it
+Oh Wow	Jumprope	song that is the equivalent of a big ice cream sundae with whole chocolate bars and sparklers sticking out of it
+The Final Countdown	Europe	song that is the equivalent of a big ice cream sundae with whole chocolate bars and sparklers sticking out of it
+HOT TO GO!	Chappell Roan	song that is the equivalent of a big ice cream sundae with whole chocolate bars and sparklers sticking out of it
+Ne te mens pas	Mae	song that is the equivalent of a big ice cream sundae with whole chocolate bars and sparklers sticking out of it
+Surf's Up	The Beach Boys	song that is the equivalent of a big ice cream sundae with whole chocolate bars and sparklers sticking out of it
+Pop It	Anamanaguchi, meesh	song that is the equivalent of a big ice cream sundae with whole chocolate bars and sparklers sticking out of it
+The Allston Anthem	Matt Savage Groove Experiment	You probably haven't heard of them
+If You Want Me to Dance	New Feelings	You probably haven't heard of them
+banana cream pie	The Slaughters, Sammy Slaughter	You probably haven't heard of them
+Battery Baby	Shelley Star	You probably haven't heard of them
+Happy	The New Deep	You probably haven't heard of them
+It's Better Being Gay	THE COCKS	You probably haven't heard of them
+Mess of Things	Hemmingbirds	You probably haven't heard of them
+Bad Bad Bad Bad Money	Jerry Fels & The Jerry Fels	You probably haven't heard of them
+Songs from Season 19
+data/19/submissions.csv
+Song	Artist	Round
+Cold Reactor	Everything Everything	You've probably already heard them
+The Professional	Sleater-Kinney	You've probably already heard them
+At Your Funeral	Saves The Day	You've probably already heard them
+Rise Above	Black Flag	You've probably already heard them
+Pash Rash	Jeff Rosenstock	You've probably already heard them
+Juxtapozed with U (2021 - Remaster)	Super Furry Animals	You've probably already heard them
+Mickey - Original Version	Toni Basil	You've probably already heard them
+Girls Make Me Wanna Die	The Aces	You've probably already heard them
+Halloween Theme - Main Title	John Carpenter	You've probably already heard them
+Coal	The Spine Stealers	Health food store/farmer’s market vibe songs
+Kids	MGMT	Health food store/farmer’s market vibe songs
+Everywhere - 2017 Remaster	Fleetwood Mac	Health food store/farmer’s market vibe songs
+Where Have All the Cowboys Gone?	Paula Cole	Health food store/farmer’s market vibe songs
+Near Wild Heaven	R.E.M.	Health food store/farmer’s market vibe songs
+Vega-Tables	The Beach Boys	Health food store/farmer’s market vibe songs
+The Golden Hour	Louie Zong	Health food store/farmer’s market vibe songs
+Got to Be Lovin' You	Erik Tagg	Health food store/farmer’s market vibe songs
+Honeybody	Kishi Bashi	Health food store/farmer’s market vibe songs
+Charmless Man	Blur	pitch a theme for a round in the comments, and then submit a song that nails the theme
+Judgment Bolt	death's dynamic shroud	pitch a theme for a round in the comments, and then submit a song that nails the theme
+Wndrwll	Neil Cicierega Archive	pitch a theme for a round in the comments, and then submit a song that nails the theme
+Relax	Frankie Goes To Hollywood	pitch a theme for a round in the comments, and then submit a song that nails the theme
+Berlin to Rome	The Last Gang	pitch a theme for a round in the comments, and then submit a song that nails the theme
+Bob Dylan's 115th Dream	Bob Dylan	pitch a theme for a round in the comments, and then submit a song that nails the theme
+Cheerleader (Felix Jaehn Remix) - Radio Edit	OMI, Felix Jaehn	pitch a theme for a round in the comments, and then submit a song that nails the theme
+Your Ex Said You Can't Dance	The Real Zebos	Pop perfection (but under 100k monthly Spotify listeners)
+Chicka Boom Boom	Ash Gordon	Pop perfection (but under 100k monthly Spotify listeners)
+Sucks To Be You	Prozzak	Pop perfection (but under 100k monthly Spotify listeners)
+Back Here Again	The After Hours	Pop perfection (but under 100k monthly Spotify listeners)
+Air	Phebe Starr	Pop perfection (but under 100k monthly Spotify listeners)
+Solo Disco	Kit Major	Pop perfection (but under 100k monthly Spotify listeners)
+Mmmbop	Scary Pockets, Lucy Schwartz	Batshit Crazy Covers and Remixes
+Candy Man	Primus	Batshit Crazy Covers and Remixes
+If You're Happy and You Know It (Metal Version)	Leo	Batshit Crazy Covers and Remixes
+Unwritten	THUMPER	Batshit Crazy Covers and Remixes
+Gimme! Gimme! Gimme! (A Man After Midnight)	Brian David Gilbert	Batshit Crazy Covers and Remixes
+Ghost Riders in the Sky	Spike Jones & His City Slickers	Batshit Crazy Covers and Remixes
+Fitter Happier	Easy Star All-Stars, Menny Moore	Batshit Crazy Covers and Remixes
+Sweet Caroline	David Hasselhoff, Ministry	Batshit Crazy Covers and Remixes
+Welcome To (Amish) Paradise	Jonah Ray	Batshit Crazy Covers and Remixes
+Cum On Feel The Noize	Bran Van 3000	Batshit Crazy Covers and Remixes
+Rhiannon	Zeke	Batshit Crazy Covers and Remixes
+I'm My Own Grandpa	Willie Nelson	unusual subject matter for a song
+My Dog Ate My Dope	Andy Warpigs	unusual subject matter for a song
+Shia LaBeouf Live	Rob Cantor	unusual subject matter for a song
+MacArthur Park - Single Version	Donna Summer	unusual subject matter for a song
+Olivia	Wolves of Glendale	unusual subject matter for a song
+Crunchy Granola Suite - Single Version	Neil Diamond	unusual subject matter for a song
+I Like Birds	Eels	unusual subject matter for a song
+Vats of Urine	DANGERDOOM, MF DOOM, Danger Mouse	unusual subject matter for a song
+Detachable Penis	King Missile	unusual subject matter for a song
+This Rainy Decade	The Cleaners From Venus	Submit the song that is currently #1 in your “On Repeat” playlist
+What's Up?	Mom Jeans.	Submit the song that is currently #1 in your “On Repeat” playlist
+Bang The Doldrums	Fall Out Boy	Submit the song that is currently #1 in your “On Repeat” playlist
+Nomu	Good Kid	Submit the song that is currently #1 in your “On Repeat” playlist
+Bad Time	Alkaline Trio	Submit the song that is currently #1 in your “On Repeat” playlist
+cowboy like me	Taylor Swift	Submit the song that is currently #1 in your “On Repeat” playlist
+How To Fix Everything	Bayside	Submit the song that is currently #1 in your “On Repeat” playlist
+Sentiment	Babel Map	Submit the song that is currently #1 in your “On Repeat” playlist
+One Of Your Girls	Troye Sivan	Submit the song that is currently #1 in your “On Repeat” playlist
+This Is Your Night	Amber	Submit the song that is currently #1 in your “On Repeat” playlist
+What’s The Frequency, Kenneth? - Remastered 2013	R.E.M.	Submit the song that is currently #1 in your “On Repeat” playlist
+Butterfly Kisses	Bob Carlisle	songs you love to make fun of
+Morning Train (Nine to Five) - Edit	Sheena Easton	songs you love to make fun of
+Gypsy Woman (She's Homeless) (La Da Dee La Da Da) - Basement Boy Strip To The Bone Mix	Crystal Waters, The Basement Boys	songs you love to make fun of
+Knights of Malta	The Smashing Pumpkins	songs you love to make fun of
+Down with the Sickness	Disturbed	songs you love to make fun of
+The Longest Time	Billy Joel	songs you love to make fun of
+Master and Servant	Depeche Mode	songs you love to make fun of
+Timber	Pitbull, Kesha	Inappropriately upbeat songs for a violent fight scene
+I'm So Excited	The Pointer Sisters	Inappropriately upbeat songs for a violent fight scene
+F.U.U.	Dream Wife, Fever Dream	Inappropriately upbeat songs for a violent fight scene
+Hi, I'm a Slut	Lil Mariko	Inappropriately upbeat songs for a violent fight scene
+Go For Soda	Kim Mitchell	Inappropriately upbeat songs for a violent fight scene
+Foreign Object	The Mountain Goats	Inappropriately upbeat songs for a violent fight scene
+California Sun	The Dictators	Inappropriately upbeat songs for a violent fight scene
+Gummi Bears Theme	The Disney Afternoon Studio Chorus	Inappropriately upbeat songs for a violent fight scene
+Our Love Will Make the World Go Round	The Meligrove Band	You probably haven't heard of them
+Smoking Room	Driving on Suspended	You probably haven't heard of them
+My Mind Is A Box - Crispy Version	The Alphabet	You probably haven't heard of them
+Rich Backgrounds	Annabel Allum	You probably haven't heard of them
+Love Without Wanting	Babelord	You probably haven't heard of them
+Scenic Overlook	The Blandinas	You probably haven't heard of them
+The Journalist	HEADCHECK	You probably haven't heard of them

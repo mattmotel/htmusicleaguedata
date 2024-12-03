@@ -2,16 +2,42 @@ import config from '../config.js';
 
 class AI {
     constructor() {
-        this.submissions = [];
-        this.isLoading = true;
+        this.rounds = [];
         this.loadData();
     }
 
     async loadData() {
-        this.isLoading = true;
         try {
-            console.log('Starting to load data...');
+            const response = await fetch('data/rounds.txt');
+            const text = await response.text();
             
+            // Split into rounds
+            const lines = text.split('\n').filter(line => line.trim());
+            
+            // Each line should be "title | id"
+            this.rounds = lines.map(line => {
+                const [title, id] = line.split('|').map(s => s.trim());
+                return { title, id };
+            });
+
+            console.log(`Loaded ${this.rounds.length} rounds`);
+        } catch (error) {
+            console.error('Failed to load rounds:', error);
+        }
+    }
+
+    async respond(message) {
+        const text = message.toLowerCase();
+
+        if (text.includes('what') && text.includes('know')) {
+            return `I know about ${this.rounds.length} rounds of music! Each round had a theme. Try asking me about specific rounds!`;
+        }
+
+        if (text.includes('show') && text.includes('round')) {
+            const roundsList = this.rounds.slice(0, 5)
+                .map(r => `- ${r.title}`)
+                .join('\n');
+            return `Here are some rounds:\n${roundsList}\n(Showing 5 of ${this.rounds.length} rounds)`;
             // Test loading one file first
             const testResponse = await fetch('/data/1/submissions.csv');
             const testText = await testResponse.text();
