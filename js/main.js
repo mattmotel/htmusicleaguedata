@@ -3,14 +3,14 @@ const csvFiles = [
     'data/5/submissions.csv', 'data/6/submissions.csv', 'data/7/submissions.csv', 'data/8/submissions.csv',
     'data/9/submissions.csv', 'data/10/submissions.csv', 'data/11/submissions.csv', 'data/12/submissions.csv',
     'data/13/submissions.csv', 'data/14/submissions.csv', 'data/15/submissions.csv', 'data/16/submissions.csv',
-    'data/17/submissions.csv', 'data/18/submissions.csv', 'data/19/submissions.csv'
+    'data/17/submissions.csv', 'data/18/submissions.csv', 'data/19/submissions.csv', 'data/20/submissions.csv'
 ];
 const roundsFiles = [
     'data/1/rounds.csv', 'data/2/rounds.csv', 'data/3/rounds.csv', 'data/4/rounds.csv',
     'data/5/rounds.csv', 'data/6/rounds.csv', 'data/7/rounds.csv', 'data/8/rounds.csv',
     'data/9/rounds.csv', 'data/10/rounds.csv', 'data/11/rounds.csv', 'data/12/rounds.csv',
     'data/13/rounds.csv', 'data/14/rounds.csv', 'data/15/rounds.csv', 'data/16/rounds.csv',
-    'data/17/rounds.csv', 'data/18/rounds.csv', 'data/19/rounds.csv'
+    'data/17/rounds.csv', 'data/18/rounds.csv', 'data/19/rounds.csv', 'data/20/rounds.csv'
 ];
 
 async function init() {
