@@ -1,0 +1,34 @@
+# Cursor Rules for Hard Times Music League Data
+
+## Code Style
+- Use TypeScript for all new files
+- Use functional components with hooks
+- Use Tailwind CSS for styling
+- Use Lucide React icons instead of emojis
+
+## Naming Conventions
+- Use PascalCase for component names
+- Use camelCase for variables and functions
+- Use kebab-case for file names
+
+## UI Guidelines
+- NO EMOJIS in titles, headings, or navigation text
+- Use Lucide React icons for visual elements
+- Keep titles clean and professional
+- Use consistent color scheme (green-400 for primary, gray-800/700 for backgrounds)
+
+## Data Handling
+- Process CSV data server-side in Next.js API routes
+- Use proper TypeScript interfaces for data types
+- Cache data when appropriate for performance
+
+## Component Structure
+- Keep components focused and single-purpose
+- Use proper TypeScript props interfaces
+- Export components as default exports
+- Use meaningful component names
+
+## Performance
+- Use Next.js server-side rendering for data pages
+- Implement proper loading states
+- Use efficient data structures and algorithms

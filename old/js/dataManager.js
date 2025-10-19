@@ -52,6 +52,7 @@ class MusicLeagueDataManager {
 
     async loadRoundsData() {
         const roundsFiles = this.generateFilePaths('rounds.csv');
+        console.log('Loading rounds from files:', roundsFiles);
         const roundsData = await Promise.all(roundsFiles.map(file => this.loadCSV(file)));
         
         roundsData.forEach((data, index) => {
@@ -59,6 +60,9 @@ class MusicLeagueDataManager {
                 console.warn(`Failed to load ${roundsFiles[index]}`);
                 return;
             }
+            
+            const seasonNumber = this.extractSeasonNumber(data.filename);
+            console.log(`Processing rounds for season ${seasonNumber} from ${data.filename}, ${data.lines.length} lines`);
             
             data.lines.slice(1).forEach(line => {
                 const parsed = this.parseRoundRow(line);
@@ -73,6 +77,8 @@ class MusicLeagueDataManager {
                 }
             });
         });
+        
+        console.log(`Total rounds loaded: ${this.rounds.size}`);
     }
 
     async loadCompetitorsData() {
@@ -89,16 +95,23 @@ class MusicLeagueDataManager {
                 }
             });
         });
+        
+        console.log('Competitors loaded:', this.competitors.size, 'competitors');
     }
 
     async loadSubmissionsData() {
         const submissionsFiles = this.generateFilePaths('submissions.csv');
+        console.log('Loading submissions from files:', submissionsFiles);
         const submissionsData = await Promise.all(submissionsFiles.map(file => this.loadCSV(file)));
         
         submissionsData.forEach((data, index) => {
-            if (!data || !data.lines) return;
+            if (!data || !data.lines) {
+                console.warn(`Failed to load ${submissionsFiles[index]}`);
+                return;
+            }
             
             const seasonNumber = this.extractSeasonNumber(data.filename);
+            console.log(`Processing season ${seasonNumber} from ${data.filename}, ${data.lines.length} lines`);
             
             data.lines.slice(1).forEach(line => {
                 const parsed = this.parseCSVRow(line);
@@ -109,11 +122,15 @@ class MusicLeagueDataManager {
                 parsed.filename = data.filename;
                 
                 // Map submitter ID to name
-                parsed.submitterName = this.competitors.get(parsed.submitterId) || parsed.submitterId;
+                const competitorName = this.competitors.get(parsed.submitterId);
+                parsed.submitterName = competitorName || parsed.submitterId;
                 
                 this.submissions.push(parsed);
             });
         });
+        
+        console.log(`Total submissions loaded: ${this.submissions.length}`);
+        console.log('Seasons found:', [...new Set(this.submissions.map(s => s.season))].sort((a, b) => a - b));
     }
 
     processData() {
@@ -147,6 +164,8 @@ class MusicLeagueDataManager {
             if (submission.album) stats.uniqueAlbums.add(submission.album);
             if (submission.roundId) stats.rounds.add(submission.roundId);
         });
+        
+        console.log('Season stats processed:', this.seasonStats.size, 'seasons');
     }
 
     generateFilePaths(filename) {

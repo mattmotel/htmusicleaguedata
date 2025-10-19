@@ -324,16 +324,14 @@ class MusicLeagueApp {
     createSeasonsView() {
         const container = document.createElement('div');
         
-        // Check if data is loaded
-        if (!this.dataManager.seasonStats || this.dataManager.seasonStats.size === 0) {
-            container.innerHTML = '<p class="no-data">Loading season data...</p>';
-            return container;
-        }
+        console.log('Creating seasons view...');
+        console.log('Season stats:', this.dataManager.seasonStats);
         
         let seasonStats = this.dataManager.getSeasonStatistics();
+        console.log('Season statistics:', seasonStats);
         
         if (!seasonStats || seasonStats.length === 0) {
-            container.innerHTML = '<p class="no-data">No season data available</p>';
+            container.innerHTML = '<p class="no-data">No season data available. Check console for debug info.</p>';
             return container;
         }
         
