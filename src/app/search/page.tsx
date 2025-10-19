@@ -42,16 +42,7 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
     setResults([]);
   };
 
-  useEffect(() => {
-    const initializeSearch = async () => {
-      const resolvedSearchParams = await searchParams;
-      if (resolvedSearchParams.q) {
-        setQuery(resolvedSearchParams.q);
-        handleSearch(resolvedSearchParams.q);
-      }
-    };
-    initializeSearch();
-  }, [searchParams]);
+  // No auto-search - only manual search on Enter
 
   return (
     <div className="space-y-6">
@@ -67,7 +58,10 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
             <input
               type="text"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setResults([]); // Clear results when typing
+              }}
               placeholder="Search songs, artists, albums, or submitters..."
               className="w-full pl-10 pr-10 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
             />
@@ -86,7 +80,7 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
             disabled={isSearching}
             className="px-6 py-3 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white rounded-lg transition-colors"
           >
-            {isSearching ? 'Searching...' : 'Search'}
+            Search
           </button>
         </form>
       </div>
@@ -149,7 +143,7 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
                           rel="noopener noreferrer"
                           className="inline-flex items-center space-x-1 bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded text-xs transition-colors"
                         >
-                          <span>▶️</span>
+                          <span>Play</span>
                         </a>
                       )}
                     </td>
@@ -161,11 +155,7 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
         </div>
       )}
 
-      {query && results.length === 0 && !isSearching && (
-        <div className="text-center py-8">
-          <p className="text-gray-400">No results found for &quot;{query}&quot;</p>
-        </div>
-      )}
+      {/* No results message only shows after actual search */}
     </div>
   );
 }

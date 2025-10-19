@@ -32,7 +32,7 @@ export default function RecentSubmissions({ submissions }: RecentSubmissionsProp
                   rel="noopener noreferrer"
                   className="ml-4 bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm transition-colors"
                 >
-                  ▶️
+                  Play
                 </a>
               )}
             </div>
