@@ -300,22 +300,10 @@ class DataManager {
   getSeasonStatistics(): SeasonStats[] {
     const stats: SeasonStats[] = [];
     for (const [season, data] of this.seasonStats.entries()) {
-      // Calculate average users per round for this season
+      // Calculate users per round for this season
       const seasonSubmissions = this.submissions.filter(sub => sub.season === season);
-      
-      // Group submissions by round to count unique users per round
-      const roundUserCounts = new Map<string, Set<string>>();
-      seasonSubmissions.forEach(sub => {
-        if (!roundUserCounts.has(sub.roundId)) {
-          roundUserCounts.set(sub.roundId, new Set());
-        }
-        roundUserCounts.get(sub.roundId)?.add(sub.submitterId);
-      });
-      
-      // Calculate average users per round
-      const userCountsPerRound = Array.from(roundUserCounts.values()).map(userSet => userSet.size);
-      const usersPerRound = userCountsPerRound.length > 0 ? 
-        Number((userCountsPerRound.reduce((sum, count) => sum + count, 0) / userCountsPerRound.length).toFixed(1)) : 0;
+      const uniqueSubmitters = new Set(seasonSubmissions.map(sub => sub.submitterId));
+      const usersPerRound = data.rounds.size > 0 ? Number((uniqueSubmitters.size / data.rounds.size).toFixed(1)) : 0;
       
       stats.push({
         season,

@@ -1,0 +1,58 @@
+# Cursor Rules for Hard Times Music League Data
+
+## Code Style
+- Use TypeScript for all new files
+- Use functional components with hooks
+- Use Tailwind CSS for styling
+- Use Lucide React icons instead of emojis
+
+## Naming Conventions
+- Use PascalCase for component names
+- Use camelCase for variables and functions
+- Use kebab-case for file names
+
+## UI Guidelines
+- NO EMOJIS in titles, headings, or navigation text
+- Use Lucide React icons for visual elements
+- Keep titles clean and professional
+- Use consistent color scheme (green-400 for primary, gray-800/700 for backgrounds)
+
+## Data Handling
+- Process CSV data server-side in Next.js API routes
+- Use proper TypeScript interfaces for data types
+- Cache data when appropriate for performance
+
+## Component Structure
+- Keep components focused and single-purpose
+- Use proper TypeScript props interfaces
+- Export components as default exports
+- Use meaningful component names
+
+## Performance
+- Use Next.js server-side rendering for data pages
+- Implement proper loading states
+- Use efficient data structures and algorithms
+
+## TypeScript Best Practices
+- NEVER use `any` type - always specify proper types
+- Add null checks for Map.get() and array access
+- Use proper interface definitions for all props
+- Avoid unused variables - remove them immediately
+
+## Next.js App Router Rules
+- searchParams is always Promise<{ [key: string]: string | string[] | undefined }>
+- Use 'use client' directive for client components with hooks
+- Server components cannot use useState, useEffect, or event handlers
+- Always await searchParams before using them
+
+## React Best Practices
+- Escape quotes in JSX: use &quot; instead of "
+- Remove unused state variables and imports
+- Use proper dependency arrays in useEffect
+- Handle async operations in useEffect properly
+
+## Error Prevention
+- Always check for undefined/null before accessing properties
+- Use proper TypeScript strict mode
+- Add proper error boundaries for data loading
+- Validate data before processing
