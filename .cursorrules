@@ -32,3 +32,27 @@
 - Use Next.js server-side rendering for data pages
 - Implement proper loading states
 - Use efficient data structures and algorithms
+
+## TypeScript Best Practices
+- NEVER use `any` type - always specify proper types
+- Add null checks for Map.get() and array access
+- Use proper interface definitions for all props
+- Avoid unused variables - remove them immediately
+
+## Next.js App Router Rules
+- searchParams is always Promise<{ [key: string]: string | string[] | undefined }>
+- Use 'use client' directive for client components with hooks
+- Server components cannot use useState, useEffect, or event handlers
+- Always await searchParams before using them
+
+## React Best Practices
+- Escape quotes in JSX: use &quot; instead of "
+- Remove unused state variables and imports
+- Use proper dependency arrays in useEffect
+- Handle async operations in useEffect properly
+
+## Error Prevention
+- Always check for undefined/null before accessing properties
+- Use proper TypeScript strict mode
+- Add proper error boundaries for data loading
+- Validate data before processing

@@ -1,15 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Search, X } from 'lucide-react';
 import { Submission } from '@/lib/data';
 
 interface SearchPageProps {
-  searchParams: { q?: string };
+  searchParams: Promise<{ q?: string }>;
 }
 
 export default function SearchPage({ searchParams }: SearchPageProps) {
-  const [query, setQuery] = useState(searchParams.q || '');
+  const [query, setQuery] = useState('');
   const [results, setResults] = useState<Submission[]>([]);
   const [isSearching, setIsSearching] = useState(false);
 
@@ -41,6 +41,17 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
     setQuery('');
     setResults([]);
   };
+
+  useEffect(() => {
+    const initializeSearch = async () => {
+      const resolvedSearchParams = await searchParams;
+      if (resolvedSearchParams.q) {
+        setQuery(resolvedSearchParams.q);
+        handleSearch(resolvedSearchParams.q);
+      }
+    };
+    initializeSearch();
+  }, [searchParams]);
 
   return (
     <div className="space-y-6">
@@ -152,7 +163,7 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
 
       {query && results.length === 0 && !isSearching && (
         <div className="text-center py-8">
-          <p className="text-gray-400">No results found for "{query}"</p>
+          <p className="text-gray-400">No results found for &quot;{query}&quot;</p>
         </div>
       )}
     </div>

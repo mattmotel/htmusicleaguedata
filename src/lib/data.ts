@@ -55,7 +55,12 @@ class DataManager {
   private competitors: Map<string, string> = new Map();
   private artistCounts: Map<string, number> = new Map();
   private albumCounts: Map<string, number> = new Map();
-  private seasonStats: Map<number, any> = new Map();
+  private seasonStats: Map<number, {
+    totalSubmissions: number;
+    uniqueArtists: Set<string>;
+    uniqueAlbums: Set<string>;
+    rounds: Set<string>;
+  }> = new Map();
 
   async loadAllData() {
     console.log('Loading Music League Data...');
@@ -258,10 +263,12 @@ class DataManager {
       }
       
       const stats = this.seasonStats.get(season);
-      stats.totalSubmissions++;
-      stats.uniqueArtists.add(submission.artist);
-      if (submission.album) stats.uniqueAlbums.add(submission.album);
-      if (submission.roundId) stats.rounds.add(submission.roundId);
+      if (stats) {
+        stats.totalSubmissions++;
+        stats.uniqueArtists.add(submission.artist);
+        if (submission.album) stats.uniqueAlbums.add(submission.album);
+        if (submission.roundId) stats.rounds.add(submission.roundId);
+      }
     });
   }
 
