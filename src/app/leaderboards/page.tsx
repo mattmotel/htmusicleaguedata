@@ -45,7 +45,6 @@ interface LeaderboardData {
 
 export default function LeaderboardsPage() {
   const [data, setData] = useState<LeaderboardData | null>(null);
-  const [showAllArtists, setShowAllArtists] = useState(false);
   const [showArtistsModal, setShowArtistsModal] = useState(false);
   const [loading, setLoading] = useState(true);
 

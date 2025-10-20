@@ -97,8 +97,25 @@ class DataManager {
     console.log(`Loaded ${this.submissions.length} submissions and ${this.votes.length} votes across ${this.seasonStats.size} seasons`);
   }
 
+  private getSeasonNumbers(): number[] {
+    const dataRoot = path.join(process.cwd(), 'public', 'data');
+    try {
+      const entries = fs.readdirSync(dataRoot, { withFileTypes: true });
+      const seasons = entries
+        .filter((e) => e.isDirectory())
+        .map((e) => Number(e.name))
+        .filter((n) => Number.isFinite(n))
+        .sort((a, b) => a - b);
+      return seasons;
+    } catch (err) {
+      console.warn('Could not read seasons from public/data. Falling back to 1..24', err);
+      return Array.from({ length: 24 }, (_, i) => i + 1);
+    }
+  }
+
   private async loadCompetitors() {
-    for (let season = 1; season <= 24; season++) {
+    const seasons = this.getSeasonNumbers();
+    for (const season of seasons) {
       try {
         const filePath = path.join(process.cwd(), 'public', 'data', season.toString(), 'competitors.csv');
         const content = fs.readFileSync(filePath, 'utf-8');
@@ -117,7 +134,8 @@ class DataManager {
   }
 
   private async loadRounds() {
-    for (let season = 1; season <= 24; season++) {
+    const seasons = this.getSeasonNumbers();
+    for (const season of seasons) {
       try {
         const filePath = path.join(process.cwd(), 'public', 'data', season.toString(), 'rounds.csv');
         const content = fs.readFileSync(filePath, 'utf-8');
@@ -158,7 +176,8 @@ class DataManager {
   }
 
   private async loadSubmissions() {
-    for (let season = 1; season <= 24; season++) {
+    const seasons = this.getSeasonNumbers();
+    for (const season of seasons) {
       try {
         const filePath = path.join(process.cwd(), 'public', 'data', season.toString(), 'submissions.csv');
         const content = fs.readFileSync(filePath, 'utf-8');
@@ -197,7 +216,8 @@ class DataManager {
   }
 
   private async loadVotes() {
-    for (let season = 1; season <= 24; season++) {
+    const seasons = this.getSeasonNumbers();
+    for (const season of seasons) {
       try {
         const filePath = path.join(process.cwd(), 'public', 'data', season.toString(), 'votes.csv');
         const content = fs.readFileSync(filePath, 'utf-8');

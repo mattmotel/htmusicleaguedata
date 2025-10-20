@@ -81,19 +81,19 @@ export default function DebugScatmanPage() {
         </Link>
         <div>
           <h1 className="text-3xl font-bold text-green-400 mb-2">Scatman Evidence</h1>
-          <p className="text-gray-400">Detailed breakdown for "Scatman John, Lou Bega"</p>
+          <p className="text-gray-400">Detailed breakdown for &quot;Scatman John, Lou Bega&quot;</p>
         </div>
       </div>
 
       {/* Possible Matches */}
       <div className="bg-gray-800 rounded-lg p-6">
         <h2 className="text-2xl font-bold text-green-400 mb-4">Possible Artist Matches</h2>
-        <p className="text-gray-400 mb-4">Found {data.possibleMatches.length} artists that might match "Scatman John, Lou Bega":</p>
+        <p className="text-gray-400 mb-4">Found {data.possibleMatches.length} artists that might match &quot;Scatman John, Lou Bega&quot;:</p>
         {data.possibleMatches.length > 0 ? (
           <div className="space-y-2">
-            {data.possibleMatches.map((artist, index) => (
-              <div key={index} className="bg-gray-700 rounded p-3">
-                <p className="font-medium text-white">"{artist}"</p>
+            {data.possibleMatches.map((artist) => (
+              <div key={artist} className="bg-gray-700 rounded p-3">
+                <p className="font-medium text-white">{artist}</p>
               </div>
             ))}
           </div>
@@ -146,13 +146,13 @@ export default function DebugScatmanPage() {
               <div className="mt-4">
                 <h4 className="text-lg font-semibold text-gray-300 mb-3">Individual Votes:</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {submission.votes.map((vote, voteIndex) => (
-                    <div key={voteIndex} className="bg-gray-700 rounded p-3">
+                  {submission.votes.map((vote) => (
+                    <div key={`${vote.voter}-${vote.points}`} className="bg-gray-700 rounded p-3">
                       <div className="flex items-center justify-between">
                         <div>
                           <p className="font-medium text-white">{vote.voter}</p>
                           {vote.comment && (
-                            <p className="text-sm text-gray-400 italic">"{vote.comment}"</p>
+                            <p className="text-sm text-gray-400 italic">&quot;{vote.comment}&quot;</p>
                           )}
                         </div>
                         <div className="text-right">

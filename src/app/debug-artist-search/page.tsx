@@ -78,21 +78,21 @@ export default function DebugArtistSearchPage() {
 
       {/* Exact Match Results */}
       <div className="bg-gray-800 rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-green-400 mb-4">Exact Match for "Scatman John, Lou Bega"</h2>
+        <h2 className="text-2xl font-bold text-green-400 mb-4">Exact Match for &quot;Scatman John, Lou Bega&quot;</h2>
         <p className="text-gray-400 mb-4">Found {data.exactMatchCount} submissions with exact artist name match</p>
         {data.exactMatchSubmissions.length > 0 ? (
           <div className="space-y-3">
             {data.exactMatchSubmissions.map((submission, index) => (
               <div key={index} className="bg-gray-700 rounded p-4">
                 <p className="font-medium text-white">{submission.title}</p>
-                <p className="text-gray-300">Artist: "{submission.artist}"</p>
+                <p className="text-gray-300">Artist: {submission.artist}</p>
                 <p className="text-gray-400">Submitted by: {submission.submitter}</p>
                 <p className="text-gray-400">Season {submission.season}, Round {submission.round}</p>
               </div>
             ))}
           </div>
         ) : (
-          <p className="text-gray-400">No exact matches found for "Scatman John, Lou Bega"</p>
+          <p className="text-gray-400">No exact matches found for &quot;Scatman John, Lou Bega&quot;</p>
         )}
       </div>
 
@@ -103,12 +103,12 @@ export default function DebugArtistSearchPage() {
           <div className="space-y-2">
             {data.foundScatmanArtists.map((artist, index) => (
               <div key={index} className="bg-gray-700 rounded p-3">
-                <p className="font-medium text-white">"{artist}"</p>
+                <p className="font-medium text-white">{artist}</p>
               </div>
             ))}
           </div>
         ) : (
-          <p className="text-gray-400">No artists found containing "Scatman" or "Lou Bega"</p>
+          <p className="text-gray-400">No artists found containing &quot;Scatman&quot; or &quot;Lou Bega&quot;</p>
         )}
       </div>
 
@@ -119,7 +119,7 @@ export default function DebugArtistSearchPage() {
           <div className="space-y-2">
             {data.relatedArtists.map((artist, index) => (
               <div key={index} className="bg-gray-700 rounded p-3">
-                <p className="font-medium text-white">"{artist}"</p>
+                <p className="font-medium text-white">{artist}</p>
               </div>
             ))}
           </div>
@@ -133,9 +133,9 @@ export default function DebugArtistSearchPage() {
         <h2 className="text-2xl font-bold text-green-400 mb-4">Sample Artists (First 20)</h2>
         <p className="text-gray-400 mb-4">Total artists in database: {data.totalArtists.toLocaleString()}</p>
         <div className="space-y-2">
-          {data.sampleArtists.map((artist, index) => (
-            <div key={index} className="bg-gray-700 rounded p-3">
-              <p className="font-medium text-white">"{artist}"</p>
+          {data.sampleArtists.map((artist) => (
+            <div key={artist} className="bg-gray-700 rounded p-3">
+              <p className="font-medium text-white">{artist}</p>
             </div>
           ))}
         </div>
