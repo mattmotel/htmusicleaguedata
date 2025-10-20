@@ -111,7 +111,9 @@ export default function ModernNavigation({
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
               icon={isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            />
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </LiquidButton>
           </div>
         </div>
       </div>

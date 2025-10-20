@@ -1,7 +1,7 @@
 'use client';
 
-import { ReactNode, useRef } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { ReactNode, useRef, useState } from 'react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { LucideIcon } from 'lucide-react';
 
 interface AdaptiveButtonProps {
@@ -37,18 +37,8 @@ export default function AdaptiveButton({
   const springX = useSpring(mouseX, { stiffness: 200, damping: 20 });
   const springY = useSpring(mouseY, { stiffness: 200, damping: 20 });
   
-  // Adaptive transformations
-  const scale = useTransform(springX, [-200, 0, 200], [0.95, 1, 0.95]);
-  const rotate = useTransform(springX, [-200, 200], [-2, 2]);
-  
-  // Morphing background
-  const backgroundGradient = useTransform(
-    [springX, springY],
-    ([x, y]) => {
-      const angle = Math.atan2(y, x) * (180 / Math.PI);
-      return `linear-gradient(${angle}deg, var(--primary), var(--secondary))`;
-    }
-  );
+  // Simple hover effects
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (event: React.MouseEvent) => {
     if (!buttonRef.current || !adaptive || disabled) return;
@@ -90,8 +80,7 @@ export default function AdaptiveButton({
     <motion.button
       ref={buttonRef}
       whileHover={!disabled ? { 
-        scale: morphing ? scale : 1.05,
-        rotate: morphing ? rotate : 0,
+        scale: 1.05,
         transition: { duration: 0.2 }
       } : {}}
       whileTap={!disabled ? { scale: 0.95 } : {}}
@@ -106,9 +95,7 @@ export default function AdaptiveButton({
         ${className}
       `}
       disabled={disabled}
-      style={{
-        background: morphing && adaptive ? backgroundGradient : undefined,
-      }}
+      style={{}}
     >
       {/* Liquid Glass Background */}
       {morphing && (

@@ -60,7 +60,7 @@ export default function UniversalDashboard({
                 interactive={stat.interactive}
                 onClick={stat.onClick ? () => {
                   // Handle dynamic onClick actions
-                  if (stat.onClick.startsWith('/')) {
+                  if (stat.onClick && stat.onClick.startsWith('/')) {
                     window.location.href = stat.onClick;
                   } else {
                     // Could be a function name or other action

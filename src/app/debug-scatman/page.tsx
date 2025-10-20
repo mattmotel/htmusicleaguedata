@@ -124,7 +124,7 @@ export default function DebugScatmanPage() {
       {/* Detailed Submissions */}
       <div className="space-y-6">
         <h2 className="text-2xl font-bold text-green-400">Individual Submissions</h2>
-        {data.submissions.map((submission, index) => (
+        {data.submissions.map((submission) => (
           <div key={submission.spotifyUri} className="bg-gray-800 rounded-lg p-6">
             <div className="flex items-start justify-between mb-4">
               <div>

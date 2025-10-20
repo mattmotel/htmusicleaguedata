@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { parseCSV } from './csv-parser';
 import { getConfig } from './config';
-import { loadServerConfig } from './server-config';
+// import { loadServerConfig } from './server-config';
 
 export interface Submission {
   spotifyUri: string;

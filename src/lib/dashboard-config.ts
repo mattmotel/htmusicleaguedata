@@ -92,7 +92,7 @@ export const defaultDashboardConfig: DashboardConfig = {
 
 // Helper function to create dashboard data from any data source
 export function createDashboardData(
-  data: any,
+  data: Record<string, unknown>,
   config: DashboardConfig,
   statMappings: Array<{
     key: string;
@@ -113,7 +113,7 @@ export function createDashboardData(
   const stats: StatCardConfig[] = statMappings.map((mapping) => ({
     id: mapping.key,
     title: mapping.title,
-    value: data[mapping.key] || 0,
+    value: typeof data[mapping.key] === 'number' ? data[mapping.key] as number : 0,
     icon: mapping.icon,
     color: mapping.color,
     description: mapping.description,
