@@ -2,12 +2,11 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart3, List, Vote, AlertTriangle, Trophy, Search } from 'lucide-react';
+import { BarChart3, List, AlertTriangle, Trophy, Search } from 'lucide-react';
 
 const navItems = [
   { href: '/', label: 'Overview', icon: BarChart3 },
   { href: '/submissions', label: 'All Submissions', icon: List },
-  { href: '/voting-rollup', label: 'Voting Rollup', icon: Vote },
   { href: '/missing-votes', label: 'Missing Votes', icon: AlertTriangle },
   { href: '/leaderboards', label: 'Leaderboards', icon: Trophy },
   { href: '/search', label: 'Search', icon: Search },

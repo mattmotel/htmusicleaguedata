@@ -299,20 +299,30 @@ export default async function LeaderboardsPage() {
             
             <div className="space-y-3">
               {topSongsByVotes.map((song, index) => (
-                <div key={`${song.title}-${song.artist}`} className="flex items-center justify-between p-3 bg-gray-700 rounded">
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
-                      {index + 1}
+                <div key={`${song.title}-${song.artist}`} className="p-4 bg-gray-700 rounded">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-start">
+                      <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3 flex-shrink-0">
+                        {index + 1}
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-medium text-white text-lg">{song.title}</p>
+                        <p className="text-sm text-gray-300 mb-2">by {song.artist}</p>
+                        <div className="space-y-1">
+                          {song.allSeasonsRounds.split(', ').map((submission, subIndex) => (
+                            <p key={subIndex} className="text-xs text-gray-400">
+                              {submission}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-medium text-white">{song.title}</p>
-                      <p className="text-sm text-gray-300">by {song.artist}</p>
-                      <p className="text-xs text-gray-400">{song.submitter}</p>
+                    <div className="text-right ml-4 flex-shrink-0">
+                      <p className="font-bold text-green-400 text-lg">{song.totalVotes}</p>
+                      <p className="text-xs text-gray-400">unique voters</p>
+                      <p className="font-bold text-green-400 text-lg mt-1">{song.totalPoints}</p>
+                      <p className="text-xs text-gray-400">total pts</p>
                     </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-bold text-green-400">{song.totalVotes} unique voters</p>
-                    <p className="text-sm text-gray-400">{song.totalPoints} total pts</p>
                   </div>
                 </div>
               ))}
