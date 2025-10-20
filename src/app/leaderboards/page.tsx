@@ -97,12 +97,12 @@ export default function LeaderboardsPage() {
               <h2 className="text-2xl font-bold text-green-400">Top Artists</h2>
             </div>
             {data.topArtists.length > 20 && (
-              <button
-                onClick={() => setShowArtistsModal(true)}
+              <a
+                href="/artists"
                 className="text-sm text-green-400 hover:text-green-300 underline"
               >
-                Show All {data.topArtists.length.toLocaleString()}
-              </button>
+                View All {data.topArtists.length.toLocaleString()}
+              </a>
             )}
           </div>
           
