@@ -77,6 +77,18 @@ export async function GET() {
       .sort((a, b) => b[1] - a[1])
       .slice(0, 20);
 
+    // For each top album, collect unique artists
+    const topAlbumsDetailed = topAlbums.map(([album, count]) => {
+      const artistsSet = new Set<string>();
+      submissions.forEach(sub => {
+        if ((sub.album || '').trim() === album) {
+          artistsSet.add(sub.artist);
+        }
+      });
+      const artists = Array.from(artistsSet).sort((a, b) => a.localeCompare(b));
+      return { album, count, artists };
+    });
+
     // Calculate most votes per artist
     const artistVoteStats = new Map<string, { artist: string; totalVotes: number; totalPoints: number; submissionCount: number }>();
 
@@ -173,6 +185,7 @@ export async function GET() {
       topSubmitters,
       topArtists,
       topAlbums,
+      topAlbumsDetailed,
       topArtistsByVotes,
       topSongsByVotes,
       topSongsSingleSubmission

@@ -15,6 +15,7 @@ interface LeaderboardData {
   }>;
   topArtists: [string, number][];
   topAlbums: [string, number][];
+  topAlbumsDetailed?: Array<{ album: string; count: number; artists: string[] }>; 
   topArtistsByVotes: Array<{
     artist: string;
     totalVotes: number;
@@ -108,16 +109,16 @@ export default function LeaderboardsPage() {
           <div className="space-y-3">
             {displayedArtists.map(([artist, count], index) => (
               <div key={artist} className="flex items-center justify-between p-3 bg-gray-700 rounded">
-                <div className="flex items-center">
-                  <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
+                  <div className="flex items-center">
+                  <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3 flex-shrink-0">
                     {index + 1}
                   </div>
                   <div>
                     <p className="font-medium text-white">{artist}</p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <p className="font-bold text-green-400">{count}</p>
+                <div className="text-right flex-shrink-0">
+                  <p className="font-bold text-green-400 whitespace-nowrap">{count}</p>
                   <p className="text-sm text-gray-400">submissions</p>
                 </div>
               </div>
@@ -133,22 +134,33 @@ export default function LeaderboardsPage() {
           </div>
           
           <div className="space-y-3">
-            {data.topAlbums.map(([album, count], index) => (
-              <div key={album} className="flex items-center justify-between p-3 bg-gray-700 rounded">
-                <div className="flex items-center">
-                  <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
-                    {index + 1}
-                  </div>
-                  <div>
-                    <p className="font-medium text-white">{album}</p>
+            {(data.topAlbumsDetailed && data.topAlbumsDetailed.length > 0
+              ? data.topAlbumsDetailed.map((row) => [row.album, row.count] as [string, number])
+              : data.topAlbums
+            ).map(([album, count], index) => {
+              const artists = data.topAlbumsDetailed?.find(a => a.album === album)?.artists || [];
+              return (
+                <div key={album} className="p-3 bg-gray-700 rounded">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3 flex-shrink-0">
+                        {index + 1}
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">{album}</p>
+                        {artists.length > 0 && (
+                          <p className="text-xs text-gray-400">{artists.join(', ')}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="text-right flex-shrink-0">
+                      <p className="font-bold text-green-400 whitespace-nowrap">{count}</p>
+                      <p className="text-sm text-gray-400">submissions</p>
+                    </div>
                   </div>
                 </div>
-                <div className="text-right">
-                  <p className="font-bold text-green-400">{count}</p>
-                  <p className="text-sm text-gray-400">submissions</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -163,7 +175,7 @@ export default function LeaderboardsPage() {
             {data.topArtistsByVotes.map((artist, index) => (
               <div key={artist.artist} className="flex items-center justify-between p-3 bg-gray-700 rounded">
                 <div className="flex items-center">
-                  <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
+                  <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3 flex-shrink-0">
                     {index + 1}
                   </div>
                   <div>
@@ -171,9 +183,9 @@ export default function LeaderboardsPage() {
                     <p className="text-sm text-gray-400">{artist.submissionCount} submissions</p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <p className="font-bold text-green-400">{artist.totalVotes}</p>
-                  <p className="text-sm text-gray-400">{artist.totalPoints} pts</p>
+                <div className="text-right flex-shrink-0">
+                  <p className="font-bold text-green-400 whitespace-nowrap">{artist.totalVotes}</p>
+                  <p className="text-sm text-gray-400 whitespace-nowrap">{artist.totalPoints} pts</p>
                 </div>
               </div>
             ))}
