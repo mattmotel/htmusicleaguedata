@@ -56,6 +56,13 @@ export async function GET() {
       .sort((a, b) => b.totalPoints - a.totalPoints)
       .slice(0, 20);
 
+    // Top submitters by average points per submission
+    const topSubmittersByAverage = Array.from(submitterStats.entries())
+      .map(([id, stats]) => ({ id, ...stats, seasons: Array.from(stats.seasons) }))
+      .filter(stats => stats.submissions >= 3) // Only include submitters with 3+ submissions
+      .sort((a, b) => b.averagePoints - a.averagePoints)
+      .slice(0, 20);
+
     // Calculate artist stats
     const artistStats = new Map<string, number>();
     submissions.forEach(submission => {
@@ -183,6 +190,7 @@ export async function GET() {
 
     return NextResponse.json({
       topSubmitters,
+      topSubmittersByAverage,
       topArtists,
       topAlbums,
       topAlbumsDetailed,

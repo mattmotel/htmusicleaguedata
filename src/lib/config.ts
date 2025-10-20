@@ -1,6 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-
+// Server-safe configuration system
 export interface BrandingConfig {
   emoji: string;
   primaryColor: string; // Tailwind color token e.g., "green-400"
@@ -36,9 +34,10 @@ export interface AppConfig {
   features: FeaturesConfig;
 }
 
+// Default configuration - no file system access needed
 const defaultConfig: AppConfig = {
   leagueName: process.env.SITE_NAME || 'Hard Times Music League',
-  baseDataDir: process.env.BASE_DATA_DIR || path.join(process.cwd(), 'public', 'data'),
+  baseDataDir: process.env.BASE_DATA_DIR || 'public/data',
   cacheTtlSeconds: Number(process.env.CACHE_TTL_SECONDS || 300),
   seasonDiscovery: 'auto',
   branding: {
@@ -57,52 +56,13 @@ const defaultConfig: AppConfig = {
   },
 };
 
-function tryLoadJson(filePath: string): unknown | null {
-  try {
-    if (fs.existsSync(filePath)) {
-      const raw = fs.readFileSync(filePath, 'utf-8');
-      return JSON.parse(raw);
-    }
-  } catch (err) {
-    console.warn(`Failed to load config file at ${filePath}:`, err);
-  }
-  return null;
-}
-
 let cachedConfig: AppConfig | null = null;
 
 export function getConfig(): AppConfig {
   if (cachedConfig) return cachedConfig;
 
-  // Load external config files in priority order
-  // 1) config/config.json
-  // 2) public/data/config.json
-  const projectRoot = process.cwd();
-  const candidates = [
-    path.join(projectRoot, 'config', 'config.json'),
-    path.join(projectRoot, 'public', 'data', 'config.json'),
-  ];
-
-  let fileConfig: Partial<AppConfig> = {};
-  for (const file of candidates) {
-    const loaded = tryLoadJson(file);
-    if (loaded && typeof loaded === 'object') {
-      fileConfig = { ...fileConfig, ...(loaded as Partial<AppConfig>) };
-    }
-  }
-
-  // Merge: defaults <- fileConfig <- ENV overrides already reflected in defaults
-  const merged: AppConfig = {
-    ...defaultConfig,
-    ...fileConfig,
-    branding: { ...defaultConfig.branding, ...(fileConfig.branding || {}) },
-    limits: { ...defaultConfig.limits, ...(fileConfig.limits || {}) },
-    csvSchema: { ...defaultConfig.csvSchema, ...(fileConfig.csvSchema || {}) },
-    features: { ...defaultConfig.features, ...(fileConfig.features || {}) },
-  };
-
-  cachedConfig = merged;
-  return merged;
+  // For now, just return the default config
+  // File-based config loading can be added later if needed
+  cachedConfig = defaultConfig;
+  return cachedConfig;
 }
-
-
