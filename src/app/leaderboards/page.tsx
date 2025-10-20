@@ -1,9 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 import { Trophy, Users, Music, Star } from 'lucide-react';
-import GlassCard from '../../components/ui/GlassCard';
+import SimpleGlassCard from '../../components/ui/SimpleGlassCard';
 import ArtistsModal from '../../components/ArtistsModal';
 
 interface LeaderboardData {
@@ -98,12 +97,7 @@ export default function LeaderboardsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
       <div className="container mx-auto px-4 py-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="space-y-8"
-        >
+        <div className="space-y-8">
           {/* Header */}
           <div className="text-center">
             <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent mb-4">
@@ -116,7 +110,7 @@ export default function LeaderboardsPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
         {/* Top Artists with View All */}
-        <GlassCard variant="elevated" size="lg">
+        <SimpleGlassCard variant="elevated" size="lg">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center">
               <Music className="h-6 w-6 text-green-400 mr-3" />
@@ -150,10 +144,10 @@ export default function LeaderboardsPage() {
               </div>
             ))}
           </div>
-        </GlassCard>
+        </SimpleGlassCard>
 
         {/* Top Albums */}
-        <GlassCard variant="elevated" size="lg">
+        <SimpleGlassCard variant="elevated" size="lg">
           <div className="flex items-center mb-6">
             <Trophy className="h-6 w-6 text-green-400 mr-3" />
             <h2 className="text-2xl font-bold text-green-400">Top Albums</h2>
@@ -188,10 +182,10 @@ export default function LeaderboardsPage() {
               );
             })}
           </div>
-        </GlassCard>
+        </SimpleGlassCard>
 
         {/* Most Votes per Artist */}
-        <GlassCard variant="elevated" size="lg">
+        <SimpleGlassCard variant="elevated" size="lg">
           <div className="flex items-center mb-6">
             <Music className="h-6 w-6 text-green-400 mr-3" />
             <h2 className="text-2xl font-bold text-green-400">Most Votes per Artist</h2>
@@ -216,10 +210,10 @@ export default function LeaderboardsPage() {
               </div>
             ))}
           </div>
-        </GlassCard>
+        </SimpleGlassCard>
 
         {/* Most Votes per Song */}
-        <GlassCard variant="elevated" size="lg">
+        <SimpleGlassCard variant="elevated" size="lg">
           <div className="flex items-center mb-6">
             <Trophy className="h-6 w-6 text-green-400 mr-3" />
             <h2 className="text-2xl font-bold text-green-400">Most Votes per Song</h2>
@@ -255,10 +249,10 @@ export default function LeaderboardsPage() {
               </div>
             ))}
           </div>
-        </GlassCard>
+        </SimpleGlassCard>
 
         {/* Most Votes per Song (Single Submission Only) */}
-        <GlassCard variant="elevated" size="lg">
+        <SimpleGlassCard variant="elevated" size="lg">
           <div className="flex items-center mb-6">
             <Star className="h-6 w-6 text-green-400 mr-3" />
             <h2 className="text-2xl font-bold text-green-400">Most Votes (Single Submission)</h2>
@@ -288,10 +282,10 @@ export default function LeaderboardsPage() {
               </div>
             ))}
           </div>
-        </GlassCard>
+        </SimpleGlassCard>
 
         {/* Top Submitters by Average Points */}
-        <GlassCard variant="elevated" size="lg">
+        <SimpleGlassCard variant="elevated" size="lg">
           <div className="flex items-center mb-6">
             <Star className="h-6 w-6 text-green-400 mr-3" />
             <h2 className="text-2xl font-bold text-green-400">Highest Average Points</h2>
@@ -316,10 +310,10 @@ export default function LeaderboardsPage() {
               </div>
             ))}
           </div>
-        </GlassCard>
+        </SimpleGlassCard>
 
         {/* Top Submitters - MOVED TO BOTTOM */}
-        <GlassCard variant="elevated" size="lg">
+        <SimpleGlassCard variant="elevated" size="lg">
           <div className="flex items-center mb-6">
             <Users className="h-6 w-6 text-green-400 mr-3" />
             <h2 className="text-2xl font-bold text-green-400">Top Submitters</h2>
@@ -344,7 +338,7 @@ export default function LeaderboardsPage() {
               </div>
             ))}
           </div>
-        </GlassCard>
+        </SimpleGlassCard>
       </div>
 
           {/* Artists Modal */}
@@ -353,7 +347,7 @@ export default function LeaderboardsPage() {
             onClose={() => setShowArtistsModal(false)}
             artists={data.topArtists}
           />
-        </motion.div>
+        </div>
       </div>
     </div>
   );

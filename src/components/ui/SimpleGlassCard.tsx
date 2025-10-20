@@ -1,56 +1,82 @@
 'use client';
 
-import { ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import { ReactNode, forwardRef } from 'react';
 
 interface SimpleGlassCardProps {
   children: ReactNode;
   className?: string;
-  variant?: 'default' | 'elevated' | 'subtle';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: 'default' | 'elevated' | 'subtle' | 'floating';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   interactive?: boolean;
+  disabled?: boolean;
+  onClick?: () => void;
+  role?: string;
+  'aria-label'?: string;
+  'aria-describedby'?: string;
 }
 
-export default function SimpleGlassCard({
-  children,
-  className = '',
-  variant = 'default',
-  size = 'md',
-  interactive = false,
-}: SimpleGlassCardProps) {
-  const baseClasses = 'backdrop-blur-sm border border-white/10 rounded-xl';
-  
-  const variantClasses = {
-    default: 'bg-white/5',
-    elevated: 'bg-white/10 shadow-lg',
-    subtle: 'bg-white/2',
-  };
-  
-  const sizeClasses = {
-    sm: 'p-4',
-    md: 'p-6',
-    lg: 'p-8',
-  };
+const SimpleGlassCard = forwardRef<HTMLDivElement, SimpleGlassCardProps>(
+  ({
+    children,
+    className = '',
+    variant = 'default',
+    size = 'md',
+    interactive = false,
+    disabled = false,
+    onClick,
+    role,
+    'aria-label': ariaLabel,
+    'aria-describedby': ariaDescribedBy,
+    ...props
+  }, ref) => {
+    const baseClasses = 'relative rounded-xl border border-gray-600/50 backdrop-blur-sm transition-all duration-200';
+    
+    const variantClasses = {
+      default: 'bg-gray-800/50',
+      elevated: 'bg-gray-800/60 shadow-lg',
+      subtle: 'bg-gray-800/30',
+      floating: 'bg-gray-800/70 shadow-xl'
+    };
+    
+    const sizeClasses = {
+      sm: 'p-3',
+      md: 'p-4',
+      lg: 'p-6',
+      xl: 'p-8'
+    };
+    
+    const interactiveClasses = interactive && !disabled 
+      ? 'cursor-pointer hover:bg-gray-700/60 hover:border-gray-500/50 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-emerald-400/50'
+      : '';
+    
+    const disabledClasses = disabled 
+      ? 'opacity-50 cursor-not-allowed' 
+      : '';
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: 'easeOut' }}
-      whileHover={interactive ? { 
-        scale: 1.02,
-        y: -2,
-        transition: { duration: 0.2 }
-      } : {}}
-      className={`
-        ${baseClasses}
-        ${variantClasses[variant]}
-        ${sizeClasses[size]}
-        ${interactive ? 'cursor-pointer hover:bg-white/10' : ''}
-        ${className}
-      `}
-    >
-      {children}
-    </motion.div>
-  );
-}
+    return (
+      <div
+        ref={ref}
+        className={`
+          ${baseClasses}
+          ${variantClasses[variant]}
+          ${sizeClasses[size]}
+          ${interactiveClasses}
+          ${disabledClasses}
+          ${className}
+        `}
+        onClick={disabled ? undefined : onClick}
+        role={role}
+        aria-label={ariaLabel}
+        aria-describedby={ariaDescribedBy}
+        tabIndex={interactive && !disabled ? 0 : undefined}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  }
+);
+
+SimpleGlassCard.displayName = 'SimpleGlassCard';
+
+export default SimpleGlassCard;
