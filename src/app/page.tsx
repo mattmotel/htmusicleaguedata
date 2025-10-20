@@ -1,11 +1,15 @@
 import { getDataManager } from '../lib/data';
 import Link from 'next/link';
-import { BarChart3, Users, Music, Trophy, Search } from 'lucide-react';
+import { BarChart3, Users, Music, Trophy, Search, Vote } from 'lucide-react';
 
 export default async function Home() {
   const dataManager = await getDataManager();
   const stats = dataManager.getOverallStats();
   const seasonStats = dataManager.getSeasonStatistics();
+  const votes = dataManager.getVotes();
+  const competitors = dataManager.getCompetitors();
+  const avgVotesPerSubmission = stats.totalSubmissions > 0 ? (votes.length / stats.totalSubmissions).toFixed(2) : '0.00';
+  const [topArtistName, topArtistCount] = stats.mostPopularArtist || ['', 0];
   
 
   return (
@@ -16,7 +20,7 @@ export default async function Home() {
       </div>
 
         {/* Stats Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mb-8">
           <div className="bg-gray-800 rounded-lg p-6">
             <div className="flex items-center justify-between">
               <div>
@@ -50,10 +54,41 @@ export default async function Home() {
           <div className="bg-gray-800 rounded-lg p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-400 text-sm">Avg per Artist</p>
-                <p className="text-2xl font-bold text-green-400">{stats.averageSubmissionsPerArtist}</p>
+                <p className="text-gray-400 text-sm">Competitors</p>
+                <p className="text-2xl font-bold text-green-400">{competitors.size}</p>
+              </div>
+              <Users className="h-8 w-8 text-green-400" />
+            </div>
+          </div>
+
+          <div className="bg-gray-800 rounded-lg p-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-400 text-sm">Total Votes</p>
+                <p className="text-2xl font-bold text-green-400">{votes.length.toLocaleString()}</p>
+              </div>
+              <Vote className="h-8 w-8 text-green-400" />
+            </div>
+          </div>
+
+          <div className="bg-gray-800 rounded-lg p-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-400 text-sm">Avg Votes / Submission</p>
+                <p className="text-2xl font-bold text-green-400">{avgVotesPerSubmission}</p>
               </div>
               <BarChart3 className="h-8 w-8 text-green-400" />
+            </div>
+          </div>
+
+          <div className="bg-gray-800 rounded-lg p-6 xl:col-span-2">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-gray-400 text-sm">Top Artist</p>
+                <p className="text-2xl font-bold text-green-400">{topArtistName || '—'}</p>
+                <p className="text-sm text-gray-400">{topArtistCount} submissions</p>
+              </div>
+              <Music className="h-8 w-8 text-green-400" />
             </div>
           </div>
         </div>

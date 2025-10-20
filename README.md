@@ -54,3 +54,62 @@ Data is loaded from `public/data/<seasonNumber>/` at build/runtime. To add Seaso
 Notes:
 - CSV parsing handles multi-line fields and quotes.
 - If a CSV is missing, it will be skipped with a warning.
+
+## Per-League Customization
+
+You can run this app for any Music League by configuring a few knobs. There are two sources of configuration: ENV variables (for environment-specific or secret values) and a JSON config file (portable, versionable defaults).
+
+### 1) ENV variables (optional)
+
+Create a `.env.local` with any of the following:
+
+```
+SITE_NAME=My Music League
+BASE_DATA_DIR=public/data
+CACHE_TTL_SECONDS=300
+ENABLE_DEBUG_PAGES=false
+```
+
+- `SITE_NAME`: League name for metadata and UX
+- `BASE_DATA_DIR`: Root folder where CSV season folders live (default `public/data`)
+- `CACHE_TTL_SECONDS`: Optional cache TTL for future API caching
+- `ENABLE_DEBUG_PAGES`: Toggle debug endpoints/pages
+
+### 2) JSON config (optional)
+
+Place a config file at one of these locations (first found wins):
+
+- `config/config.json`
+- `public/data/config.json`
+
+Example `config/config.json`:
+
+```json
+{
+  "leagueName": "Hard Times Music League",
+  "baseDataDir": "public/data",
+  "cacheTtlSeconds": 300,
+  "seasonDiscovery": "auto",
+  "branding": { "emoji": "🥾", "primaryColor": "green-400" },
+  "limits": { "topArtists": 20, "topAlbums": 20, "topSongs": 20 },
+  "csvSchema": {},
+  "features": { "debugPages": false, "artistsPage": true }
+}
+```
+
+Fields:
+- **leagueName**: Display name of the league
+- **baseDataDir**: Data root (absolute or relative) where season folders live
+- **cacheTtlSeconds**: Optional cache TTL for server-side caches
+- **seasonDiscovery**: `"auto"` (scan numeric subfolders) or `{ "seasons": [1,2,3] }` to pin seasons
+- **branding**: `{ emoji, primaryColor }` for light-touch branding
+- **limits**: Leaderboard limits (top N)
+- **csvSchema**: Optional column remaps if export headers differ
+- **features**: Feature toggles (e.g., debug pages, artists page)
+
+Merging order:
+1. Built-in defaults
+2. JSON config (if present)
+3. ENV overrides (already applied in defaults)
+
+With this setup, you can drop a new league’s CSVs under `public/data/<season>/` and optionally a `config.json` to customize branding, limits, or season discovery without code changes.

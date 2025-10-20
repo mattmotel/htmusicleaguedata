@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { parseCSV } from './csv-parser';
+import { getConfig } from './config';
 
 export interface Submission {
   spotifyUri: string;
@@ -98,7 +99,15 @@ class DataManager {
   }
 
   private getSeasonNumbers(): number[] {
-    const dataRoot = path.join(process.cwd(), 'public', 'data');
+    const config = getConfig();
+    const dataRoot = config.baseDataDir;
+    const discovery = config.seasonDiscovery;
+    if (typeof discovery === 'object' && 'seasons' in discovery) {
+      const seasons = (discovery as { seasons: number[] }).seasons
+        .filter((n) => Number.isFinite(n))
+        .sort((a, b) => a - b);
+      return seasons;
+    }
     try {
       const entries = fs.readdirSync(dataRoot, { withFileTypes: true });
       const seasons = entries
@@ -117,7 +126,7 @@ class DataManager {
     const seasons = this.getSeasonNumbers();
     for (const season of seasons) {
       try {
-        const filePath = path.join(process.cwd(), 'public', 'data', season.toString(), 'competitors.csv');
+        const filePath = path.join(getConfig().baseDataDir, season.toString(), 'competitors.csv');
         const content = fs.readFileSync(filePath, 'utf-8');
         const rows = parseCSV(content);
         
@@ -137,7 +146,7 @@ class DataManager {
     const seasons = this.getSeasonNumbers();
     for (const season of seasons) {
       try {
-        const filePath = path.join(process.cwd(), 'public', 'data', season.toString(), 'rounds.csv');
+        const filePath = path.join(getConfig().baseDataDir, season.toString(), 'rounds.csv');
         const content = fs.readFileSync(filePath, 'utf-8');
         const rows = parseCSV(content);
         
@@ -179,7 +188,7 @@ class DataManager {
     const seasons = this.getSeasonNumbers();
     for (const season of seasons) {
       try {
-        const filePath = path.join(process.cwd(), 'public', 'data', season.toString(), 'submissions.csv');
+        const filePath = path.join(getConfig().baseDataDir, season.toString(), 'submissions.csv');
         const content = fs.readFileSync(filePath, 'utf-8');
         const rows = parseCSV(content);
         
@@ -219,7 +228,7 @@ class DataManager {
     const seasons = this.getSeasonNumbers();
     for (const season of seasons) {
       try {
-        const filePath = path.join(process.cwd(), 'public', 'data', season.toString(), 'votes.csv');
+        const filePath = path.join(getConfig().baseDataDir, season.toString(), 'votes.csv');
         const content = fs.readFileSync(filePath, 'utf-8');
         const rows = parseCSV(content);
         

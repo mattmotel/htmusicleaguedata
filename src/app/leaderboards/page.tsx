@@ -88,7 +88,7 @@ export default function LeaderboardsPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-        {/* Top Artists with Show More */}
+        {/* Top Artists with View All */}
         <div className="bg-gray-800 rounded-lg p-6">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center">
