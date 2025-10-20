@@ -1,161 +1,126 @@
-'use client';
-
-import { useState, useEffect } from 'react';
-import { Search, X } from 'lucide-react';
-import { Submission } from '@/lib/data';
+import { getDataManager } from '../../lib/data';
+import { Search, Music, User, Calendar } from 'lucide-react';
 
 interface SearchPageProps {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default function SearchPage({ searchParams }: SearchPageProps) {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState<Submission[]>([]);
-  const [isSearching, setIsSearching] = useState(false);
+export default async function SearchPage({ searchParams }: SearchPageProps) {
+  const dataManager = await getDataManager();
+  const resolvedSearchParams = await searchParams;
+  const query = resolvedSearchParams.q as string || '';
 
-  const handleSearch = async (searchQuery: string) => {
-    if (!searchQuery.trim()) {
-      setResults([]);
-      return;
-    }
-
-    setIsSearching(true);
-    try {
-      const response = await fetch(`/api/search?q=${encodeURIComponent(searchQuery)}`);
-      const data = await response.json();
-      setResults(data);
-    } catch (error) {
-      console.error('Search error:', error);
-      setResults([]);
-    } finally {
-      setIsSearching(false);
-    }
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    handleSearch(query);
-  };
-
-  const clearSearch = () => {
-    setQuery('');
-    setResults([]);
-  };
-
-  // No auto-search - only manual search on Enter
+  let searchResults: any[] = [];
+  
+  if (query) {
+    searchResults = dataManager.searchSubmissions(query);
+  }
 
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-green-400 mb-2">Search Submissions</h1>
-        <p className="text-gray-400">Search through all submissions by song, artist, album, or submitter</p>
+        <h1 className="text-3xl font-bold text-green-400 mb-2">Search</h1>
+        <p className="text-gray-400">Search songs, artists, albums, and submissions</p>
       </div>
 
-      <div className="bg-gray-800 rounded-lg border border-gray-700 p-6">
-        <form onSubmit={handleSubmit} className="flex space-x-4">
-          <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setResults([]); // Clear results when typing
-              }}
-              placeholder="Search songs, artists, albums, or submitters..."
-              className="w-full pl-10 pr-10 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-            />
-            {query && (
-              <button
-                type="button"
-                onClick={clearSearch}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
-              >
-                <X className="w-5 h-5" />
-              </button>
+        {/* Search Form */}
+        <div className="bg-gray-800 rounded-lg p-6 mb-8">
+          <form method="GET" className="flex gap-4">
+            <div className="flex-1 relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+              <input
+                type="text"
+                name="q"
+                placeholder="Search songs, artists, albums, or submitters..."
+                defaultValue={query}
+                className="w-full pl-10 pr-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"
+              />
+            </div>
+            <button
+              type="submit"
+              className="px-6 py-3 bg-green-400 text-gray-900 rounded-lg font-medium hover:bg-green-300 transition-colors"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+
+        {/* Search Results */}
+        {query && (
+          <div className="bg-gray-800 rounded-lg p-6">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-green-400">Search Results</h2>
+              <span className="text-gray-400">{searchResults.length} results for &quot;{query}&quot;</span>
+            </div>
+
+            {searchResults.length > 0 ? (
+              <div className="space-y-4">
+                {searchResults.map((submission, index) => (
+                  <div key={index} className="bg-gray-700 rounded-lg p-4 hover:bg-gray-600 transition-colors">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex-1">
+                        <div className="flex items-center mb-2">
+                          <Music className="h-4 w-4 text-green-400 mr-2" />
+                          <h3 className="text-lg font-semibold text-white">{submission.title}</h3>
+                        </div>
+                        <p className="text-gray-300 mb-1">by {submission.artist}</p>
+                        {submission.album && (
+                          <p className="text-sm text-gray-400 mb-2">Album: {submission.album}</p>
+                        )}
+                        <div className="flex items-center text-sm text-gray-400 mb-2">
+                          <User className="h-3 w-3 mr-1" />
+                          <span>Submitted by: {submission.submitterName}</span>
+                          <Calendar className="h-3 w-3 ml-4 mr-1" />
+                          <span>Season {submission.season}, Round {submission.roundNumber}</span>
+                        </div>
+                        {submission.comment && (
+                          <div className="mt-2 p-2 bg-gray-600 rounded text-sm text-gray-200">
+                            &quot;{submission.comment}&quot;
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-8">
+                <Search className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                <p className="text-gray-400 text-lg">No results found for &quot;{query}&quot;</p>
+                <p className="text-gray-500">Try searching for a different term</p>
+              </div>
             )}
           </div>
-          <button
-            type="submit"
-            disabled={isSearching}
-            className="px-6 py-3 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white rounded-lg transition-colors"
-          >
-            Search
-          </button>
-        </form>
-      </div>
+        )}
 
-      {results.length > 0 && (
-        <div className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
-          <div className="px-6 py-4 border-b border-gray-600">
-            <h3 className="text-lg font-semibold text-white">
-              {results.length} result{results.length !== 1 ? 's' : ''} found
-            </h3>
+        {/* Search Tips */}
+        {!query && (
+          <div className="bg-gray-800 rounded-lg p-6">
+            <h2 className="text-2xl font-bold text-green-400 mb-4">Search Tips</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-2">Search by Song</h3>
+                <p className="text-gray-400">Search for song titles to find specific tracks</p>
+                <p className="text-sm text-gray-500 mt-1">Example: &quot;Bohemian Rhapsody&quot;</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-2">Search by Artist</h3>
+                <p className="text-gray-400">Find all submissions from a specific artist</p>
+                <p className="text-sm text-gray-500 mt-1">Example: &quot;Radiohead&quot;</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-2">Search by Album</h3>
+                <p className="text-gray-400">Find songs from specific albums</p>
+                <p className="text-sm text-gray-500 mt-1">Example: &quot;OK Computer&quot;</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-2">Search by Submitter</h3>
+                <p className="text-gray-400">Find all submissions from a specific person</p>
+                <p className="text-sm text-gray-500 mt-1">Example: &quot;Matt McInerney&quot;</p>
+              </div>
+            </div>
           </div>
-          
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-gray-700">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                    Song
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                    Artist
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                    Album
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                    Season
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                    Submitter
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
-                    Play
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-700">
-                {results.map((submission, index) => (
-                  <tr key={index} className="hover:bg-gray-700">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                      {submission.title}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                      {submission.artist}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                      {submission.album}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                      Season {submission.season}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                      {submission.submitterName}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                      {submission.spotifyUri && (
-                        <a
-                          href={submission.spotifyUri}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center space-x-1 bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded text-xs transition-colors"
-                        >
-                          <span>Play</span>
-                        </a>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
-
-      {/* No results message only shows after actual search */}
+        )}
     </div>
   );
 }

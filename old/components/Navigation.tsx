@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart3, List, Vote, AlertTriangle, Trophy, Search } from 'lucide-react';
+import { BarChart3, List, Mic, Disc3, Calendar, Search, Vote, AlertTriangle, Trophy } from 'lucide-react';
 
 const navItems = [
   { href: '/', label: 'Overview', icon: BarChart3 },
@@ -10,6 +10,9 @@ const navItems = [
   { href: '/voting-rollup', label: 'Voting Rollup', icon: Vote },
   { href: '/missing-votes', label: 'Missing Votes', icon: AlertTriangle },
   { href: '/leaderboards', label: 'Leaderboards', icon: Trophy },
+  { href: '/artists', label: 'Artists', icon: Mic },
+  { href: '/albums', label: 'Albums', icon: Disc3 },
+  { href: '/seasons', label: 'Seasons', icon: Calendar },
   { href: '/search', label: 'Search', icon: Search },
 ];
 
@@ -21,12 +24,9 @@ export default function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-2">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="bg-green-400 rounded-md p-2">
-                <span className="text-xl font-bold text-gray-900">🎵</span>
-              </div>
-              <span className="text-xl font-bold text-green-400">Hard Times Music League</span>
-            </Link>
+            <div className="bg-[#9E00C4] rounded-md p-2">
+              <h1 className="text-xl font-bold text-white">🥾</h1>
+            </div>
           </div>
           
           <div className="flex space-x-1">

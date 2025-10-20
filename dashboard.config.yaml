@@ -144,3 +144,4 @@ views:
       - field: "spotifyUri"
         label: "Play"
         type: "link"
+

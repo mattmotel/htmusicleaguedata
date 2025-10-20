@@ -1,6 +1,6 @@
 'use client';
 
-import { Submission } from '@/lib/data';
+import { Submission } from '../lib/data';
 import { Play, ChevronDown, ChevronRight, Expand, Minimize } from 'lucide-react';
 import { useState } from 'react';
 
@@ -141,9 +141,7 @@ export default function SubmissionsTable({ submissions }: SubmissionsTableProps)
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                           <div className="flex flex-col">
                             <span className="font-medium text-blue-400">{submission.roundName}</span>
-                            {submission.roundNumber !== 999 && (
-                              <span className="text-xs text-gray-500">Round {submission.roundNumber}</span>
-                            )}
+                            <span className="text-xs text-gray-500">Round {submission.roundNumber}</span>
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">

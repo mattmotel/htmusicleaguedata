@@ -230,3 +230,4 @@ console.log(`   npm install`);
 console.log(`   npm run dev`);
 console.log(`   Add your data to public/data/`);
 console.log(`   Configure dashboard.config.yaml`);
+

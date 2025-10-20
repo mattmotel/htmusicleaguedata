@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import { parseCSV } from './csv-parser';
 
 export interface Submission {
   spotifyUri: string;
@@ -15,17 +14,6 @@ export interface Submission {
   roundName: string;
   roundNumber: number;
   visible: string;
-  season: number;
-}
-
-export interface Vote {
-  spotifyUri: string;
-  voterId: string;
-  voterName: string;
-  created: string;
-  pointsAssigned: number;
-  comment: string;
-  roundId: string;
   season: number;
 }
 
@@ -63,7 +51,6 @@ export interface OverallStats {
 
 class DataManager {
   private submissions: Submission[] = [];
-  private votes: Vote[] = [];
   private rounds: Map<string, Round> = new Map();
   private competitors: Map<string, string> = new Map();
   private artistCounts: Map<string, number> = new Map();
@@ -88,13 +75,10 @@ class DataManager {
     // Load submissions
     await this.loadSubmissions();
     
-    // Load votes
-    await this.loadVotes();
-    
     // Process data
     this.processData();
     
-    console.log(`Loaded ${this.submissions.length} submissions and ${this.votes.length} votes across ${this.seasonStats.size} seasons`);
+    console.log(`Loaded ${this.submissions.length} submissions across ${this.seasonStats.size} seasons`);
   }
 
   private async loadCompetitors() {
@@ -102,11 +86,12 @@ class DataManager {
       try {
         const filePath = path.join(process.cwd(), 'public', 'data', season.toString(), 'competitors.csv');
         const content = fs.readFileSync(filePath, 'utf-8');
-        const rows = parseCSV(content);
+        const lines = content.split('\n').filter(line => line.trim());
         
-        rows.slice(1).forEach(row => {
-          if (row.length >= 2 && row[0]?.trim() && row[1]?.trim()) {
-            this.competitors.set(row[0].trim(), row[1].trim());
+        lines.slice(1).forEach(line => {
+          const [id, name] = this.parseCSVLine(line);
+          if (id && name) {
+            this.competitors.set(id, name);
           }
         });
       } catch (error) {
@@ -121,22 +106,64 @@ class DataManager {
       try {
         const filePath = path.join(process.cwd(), 'public', 'data', season.toString(), 'rounds.csv');
         const content = fs.readFileSync(filePath, 'utf-8');
-        const rows = parseCSV(content);
+        
+        // Parse CSV properly handling multi-line fields
+        const rows: string[][] = [];
+        let currentRow: string[] = [];
+        let currentField = '';
+        let inQuotes = false;
+        
+        for (let i = 0; i < content.length; i++) {
+          const char = content[i];
+          
+          if (char === '"') {
+            inQuotes = !inQuotes;
+            continue;
+          }
+          
+          if (char === ',' && !inQuotes) {
+            currentRow.push(currentField.trim());
+            currentField = '';
+            continue;
+          }
+          
+          if (char === '\n' && !inQuotes) {
+            if (currentField || currentRow.length > 0) {
+              currentRow.push(currentField.trim());
+              if (currentRow.some(field => field.length > 0)) {
+                rows.push(currentRow);
+              }
+              currentRow = [];
+              currentField = '';
+            }
+            continue;
+          }
+          
+          currentField += char;
+        }
+        
+        // Push last row if exists
+        if (currentField || currentRow.length > 0) {
+          currentRow.push(currentField.trim());
+          if (currentRow.some(field => field.length > 0)) {
+            rows.push(currentRow);
+          }
+        }
         
         // Create round number mapping for this season
         const roundNumberMapping = new Map<string, number>();
         let sequentialNumber = 1;
         
         // Skip header row and process data rows
-        rows.slice(1).forEach(row => {
-          if (row.length >= 2 && row[0]?.trim()) {
-            const roundId = row[0].trim();
+        rows.slice(1).forEach(columns => {
+          if (columns.length >= 2 && columns[0]?.trim()) {
+            const roundId = columns[0]?.trim() || '';
             const round: Round = {
               id: roundId,
-              timestamp: row[1]?.trim() || '',
-              title: row[2]?.trim() || '',
-              description: row[3]?.trim() || '',
-              playlistUrl: row[4]?.trim() || ''
+              timestamp: columns[1]?.trim() || '',
+              title: columns[2]?.trim() || '',
+              description: columns[3]?.trim() || '',
+              playlistUrl: columns[4]?.trim() || ''
             };
             this.rounds.set(round.id, round);
             
@@ -162,7 +189,8 @@ class DataManager {
       try {
         const filePath = path.join(process.cwd(), 'public', 'data', season.toString(), 'submissions.csv');
         const content = fs.readFileSync(filePath, 'utf-8');
-        const rows = parseCSV(content);
+        // Parse CSV properly handling multi-line fields
+        const rows = this.parseCSV(content);
         
         rows.slice(1).forEach(row => {
           if (row.length >= 8 && row[0]?.startsWith('spotify:track:')) {
@@ -196,44 +224,103 @@ class DataManager {
     console.log(`Loaded ${this.submissions.length} submissions`);
   }
 
-  private async loadVotes() {
-    for (let season = 1; season <= 24; season++) {
-      try {
-        const filePath = path.join(process.cwd(), 'public', 'data', season.toString(), 'votes.csv');
-        const content = fs.readFileSync(filePath, 'utf-8');
-        const rows = parseCSV(content);
-        
-        rows.slice(1).forEach(row => {
-          if (row.length >= 6 && row[0]?.startsWith('spotify:track:')) {
-            const vote: Vote = {
-              spotifyUri: row[0].trim(),
-              voterId: row[1]?.trim() || '',
-              voterName: this.competitors.get(row[1]?.trim() || '') || row[1]?.trim() || '',
-              created: row[2]?.trim() || '',
-              pointsAssigned: parseInt(row[3]) || 0,
-              comment: row[4]?.trim() || '',
-              roundId: row[5]?.trim() || '',
-              season
-            };
-            this.votes.push(vote);
-          }
-        });
-      } catch (error) {
-        console.warn(`Could not load votes for season ${season}:`, error);
-      }
-    }
-    console.log(`Loaded ${this.votes.length} votes`);
-  }
-
   private extractRoundNumber(roundName: string, roundId: string, season: number): number {
     // Use the pre-computed mapping for this season
     const seasonMapping = this.roundNumberMappings.get(season);
     if (seasonMapping && seasonMapping.has(roundId)) {
-      return seasonMapping.get(roundId)!;
+      const roundNumber = seasonMapping.get(roundId)!;
+      return roundNumber;
     }
     
     // fallback to 1 if not found
     return 1;
+  }
+
+  private parseCSV(content: string): string[][] {
+    const rows: string[][] = [];
+    let currentRow: string[] = [];
+    let current = '';
+    let inQuotes = false;
+    let previousChar = '';
+    
+    for (let i = 0; i < content.length; i++) {
+      const char = content[i];
+      
+      if (char === '"' && previousChar !== '\\') {
+        inQuotes = !inQuotes;
+        current += char;
+        previousChar = char;
+        continue;
+      }
+      
+      if (char === ',' && !inQuotes) {
+        currentRow.push(current.trim());
+        current = '';
+        previousChar = char;
+        continue;
+      }
+      
+      if ((char === '\n' || char === '\r') && !inQuotes) {
+        currentRow.push(current.trim());
+        if (currentRow.some(field => field.length > 0)) {
+          rows.push(currentRow);
+        }
+        currentRow = [];
+        current = '';
+        previousChar = char;
+        continue;
+      }
+      
+      current += char;
+      previousChar = char;
+    }
+    
+    // Add the last row if there's content
+    if (current.trim() || currentRow.length > 0) {
+      currentRow.push(current.trim());
+      if (currentRow.some(field => field.length > 0)) {
+        rows.push(currentRow);
+      }
+    }
+    
+    return rows;
+  }
+
+  private parseCSVLine(text: string): string[] {
+    const result: string[] = [];
+    let current = '';
+    let inQuotes = false;
+    let previousChar = '';
+    
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      
+      if (char === '"' && previousChar !== '\\') {
+        inQuotes = !inQuotes;
+        continue;
+      }
+      
+      if (char === ',' && !inQuotes) {
+        result.push(current.trim());
+        current = '';
+        continue;
+      }
+      
+      if ((char === '\n' || char === '\r') && !inQuotes) {
+        continue;
+      }
+      
+      current += char;
+      previousChar = char;
+    }
+    
+    if (current) {
+      result.push(current.trim());
+    }
+    
+    return result.map(field => 
+      field.replace(/^"(.*)"$/, '$1').replace(/""/g, '"')
+    );
   }
 
   private processData() {
@@ -274,10 +361,6 @@ class DataManager {
   // Getters
   getSubmissions(): Submission[] {
     return this.submissions;
-  }
-
-  getVotes(): Vote[] {
-    return this.votes;
   }
 
   getRounds(): Map<string, Round> {
@@ -361,14 +444,6 @@ class DataManager {
 
   getSubmissionsBySeason(season: number): Submission[] {
     return this.submissions.filter(sub => sub.season === season);
-  }
-
-  getVotesBySubmission(spotifyUri: string): Vote[] {
-    return this.votes.filter(vote => vote.spotifyUri === spotifyUri);
-  }
-
-  getVotesByRound(roundId: string): Vote[] {
-    return this.votes.filter(vote => vote.roundId === roundId);
   }
 }
 
