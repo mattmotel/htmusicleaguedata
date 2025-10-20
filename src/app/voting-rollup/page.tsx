@@ -6,10 +6,15 @@ export default async function VotingRollupPage() {
   const submissions = dataManager.getSubmissions();
   const votes = dataManager.getVotes();
 
+  // Only show recent seasons to reduce data size
+  const recentSeasons = submissions
+    .filter(submission => submission.season >= 20) // Only last 5 seasons
+    .sort((a, b) => b.season - a.season || b.roundNumber - a.roundNumber);
+
   // Group submissions by season and round
   const submissionsBySeason = new Map<number, Map<number, Submission[]>>();
   
-  submissions.forEach(submission => {
+  recentSeasons.forEach(submission => {
     if (!submissionsBySeason.has(submission.season)) {
       submissionsBySeason.set(submission.season, new Map());
     }
@@ -40,7 +45,7 @@ export default async function VotingRollupPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold text-green-400 mb-2">Voting Rollup</h1>
-        <p className="text-gray-400">Detailed voting information and results for each round</p>
+        <p className="text-gray-400">Detailed voting information and results for recent seasons (Seasons 20-24)</p>
       </div>
 
         <div className="space-y-8">
@@ -55,18 +60,21 @@ export default async function VotingRollupPage() {
                     .sort(([a], [b]) => a - b)
                     .map(([roundNumber, roundSubmissions]) => {
                       const roundName = roundSubmissions[0]?.roundName || `Round ${roundNumber}`;
-                      const roundSubmissionsWithVotes = roundSubmissions.map(submission => {
-                        const submissionVotes = votes.filter(vote => vote.spotifyUri === submission.spotifyUri);
-                        const totalPoints = submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
-                        const voteCount = submissionVotes.length;
-                        
-                        return {
-                          ...submission,
-                          votes: submissionVotes,
-                          totalPoints,
-                          voteCount
-                        };
-                      }).sort((a, b) => b.totalPoints - a.totalPoints);
+                      const roundSubmissionsWithVotes = roundSubmissions
+                        .map(submission => {
+                          const submissionVotes = votes.filter(vote => vote.spotifyUri === submission.spotifyUri);
+                          const totalPoints = submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
+                          const voteCount = submissionVotes.length;
+                          
+                          return {
+                            ...submission,
+                            votes: submissionVotes,
+                            totalPoints,
+                            voteCount
+                          };
+                        })
+                        .sort((a, b) => b.totalPoints - a.totalPoints)
+                        .slice(0, 20); // Limit to top 20 submissions per round
 
                       return (
                         <div key={roundNumber} className="bg-gray-700 rounded-lg p-4">
