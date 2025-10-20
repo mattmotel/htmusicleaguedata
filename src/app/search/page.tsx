@@ -1,4 +1,4 @@
-import { getDataManager } from '../../lib/data';
+import { getDataManager, Submission } from '../../lib/data';
 import { Search, Music, User, Calendar } from 'lucide-react';
 
 interface SearchPageProps {
@@ -10,7 +10,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   const resolvedSearchParams = await searchParams;
   const query = resolvedSearchParams.q as string || '';
 
-  let searchResults: any[] = [];
+  let searchResults: Submission[] = [];
   
   if (query) {
     searchResults = dataManager.searchSubmissions(query);

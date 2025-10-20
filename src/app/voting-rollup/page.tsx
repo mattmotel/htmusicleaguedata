@@ -1,4 +1,4 @@
-import { getDataManager } from '../../lib/data';
+import { getDataManager, Submission } from '../../lib/data';
 import { Vote, Users, Star } from 'lucide-react';
 
 export default async function VotingRollupPage() {
@@ -7,7 +7,7 @@ export default async function VotingRollupPage() {
   const votes = dataManager.getVotes();
 
   // Group submissions by season and round
-  const submissionsBySeason = new Map<number, Map<number, any[]>>();
+  const submissionsBySeason = new Map<number, Map<number, Submission[]>>();
   
   submissions.forEach(submission => {
     if (!submissionsBySeason.has(submission.season)) {
@@ -23,18 +23,18 @@ export default async function VotingRollupPage() {
   });
 
   // Calculate vote counts and points for each submission
-  const submissionsWithVotes = submissions.map(submission => {
-    const submissionVotes = votes.filter(vote => vote.spotifyUri === submission.spotifyUri);
-    const totalPoints = submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
-    const voteCount = submissionVotes.length;
-    
-    return {
-      ...submission,
-      votes: submissionVotes,
-      totalPoints,
-      voteCount
-    };
-  });
+  // const submissionsWithVotes = submissions.map(submission => {
+  //   const submissionVotes = votes.filter(vote => vote.spotifyUri === submission.spotifyUri);
+  //   const totalPoints = submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
+  //   const voteCount = submissionVotes.length;
+  //   
+  //   return {
+  //     ...submission,
+  //     votes: submissionVotes,
+  //     totalPoints,
+  //     voteCount
+  //   };
+  // });
 
   return (
     <div className="space-y-6">

@@ -1,4 +1,4 @@
-import { getDataManager } from '../../lib/data';
+import { getDataManager, Submission } from '../../lib/data';
 import { Users, AlertCircle, CheckCircle } from 'lucide-react';
 import MissingVotesTable from '../../components/MissingVotesTable';
 
@@ -9,7 +9,7 @@ export default async function MissingVotesPage() {
   const competitors = dataManager.getCompetitors();
 
   // Group submissions by season and round
-  const submissionsBySeason = new Map<number, Map<number, any[]>>();
+  const submissionsBySeason = new Map<number, Map<number, Submission[]>>();
   
   submissions.forEach(submission => {
     if (!submissionsBySeason.has(submission.season)) {
@@ -29,7 +29,7 @@ export default async function MissingVotesPage() {
     season: number;
     roundNumber: number;
     roundName: string;
-    submissions: any[];
+    submissions: Submission[];
     voters: Set<string>;
     expectedVoters: Set<string>;
     missingVoters: string[];

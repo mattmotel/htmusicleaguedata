@@ -1,11 +1,11 @@
-import { getDataManager } from '../../lib/data';
+import { getDataManager, Submission } from '../../lib/data';
 import { Trophy, Users, Music } from 'lucide-react';
 
 export default async function LeaderboardsPage() {
   const dataManager = await getDataManager();
   const submissions = dataManager.getSubmissions();
   const votes = dataManager.getVotes();
-  const competitors = dataManager.getCompetitors();
+  // const competitors = dataManager.getCompetitors(); // Not used in this component
 
   // Calculate submitter stats
   const submitterStats = new Map<string, {
@@ -124,7 +124,7 @@ export default async function LeaderboardsPage() {
   }>();
   
   // Group submissions by song title + artist to avoid double counting
-  const submissionsBySong = new Map<string, any[]>();
+  const submissionsBySong = new Map<string, Submission[]>();
   submissions.forEach(submission => {
     const key = `${submission.title} - ${submission.artist}`;
     if (!submissionsBySong.has(key)) {

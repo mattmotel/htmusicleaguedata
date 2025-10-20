@@ -1,13 +1,14 @@
 'use client';
 
-import { Users, AlertCircle, CheckCircle, ChevronDown, ChevronRight, Expand, Minimize } from 'lucide-react';
+import { AlertCircle, CheckCircle, ChevronDown, ChevronRight, Expand, Minimize } from 'lucide-react';
 import { useState } from 'react';
+import { Submission } from '../lib/data';
 
 interface ParticipationData {
   season: number;
   roundNumber: number;
   roundName: string;
-  submissions: any[];
+  submissions: Submission[];
   voters: Set<string>;
   expectedVoters: Set<string>;
   missingVoters: string[];
@@ -23,7 +24,7 @@ export default function MissingVotesTable({ participationData, competitors }: Mi
   // Group data by season
   const dataBySeason = new Map<number, ParticipationData[]>();
   
-  participationData.forEach((data, key) => {
+  participationData.forEach((data) => {
     if (!dataBySeason.has(data.season)) {
       dataBySeason.set(data.season, []);
     }
@@ -31,7 +32,7 @@ export default function MissingVotesTable({ participationData, competitors }: Mi
   });
 
   // Sort seasons and rounds within each season
-  dataBySeason.forEach((seasonData, season) => {
+  dataBySeason.forEach((seasonData) => {
     seasonData.sort((a, b) => a.roundNumber - b.roundNumber);
   });
 
