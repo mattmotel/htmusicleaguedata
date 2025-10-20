@@ -1,176 +1,85 @@
-import { getDataManager, Submission } from '../../lib/data';
-import { Trophy, Users, Music } from 'lucide-react';
+'use client';
 
-export default async function LeaderboardsPage() {
-  const dataManager = await getDataManager();
-  const submissions = dataManager.getSubmissions();
-  const votes = dataManager.getVotes();
-  // const competitors = dataManager.getCompetitors(); // Not used in this component
+import { useEffect, useState } from 'react';
+import { Trophy, Users, Music, Star } from 'lucide-react';
+import ArtistsModal from '../../components/ArtistsModal';
 
-  // Calculate submitter stats
-  const submitterStats = new Map<string, {
+interface LeaderboardData {
+  topSubmitters: Array<{
+    id: string;
     name: string;
     submissions: number;
-    seasons: Set<number>;
+    seasons: number[];
     totalPoints: number;
     averagePoints: number;
-  }>();
-
-  submissions.forEach(submission => {
-    const submitterId = submission.submitterId;
-    const submitterName = submission.submitterName;
-    
-    if (!submitterStats.has(submitterId)) {
-      submitterStats.set(submitterId, {
-        name: submitterName,
-        submissions: 0,
-        seasons: new Set(),
-        totalPoints: 0,
-        averagePoints: 0
-      });
-    }
-    
-    const stats = submitterStats.get(submitterId)!;
-    stats.submissions++;
-    stats.seasons.add(submission.season);
-  });
-
-  // Calculate points for each submission
-  submissions.forEach(submission => {
-    const submissionVotes = votes.filter(vote => vote.spotifyUri === submission.spotifyUri);
-    const totalPoints = submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
-    
-    const submitterData = submitterStats.get(submission.submitterId);
-    if (submitterData) {
-      submitterData.totalPoints += totalPoints;
-    }
-  });
-
-  // Calculate averages
-  submitterStats.forEach(stats => {
-    stats.averagePoints = stats.submissions > 0 ? Number((stats.totalPoints / stats.submissions).toFixed(1)) : 0;
-  });
-
-  // Top submitters
-  const topSubmitters = Array.from(submitterStats.entries())
-    .map(([id, stats]) => ({
-      id,
-      ...stats,
-      seasonsCount: stats.seasons.size
-    }))
-    .sort((a, b) => b.totalPoints - a.totalPoints)
-    .slice(0, 20);
-
-  // Top artists
-  const artistStats = new Map<string, number>();
-  submissions.forEach(submission => {
-    const artist = submission.artist;
-    artistStats.set(artist, (artistStats.get(artist) || 0) + 1);
-  });
-
-  const topArtists = Array.from(artistStats.entries())
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 20);
-
-  // Top albums
-  const albumStats = new Map<string, number>();
-  submissions.forEach(submission => {
-    if (submission.album) {
-      const album = submission.album;
-      albumStats.set(album, (albumStats.get(album) || 0) + 1);
-    }
-  });
-
-  const topAlbums = Array.from(albumStats.entries())
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 20);
-
-  // Calculate most votes per artist
-  const artistVoteStats = new Map<string, { artist: string; totalVotes: number; totalPoints: number; submissionCount: number }>();
-  
-  submissions.forEach(submission => {
-    const submissionVotes = votes.filter(vote => vote.spotifyUri === submission.spotifyUri);
-    const totalPoints = submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
-    
-    if (!artistVoteStats.has(submission.artist)) {
-      artistVoteStats.set(submission.artist, {
-        artist: submission.artist,
-        totalVotes: 0,
-        totalPoints: 0,
-        submissionCount: 0
-      });
-    }
-    
-    const stats = artistVoteStats.get(submission.artist)!;
-    stats.totalVotes += submissionVotes.length;
-    stats.totalPoints += totalPoints;
-    stats.submissionCount++;
-  });
-
-  const topArtistsByVotes = Array.from(artistVoteStats.values())
-    .sort((a, b) => b.totalVotes - a.totalVotes)
-    .slice(0, 20);
-
-  // Calculate most votes per song (group by title + artist to avoid double counting)
-  const songVoteStats = new Map<string, { 
-    title: string; 
-    artist: string; 
-    totalVotes: number; 
-    totalPoints: number; 
+  }>;
+  topArtists: [string, number][];
+  topAlbums: [string, number][];
+  topArtistsByVotes: Array<{
+    artist: string;
+    totalVotes: number;
+    totalPoints: number;
+    submissionCount: number;
+  }>;
+  topSongsByVotes: Array<{
+    title: string;
+    artist: string;
+    totalVotes: number;
+    totalPoints: number;
     submitter: string;
     season: number;
     round: number;
     allSeasonsRounds: string;
-  }>();
-  
-  // Group submissions by song title + artist to avoid double counting
-  const submissionsBySong = new Map<string, Submission[]>();
-  submissions.forEach(submission => {
-    const key = `${submission.title} - ${submission.artist}`;
-    if (!submissionsBySong.has(key)) {
-      submissionsBySong.set(key, []);
-    }
-    submissionsBySong.get(key)!.push(submission);
-  });
-  
-  // Calculate votes for each unique song (only count each vote once per song)
-  submissionsBySong.forEach((songSubmissions, songKey) => {
-    const firstSubmission = songSubmissions[0];
-    const allSpotifyUris = songSubmissions.map(s => s.spotifyUri);
-    
-    // Get all votes for any submission of this song, but deduplicate by voter
-    const songVotes = votes.filter(vote => allSpotifyUris.includes(vote.spotifyUri));
-    
-    // Deduplicate votes by voter ID to avoid counting the same voter multiple times
-    const uniqueVotes = new Map();
-    songVotes.forEach(vote => {
-      if (!uniqueVotes.has(vote.voterId)) {
-        uniqueVotes.set(vote.voterId, vote);
-      }
-    });
-    
-    const deduplicatedVotes = Array.from(uniqueVotes.values());
-    const totalPoints = deduplicatedVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
-    
-    
-    // Create paired submitter + season/round info
-    const submitterSeasonPairs = songSubmissions.map(s => `${s.submitterName} (S${s.season} R${s.roundNumber})`).join(', ');
-    
-    songVoteStats.set(songKey, {
-      title: firstSubmission.title,
-      artist: firstSubmission.artist,
-      totalVotes: deduplicatedVotes.length,
-      totalPoints: totalPoints,
-      submitter: submitterSeasonPairs,
-      season: firstSubmission.season,
-      round: firstSubmission.roundNumber,
-      allSeasonsRounds: submitterSeasonPairs
-    });
-  });
+  }>;
+  topSongsSingleSubmission: Array<{
+    title: string;
+    artist: string;
+    totalVotes: number;
+    totalPoints: number;
+    submitter: string;
+    season: number;
+    round: number;
+    allSeasonsRounds: string;
+  }>;
+}
 
-  const topSongsByVotes = Array.from(songVoteStats.values())
-    .sort((a, b) => b.totalVotes - a.totalVotes)
-    .slice(0, 20);
+export default function LeaderboardsPage() {
+  const [data, setData] = useState<LeaderboardData | null>(null);
+  const [showAllArtists, setShowAllArtists] = useState(false);
+  const [showArtistsModal, setShowArtistsModal] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadData() {
+      try {
+        const response = await fetch('/api/leaderboards');
+        if (!response.ok) {
+          throw new Error('Failed to fetch leaderboard data');
+        }
+        const leaderboardData = await response.json();
+        setData(leaderboardData);
+      } catch (error) {
+        console.error('Error loading leaderboard data:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadData();
+  }, []);
+
+  if (loading || !data) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold text-green-400 mb-2">Overall Leaderboards</h1>
+          <p className="text-gray-400">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  const displayedArtists = data.topArtists.slice(0, 20);
 
   return (
     <div className="space-y-6">
@@ -179,156 +88,206 @@ export default async function LeaderboardsPage() {
         <p className="text-gray-400">Rankings across all seasons for submitters, artists, albums, and vote performance</p>
       </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {/* Top Submitters */}
-          <div className="bg-gray-800 rounded-lg p-6">
-            <div className="flex items-center mb-6">
-              <Users className="h-6 w-6 text-green-400 mr-3" />
-              <h2 className="text-2xl font-bold text-green-400">Top Submitters</h2>
-            </div>
-            
-            <div className="space-y-3">
-              {topSubmitters.map((submitter, index) => (
-                <div key={submitter.id} className="flex items-center justify-between p-3 bg-gray-700 rounded">
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <p className="font-medium text-white">{submitter.name}</p>
-                      <p className="text-sm text-gray-400">{submitter.submissions} submissions</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-bold text-green-400">{submitter.totalPoints}</p>
-                    <p className="text-sm text-gray-400">{submitter.averagePoints} avg</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Top Artists */}
-          <div className="bg-gray-800 rounded-lg p-6">
-            <div className="flex items-center mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        {/* Top Artists with Show More */}
+        <div className="bg-gray-800 rounded-lg p-6">
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center">
               <Music className="h-6 w-6 text-green-400 mr-3" />
               <h2 className="text-2xl font-bold text-green-400">Top Artists</h2>
             </div>
-            
-            <div className="space-y-3">
-              {topArtists.map(([artist, count], index) => (
-                <div key={artist} className="flex items-center justify-between p-3 bg-gray-700 rounded">
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <p className="font-medium text-white">{artist}</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-bold text-green-400">{count}</p>
-                    <p className="text-sm text-gray-400">submissions</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {data.topArtists.length > 20 && (
+              <button
+                onClick={() => setShowArtistsModal(true)}
+                className="text-sm text-green-400 hover:text-green-300 underline"
+              >
+                Show All {data.topArtists.length.toLocaleString()}
+              </button>
+            )}
           </div>
-
-          {/* Top Albums */}
-          <div className="bg-gray-800 rounded-lg p-6">
-            <div className="flex items-center mb-6">
-              <Trophy className="h-6 w-6 text-green-400 mr-3" />
-              <h2 className="text-2xl font-bold text-green-400">Top Albums</h2>
-            </div>
-            
-            <div className="space-y-3">
-              {topAlbums.map(([album, count], index) => (
-                <div key={album} className="flex items-center justify-between p-3 bg-gray-700 rounded">
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <p className="font-medium text-white">{album}</p>
-                    </div>
+          
+          <div className="space-y-3">
+            {displayedArtists.map(([artist, count], index) => (
+              <div key={artist} className="flex items-center justify-between p-3 bg-gray-700 rounded">
+                <div className="flex items-center">
+                  <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
+                    {index + 1}
                   </div>
-                  <div className="text-right">
-                    <p className="font-bold text-green-400">{count}</p>
-                    <p className="text-sm text-gray-400">submissions</p>
+                  <div>
+                    <p className="font-medium text-white">{artist}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Most Votes per Artist */}
-          <div className="bg-gray-800 rounded-lg p-6">
-            <div className="flex items-center mb-6">
-              <Music className="h-6 w-6 text-green-400 mr-3" />
-              <h2 className="text-2xl font-bold text-green-400">Most Votes per Artist</h2>
-            </div>
-            
-            <div className="space-y-3">
-              {topArtistsByVotes.map((artist, index) => (
-                <div key={artist.artist} className="flex items-center justify-between p-3 bg-gray-700 rounded">
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <p className="font-medium text-white">{artist.artist}</p>
-                      <p className="text-sm text-gray-400">{artist.submissionCount} submissions</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-bold text-green-400">{artist.totalVotes}</p>
-                    <p className="text-sm text-gray-400">{artist.totalPoints} pts</p>
-                  </div>
+                <div className="text-right">
+                  <p className="font-bold text-green-400">{count}</p>
+                  <p className="text-sm text-gray-400">submissions</p>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Most Votes per Song */}
-          <div className="bg-gray-800 rounded-lg p-6">
-            <div className="flex items-center mb-6">
-              <Trophy className="h-6 w-6 text-green-400 mr-3" />
-              <h2 className="text-2xl font-bold text-green-400">Most Votes per Song</h2>
-            </div>
-            
-            <div className="space-y-3">
-              {topSongsByVotes.map((song, index) => (
-                <div key={`${song.title}-${song.artist}`} className="p-4 bg-gray-700 rounded">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-start">
-                      <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3 flex-shrink-0">
-                        {index + 1}
-                      </div>
-                      <div className="flex-1">
-                        <p className="font-medium text-white text-lg">{song.title}</p>
-                        <p className="text-sm text-gray-300 mb-2">by {song.artist}</p>
-                        <div className="space-y-1">
-                          {song.allSeasonsRounds.split(', ').map((submission, subIndex) => (
-                            <p key={subIndex} className="text-xs text-gray-400">
-                              {submission}
-                            </p>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-right ml-4 flex-shrink-0">
-                      <p className="font-bold text-green-400 text-lg">{song.totalVotes}</p>
-                      <p className="text-xs text-gray-400">unique voters</p>
-                      <p className="font-bold text-green-400 text-lg mt-1">{song.totalPoints}</p>
-                      <p className="text-xs text-gray-400">total pts</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
+
+        {/* Top Albums */}
+        <div className="bg-gray-800 rounded-lg p-6">
+          <div className="flex items-center mb-6">
+            <Trophy className="h-6 w-6 text-green-400 mr-3" />
+            <h2 className="text-2xl font-bold text-green-400">Top Albums</h2>
+          </div>
+          
+          <div className="space-y-3">
+            {data.topAlbums.map(([album, count], index) => (
+              <div key={album} className="flex items-center justify-between p-3 bg-gray-700 rounded">
+                <div className="flex items-center">
+                  <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <p className="font-medium text-white">{album}</p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="font-bold text-green-400">{count}</p>
+                  <p className="text-sm text-gray-400">submissions</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Most Votes per Artist */}
+        <div className="bg-gray-800 rounded-lg p-6">
+          <div className="flex items-center mb-6">
+            <Music className="h-6 w-6 text-green-400 mr-3" />
+            <h2 className="text-2xl font-bold text-green-400">Most Votes per Artist</h2>
+          </div>
+
+          <div className="space-y-3">
+            {data.topArtistsByVotes.map((artist, index) => (
+              <div key={artist.artist} className="flex items-center justify-between p-3 bg-gray-700 rounded">
+                <div className="flex items-center">
+                  <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <p className="font-medium text-white">{artist.artist}</p>
+                    <p className="text-sm text-gray-400">{artist.submissionCount} submissions</p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="font-bold text-green-400">{artist.totalVotes}</p>
+                  <p className="text-sm text-gray-400">{artist.totalPoints} pts</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Most Votes per Song */}
+        <div className="bg-gray-800 rounded-lg p-6">
+          <div className="flex items-center mb-6">
+            <Trophy className="h-6 w-6 text-green-400 mr-3" />
+            <h2 className="text-2xl font-bold text-green-400">Most Votes per Song</h2>
+          </div>
+
+          <div className="space-y-3">
+            {data.topSongsByVotes.map((song, index) => (
+              <div key={`${song.title}-${song.artist}`} className="p-4 bg-gray-700 rounded">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start">
+                    <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3 flex-shrink-0">
+                      {index + 1}
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-medium text-white text-lg">{song.title}</p>
+                      <p className="text-sm text-gray-300 mb-2">by {song.artist}</p>
+                      <div className="space-y-1">
+                        {song.allSeasonsRounds.split(', ').map((submission, subIndex) => (
+                          <p key={subIndex} className="text-xs text-gray-400">
+                            {submission}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-right ml-4 flex-shrink-0">
+                    <p className="font-bold text-green-400 text-lg">{song.totalVotes}</p>
+                    <p className="text-xs text-gray-400">unique voters</p>
+                    <p className="font-bold text-green-400 text-lg mt-1">{song.totalPoints}</p>
+                    <p className="text-xs text-gray-400">total pts</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Most Votes per Song (Single Submission Only) */}
+        <div className="bg-gray-800 rounded-lg p-6">
+          <div className="flex items-center mb-6">
+            <Star className="h-6 w-6 text-green-400 mr-3" />
+            <h2 className="text-2xl font-bold text-green-400">Most Votes (Single Submission)</h2>
+          </div>
+
+          <div className="space-y-3">
+            {data.topSongsSingleSubmission.map((song, index) => (
+              <div key={`${song.title}-${song.artist}`} className="p-4 bg-gray-700 rounded">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start">
+                    <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3 flex-shrink-0">
+                      {index + 1}
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-medium text-white text-lg">{song.title}</p>
+                      <p className="text-sm text-gray-300 mb-2">by {song.artist}</p>
+                      <p className="text-xs text-gray-400">{song.allSeasonsRounds}</p>
+                    </div>
+                  </div>
+                  <div className="text-right ml-4 flex-shrink-0">
+                    <p className="font-bold text-green-400 text-lg">{song.totalPoints}</p>
+                    <p className="text-xs text-gray-400">total pts</p>
+                    <p className="font-bold text-green-400 text-lg mt-1">{song.totalVotes}</p>
+                    <p className="text-xs text-gray-400">unique voters</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Top Submitters - MOVED TO BOTTOM */}
+        <div className="bg-gray-800 rounded-lg p-6">
+          <div className="flex items-center mb-6">
+            <Users className="h-6 w-6 text-green-400 mr-3" />
+            <h2 className="text-2xl font-bold text-green-400">Top Submitters</h2>
+          </div>
+          
+          <div className="space-y-3">
+            {data.topSubmitters.map((submitter, index) => (
+              <div key={submitter.id} className="flex items-center justify-between p-3 bg-gray-700 rounded">
+                <div className="flex items-center">
+                  <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <p className="font-medium text-white">{submitter.name}</p>
+                    <p className="text-sm text-gray-400">{submitter.submissions} submissions across {submitter.seasons.length} seasons</p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="font-bold text-green-400">{submitter.totalPoints} pts</p>
+                  <p className="text-sm text-gray-400">{submitter.averagePoints} avg/sub</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Artists Modal */}
+      <ArtistsModal
+        isOpen={showArtistsModal}
+        onClose={() => setShowArtistsModal(false)}
+        artists={data.topArtists}
+      />
     </div>
   );
 }
