@@ -1,6 +1,7 @@
 import { getDataManager, Submission } from '../../lib/data';
 import { Users, AlertCircle, CheckCircle } from 'lucide-react';
 import MissingVotesTable from '../../components/MissingVotesTable';
+import GlassCard from '../../components/ui/GlassCard';
 
 export default async function MissingVotesPage() {
   const dataManager = await getDataManager();
@@ -89,57 +90,68 @@ export default async function MissingVotesPage() {
     totalParticipation / participationData.size : 0;
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-green-400 mb-2">Missing Votes</h1>
-        <p className="text-gray-400">Track participation and missing votes across all rounds</p>
-      </div>
-
-        {/* Overall Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-gray-800 rounded-lg p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-400 text-sm">Total Rounds</p>
-                <p className="text-2xl font-bold text-green-400">{overallStats.totalRounds}</p>
-              </div>
-              <Users className="h-8 w-8 text-green-400" />
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+      <div className="container mx-auto px-4 py-8">
+        <div className="space-y-8">
+          {/* Header */}
+          <GlassCard variant="elevated" size="lg">
+            <div>
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent mb-2">
+                Missing Votes
+              </h1>
+              <p className="text-gray-400">Track participation and missing votes across all rounds</p>
             </div>
+          </GlassCard>
+
+          {/* Overall Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <GlassCard variant="elevated" size="md">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-gray-400 text-sm">Total Rounds</p>
+                  <p className="text-2xl font-bold text-emerald-400">{overallStats.totalRounds}</p>
+                </div>
+                <Users className="h-8 w-8 text-emerald-400" />
+              </div>
+            </GlassCard>
+
+            <GlassCard variant="elevated" size="md">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-gray-400 text-sm">Avg Participation</p>
+                  <p className="text-2xl font-bold text-emerald-400">{overallStats.averageParticipation.toFixed(1)}%</p>
+                </div>
+                <CheckCircle className="h-8 w-8 text-emerald-400" />
+              </div>
+            </GlassCard>
+
+            <GlassCard variant="elevated" size="md">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-gray-400 text-sm">Rounds with Missing</p>
+                  <p className="text-2xl font-bold text-emerald-400">{overallStats.roundsWithMissingVotes}</p>
+                </div>
+                <AlertCircle className="h-8 w-8 text-emerald-400" />
+              </div>
+            </GlassCard>
+
+            <GlassCard variant="elevated" size="md">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-gray-400 text-sm">Total Missing Votes</p>
+                  <p className="text-2xl font-bold text-emerald-400">{overallStats.totalMissingVotes}</p>
+                </div>
+                <AlertCircle className="h-8 w-8 text-emerald-400" />
+              </div>
+            </GlassCard>
           </div>
 
-          <div className="bg-gray-800 rounded-lg p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-400 text-sm">Avg Participation</p>
-                <p className="text-2xl font-bold text-green-400">{overallStats.averageParticipation.toFixed(1)}%</p>
-              </div>
-              <CheckCircle className="h-8 w-8 text-green-400" />
-            </div>
-          </div>
-
-          <div className="bg-gray-800 rounded-lg p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-400 text-sm">Rounds with Missing</p>
-                <p className="text-2xl font-bold text-green-400">{overallStats.roundsWithMissingVotes}</p>
-              </div>
-              <AlertCircle className="h-8 w-8 text-green-400" />
-            </div>
-          </div>
-
-          <div className="bg-gray-800 rounded-lg p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-400 text-sm">Total Missing Votes</p>
-                <p className="text-2xl font-bold text-green-400">{overallStats.totalMissingVotes}</p>
-              </div>
-              <AlertCircle className="h-8 w-8 text-green-400" />
-            </div>
-          </div>
+          {/* Participation by Season */}
+          <GlassCard variant="elevated" size="lg">
+            <MissingVotesTable participationData={participationData} competitors={competitors} />
+          </GlassCard>
         </div>
-
-        {/* Participation by Season */}
-        <MissingVotesTable participationData={participationData} competitors={competitors} />
+      </div>
     </div>
   );
 }
