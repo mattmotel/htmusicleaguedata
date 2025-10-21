@@ -25,6 +25,13 @@ interface LeaderboardData {
   topArtists: [string, number][];
   topAlbums: [string, number][];
   topAlbumsDetailed?: Array<{ album: string; count: number; artists: string[] }>; 
+  topAlbumsByVotes: Array<{
+    album: string;
+    totalVotes: number;
+    totalPoints: number;
+    submissionCount: number;
+    artists: string[];
+  }>;
   topArtistsByVotes: Array<{
     artist: string;
     totalVotes: number;
@@ -57,6 +64,7 @@ interface LeaderboardData {
     seasons: number[];
     totalVotesReceived: number;
     normalizedScore: number;
+    missedVotes: number;
   }>;
 }
 
@@ -193,13 +201,37 @@ export default async function LeaderboardsPage() {
 
   // Calculate album stats
   const albumStats = new Map<string, number>();
+  const albumVoteStats = new Map<string, { album: string; totalVotes: number; totalPoints: number; submissionCount: number }>();
+  
   submissions.forEach(submission => {
     const album = submission.album;
     albumStats.set(album, (albumStats.get(album) || 0) + 1);
+    
+    // Calculate votes for this album
+    const submissionVotes = votes.filter(vote => vote.spotifyUri === submission.spotifyUri);
+    const totalPoints = submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
+    
+    if (!albumVoteStats.has(album)) {
+      albumVoteStats.set(album, {
+        album: album,
+        totalVotes: 0,
+        totalPoints: 0,
+        submissionCount: 0
+      });
+    }
+    
+    const stats = albumVoteStats.get(album)!;
+    stats.totalVotes += submissionVotes.length;
+    stats.totalPoints += totalPoints;
+    stats.submissionCount++;
   });
 
   const topAlbums = Array.from(albumStats.entries())
     .sort((a, b) => b[1] - a[1])
+    .slice(0, 20);
+    
+  const topAlbumsByVotes = Array.from(albumVoteStats.values())
+    .sort((a, b) => b.totalVotes - a.totalVotes)
     .slice(0, 20);
 
   // For each top album, collect unique artists
@@ -212,6 +244,18 @@ export default async function LeaderboardsPage() {
     });
     const artists = Array.from(artistsSet).sort((a, b) => a.localeCompare(b));
     return { album, count, artists };
+  });
+
+  // Also create detailed data for albums by votes
+  const topAlbumsByVotesDetailed = topAlbumsByVotes.map(album => {
+    const artistsSet = new Set<string>();
+    submissions.forEach(sub => {
+      if ((sub.album || '').trim() === album.album) {
+        artistsSet.add(sub.artist);
+      }
+    });
+    const artists = Array.from(artistsSet).sort((a, b) => a.localeCompare(b));
+    return { ...album, artists };
   });
 
   // Calculate most votes per artist
@@ -313,10 +357,52 @@ export default async function LeaderboardsPage() {
     topArtists,
     topAlbums,
     topAlbumsDetailed,
-      topArtistsByVotes,
-      topSongsByVotes,
-      topSongsSingleSubmission
-    };
+    topArtistsByVotes,
+    topSongsByVotes,
+    topSongsSingleSubmission
+  };
+
+    // Calculate missed votes for each submitter
+    const submitterMissedVotes = new Map<string, number>();
+    
+    // Group submissions by season and round to calculate missed votes
+    const submissionsBySeason = new Map<number, Map<number, Submission[]>>();
+    
+    submissions.forEach(submission => {
+      if (!submissionsBySeason.has(submission.season)) {
+        submissionsBySeason.set(submission.season, new Map());
+      }
+      
+      const seasonMap = submissionsBySeason.get(submission.season)!;
+      if (!seasonMap.has(submission.roundNumber)) {
+        seasonMap.set(submission.roundNumber, []);
+      }
+      
+      seasonMap.get(submission.roundNumber)!.push(submission);
+    });
+
+    // Calculate missed votes for each round
+    submissionsBySeason.forEach((roundsMap, season) => {
+      roundsMap.forEach((roundSubmissions, roundNumber) => {
+        const roundId = roundSubmissions[0]?.roundId;
+        
+        // Get all voters for this round
+        const roundVotes = votes.filter(vote => vote.roundId === roundId);
+        const voters = new Set(roundVotes.map(vote => vote.voterId));
+        
+        // Get all submitters for this round
+        const submitters = new Set(roundSubmissions.map(sub => sub.submitterId));
+        
+        // Expected voters should be all submitters (they should vote on each other's submissions)
+        const expectedVoters = new Set(submitters);
+        const missingVoters = Array.from(expectedVoters).filter(voterId => !voters.has(voterId));
+        
+        // Count missed votes for each submitter
+        missingVoters.forEach(voterId => {
+          submitterMissedVotes.set(voterId, (submitterMissedVotes.get(voterId) || 0) + 1);
+        });
+      });
+    });
 
     // Calculate normalized voting performance
     const topNormalizedSubmitters = Array.from(submitterStats.entries())
@@ -335,7 +421,8 @@ export default async function LeaderboardsPage() {
           submitterName: submitter.name,
           seasons: submitter.seasons,
           totalVotesReceived,
-          normalizedScore
+          normalizedScore,
+          missedVotes: submitterMissedVotes.get(submitter.id) || 0
         };
       })
       .sort((a, b) => b.normalizedScore - a.normalizedScore)
@@ -347,6 +434,7 @@ export default async function LeaderboardsPage() {
     topArtists,
     topAlbums,
     topAlbumsDetailed,
+    topAlbumsByVotes: topAlbumsByVotesDetailed,
     topArtistsByVotes,
     topSongsByVotes,
     topSongsSingleSubmission,
