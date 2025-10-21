@@ -10,6 +10,7 @@ interface LeaderboardData {
     seasons: number[];
     totalPoints: number;
     averagePoints: number;
+    equivalizedAveragePoints: number;
   }>;
   topSubmittersByAverage: Array<{
     id: string;
@@ -18,6 +19,7 @@ interface LeaderboardData {
     seasons: number[];
     totalPoints: number;
     averagePoints: number;
+    equivalizedAveragePoints: number;
   }>;
   topArtists: [string, number][];
   topAlbums: [string, number][];
@@ -62,6 +64,7 @@ export default async function LeaderboardsPage() {
     seasons: Set<number>;
     totalPoints: number;
     averagePoints: number;
+    equivalizedAveragePoints: number;
   }>();
 
   submissions.forEach(submission => {
@@ -74,7 +77,8 @@ export default async function LeaderboardsPage() {
         submissions: 0,
         seasons: new Set(),
         totalPoints: 0,
-        averagePoints: 0
+        averagePoints: 0,
+        equivalizedAveragePoints: 0
       });
     }
     
@@ -97,6 +101,64 @@ export default async function LeaderboardsPage() {
   // Calculate averages
   submitterStats.forEach(stats => {
     stats.averagePoints = stats.submissions > 0 ? Number((stats.totalPoints / stats.submissions).toFixed(1)) : 0;
+  });
+
+  // Calculate equivalized average points (normalized to 30-point system)
+  // First, get season normalization factors
+  const seasonNormalizationFactors = new Map<number, number>();
+  const allSeasons = Array.from(new Set(submissions.map(s => s.season)));
+  
+  allSeasons.forEach(season => {
+    const seasonSubmissions = submissions.filter(s => s.season === season);
+    const seasonVotes = votes.filter(v => v.season === season);
+    const seasonRoundIds = new Set(seasonSubmissions.map(s => s.roundId));
+    const roundsMap = dataManager.getRounds();
+    const seasonRounds = Array.from(roundsMap.values()).filter(r => seasonRoundIds.has(r.id));
+    
+    // Find the first round chronologically
+    const firstRound = seasonRounds.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime())[0];
+    
+    if (firstRound) {
+      const firstRoundVotesList = seasonVotes.filter(v => v.roundId === firstRound.id);
+      
+      // Find Matt's voter ID
+      const competitors = dataManager.getCompetitors();
+      let mattVoterId = '';
+      for (const [voterId, voterName] of competitors.entries()) {
+        if (voterName === 'Matt McInerney') {
+          mattVoterId = voterId;
+          break;
+        }
+      }
+      
+      // Calculate points per user for this season
+      const pointsPerUser = mattVoterId ? firstRoundVotesList.filter(v => v.voterId === mattVoterId).reduce((sum, vote) => sum + vote.pointsAssigned, 0) : 0;
+      
+      // Calculate normalization factor (30 / pointsPerUser)
+      const normalizationFactor = pointsPerUser > 0 ? 30 / pointsPerUser : 1;
+      seasonNormalizationFactors.set(season, normalizationFactor);
+    }
+  });
+
+  // Calculate equivalized average points for each submitter
+  submitterStats.forEach(stats => {
+    let equivalizedTotalPoints = 0;
+    let equivalizedSubmissions = 0;
+    
+    // Get all submissions for this submitter
+    const submitterSubmissions = submissions.filter(s => s.submitterId === stats.name || s.submitterName === stats.name);
+    
+    submitterSubmissions.forEach(submission => {
+      const seasonFactor = seasonNormalizationFactors.get(submission.season) || 1;
+      const submissionVotes = votes.filter(v => v.spotifyUri === submission.spotifyUri);
+      const submissionPoints = submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
+      const equivalizedPoints = submissionPoints * seasonFactor;
+      
+      equivalizedTotalPoints += equivalizedPoints;
+      equivalizedSubmissions++;
+    });
+    
+    stats.equivalizedAveragePoints = equivalizedSubmissions > 0 ? Number((equivalizedTotalPoints / equivalizedSubmissions).toFixed(1)) : 0;
   });
 
   const topSubmitters = Array.from(submitterStats.entries())
@@ -525,6 +587,37 @@ export default async function LeaderboardsPage() {
                 <div className="text-right">
                   <p className="font-bold text-green-400">{submitter.averagePoints} avg pts</p>
                   <p className="text-sm text-gray-400">{submitter.totalPoints} total pts</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </SimpleGlassCard>
+
+        {/* Top Submitters by Equivalized Average Points */}
+        <SimpleGlassCard variant="elevated" size="lg">
+          <div className="flex items-center mb-6">
+            <Star className="h-6 w-6 text-blue-400 mr-3" />
+            <h2 className="text-2xl font-bold text-blue-400">Highest Equivalized Average Points</h2>
+          </div>
+          <p className="text-gray-400 mb-6 text-sm">
+            Normalized to 30-point system to compare across different voting systems
+          </p>
+          
+          <div className="space-y-3">
+            {data.topSubmittersByAverage.map((submitter, index) => (
+              <div key={submitter.id} className="flex items-center justify-between p-3 bg-gray-700 rounded">
+                <div className="flex items-center">
+                  <div className="flex items-center justify-center w-8 h-8 bg-blue-400 text-gray-900 rounded-full text-sm font-bold mr-3">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <p className="font-medium text-white">{submitter.name}</p>
+                    <p className="text-sm text-gray-400">{submitter.submissions} submissions across {submitter.seasons.length} seasons</p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="font-bold text-blue-400">{submitter.equivalizedAveragePoints} equiv avg pts</p>
+                  <p className="text-sm text-gray-400">{submitter.averagePoints} raw avg pts</p>
                 </div>
               </div>
             ))}

@@ -228,10 +228,7 @@ export default async function SeasonsPage() {
                       <div>
                         <p className="text-white font-medium">{season.votingSystem.votesPerUser} points per user</p>
                         <p className="text-sm text-gray-400">
-                          {season.votingSystem.usersWhoVoted} voters in sample round
-                        </p>
-                        <p className="text-xs text-gray-500">
-                          Sample: {season.votingSystem.sampleRound}
+                          Normalization: {(30 / season.votingSystem.votesPerUser).toFixed(1)}x
                         </p>
                       </div>
                     </td>
