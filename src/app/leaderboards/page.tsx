@@ -170,6 +170,70 @@ export default async function LeaderboardsPage() {
     .sort((a, b) => b.totalVotes - a.totalVotes)
     .slice(0, 20);
 
+  // Calculate normalized voting stats (accounts for different voting systems per season)
+  const normalizedVoteStats = new Map<string, {
+    submitterId: string;
+    submitterName: string;
+    seasons: number[];
+    totalVotesReceived: number;
+    totalVotesPossible: number;
+    normalizedScore: number;
+    averageVotesPerSeason: number;
+  }>();
+
+  // Get all unique voters per season to calculate possible votes
+  const seasonVoterStats = new Map<number, Set<string>>();
+  votes.forEach(vote => {
+    if (!seasonVoterStats.has(vote.season)) {
+      seasonVoterStats.set(vote.season, new Set());
+    }
+    seasonVoterStats.get(vote.season)!.add(vote.voterId);
+  });
+
+  // Calculate normalized scores for each submitter
+  submissions.forEach(submission => {
+    const submitterId = submission.submitterId;
+    const submitterName = submission.submitterName;
+    
+    if (!normalizedVoteStats.has(submitterId)) {
+      normalizedVoteStats.set(submitterId, {
+        submitterId,
+        submitterName,
+        seasons: [],
+        totalVotesReceived: 0,
+        totalVotesPossible: 0,
+        normalizedScore: 0,
+        averageVotesPerSeason: 0
+      });
+    }
+    
+    const stats = normalizedVoteStats.get(submitterId)!;
+    if (!stats.seasons.includes(submission.season)) {
+      stats.seasons.push(submission.season);
+    }
+    
+    // Get votes for this submission
+    const submissionVotes = votes.filter(vote => vote.spotifyUri === submission.spotifyUri);
+    stats.totalVotesReceived += submissionVotes.length;
+    
+    // Calculate possible votes for this season (number of voters in this season)
+    const votersInSeason = seasonVoterStats.get(submission.season)?.size || 0;
+    stats.totalVotesPossible += votersInSeason;
+  });
+
+  // Calculate normalized scores
+  normalizedVoteStats.forEach(stats => {
+    if (stats.totalVotesPossible > 0) {
+      stats.normalizedScore = (stats.totalVotesReceived / stats.totalVotesPossible) * 100;
+      stats.averageVotesPerSeason = stats.totalVotesReceived / stats.seasons.length;
+    }
+  });
+
+  const topNormalizedSubmitters = Array.from(normalizedVoteStats.values())
+    .filter(stats => stats.seasons.length >= 3) // Only include submitters with 3+ seasons
+    .sort((a, b) => b.normalizedScore - a.normalizedScore)
+    .slice(0, 20);
+
   // Calculate most votes per song (group by title + artist to avoid double counting)
   const songVoteStats = new Map<string, {
     title: string;
@@ -461,6 +525,37 @@ export default async function LeaderboardsPage() {
                 <div className="text-right">
                   <p className="font-bold text-green-400">{submitter.averagePoints} avg pts</p>
                   <p className="text-sm text-gray-400">{submitter.totalPoints} total pts</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </SimpleGlassCard>
+
+        {/* Normalized Voting Performance */}
+        <SimpleGlassCard variant="elevated" size="lg">
+          <div className="flex items-center mb-6">
+            <Trophy className="h-6 w-6 text-emerald-400 mr-3" />
+            <h2 className="text-2xl font-bold text-emerald-400">Normalized Voting Performance</h2>
+          </div>
+          <p className="text-gray-400 mb-6 text-sm">
+            Accounts for different voting systems across seasons (20 points vs 10 points per player)
+          </p>
+          
+          <div className="space-y-3">
+            {topNormalizedSubmitters.map((submitter, index) => (
+              <div key={submitter.submitterId} className="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg border border-gray-600/50 backdrop-blur-sm">
+                <div className="flex items-center">
+                  <div className="flex items-center justify-center w-8 h-8 bg-emerald-400 text-gray-900 rounded-full text-sm font-bold mr-3">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <p className="font-medium text-white">{submitter.submitterName}</p>
+                    <p className="text-sm text-gray-400">{submitter.seasons.length} seasons • {submitter.totalVotesReceived} votes received</p>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="font-bold text-emerald-400">{submitter.normalizedScore.toFixed(1)}%</p>
+                  <p className="text-sm text-gray-400">normalized score</p>
                 </div>
               </div>
             ))}

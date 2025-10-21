@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, BarChart3, List, AlertTriangle, Trophy, Search, Users } from 'lucide-react';
+import { Menu, X, BarChart3, List, AlertTriangle, Trophy, Search, Users, Calendar } from 'lucide-react';
 import GlassCard from './GlassCard';
 import GlassButton from './GlassButton';
 import AppIcon from './AppIcon';
@@ -21,6 +21,7 @@ const navItems: NavItem[] = [
   { href: '/', label: 'Overview', icon: BarChart3, description: 'Dashboard and analytics' },
   { href: '/submissions', label: 'All Submissions', icon: List, description: 'Browse all submissions' },
   { href: '/leaderboards', label: 'Leaderboards', icon: Trophy, description: 'Rankings and statistics' },
+  { href: '/seasons', label: 'Seasons', icon: Calendar, description: 'Season statistics and breakdown' },
   { href: '/artists', label: 'Artists', icon: Users, description: 'View all artists' },
   { href: '/missing-votes', label: 'Missing Votes', icon: AlertTriangle, description: 'Track participation' },
   { href: '/search', label: 'Search', icon: Search, description: 'Search songs and artists' },

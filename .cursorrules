@@ -21,6 +21,10 @@
 - Process CSV data server-side in Next.js API routes
 - Use proper TypeScript interfaces for data types
 - Cache data when appropriate for performance
+- **CRITICAL**: Some CSV files have malformed line breaks that break parsing
+- Always use the custom CSV parser that handles these line break issues
+- Never use standard CSV parsing libraries - they will fail on this data
+- The csv-parser.ts handles the specific line break problems in this dataset
 
 ## Component Structure
 - Keep components focused and single-purpose
