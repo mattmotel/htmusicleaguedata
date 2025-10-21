@@ -117,15 +117,15 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
           Submitters
         </button>
         <button
-          onClick={() => setActiveTab('normalized')}
+          onClick={() => setActiveTab('point-average')}
           className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            activeTab === 'normalized'
+            activeTab === 'point-average'
               ? 'bg-emerald-400 text-gray-900'
               : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
           }`}
         >
           <TrendingUp className="inline w-4 h-4 mr-2" />
-          Normalized
+          Point Average
         </button>
       </div>
 
@@ -315,8 +315,12 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
               ))}
             </div>
           </SimpleGlassCard>
+        </div>
+      )}
 
-          {/* Top Submitters by Average Points */}
+      {activeTab === 'point-average' && (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Highest Average Points */}
           <SimpleGlassCard variant="elevated" size="lg">
             <div className="flex items-center mb-6">
               <Star className="h-6 w-6 text-green-400 mr-3" />
@@ -343,12 +347,8 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
               ))}
             </div>
           </SimpleGlassCard>
-        </div>
-      )}
 
-      {activeTab === 'normalized' && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Top Submitters by Equivalized Average Points */}
+          {/* Highest Equivalized Average Points */}
           <SimpleGlassCard variant="elevated" size="lg">
             <div className="flex items-center mb-6">
               <Star className="h-6 w-6 text-blue-400 mr-3" />
@@ -373,37 +373,6 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
                   <div className="text-right">
                     <p className="font-bold text-blue-400">{submitter.equivalizedAveragePoints} equiv avg pts</p>
                     <p className="text-sm text-gray-400">{submitter.averagePoints} raw avg pts</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </SimpleGlassCard>
-
-          {/* Normalized Voting Performance */}
-          <SimpleGlassCard variant="elevated" size="lg">
-            <div className="flex items-center mb-6">
-              <Trophy className="h-6 w-6 text-emerald-400 mr-3" />
-              <h2 className="text-2xl font-bold text-emerald-400">Normalized Voting Performance</h2>
-            </div>
-            <p className="text-gray-400 mb-6 text-sm">
-              Accounts for different voting systems across seasons (20 points vs 10 points per player)
-            </p>
-            
-            <div className="space-y-3">
-              {data.topNormalizedSubmitters.map((submitter, index) => (
-                <div key={submitter.submitterId} className="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg border border-gray-600/50 backdrop-blur-sm">
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-8 h-8 bg-emerald-400 text-gray-900 rounded-full text-sm font-bold mr-3">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <p className="font-medium text-white">{submitter.submitterName}</p>
-                      <p className="text-sm text-gray-400">{submitter.seasons.length} seasons • {submitter.totalVotesReceived} votes received</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-bold text-emerald-400">{submitter.normalizedScore.toFixed(1)}%</p>
-                    <p className="text-sm text-gray-400">normalized score</p>
                   </div>
                 </div>
               ))}
