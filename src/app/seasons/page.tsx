@@ -74,8 +74,8 @@ export default async function SeasonsPage() {
     const winners = sortedSubmitters.filter(s => s.points === topPoints);
     
     const topSubmitter = winners.length > 1 
-      ? { name: winners.map(w => w.name).join(' & '), points: topPoints }
-      : sortedSubmitters[0] || { name: 'N/A', points: 0 };
+      ? { name: winners.map(w => w.name).join(' & '), submissions: winners[0]?.submissions || 0, points: topPoints }
+      : sortedSubmitters[0] || { name: 'N/A', submissions: 0, points: 0 };
     
     // Analyze voting system for this season
     // Find the first round chronologically (earliest timestamp)

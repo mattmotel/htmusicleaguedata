@@ -1,6 +1,4 @@
 import { getDataManager, Submission } from '../../lib/data';
-import { Trophy, Users, Music, Star, BarChart3, TrendingUp } from 'lucide-react';
-import SimpleGlassCard from '../../components/ui/SimpleGlassCard';
 import LeaderboardTabs from './LeaderboardTabs';
 
 interface LeaderboardData {
@@ -382,8 +380,8 @@ export default async function LeaderboardsPage() {
     });
 
     // Calculate missed votes for each round
-    submissionsBySeason.forEach((roundsMap, season) => {
-      roundsMap.forEach((roundSubmissions, roundNumber) => {
+    submissionsBySeason.forEach((roundsMap) => {
+      roundsMap.forEach((roundSubmissions) => {
         const roundId = roundSubmissions[0]?.roundId;
         
         // Get all voters for this round
