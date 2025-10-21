@@ -66,23 +66,12 @@ interface LeaderboardTabsProps {
 }
 
 export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
-  const [activeTab, setActiveTab] = useState('submitters');
+  const [activeTab, setActiveTab] = useState('artists');
 
   return (
     <>
       {/* Tabs */}
       <div className="flex flex-wrap justify-center gap-2 mb-8">
-        <button
-          onClick={() => setActiveTab('submitters')}
-          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            activeTab === 'submitters'
-              ? 'bg-emerald-400 text-gray-900'
-              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-          }`}
-        >
-          <Users className="inline w-4 h-4 mr-2" />
-          Submitters
-        </button>
         <button
           onClick={() => setActiveTab('artists')}
           className={`px-4 py-2 rounded-lg font-medium transition-colors ${
@@ -117,6 +106,17 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
           Songs
         </button>
         <button
+          onClick={() => setActiveTab('submitters')}
+          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+            activeTab === 'submitters'
+              ? 'bg-emerald-400 text-gray-900'
+              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+          }`}
+        >
+          <Users className="inline w-4 h-4 mr-2" />
+          Submitters
+        </button>
+        <button
           onClick={() => setActiveTab('normalized')}
           className={`px-4 py-2 rounded-lg font-medium transition-colors ${
             activeTab === 'normalized'
@@ -130,68 +130,8 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
       </div>
 
       {/* Tab Content */}
-      {activeTab === 'submitters' && (
-        <div className="space-y-8">
-          {/* Top Submitters by Total Points */}
-          <SimpleGlassCard variant="elevated" size="lg">
-            <div className="flex items-center mb-6">
-              <Trophy className="h-6 w-6 text-green-400 mr-3" />
-              <h2 className="text-2xl font-bold text-green-400">Top Submitters</h2>
-            </div>
-            
-            <div className="space-y-3">
-              {data.topSubmitters.map((submitter, index) => (
-                <div key={submitter.id} className="flex items-center justify-between p-3 bg-gray-700 rounded">
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <p className="font-medium text-white">{submitter.name}</p>
-                      <p className="text-sm text-gray-400">{submitter.submissions} submissions across {submitter.seasons.length} seasons</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-bold text-green-400">{submitter.totalPoints} pts</p>
-                    <p className="text-sm text-gray-400">{submitter.averagePoints} avg/sub</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </SimpleGlassCard>
-
-          {/* Top Submitters by Average Points */}
-          <SimpleGlassCard variant="elevated" size="lg">
-            <div className="flex items-center mb-6">
-              <Star className="h-6 w-6 text-green-400 mr-3" />
-              <h2 className="text-2xl font-bold text-green-400">Highest Average Points</h2>
-            </div>
-            
-            <div className="space-y-3">
-              {data.topSubmittersByAverage.map((submitter, index) => (
-                <div key={submitter.id} className="flex items-center justify-between p-3 bg-gray-700 rounded">
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <p className="font-medium text-white">{submitter.name}</p>
-                      <p className="text-sm text-gray-400">{submitter.submissions} submissions across {submitter.seasons.length} seasons</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-bold text-green-400">{submitter.averagePoints} avg pts</p>
-                    <p className="text-sm text-gray-400">{submitter.totalPoints} total pts</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </SimpleGlassCard>
-        </div>
-      )}
-
       {activeTab === 'artists' && (
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Top Artists */}
           <SimpleGlassCard variant="elevated" size="lg">
             <div className="flex items-center justify-between mb-6">
@@ -251,7 +191,7 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
       )}
 
       {activeTab === 'albums' && (
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Top Albums */}
           <SimpleGlassCard variant="elevated" size="lg">
             <div className="flex items-center mb-6">
@@ -287,7 +227,7 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
       )}
 
       {activeTab === 'songs' && (
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Most Votes per Song */}
           <SimpleGlassCard variant="elevated" size="lg">
             <div className="flex items-center mb-6">
@@ -346,8 +286,68 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
         </div>
       )}
 
+      {activeTab === 'submitters' && (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Top Submitters by Total Points */}
+          <SimpleGlassCard variant="elevated" size="lg">
+            <div className="flex items-center mb-6">
+              <Trophy className="h-6 w-6 text-green-400 mr-3" />
+              <h2 className="text-2xl font-bold text-green-400">Top Submitters</h2>
+            </div>
+            
+            <div className="space-y-3">
+              {data.topSubmitters.map((submitter, index) => (
+                <div key={submitter.id} className="flex items-center justify-between p-3 bg-gray-700 rounded">
+                  <div className="flex items-center">
+                    <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <p className="font-medium text-white">{submitter.name}</p>
+                      <p className="text-sm text-gray-400">{submitter.submissions} submissions across {submitter.seasons.length} seasons</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-bold text-green-400">{submitter.totalPoints} pts</p>
+                    <p className="text-sm text-gray-400">{submitter.averagePoints} avg/sub</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </SimpleGlassCard>
+
+          {/* Top Submitters by Average Points */}
+          <SimpleGlassCard variant="elevated" size="lg">
+            <div className="flex items-center mb-6">
+              <Star className="h-6 w-6 text-green-400 mr-3" />
+              <h2 className="text-2xl font-bold text-green-400">Highest Average Points</h2>
+            </div>
+            
+            <div className="space-y-3">
+              {data.topSubmittersByAverage.map((submitter, index) => (
+                <div key={submitter.id} className="flex items-center justify-between p-3 bg-gray-700 rounded">
+                  <div className="flex items-center">
+                    <div className="flex items-center justify-center w-8 h-8 bg-green-400 text-gray-900 rounded-full text-sm font-bold mr-3">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <p className="font-medium text-white">{submitter.name}</p>
+                      <p className="text-sm text-gray-400">{submitter.submissions} submissions across {submitter.seasons.length} seasons</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-bold text-green-400">{submitter.averagePoints} avg pts</p>
+                    <p className="text-sm text-gray-400">{submitter.totalPoints} total pts</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </SimpleGlassCard>
+        </div>
+      )}
+
       {activeTab === 'normalized' && (
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Top Submitters by Equivalized Average Points */}
           <SimpleGlassCard variant="elevated" size="lg">
             <div className="flex items-center mb-6">
