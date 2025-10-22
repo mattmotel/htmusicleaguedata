@@ -14,10 +14,14 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   const resolvedSearchParams = await searchParams;
   const query = resolvedSearchParams.q as string || '';
 
+  console.log(`[Search Page] Total submissions available: ${dataManager.getSubmissions().length}`);
+  console.log(`[Search Page] Query: "${query}"`);
+
   let searchResults: Submission[] = [];
   
   if (query) {
     searchResults = dataManager.searchSubmissions(query);
+    console.log(`[Search Page] Search results found: ${searchResults.length}`);
   }
 
   return (
