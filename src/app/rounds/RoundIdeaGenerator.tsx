@@ -55,7 +55,7 @@ export default function RoundIdeaGenerator({ existingRounds }: RoundIdeaGenerato
         ) : (
           <>
             <Sparkles className="w-5 h-5" />
-            Generate 10 New Round Ideas
+            Generate 20 New Round Ideas
           </>
         )}
       </button>

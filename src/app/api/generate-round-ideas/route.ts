@@ -23,26 +23,26 @@ export async function POST(request: Request) {
           messages: [
             {
               role: 'system',
-              content: 'You are a creative music league round idea generator. This is primarily a MUSIC DISCOVERY league - helping people find new, obscure, and underrated music. Most rounds (8-9 out of 10) should focus on discovery. You can include 1-2 creative non-discovery themes if they\'re genuinely interesting. Write naturally and simply - avoid flowery language or trying too hard.'
+              content: 'You are a creative music league round idea generator. This is primarily a MUSIC DISCOVERY league - helping people find new, obscure, and underrated music. Most rounds should focus on discovery (80-90%). You can include a few creative non-discovery themes if they\'re genuinely interesting. Write naturally and simply - avoid flowery language or trying too hard.'
             },
             {
               role: 'user',
-              content: `Here are ALL the round themes we've done so far:\n\n${existingRounds}\n\nGenerate 10 NEW round ideas that are DIFFERENT from what we've already done.
+              content: `Here are ALL the round themes we've done so far:\n\n${existingRounds}\n\nGenerate 20 NEW round ideas that are DIFFERENT from what we've already done.
 
 Key rules:
 - DO NOT repeat or closely copy any of the existing rounds above
-- 8-9 should focus on music discovery (obscure artists, underrated songs, local bands, deep cuts, etc)
-- 1-2 can be creative non-discovery themes if they're interesting
+- First 15 ideas: Focus on music discovery (obscure artists, underrated songs, local bands, deep cuts, etc)
+- Last 5 ideas: GO WILD. Super creative, out-of-the-box, weird concepts. Still music-based but totally unexpected and fun
 - Keep the language simple and direct - don't add unnecessary descriptive fluff
 - Be specific and clear
 - Make them actually different from each other (don't repeat the same concept)
 - Study the existing rounds to match the style, but DON'T copy them
 
-Return ONLY the 10 ideas, one per line, no numbering.`
+Return ONLY the 20 ideas, one per line, no numbering.`
             }
           ],
           temperature: 0.85,
-          max_tokens: 500,
+          max_tokens: 1000,
         }),
       });
       
@@ -56,7 +56,7 @@ Return ONLY the 10 ideas, one per line, no numbering.`
           .split('\n')
           .filter((line: string) => line.trim())
           .map((line: string) => line.replace(/^\d+\.\s*/, '').trim())
-          .slice(0, 10);
+          .slice(0, 20);
         
         console.log('Successfully generated ideas:', ideas.length);
         return NextResponse.json({
@@ -81,7 +81,17 @@ Return ONLY the 10 ideas, one per line, no numbering.`
       "A genre you didn't know existed until recently",
       "Songs from the best year in music that everyone's sleeping on",
       "Artists who were ahead of their time",
-      "Hidden gems from otherwise forgettable albums"
+      "Hidden gems from otherwise forgettable albums",
+      "The best B-side that should've been the single",
+      "Artists from your hometown that never made it big",
+      "Songs from bands that changed their name and sound",
+      "The most underrated live album ever",
+      "Artists who got overshadowed by their more famous bandmates",
+      "Songs from soundtracks nobody watched",
+      "Regional scenes that never went national",
+      "Artists who quit music at their peak",
+      "Songs that were bigger in other countries",
+      "The best debut single from a band that fizzled out"
     ];
     
     return NextResponse.json({
