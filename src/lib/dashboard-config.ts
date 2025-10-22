@@ -186,6 +186,6 @@ export const musicLeagueMappings = {
     description: item.description,
     href: item.href,
     icon: item.icon,
-    color: item.color as const,
+    color: item.color,
   })),
 };
