@@ -15,11 +15,8 @@ export async function GET(request: Request) {
     console.log(`[API Test] Total submissions: ${allSubmissions.length}`);
     console.log(`[API Test] Query: "${query}"`);
     
-    let searchResults = [];
-    if (query) {
-      searchResults = dataManager.searchSubmissions(query);
-      console.log(`[API Test] Search results: ${searchResults.length}`);
-    }
+    let searchResults = dataManager.searchSubmissions(query);
+    console.log(`[API Test] Search results: ${searchResults.length}`);
     
     return NextResponse.json({
       success: true,
