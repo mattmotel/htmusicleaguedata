@@ -21,7 +21,7 @@ interface NavItemWithIcon {
 
 // Convert navigation config to component-ready format
 const navItems: NavItemWithIcon[] = getNavBarItems().map(item => {
-  const IconComponent = (LucideIcons as Record<string, React.ComponentType<{ className?: string }>>)[item.icon];
+  const IconComponent = (LucideIcons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[item.icon];
   return {
     href: item.href,
     label: item.label,
