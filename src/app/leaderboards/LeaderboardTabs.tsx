@@ -67,6 +67,14 @@ interface LeaderboardData {
     normalizedScore: number;
     missedVotes: number;
   }>;
+  bestSeasonPerformances: Array<{
+    submitterName: string;
+    season: number;
+    rawScore: number;
+    normalizedScore: number;
+    normalizationFactor: number;
+    submissions: number;
+  }>;
 }
 
 interface LeaderboardTabsProps {
@@ -134,6 +142,17 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
         >
           <TrendingUp className="inline w-4 h-4 mr-2" />
           Point Average
+        </button>
+        <button
+          onClick={() => setActiveTab('season-performances')}
+          className={`px-6 py-3 rounded-lg font-medium transition-all ${
+            activeTab === 'season-performances'
+              ? 'bg-emerald-400 text-gray-900'
+              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+          }`}
+        >
+          <Trophy className="inline w-4 h-4 mr-2" />
+          Best Seasons
         </button>
       </div>
 
@@ -446,6 +465,90 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
                   <div className="text-right">
                     <p className="font-bold text-blue-400">{submitter.equivalizedAveragePoints} equiv avg pts</p>
                     <p className="text-sm text-gray-400">{submitter.averagePoints} raw avg pts</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </SimpleGlassCard>
+        </div>
+      )}
+
+      {activeTab === 'season-performances' && (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Highest Normalized Season Scores */}
+          <SimpleGlassCard variant="elevated" size="lg">
+            <div className="flex items-center mb-6">
+              <Trophy className="h-6 w-6 text-yellow-400 mr-3" />
+              <h2 className="text-2xl font-bold text-yellow-400">Highest Normalized Season Scores</h2>
+            </div>
+            <p className="text-gray-400 mb-6 text-sm">
+              All scores normalized to 30-point system for fair comparison
+            </p>
+            
+            <div className="space-y-3">
+              {data.bestSeasonPerformances.map((performance, index) => (
+                <div key={`${performance.submitterName}-${performance.season}-norm`} className="flex items-center justify-between p-3 bg-gray-700 rounded">
+                  <div className="flex items-center">
+                    <div className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold mr-3 flex-shrink-0 ${
+                      index === 0 ? 'bg-yellow-400 text-gray-900' :
+                      index === 1 ? 'bg-gray-300 text-gray-900' :
+                      index === 2 ? 'bg-orange-600 text-white' :
+                      'bg-yellow-400 text-gray-900'
+                    }`}>
+                      {index + 1}
+                    </div>
+                    <div>
+                      <p className="font-medium text-white">{performance.submitterName}</p>
+                      <p className="text-sm text-gray-400">
+                        Season {performance.season} • {performance.submissions} submissions
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-bold text-yellow-400">{Math.round(performance.normalizedScore)} pts</p>
+                    <p className="text-sm text-gray-400">
+                      {performance.rawScore} raw • {performance.normalizationFactor.toFixed(1)}x
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </SimpleGlassCard>
+
+          {/* Highest Raw Season Scores */}
+          <SimpleGlassCard variant="elevated" size="lg">
+            <div className="flex items-center mb-6">
+              <Star className="h-6 w-6 text-orange-400 mr-3" />
+              <h2 className="text-2xl font-bold text-orange-400">Highest Raw Season Scores</h2>
+            </div>
+            <p className="text-gray-400 mb-6 text-sm">
+              Actual points scored (not normalized)
+            </p>
+            
+            <div className="space-y-3">
+              {[...data.bestSeasonPerformances].sort((a, b) => b.rawScore - a.rawScore).map((performance, index) => (
+                <div key={`${performance.submitterName}-${performance.season}-raw`} className="flex items-center justify-between p-3 bg-gray-700 rounded">
+                  <div className="flex items-center">
+                    <div className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold mr-3 flex-shrink-0 ${
+                      index === 0 ? 'bg-orange-400 text-gray-900' :
+                      index === 1 ? 'bg-gray-300 text-gray-900' :
+                      index === 2 ? 'bg-orange-600 text-white' :
+                      'bg-orange-400 text-gray-900'
+                    }`}>
+                      {index + 1}
+                    </div>
+                    <div>
+                      <p className="font-medium text-white">{performance.submitterName}</p>
+                      <p className="text-sm text-gray-400">
+                        Season {performance.season} • {performance.submissions} submissions
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-bold text-orange-400">{performance.rawScore} pts</p>
+                    <p className="text-sm text-gray-400">
+                      {Math.round(performance.normalizedScore)} norm • {performance.normalizationFactor.toFixed(1)}x
+                    </p>
                   </div>
                 </div>
               ))}

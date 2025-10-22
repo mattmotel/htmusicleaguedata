@@ -64,6 +64,14 @@ interface LeaderboardData {
     normalizedScore: number;
     missedVotes: number;
   }>;
+  bestSeasonPerformances: Array<{
+    submitterName: string;
+    season: number;
+    rawScore: number;
+    normalizedScore: number;
+    normalizationFactor: number;
+    submissions: number;
+  }>;
 }
 
 export default async function LeaderboardsPage() {
@@ -426,6 +434,71 @@ export default async function LeaderboardsPage() {
       .sort((a, b) => b.normalizedScore - a.normalizedScore)
       .slice(0, 20);
 
+  // Calculate best individual season performances (normalized)
+  const seasonPerformances: Array<{
+    submitterName: string;
+    season: number;
+    rawScore: number;
+    normalizedScore: number;
+    normalizationFactor: number;
+    submissions: number;
+  }> = [];
+
+  // Get normalization factors for each season
+  const seasonsForPerformances = Array.from(new Set(submissions.map(s => s.season)));
+  seasonsForPerformances.forEach(season => {
+    const seasonSubmissions = submissions.filter(s => s.season === season);
+    const seasonVotes = votes.filter(v => v.season === season);
+    const seasonRoundIds = new Set(seasonSubmissions.map(s => s.roundId));
+    const roundsMap = dataManager.getRounds();
+    const seasonRounds = Array.from(roundsMap.values()).filter(r => seasonRoundIds.has(r.id));
+    
+    const firstRound = seasonRounds.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime())[0];
+    
+    if (firstRound) {
+      const firstRoundVotesList = seasonVotes.filter(v => v.roundId === firstRound.id);
+      const competitors = dataManager.getCompetitors();
+      let mattVoterId = '';
+      for (const [voterId, voterName] of competitors.entries()) {
+        if (voterName === 'Matt McInerney') {
+          mattVoterId = voterId;
+          break;
+        }
+      }
+      
+      const pointsPerUser = mattVoterId ? firstRoundVotesList.filter(v => v.voterId === mattVoterId).reduce((sum, vote) => sum + vote.pointsAssigned, 0) : 0;
+      const normalizationFactor = pointsPerUser > 0 ? 30 / pointsPerUser : 1;
+      
+      // Calculate each submitter's score for this season
+      const seasonSubmitterScores = new Map<string, { rawScore: number; submissions: number }>();
+      seasonSubmissions.forEach(submission => {
+        const submissionVotes = seasonVotes.filter(v => v.spotifyUri === submission.spotifyUri);
+        const submissionPoints = submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
+        
+        const current = seasonSubmitterScores.get(submission.submitterName) || { rawScore: 0, submissions: 0 };
+        current.rawScore += submissionPoints;
+        current.submissions += 1;
+        seasonSubmitterScores.set(submission.submitterName, current);
+      });
+      
+      // Add to performances array
+      seasonSubmitterScores.forEach((data, submitterName) => {
+        seasonPerformances.push({
+          submitterName,
+          season,
+          rawScore: data.rawScore,
+          normalizedScore: data.rawScore * normalizationFactor,
+          normalizationFactor,
+          submissions: data.submissions
+        });
+      });
+    }
+  });
+
+  const bestSeasonPerformances = seasonPerformances
+    .sort((a, b) => b.normalizedScore - a.normalizedScore)
+    .slice(0, 50); // Top 50 season performances
+
   const leaderboardData: LeaderboardData = {
     topSubmitters,
     topSubmittersByAverage,
@@ -436,7 +509,8 @@ export default async function LeaderboardsPage() {
     topArtistsByVotes,
     topSongsByVotes,
     topSongsSingleSubmission,
-    topNormalizedSubmitters
+    topNormalizedSubmitters,
+    bestSeasonPerformances
   };
 
   return (
