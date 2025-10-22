@@ -37,7 +37,7 @@ export interface AppConfig {
 // Default configuration - no file system access needed
 const defaultConfig: AppConfig = {
   leagueName: process.env.SITE_NAME || 'Hard Times Music League',
-  baseDataDir: process.env.BASE_DATA_DIR || 'public/data',
+  baseDataDir: process.env.BASE_DATA_DIR || (typeof process !== 'undefined' && process.cwd ? `${process.cwd()}/public/data` : 'public/data'),
   cacheTtlSeconds: Number(process.env.CACHE_TTL_SECONDS || 300),
   seasonDiscovery: 'auto',
   branding: {
