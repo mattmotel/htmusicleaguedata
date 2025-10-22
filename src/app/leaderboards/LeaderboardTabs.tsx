@@ -491,9 +491,9 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
                   <div className="flex items-center">
                     <div className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold mr-3 flex-shrink-0 ${
                       index === 0 ? 'bg-yellow-400 text-gray-900' :
-                      index === 1 ? 'bg-gray-300 text-gray-900' :
-                      index === 2 ? 'bg-orange-600 text-white' :
-                      'bg-yellow-400 text-gray-900'
+                      index === 1 ? 'bg-gray-400 text-gray-900' :
+                      index === 2 ? 'bg-orange-700 text-white' :
+                      'bg-gray-600 text-white'
                     }`}>
                       {index + 1}
                     </div>
@@ -530,10 +530,10 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
                 <div key={`${performance.submitterName}-${performance.season}-raw`} className="flex items-center justify-between p-3 bg-gray-700 rounded">
                   <div className="flex items-center">
                     <div className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold mr-3 flex-shrink-0 ${
-                      index === 0 ? 'bg-orange-400 text-gray-900' :
-                      index === 1 ? 'bg-gray-300 text-gray-900' :
-                      index === 2 ? 'bg-orange-600 text-white' :
-                      'bg-orange-400 text-gray-900'
+                      index === 0 ? 'bg-yellow-400 text-gray-900' :
+                      index === 1 ? 'bg-gray-400 text-gray-900' :
+                      index === 2 ? 'bg-orange-700 text-white' :
+                      'bg-gray-600 text-white'
                     }`}>
                       {index + 1}
                     </div>
