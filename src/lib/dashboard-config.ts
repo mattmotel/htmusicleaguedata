@@ -1,4 +1,6 @@
 // Reusable Dashboard Configuration System
+import { getHomepageItems } from './navigation-config';
+
 export interface DashboardConfig {
   title: string;
   description: string;
@@ -178,46 +180,12 @@ export const musicLeagueMappings = {
       description: 'Votes cast across all seasons',
     },
   ],
-  navigation: [
-    {
-      key: 'submissions',
-      title: 'All Submissions',
-      description: 'Browse all song submissions across seasons',
-      href: '/submissions',
-      icon: 'Music',
-      color: 'emerald' as const,
-    },
-    {
-      key: 'leaderboards',
-      title: 'Leaderboards',
-      description: 'Overall rankings and statistics',
-      href: '/leaderboards',
-      icon: 'Trophy',
-      color: 'blue' as const,
-    },
-    {
-      key: 'artists',
-      title: 'Artists',
-      description: 'View all artists and submission counts',
-      href: '/artists',
-      icon: 'Users',
-      color: 'purple' as const,
-    },
-    {
-      key: 'missing-votes',
-      title: 'Missing Votes',
-      description: 'Track participation and missing votes',
-      href: '/missing-votes',
-      icon: 'AlertTriangle',
-      color: 'orange' as const,
-    },
-    {
-      key: 'search',
-      title: 'Search',
-      description: 'Search songs, artists, and submissions',
-      href: '/search',
-      icon: 'Search',
-      color: 'pink' as const,
-    },
-  ],
+  navigation: getHomepageItems().map(item => ({
+    key: item.id,
+    title: item.label,
+    description: item.description,
+    href: item.href,
+    icon: item.icon,
+    color: item.color as const,
+  })),
 };

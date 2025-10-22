@@ -84,6 +84,25 @@ import Navigation from './ui/Navigation';
 - ✅ Active state indication
 - ✅ Smooth transitions
 
+### PageHeader
+
+A consistent header component for all pages.
+
+```tsx
+import PageHeader from './ui/PageHeader';
+
+<PageHeader
+  title="Page Title"
+  description="Page description text"
+/>
+```
+
+**Features:**
+- ✅ Consistent gradient text styling
+- ✅ Centered layout
+- ✅ Responsive typography
+- ✅ Reusable across all pages
+
 ### ReusableDashboard
 
 A complete dashboard component that works with any data.

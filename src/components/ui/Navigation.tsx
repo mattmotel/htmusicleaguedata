@@ -4,28 +4,31 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, BarChart3, List, AlertTriangle, Trophy, Search, Users, Calendar } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
 import GlassCard from './GlassCard';
 import GlassButton from './GlassButton';
 import AppIcon from './AppIcon';
 import { getConfig } from '../../lib/config';
+import { getNavBarItems } from '../../lib/navigation-config';
 
-interface NavItem {
+interface NavItemWithIcon {
   href: string;
   label: string;
   icon: React.ComponentType<{ className?: string }>;
-  description?: string;
+  description: string;
 }
 
-const navItems: NavItem[] = [
-  { href: '/', label: 'Overview', icon: BarChart3, description: 'Dashboard and analytics' },
-  { href: '/submissions', label: 'All Submissions', icon: List, description: 'Browse all submissions' },
-  { href: '/leaderboards', label: 'Leaderboards', icon: Trophy, description: 'Rankings and statistics' },
-  { href: '/seasons', label: 'Seasons', icon: Calendar, description: 'Season statistics and breakdown' },
-  { href: '/artists', label: 'Artists', icon: Users, description: 'View all artists' },
-  { href: '/missing-votes', label: 'Missing Votes', icon: AlertTriangle, description: 'Track participation' },
-  { href: '/search', label: 'Search', icon: Search, description: 'Search songs and artists' },
-];
+// Convert navigation config to component-ready format
+const navItems: NavItemWithIcon[] = getNavBarItems().map(item => {
+  const IconComponent = (LucideIcons as Record<string, React.ComponentType<{ className?: string }>>)[item.icon];
+  return {
+    href: item.href,
+    label: item.label,
+    icon: IconComponent,
+    description: item.description,
+  };
+});
 
 export default function Navigation() {
   const pathname = usePathname();

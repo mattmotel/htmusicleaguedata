@@ -1,5 +1,6 @@
 import { getDataManager } from '../../lib/data';
 import GlassCard from '../../components/ui/GlassCard';
+import PageHeader from '../../components/ui/PageHeader';
 import SubmissionsTable from '../../components/SubmissionsTable';
 
 export default async function SubmissionsPage() {
@@ -11,14 +12,10 @@ export default async function SubmissionsPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="space-y-8">
           {/* Header */}
-          <div className="text-center">
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent mb-4">
-              All Submissions
-            </h1>
-            <p className="text-lg text-slate-300">
-              Browse {submissions.length.toLocaleString()} song submissions across all seasons
-            </p>
-          </div>
+          <PageHeader
+            title="All Submissions"
+            description={`Browse ${submissions.length.toLocaleString()} song submissions across all seasons`}
+          />
 
           {/* Submissions Table */}
           <GlassCard variant="elevated" size="lg">
