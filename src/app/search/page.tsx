@@ -5,15 +5,20 @@ import GlassCard from '../../components/ui/GlassCard';
 // Force dynamic rendering - don't cache this page
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
+export const dynamicParams = true;
+export const fetchCache = 'force-no-store';
 
 interface SearchPageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
-  const dataManager = await getDataManager();
+  // Force this to be a dynamic route by awaiting first
   const resolvedSearchParams = await searchParams;
   const query = resolvedSearchParams.q as string || '';
+  
+  // Load data manager AFTER resolving params to ensure dynamic rendering
+  const dataManager = await getDataManager();
 
   console.log(`[Search Page] Total submissions available: ${dataManager.getSubmissions().length}`);
   console.log(`[Search Page] Query: "${query}"`);
