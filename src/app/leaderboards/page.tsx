@@ -180,11 +180,11 @@ export default async function LeaderboardsPage() {
     .sort((a, b) => b.totalPoints - a.totalPoints)
     .slice(0, 20);
 
-  // Top submitters by average points per submission
+  // Top submitters by average points per submission (sorted by equivalized average)
   const topSubmittersByAverage = Array.from(submitterStats.entries())
     .map(([id, stats]) => ({ id, ...stats, seasons: Array.from(stats.seasons) }))
     .filter(stats => stats.submissions >= 3) // Only include submitters with 3+ submissions
-    .sort((a, b) => b.averagePoints - a.averagePoints)
+    .sort((a, b) => b.equivalizedAveragePoints - a.equivalizedAveragePoints)
     .slice(0, 20);
 
   // Calculate artist stats
