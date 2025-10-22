@@ -50,7 +50,7 @@ export interface NavigationCardConfig {
   description: string;
   href: string;
   icon: string;
-  color: 'emerald' | 'blue' | 'purple' | 'orange' | 'red' | 'pink';
+  color: 'emerald' | 'blue' | 'purple' | 'orange' | 'red' | 'pink' | 'yellow';
 }
 
 export interface DashboardData {
