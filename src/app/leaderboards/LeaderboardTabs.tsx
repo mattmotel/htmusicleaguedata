@@ -86,7 +86,8 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
   return (
     <>
       {/* Tabs */}
-      <div className="flex flex-wrap justify-center gap-2 mb-8">
+      <div className="overflow-x-auto scrollbar-hide mb-8 -mx-4 px-4 md:mx-0 md:px-0">
+        <div className="flex justify-center gap-2 min-w-max md:flex-wrap md:min-w-0">
         <Link
           href="/leaderboards/artists"
           className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
@@ -153,6 +154,7 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
           <Trophy className="w-4 h-4 mr-2" />
           Best Seasons
         </Link>
+        </div>
       </div>
 
       {/* Tab Content */}

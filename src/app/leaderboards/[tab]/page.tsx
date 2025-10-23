@@ -1,5 +1,6 @@
 import { getDataManager, Submission } from '../../../lib/data';
 import LeaderboardTabs from '../LeaderboardTabs';
+import PageHeader from '../../../components/ui/PageHeader';
 import { redirect } from 'next/navigation';
 
 interface LeaderboardData {
@@ -491,14 +492,10 @@ export default async function LeaderboardTabPage({ params }: { params: Promise<{
       <div className="container mx-auto px-4 py-8">
         <div className="space-y-8">
           {/* Header */}
-          <div className="text-center">
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent mb-4">
-              Overall Leaderboards
-            </h1>
-            <p className="text-lg text-slate-300">
-              Rankings across all seasons for submitters, artists, albums, and vote performance
-            </p>
-          </div>
+          <PageHeader
+            title="Overall Leaderboards"
+            description="Rankings across all seasons for submitters, artists, albums, and vote performance"
+          />
 
           {/* Leaderboard Tabs */}
           <LeaderboardTabs data={leaderboardData} currentTab={tab} />

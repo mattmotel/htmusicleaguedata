@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Search, Music, User, Calendar } from 'lucide-react';
 import GlassCard from '../../components/ui/GlassCard';
+import PageHeader from '../../components/ui/PageHeader';
 
 interface SearchResult {
   spotifyUri: string;
@@ -60,14 +61,10 @@ export default function SearchClient() {
       <div className="container mx-auto px-4 py-8">
         <div className="space-y-8">
           {/* Header */}
-          <GlassCard variant="elevated" size="lg">
-            <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent mb-2">
-                Search
-              </h1>
-              <p className="text-gray-400">Search songs, artists, albums, and submissions</p>
-            </div>
-          </GlassCard>
+          <PageHeader
+            title="Search"
+            description="Search songs, artists, albums, and submissions"
+          />
 
           {/* Search Form */}
           <GlassCard variant="elevated" size="lg">
