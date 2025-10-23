@@ -1,7 +1,7 @@
 import { getDataManager } from '../../lib/data';
-import Link from 'next/link';
-import { Music, List } from 'lucide-react';
+import { Music } from 'lucide-react';
 import GlassCard from '../../components/ui/GlassCard';
+import PageHeader from '../../components/ui/PageHeader';
 
 export default async function ArtistsPage() {
   const dataManager = await getDataManager();
@@ -20,19 +20,10 @@ export default async function ArtistsPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="space-y-8">
           {/* Header */}
-          <GlassCard variant="elevated" size="lg">
-            <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent mb-2">
-                  All Artists
-                </h1>
-                <p className="text-gray-400">{artists.length.toLocaleString()} artists across all seasons</p>
-              </div>
-              <Link href="/leaderboards" className="text-sm text-emerald-400 hover:text-emerald-300 underline flex items-center">
-                <List className="w-4 h-4 mr-2" /> Back to Leaderboards
-              </Link>
-            </div>
-          </GlassCard>
+          <PageHeader
+            title="All Artists"
+            description={`${artists.length.toLocaleString()} artists across all seasons`}
+          />
 
           {/* Artists List */}
           <GlassCard variant="elevated" size="lg">

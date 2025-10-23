@@ -2,6 +2,7 @@ import { getDataManager, Submission } from '../../lib/data';
 import { Users, AlertCircle, CheckCircle } from 'lucide-react';
 import MissingVotesTable from '../../components/MissingVotesTable';
 import GlassCard from '../../components/ui/GlassCard';
+import PageHeader from '../../components/ui/PageHeader';
 
 export default async function MissingVotesPage() {
   const dataManager = await getDataManager();
@@ -94,14 +95,10 @@ export default async function MissingVotesPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="space-y-8">
           {/* Header */}
-          <GlassCard variant="elevated" size="lg">
-            <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent mb-2">
-                Missing Votes
-              </h1>
-              <p className="text-gray-400">Track participation and missing votes across all rounds</p>
-            </div>
-          </GlassCard>
+          <PageHeader
+            title="Missing Votes"
+            description="Track participation and missing votes across all rounds"
+          />
 
           {/* Overall Stats */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">

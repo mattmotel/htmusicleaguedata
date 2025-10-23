@@ -1,5 +1,6 @@
 import { getDataManager } from '../../lib/data';
 import SimpleGlassCard from '../../components/ui/SimpleGlassCard';
+import PageHeader from '../../components/ui/PageHeader';
 import { Users, Calendar, TrendingUp, Award } from 'lucide-react';
 
 export default async function SeasonsPage() {
@@ -135,16 +136,17 @@ export default async function SeasonsPage() {
   const totalPoints = votes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">Season Statistics</h1>
-          <p className="text-gray-400">Detailed breakdown of each season&apos;s performance</p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+      <div className="container mx-auto px-4 py-8">
+        <div className="space-y-8">
+          {/* Header */}
+          <PageHeader
+            title="Season Statistics"
+            description="Detailed breakdown of each season's performance"
+          />
 
-        {/* Overall Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
+          {/* Overall Stats Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           <SimpleGlassCard variant="elevated" size="sm">
             <div className="text-center">
               <Calendar className="h-8 w-8 text-emerald-400 mx-auto mb-2" />
@@ -186,10 +188,10 @@ export default async function SeasonsPage() {
               <p className="text-sm text-gray-400">Total Points</p>
             </div>
           </SimpleGlassCard>
-        </div>
+          </div>
 
-        {/* Seasons Table */}
-        <SimpleGlassCard variant="elevated" size="lg">
+          {/* Seasons Table */}
+          <SimpleGlassCard variant="elevated" size="lg">
           <div className="flex items-center mb-6">
             <Calendar className="h-6 w-6 text-emerald-400 mr-3" />
             <h2 className="text-2xl font-bold text-emerald-400">Season Breakdown</h2>
@@ -254,7 +256,8 @@ export default async function SeasonsPage() {
               <span className="text-emerald-400">*</span> Season 1, Round 1 had 10 points max. Scores have been normalized (2x multiplier) to match other rounds (20 points max).
             </p>
           </div>
-        </SimpleGlassCard>
+          </SimpleGlassCard>
+        </div>
       </div>
     </div>
   );
