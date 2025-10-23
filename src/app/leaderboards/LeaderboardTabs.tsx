@@ -378,13 +378,15 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
 
           {/* Most Submissions by Submitter */}
           <SimpleGlassCard variant="elevated" size="lg">
-            <div className="flex items-center mb-6">
-              <Users className="h-6 w-6 text-green-400 mr-3" />
-              <h2 className="text-2xl font-bold text-green-400">Most Submissions</h2>
+            <div className="mb-6">
+              <div className="flex items-center mb-2">
+                <Users className="h-6 w-6 text-green-400 mr-3" />
+                <h2 className="text-2xl font-bold text-green-400">Most Submissions</h2>
+              </div>
+              <p className="text-gray-400 text-sm ml-9">
+                Submitters with the most total submissions
+              </p>
             </div>
-            <p className="text-gray-400 mb-6 text-sm">
-              Submitters with the most total submissions
-            </p>
             
             <div className="space-y-3">
               {data.topSubmitters.slice(0, 20).map((submitter, index) => (
@@ -441,13 +443,15 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
 
           {/* Highest Equivalized Average Points */}
           <SimpleGlassCard variant="elevated" size="lg">
-            <div className="flex items-center mb-6">
-              <Star className="h-6 w-6 text-blue-400 mr-3" />
-              <h2 className="text-2xl font-bold text-blue-400">Highest Equivalized Average Points</h2>
+            <div className="mb-6">
+              <div className="flex items-center mb-2">
+                <Star className="h-6 w-6 text-blue-400 mr-3" />
+                <h2 className="text-2xl font-bold text-blue-400">Highest Equivalized Average Points</h2>
+              </div>
+              <p className="text-gray-400 text-sm ml-9">
+                Normalized to 30-point system to compare across different voting systems
+              </p>
             </div>
-            <p className="text-gray-400 mb-6 text-sm">
-              Normalized to 30-point system to compare across different voting systems
-            </p>
             
             <div className="space-y-3">
               {data.topSubmittersByAverage.map((submitter, index) => (
@@ -476,13 +480,15 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Highest Normalized Season Scores */}
           <SimpleGlassCard variant="elevated" size="lg">
-            <div className="flex items-center mb-6">
-              <Trophy className="h-6 w-6 text-yellow-400 mr-3" />
-              <h2 className="text-2xl font-bold text-yellow-400">Highest Normalized Season Scores</h2>
+            <div className="mb-6">
+              <div className="flex items-center mb-2">
+                <Trophy className="h-6 w-6 text-yellow-400 mr-3" />
+                <h2 className="text-2xl font-bold text-yellow-400">Highest Normalized Season Scores</h2>
+              </div>
+              <p className="text-gray-400 text-sm ml-9">
+                All scores normalized to 30-point system for fair comparison
+              </p>
             </div>
-            <p className="text-gray-400 mb-6 text-sm">
-              All scores normalized to 30-point system for fair comparison
-            </p>
             
             <div className="space-y-3">
               {data.bestSeasonPerformances.map((performance, index) => (
@@ -516,13 +522,15 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
 
           {/* Highest Raw Season Scores */}
           <SimpleGlassCard variant="elevated" size="lg">
-            <div className="flex items-center mb-6">
-              <Star className="h-6 w-6 text-orange-400 mr-3" />
-              <h2 className="text-2xl font-bold text-orange-400">Highest Raw Season Scores</h2>
+            <div className="mb-6">
+              <div className="flex items-center mb-2">
+                <Star className="h-6 w-6 text-orange-400 mr-3" />
+                <h2 className="text-2xl font-bold text-orange-400">Highest Raw Season Scores</h2>
+              </div>
+              <p className="text-gray-400 text-sm ml-9">
+                Actual points scored (not normalized)
+              </p>
             </div>
-            <p className="text-gray-400 mb-6 text-sm">
-              Actual points scored (not normalized)
-            </p>
             
             <div className="space-y-3">
               {[...data.bestSeasonPerformances].sort((a, b) => b.rawScore - a.rawScore).map((performance, index) => (

@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, ChevronRight, Expand, Minimize } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 interface Round {
   id: string;
+  timestamp: string;
   title: string;
   description: string;
-  timestamp: string;
   season: number;
 }
 
@@ -17,10 +17,7 @@ interface RoundsListProps {
 }
 
 export default function RoundsList({ sortedSeasons, roundsBySeason }: RoundsListProps) {
-  // First season is open by default, rest are closed
-  const [expandedSeasons, setExpandedSeasons] = useState<Set<number>>(
-    new Set(sortedSeasons.length > 0 ? [sortedSeasons[0]] : [])
-  );
+  const [expandedSeasons, setExpandedSeasons] = useState<Set<number>>(new Set([sortedSeasons[0]]));
 
   const toggleSeason = (season: number) => {
     const newExpanded = new Set(expandedSeasons);
@@ -32,59 +29,35 @@ export default function RoundsList({ sortedSeasons, roundsBySeason }: RoundsList
     setExpandedSeasons(newExpanded);
   };
 
-  const expandAll = () => {
-    setExpandedSeasons(new Set(sortedSeasons));
-  };
-
-  const collapseAll = () => {
-    setExpandedSeasons(new Set());
-  };
-
   return (
-    <div className="space-y-8">
-      {/* Expand/Collapse All Buttons */}
-      <div className="flex justify-end space-x-2">
-        <button
-          onClick={expandAll}
-          className="flex items-center space-x-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
-        >
-          <Expand className="w-4 h-4" />
-          <span>Expand All</span>
-        </button>
-        <button
-          onClick={collapseAll}
-          className="flex items-center space-x-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
-        >
-          <Minimize className="w-4 h-4" />
-          <span>Collapse All</span>
-        </button>
-      </div>
-
-      {/* Rounds by Season */}
+    <div className="space-y-4">
       {sortedSeasons.map(season => {
         const rounds = roundsBySeason.get(season) || [];
         const isExpanded = expandedSeasons.has(season);
         
         return (
-          <div key={season} className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
+          <div key={season} className="border border-gray-600/50 rounded-lg overflow-hidden">
             <button
               onClick={() => toggleSeason(season)}
-              className="w-full bg-gray-700 px-6 py-4 border-b border-gray-600 hover:bg-gray-600 transition-colors"
+              className="w-full p-4 bg-gray-700/30 hover:bg-gray-700/50 transition-colors flex items-center justify-between"
             >
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-white text-left">
-                  Season {season} ({rounds.length} rounds)
-                </h3>
-                {isExpanded ? (
-                  <ChevronDown className="w-5 h-5 text-gray-400" />
-                ) : (
-                  <ChevronRight className="w-5 h-5 text-gray-400" />
-                )}
+              <div className="flex items-center gap-3">
+                <h2 className="text-xl font-bold text-emerald-400">
+                  Season {season}
+                </h2>
+                <span className="text-gray-400 text-sm">
+                  {rounds.length} rounds
+                </span>
               </div>
+              {isExpanded ? (
+                <ChevronUp className="h-5 w-5 text-gray-400" />
+              ) : (
+                <ChevronDown className="h-5 w-5 text-gray-400" />
+              )}
             </button>
             
             {isExpanded && (
-              <div className="p-6 space-y-3">
+              <div className="p-4 space-y-3">
                 {rounds.map((round, index) => (
                   <div key={round.id} className="p-4 bg-gray-700/50 rounded-lg hover:bg-gray-600/50 transition-colors">
                     <div className="flex items-start gap-3">
@@ -119,4 +92,3 @@ export default function RoundsList({ sortedSeasons, roundsBySeason }: RoundsList
     </div>
   );
 }
-
