@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import Link from 'next/link';
 import { Trophy, Users, Music, Star, BarChart3, TrendingUp } from 'lucide-react';
 import SimpleGlassCard from '../../components/ui/SimpleGlassCard';
 
@@ -79,85 +79,84 @@ interface LeaderboardData {
 
 interface LeaderboardTabsProps {
   data: LeaderboardData;
+  currentTab: string;
 }
 
-export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
-  const [activeTab, setActiveTab] = useState('artists');
-
+export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsProps) {
   return (
     <>
       {/* Tabs */}
       <div className="flex flex-wrap justify-center gap-2 mb-8">
-        <button
-          onClick={() => setActiveTab('artists')}
-          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            activeTab === 'artists'
+        <Link
+          href="/leaderboards/artists"
+          className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
+            currentTab === 'artists'
               ? 'bg-emerald-400 text-gray-900'
               : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
           }`}
         >
-          <Music className="inline w-4 h-4 mr-2" />
+          <Music className="w-4 h-4 mr-2" />
           Artists
-        </button>
-        <button
-          onClick={() => setActiveTab('albums')}
-          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            activeTab === 'albums'
+        </Link>
+        <Link
+          href="/leaderboards/albums"
+          className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
+            currentTab === 'albums'
               ? 'bg-emerald-400 text-gray-900'
               : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
           }`}
         >
-          <BarChart3 className="inline w-4 h-4 mr-2" />
+          <BarChart3 className="w-4 h-4 mr-2" />
           Albums
-        </button>
-        <button
-          onClick={() => setActiveTab('songs')}
-          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            activeTab === 'songs'
+        </Link>
+        <Link
+          href="/leaderboards/songs"
+          className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
+            currentTab === 'songs'
               ? 'bg-emerald-400 text-gray-900'
               : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
           }`}
         >
-          <Star className="inline w-4 h-4 mr-2" />
+          <Star className="w-4 h-4 mr-2" />
           Songs
-        </button>
-        <button
-          onClick={() => setActiveTab('submitters')}
-          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            activeTab === 'submitters'
+        </Link>
+        <Link
+          href="/leaderboards/submitters"
+          className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
+            currentTab === 'submitters'
               ? 'bg-emerald-400 text-gray-900'
               : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
           }`}
         >
-          <Users className="inline w-4 h-4 mr-2" />
+          <Users className="w-4 h-4 mr-2" />
           Submitters
-        </button>
-        <button
-          onClick={() => setActiveTab('point-average')}
-          className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            activeTab === 'point-average'
+        </Link>
+        <Link
+          href="/leaderboards/point-average"
+          className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
+            currentTab === 'point-average'
               ? 'bg-emerald-400 text-gray-900'
               : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
           }`}
         >
-          <TrendingUp className="inline w-4 h-4 mr-2" />
+          <TrendingUp className="w-4 h-4 mr-2" />
           Point Average
-        </button>
-        <button
-          onClick={() => setActiveTab('season-performances')}
-          className={`px-6 py-3 rounded-lg font-medium transition-all ${
-            activeTab === 'season-performances'
+        </Link>
+        <Link
+          href="/leaderboards/best-seasons"
+          className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
+            currentTab === 'best-seasons'
               ? 'bg-emerald-400 text-gray-900'
               : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
           }`}
         >
-          <Trophy className="inline w-4 h-4 mr-2" />
+          <Trophy className="w-4 h-4 mr-2" />
           Best Seasons
-        </button>
+        </Link>
       </div>
 
       {/* Tab Content */}
-      {activeTab === 'artists' && (
+      {currentTab === 'artists' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Top Artists */}
           <SimpleGlassCard variant="elevated" size="lg">
@@ -217,7 +216,7 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
         </div>
       )}
 
-      {activeTab === 'albums' && (
+      {currentTab === 'albums' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Most Submissions by Album */}
           <SimpleGlassCard variant="elevated" size="lg">
@@ -287,7 +286,7 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
         </div>
       )}
 
-      {activeTab === 'songs' && (
+      {currentTab === 'songs' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Most Votes per Song */}
           <SimpleGlassCard variant="elevated" size="lg">
@@ -347,7 +346,7 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
         </div>
       )}
 
-      {activeTab === 'submitters' && (
+      {currentTab === 'submitters' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Top Submitters by Total Points */}
           <SimpleGlassCard variant="elevated" size="lg">
@@ -410,7 +409,7 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
         </div>
       )}
 
-      {activeTab === 'point-average' && (
+      {currentTab === 'point-average' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Highest Average Points */}
           <SimpleGlassCard variant="elevated" size="lg">
@@ -473,7 +472,7 @@ export default function LeaderboardTabs({ data }: LeaderboardTabsProps) {
         </div>
       )}
 
-      {activeTab === 'season-performances' && (
+      {currentTab === 'best-seasons' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Highest Normalized Season Scores */}
           <SimpleGlassCard variant="elevated" size="lg">

@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import GlassCard from './GlassCard';
 import GlassButton from './GlassButton';
-import AppIcon from './AppIcon';
 import { getConfig } from '../../lib/config';
 import { getNavBarItems } from '../../lib/navigation-config';
 
@@ -41,16 +41,18 @@ export default function Navigation() {
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-slate-900/80 border-b border-white/10">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo with Apple-style app icon */}
+          {/* Logo */}
           <Link 
             href="/" 
             className="flex items-center space-x-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-slate-900 rounded-lg"
             aria-label="Go to homepage"
           >
-            <AppIcon 
-              emoji={config.branding.emoji}
-              size="md"
-              animated={true}
+            <Image 
+              src="/logo.png"
+              alt="Hard Times Music League"
+              width={48}
+              height={48}
+
             />
             <span className="text-xl font-bold text-white">{config.leagueName}</span>
           </Link>

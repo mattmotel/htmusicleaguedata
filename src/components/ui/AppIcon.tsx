@@ -1,16 +1,19 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface AppIconProps {
-  emoji: string;
+  emoji?: string;
+  iconImage?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
   animated?: boolean;
 }
 
 export default function AppIcon({ 
-  emoji, 
+  emoji,
+  iconImage,
   size = 'md', 
   className = '',
   animated = true 
@@ -34,18 +37,32 @@ export default function AppIcon({
         transition: { duration: 0.1 }
       } : {}}
     >
-      {/* Clean Apple-style rounded square background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl shadow-lg">
-        {/* Simple glass overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-2xl" />
-      </div>
-      
-      {/* Emoji content */}
-      <div className="relative z-10 flex items-center justify-center h-full">
-        <span className="drop-shadow-sm">
-          {emoji}
-        </span>
-      </div>
+      {iconImage ? (
+        // For custom icon images, use the full container
+        <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-lg">
+          <Image 
+            src={iconImage} 
+            alt="App Icon" 
+            fill
+            className="object-cover"
+          />
+        </div>
+      ) : (
+        <>
+          {/* Clean Apple-style rounded square background for emoji */}
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl shadow-lg">
+            {/* Simple glass overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-2xl" />
+          </div>
+          
+          {/* Emoji content */}
+          <div className="relative z-10 flex items-center justify-center h-full">
+            <span className="drop-shadow-sm">
+              {emoji}
+            </span>
+          </div>
+        </>
+      )}
     </motion.div>
   );
 }

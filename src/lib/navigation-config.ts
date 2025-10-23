@@ -16,7 +16,7 @@ export const navigationItems: NavItem[] = [
   {
     id: 'leaderboards',
     label: 'Leaderboards',
-    href: '/leaderboards',
+    href: '/leaderboards/artists',
     icon: 'Trophy',
     description: 'Rankings and statistics',
     color: 'blue',

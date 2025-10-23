@@ -1,6 +1,7 @@
 // Server-safe configuration system
 export interface BrandingConfig {
-  emoji: string;
+  emoji?: string;
+  iconImage?: string; // Path to icon image
   primaryColor: string; // Tailwind color token e.g., "green-400"
 }
 
@@ -41,7 +42,7 @@ const defaultConfig: AppConfig = {
   cacheTtlSeconds: Number(process.env.CACHE_TTL_SECONDS || 300),
   seasonDiscovery: 'auto',
   branding: {
-    emoji: '🥾',
+    iconImage: '/icon.png',
     primaryColor: 'green-400',
   },
   limits: {
