@@ -23,6 +23,15 @@ interface LeaderboardData {
     averagePoints: number;
     equivalizedAveragePoints: number;
   }>;
+  topSubmittersByEquivalizedAverage: Array<{
+    id: string;
+    name: string;
+    submissions: number;
+    seasons: number[];
+    totalPoints: number;
+    averagePoints: number;
+    equivalizedAveragePoints: number;
+  }>;
   topArtists: [string, number][];
   topAlbums: [string, number][];
   topAlbumsDetailed?: Array<{ album: string; count: number; artists: string[] }>; 
@@ -460,7 +469,7 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
             </p>
             
             <div className="space-y-3">
-              {data.topSubmittersByAverage.map((submitter, index) => (
+              {data.topSubmittersByEquivalizedAverage.map((submitter, index) => (
                 <div key={submitter.id} className="flex items-center justify-between p-3 bg-gray-700 rounded">
                   <div className="flex items-center">
                     <div className="flex items-center justify-center w-8 h-8 bg-blue-400 text-gray-900 rounded-full text-sm font-bold mr-3 flex-shrink-0">

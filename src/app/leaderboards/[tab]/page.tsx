@@ -22,6 +22,15 @@ interface LeaderboardData {
     averagePoints: number;
     equivalizedAveragePoints: number;
   }>;
+  topSubmittersByEquivalizedAverage: Array<{
+    id: string;
+    name: string;
+    submissions: number;
+    seasons: number[];
+    totalPoints: number;
+    averagePoints: number;
+    equivalizedAveragePoints: number;
+  }>;
   topArtists: [string, number][];
   topAlbums: [string, number][];
   topAlbumsDetailed?: Array<{ album: string; count: number; artists: string[] }>; 
@@ -195,8 +204,23 @@ export default async function LeaderboardTabPage({ params }: { params: Promise<{
     .sort((a, b) => b.totalPoints - a.totalPoints)
     .slice(0, 50);
 
-  // Top submitters by average points
+  // Top submitters by average points (RAW)
   const topSubmittersByAverage = Array.from(submitterStats.entries())
+    .map(([id, stats]) => ({
+      id,
+      name: stats.name,
+      submissions: stats.submissions,
+      seasons: Array.from(stats.seasons).sort((a, b) => a - b),
+      totalPoints: stats.totalPoints,
+      averagePoints: stats.averagePoints,
+      equivalizedAveragePoints: stats.equivalizedAveragePoints
+    }))
+    .filter(submitter => submitter.submissions >= 10)
+    .sort((a, b) => b.averagePoints - a.averagePoints)
+    .slice(0, 50);
+
+  // Top submitters by EQUIVALIZED average points
+  const topSubmittersByEquivalizedAverage = Array.from(submitterStats.entries())
     .map(([id, stats]) => ({
       id,
       name: stats.name,
@@ -476,6 +500,7 @@ export default async function LeaderboardTabPage({ params }: { params: Promise<{
   const leaderboardData: LeaderboardData = {
     topSubmitters,
     topSubmittersByAverage,
+    topSubmittersByEquivalizedAverage,
     topArtists,
     topAlbums,
     topAlbumsDetailed,
