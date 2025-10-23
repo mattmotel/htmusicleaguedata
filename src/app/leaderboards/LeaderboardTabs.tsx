@@ -53,20 +53,28 @@ interface LeaderboardData {
     artist: string;
     totalVotes: number;
     totalPoints: number;
-    submitter: string;
-    season: number;
-    round: number;
-    allSeasonsRounds: string;
+    submissions: Array<{
+      submitter: string;
+      season: number;
+      round: number;
+      votes: number;
+      points: number;
+      spotifyUri: string;
+    }>;
   }>;
   topSongsSingleSubmission: Array<{
     title: string;
     artist: string;
     totalVotes: number;
     totalPoints: number;
-    submitter: string;
-    season: number;
-    round: number;
-    allSeasonsRounds: string;
+    submissions: Array<{
+      submitter: string;
+      season: number;
+      round: number;
+      votes: number;
+      points: number;
+      spotifyUri: string;
+    }>;
   }>;
   topNormalizedSubmitters: Array<{
     submitterId: string;
@@ -306,21 +314,32 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
               <h2 className="text-2xl font-bold text-yellow-400">Most Votes per Song</h2>
             </div>
             
-            <div className="space-y-3">
+            <div className="space-y-4">
               {data.topSongsByVotes.slice(0, 20).map((song, index) => (
-                <div key={`${song.title}-${song.season}`} className="flex items-center justify-between p-3 bg-gray-700 rounded">
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-8 h-8 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold mr-3 flex-shrink-0">
-                      {index + 1}
+                <div key={`${song.title}-${song.artist}`} className="bg-gray-700/50 rounded-lg p-4 border border-gray-600/50">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center flex-1">
+                      <div className="flex items-center justify-center w-8 h-8 bg-yellow-400 text-gray-900 rounded-full text-sm font-bold mr-3 flex-shrink-0">
+                        {index + 1}
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-bold text-white text-lg">{song.title}</p>
+                        <p className="text-sm text-gray-400">{song.artist}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-medium text-white">{song.title}</p>
-                      <p className="text-sm text-gray-400">{song.artist} • S{song.season} • {song.submitter}</p>
+                    <div className="text-right">
+                      <p className="font-bold text-yellow-400 text-xl">{song.totalPoints} points</p>
+                      <p className="text-sm text-gray-400">{song.totalVotes} votes total</p>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <p className="font-bold text-yellow-400">{song.totalVotes} votes</p>
-                    <p className="text-sm text-gray-400">{song.totalPoints} points</p>
+                  <div className="space-y-1 ml-11 border-l-2 border-gray-600 pl-3">
+                    {song.submissions.map((sub, subIndex) => (
+                      <div key={`${sub.spotifyUri}-${sub.season}-${sub.round}-${sub.submitter}`} className="py-1">
+                        <p className="text-sm text-gray-300">
+                          S{sub.season}, Round {sub.round} • {sub.submitter}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               ))}
@@ -335,23 +354,26 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
             </div>
             
             <div className="space-y-3">
-              {data.topSongsSingleSubmission.slice(0, 20).map((song, index) => (
-                <div key={`${song.title}-${song.season}`} className="flex items-center justify-between p-3 bg-gray-700 rounded">
-                  <div className="flex items-center">
-                    <div className="flex items-center justify-center w-8 h-8 bg-orange-400 text-gray-900 rounded-full text-sm font-bold mr-3 flex-shrink-0">
-                      {index + 1}
+              {data.topSongsSingleSubmission.slice(0, 20).map((song, index) => {
+                const sub = song.submissions[0];
+                return (
+                  <div key={sub.spotifyUri} className="flex items-center justify-between p-3 bg-gray-700 rounded">
+                    <div className="flex items-center">
+                      <div className="flex items-center justify-center w-8 h-8 bg-orange-400 text-gray-900 rounded-full text-sm font-bold mr-3 flex-shrink-0">
+                        {index + 1}
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">{song.title}</p>
+                        <p className="text-sm text-gray-400">{song.artist} • S{sub.season}, Round {sub.round} • {sub.submitter}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-medium text-white">{song.title}</p>
-                      <p className="text-sm text-gray-400">{song.artist} • S{song.season} • {song.submitter}</p>
+                    <div className="text-right">
+                      <p className="font-bold text-orange-400">{sub.points} points</p>
+                      <p className="text-sm text-gray-400">{sub.votes} votes</p>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <p className="font-bold text-orange-400">{song.totalVotes} votes</p>
-                    <p className="text-sm text-gray-400">{song.totalPoints} points</p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </SimpleGlassCard>
         </div>

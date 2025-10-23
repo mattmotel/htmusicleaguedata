@@ -52,20 +52,28 @@ interface LeaderboardData {
     artist: string;
     totalVotes: number;
     totalPoints: number;
-    submitter: string;
-    season: number;
-    round: number;
-    allSeasonsRounds: string;
+    submissions: Array<{
+      submitter: string;
+      season: number;
+      round: number;
+      votes: number;
+      points: number;
+      spotifyUri: string;
+    }>;
   }>;
   topSongsSingleSubmission: Array<{
     title: string;
     artist: string;
     totalVotes: number;
     totalPoints: number;
-    submitter: string;
-    season: number;
-    round: number;
-    allSeasonsRounds: string;
+    submissions: Array<{
+      submitter: string;
+      season: number;
+      round: number;
+      votes: number;
+      points: number;
+      spotifyUri: string;
+    }>;
   }>;
   topNormalizedSubmitters: Array<{
     submitterId: string;
@@ -313,80 +321,57 @@ export default async function LeaderboardTabPage({ params }: { params: Promise<{
     .sort((a, b) => b.totalPoints - a.totalPoints)
     .slice(0, 50);
 
-  // Top songs by votes
-  const songVotes = new Map<string, { 
-    title: string; 
-    artist: string; 
-    totalVotes: number; 
-    totalPoints: number; 
-    submitter: string;
-    seasons: Set<number>;
-    rounds: Set<number>;
+  // Top songs by votes - group by song with individual submissions listed
+  const songGroupedSubmissions = new Map<string, {
+    title: string;
+    artist: string;
+    totalVotes: number;
+    totalPoints: number;
+    submissions: Array<{
+      submitter: string;
+      season: number;
+      round: number;
+      votes: number;
+      points: number;
+      spotifyUri: string;
+    }>;
   }>();
-  
+
   submissions.forEach(submission => {
     const key = `${submission.title}|||${submission.artist}`;
+    const submissionVotes = votes.filter(vote => vote.spotifyUri === submission.spotifyUri);
+    const submissionPoints = submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
     
-    if (!songVotes.has(key)) {
-      songVotes.set(key, {
+    if (!songGroupedSubmissions.has(key)) {
+      songGroupedSubmissions.set(key, {
         title: submission.title,
         artist: submission.artist,
         totalVotes: 0,
         totalPoints: 0,
-        submitter: submission.submitterName,
-        seasons: new Set(),
-        rounds: new Set()
+        submissions: []
       });
     }
     
-    const songData = songVotes.get(key)!;
-    songData.seasons.add(submission.season);
-    songData.rounds.add(submission.roundNumber);
-    
-    const submissionVotes = votes.filter(vote => vote.spotifyUri === submission.spotifyUri);
+    const songData = songGroupedSubmissions.get(key)!;
     songData.totalVotes += submissionVotes.length;
-    songData.totalPoints += submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
+    songData.totalPoints += submissionPoints;
+    songData.submissions.push({
+      submitter: submission.submitterName,
+      season: submission.season,
+      round: submission.roundNumber,
+      votes: submissionVotes.length,
+      points: submissionPoints,
+      spotifyUri: submission.spotifyUri
+    });
   });
 
-  const topSongsByVotes = Array.from(songVotes.values())
-    .map(song => {
-      const seasonsArray = Array.from(song.seasons).sort((a, b) => a - b);
-      const firstSeason = seasonsArray[0];
-      const firstRound = Math.min(...Array.from(song.rounds));
-      
-      return {
-        title: song.title,
-        artist: song.artist,
-        totalVotes: song.totalVotes,
-        totalPoints: song.totalPoints,
-        submitter: song.submitter,
-        season: firstSeason,
-        round: firstRound,
-        allSeasonsRounds: seasonsArray.map(s => `S${s}`).join(', ')
-      };
-    })
+  const topSongsByVotes = Array.from(songGroupedSubmissions.values())
     .sort((a, b) => b.totalPoints - a.totalPoints)
     .slice(0, 50);
 
   // Top songs (single submission only)
-  const topSongsSingleSubmission = Array.from(songVotes.values())
-    .filter(song => song.seasons.size === 1)
-    .map(song => {
-      const seasonsArray = Array.from(song.seasons).sort((a, b) => a - b);
-      const firstSeason = seasonsArray[0];
-      const firstRound = Math.min(...Array.from(song.rounds));
-      
-      return {
-        title: song.title,
-        artist: song.artist,
-        totalVotes: song.totalVotes,
-        totalPoints: song.totalPoints,
-        submitter: song.submitter,
-        season: firstSeason,
-        round: firstRound,
-        allSeasonsRounds: seasonsArray.map(s => `S${s}`).join(', ')
-      };
-    })
+  const topSongsSingleSubmission = Array.from(songGroupedSubmissions.values())
+    .filter(song => song.submissions.length === 1)
     .sort((a, b) => b.totalPoints - a.totalPoints)
     .slice(0, 50);
 
