@@ -380,13 +380,59 @@ class DataManager {
   }
 
   searchSubmissions(query: string): Submission[] {
-    const lowerQuery = query.toLowerCase();
-    return this.submissions.filter(sub => 
-      sub.title.toLowerCase().includes(lowerQuery) ||
-      sub.artist.toLowerCase().includes(lowerQuery) ||
-      sub.album.toLowerCase().includes(lowerQuery) ||
-      sub.submitterName.toLowerCase().includes(lowerQuery)
-    );
+    const lowerQuery = query.toLowerCase().trim();
+    
+    // Create a word boundary regex for better matching
+    // \b ensures we match whole words, not substrings
+    const wordBoundaryRegex = new RegExp(`\\b${lowerQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+    
+    const results = this.submissions.filter(sub => {
+      const title = sub.title.toLowerCase();
+      const artist = sub.artist.toLowerCase();
+      const album = sub.album.toLowerCase();
+      const submitter = sub.submitterName.toLowerCase();
+      
+      // Check for matches
+      return title.includes(lowerQuery) ||
+             artist.includes(lowerQuery) ||
+             album.includes(lowerQuery) ||
+             submitter.includes(lowerQuery);
+    });
+    
+    // Sort results: exact/word boundary matches first, then substring matches
+    return results.sort((a, b) => {
+      const aTitle = a.title.toLowerCase();
+      const aArtist = a.artist.toLowerCase();
+      const aAlbum = a.album.toLowerCase();
+      const bTitle = b.title.toLowerCase();
+      const bArtist = b.artist.toLowerCase();
+      const bAlbum = b.album.toLowerCase();
+      
+      // Exact match score (higher is better)
+      const aExact = (aTitle === lowerQuery ? 100 : 0) + 
+                     (aArtist === lowerQuery ? 100 : 0) + 
+                     (aAlbum === lowerQuery ? 50 : 0);
+      const bExact = (bTitle === lowerQuery ? 100 : 0) + 
+                     (bArtist === lowerQuery ? 100 : 0) + 
+                     (bAlbum === lowerQuery ? 50 : 0);
+      
+      if (aExact !== bExact) return bExact - aExact;
+      
+      // Word boundary match score
+      const aWordBoundary = (wordBoundaryRegex.test(aArtist) ? 50 : 0) + 
+                           (wordBoundaryRegex.test(aTitle) ? 30 : 0) +
+                           (wordBoundaryRegex.test(aAlbum) ? 20 : 0);
+      const bWordBoundary = (wordBoundaryRegex.test(bArtist) ? 50 : 0) + 
+                           (wordBoundaryRegex.test(bTitle) ? 30 : 0) +
+                           (wordBoundaryRegex.test(bAlbum) ? 20 : 0);
+      
+      if (aWordBoundary !== bWordBoundary) return bWordBoundary - aWordBoundary;
+      
+      // If equal, sort alphabetically by artist then title
+      const artistCompare = aArtist.localeCompare(bArtist);
+      if (artistCompare !== 0) return artistCompare;
+      return aTitle.localeCompare(bTitle);
+    });
   }
 
   getSubmissionsBySeason(season: number): Submission[] {
