@@ -23,7 +23,6 @@ export default async function Home() {
   const dashboardConfig = {
     ...defaultDashboardConfig,
     title: config.leagueName,
-    logo: config.branding.emoji,
   };
 
   const data = createDashboardData(

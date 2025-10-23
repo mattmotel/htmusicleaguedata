@@ -38,7 +38,7 @@ export default function Navigation() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-xl bg-slate-900/80 border-b border-white/10">
+    <nav className="sticky top-0 z-50 backdrop-blur-xl bg-slate-900/80 border-b border-white/10 py-4">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -50,8 +50,9 @@ export default function Navigation() {
             <Image 
               src="/logo.png"
               alt="Hard Times Music League"
-              width={48}
-              height={48}
+              width={64}
+              height={64}
+         
 
             />
             <span className="text-xl font-bold text-white">{config.leagueName}</span>

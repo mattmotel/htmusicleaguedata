@@ -4,7 +4,6 @@ import { getHomepageItems } from './navigation-config';
 export interface DashboardConfig {
   title: string;
   description: string;
-  logo: string;
   theme: {
     primary: string;
     secondary: string;
@@ -67,7 +66,6 @@ export interface DashboardData {
 export const defaultDashboardConfig: DashboardConfig = {
   title: 'Hard Times Music League',
   description: 'Data Dashboard & Analytics',
-  logo: '🥾',
   theme: {
     primary: '#10b981',
     secondary: '#6366f1',
