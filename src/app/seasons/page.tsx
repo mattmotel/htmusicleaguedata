@@ -226,7 +226,10 @@ export default async function SeasonsPage() {
                     <td className="py-3 px-4 text-white">{season.rounds}</td>
                     <td className="py-3 px-4">
                       <div>
-                        <p className="text-white font-medium">{season.votingSystem.votesPerUser} points per user</p>
+                        <p className="text-white font-medium">
+                          {season.votingSystem.votesPerUser} points per user
+                          {season.season === 1 && <span className="text-emerald-400">*</span>}
+                        </p>
                         <p className="text-sm text-gray-400">
                           Normalization: {(30 / season.votingSystem.votesPerUser).toFixed(1)}x
                         </p>
@@ -243,6 +246,13 @@ export default async function SeasonsPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+          
+          {/* Footnote for Season 1 */}
+          <div className="mt-4 pt-4 border-t border-gray-700">
+            <p className="text-sm text-gray-400">
+              <span className="text-emerald-400">*</span> Season 1, Round 1 had 10 points max. Scores have been normalized (2x multiplier) to match other rounds (20 points max).
+            </p>
           </div>
         </SimpleGlassCard>
       </div>

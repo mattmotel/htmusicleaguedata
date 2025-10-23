@@ -227,6 +227,9 @@ class DataManager {
 
   private async loadVotes() {
     const seasons = this.getSeasonNumbers();
+    // Season 1, Round 1 ID - this round had 10 point max instead of 20
+    const SEASON_1_ROUND_1_ID = '2bfbcc13a47c4b0e8f5978b95a2fad65';
+    
     for (const season of seasons) {
       try {
         const filePath = path.join(getConfig().baseDataDir, season.toString(), 'votes.csv');
@@ -235,14 +238,22 @@ class DataManager {
         
         rows.slice(1).forEach(row => {
           if (row.length >= 6 && row[0]?.startsWith('spotify:track:')) {
+            const roundId = row[5]?.trim() || '';
+            let pointsAssigned = parseInt(row[3]) || 0;
+            
+            // Apply 2x multiplier to Season 1, Round 1 to normalize with other rounds
+            if (season === 1 && roundId === SEASON_1_ROUND_1_ID) {
+              pointsAssigned = pointsAssigned * 2;
+            }
+            
             const vote: Vote = {
               spotifyUri: row[0].trim(),
               voterId: row[1]?.trim() || '',
               voterName: this.competitors.get(row[1]?.trim() || '') || row[1]?.trim() || '',
               created: row[2]?.trim() || '',
-              pointsAssigned: parseInt(row[3]) || 0,
+              pointsAssigned: pointsAssigned,
               comment: row[4]?.trim() || '',
-              roundId: row[5]?.trim() || '',
+              roundId: roundId,
               season
             };
             this.votes.push(vote);

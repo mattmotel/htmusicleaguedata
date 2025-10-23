@@ -522,8 +522,11 @@ export default async function LeaderboardsPage() {
             <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent mb-4">
               Overall Leaderboards
             </h1>
-            <p className="text-lg text-slate-300">
+            <p className="text-lg text-slate-300 mb-2">
               Rankings across all seasons for submitters, artists, albums, and vote performance
+            </p>
+            <p className="text-sm text-emerald-400">
+              * Season 1, Round 1 scores normalized (2x multiplier applied)
             </p>
           </div>
 
