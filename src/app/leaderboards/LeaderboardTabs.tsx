@@ -350,10 +350,13 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Top Submitters by Total Points */}
           <SimpleGlassCard variant="elevated" size="lg">
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-3">
               <Trophy className="h-6 w-6 text-green-400 mr-3" />
               <h2 className="text-2xl font-bold text-green-400">Top Submitters</h2>
             </div>
+            <p className="text-gray-400 mb-8 text-sm">
+              Most total points earned
+            </p>
             
             <div className="space-y-3">
               {data.topSubmitters.map((submitter, index) => (
@@ -415,10 +418,13 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Highest Average Points */}
           <SimpleGlassCard variant="elevated" size="lg">
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-3">
               <Star className="h-6 w-6 text-green-400 mr-3" />
               <h2 className="text-2xl font-bold text-green-400">Highest Average Points</h2>
             </div>
+            <p className="text-gray-400 mb-8 text-sm">
+              Average points per submission (min. 3 submissions)
+            </p>
             
             <div className="space-y-3">
               {data.topSubmittersByAverage.map((submitter, index) => (
