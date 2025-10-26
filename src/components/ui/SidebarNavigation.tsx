@@ -176,7 +176,7 @@ export default function SidebarNavigation() {
       {/* Mobile Overlay */}
       {isMobileOpen && (
         <div 
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[50] lg:hidden"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] lg:hidden"
           onClick={() => setIsMobileOpen(false)}
         />
       )}
@@ -212,6 +212,7 @@ export default function SidebarNavigation() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={() => setIsMobileOpen(false)}
                   className={`flex items-center transition-all duration-200 group ${
                     sidebarState === 'collapsed' 
                       ? 'justify-center px-2 py-2.5' 

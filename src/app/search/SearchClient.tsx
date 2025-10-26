@@ -58,7 +58,7 @@ export default function SearchClient() {
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto py-8">
         <div className="space-y-8">
           {/* Header */}
           <PageHeader

@@ -24,7 +24,7 @@ export default function RootLayout({
           <SidebarNavigation />
           <div className="transition-all duration-300" id="main-content">
             <div className="min-h-screen bg-white/5 backdrop-blur-sm rounded-tl-3xl rounded-tr-3xl shadow-2xl border border-white/10">
-              <div className="p-6 pr-8">
+              <div className="p-3 md:p-6 pr-4 md:pr-8">
                 {children}
               </div>
             </div>
