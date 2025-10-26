@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navigation from '../components/Navigation';
+import SidebarNavigation from '../components/ui/SidebarNavigation';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <div className="min-h-screen bg-gray-900 text-white">
-          <Navigation />
-          <main className="container mx-auto px-4 py-8">
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+          <SidebarNavigation />
+          <div className="transition-all duration-300" id="main-content">
             {children}
-          </main>
+          </div>
         </div>
       </body>
     </html>

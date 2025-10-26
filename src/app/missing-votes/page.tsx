@@ -91,7 +91,7 @@ export default async function MissingVotesPage() {
     totalParticipation / participationData.size : 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8">
         <div className="space-y-8">
           {/* Header */}

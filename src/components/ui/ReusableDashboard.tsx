@@ -27,7 +27,7 @@ export default function ReusableDashboard({
   };
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 ${className}`}>
+    <div className={`min-h-screen ${className}`}>
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
