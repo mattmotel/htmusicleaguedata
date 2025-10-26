@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { 
   BarChart, 
   Bar, 
@@ -50,8 +50,8 @@ function TopArtistsByPoints({ artists }: { artists: any[] }) {
   }));
 
   return (
-    <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-      <h3 className="text-white font-bold text-lg mb-4">Top Artists by Points</h3>
+    <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:border-emerald-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/20">
+      <h3 className="text-emerald-400 font-bold text-lg mb-4">Top Artists by Points</h3>
       <p className="text-gray-400 text-sm mb-4">Highest scoring artists in the league</p>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data}>
@@ -101,8 +101,8 @@ function MostVotesSingleSubmission({ topSongs }: { topSongs: any[] }) {
     .slice(0, 10); // Already sorted by points descending in the data preparation
 
   return (
-    <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-      <h3 className="text-white font-bold text-lg mb-4">Most Points (Single Submission)</h3>
+    <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:border-orange-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20">
+      <h3 className="text-orange-400 font-bold text-lg mb-4">Most Points (Single Submission)</h3>
       <p className="text-gray-400 text-sm mb-4">Individual song submissions with the most points</p>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data}>
@@ -154,8 +154,8 @@ function SubmitterEfficiency({ submitters }: { submitters: any[] }) {
     .slice(0, 10);
 
   return (
-    <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-      <h3 className="text-white font-bold text-lg mb-4">Submitter Efficiency</h3>
+    <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:border-indigo-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20">
+      <h3 className="text-indigo-400 font-bold text-lg mb-4">Submitter Efficiency</h3>
       <p className="text-gray-400 text-sm mb-4">Shows both raw average and normalized average points per submission</p>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data}>
@@ -204,8 +204,8 @@ function AveragePointsPerVote({ artists }: { artists: any[] }) {
     .slice(0, 12);
 
   return (
-    <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
-      <h3 className="text-white font-bold text-lg mb-4">Average Points per Vote</h3>
+    <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:border-green-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20">
+      <h3 className="text-green-400 font-bold text-lg mb-4">Average Points per Vote</h3>
       <p className="text-gray-400 text-sm mb-4">Shows which artists get the most points per vote</p>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data}>
@@ -242,13 +242,36 @@ function AveragePointsPerVote({ artists }: { artists: any[] }) {
 
 // Main Analytics Dashboard
 export default function MusicAnalytics({ topArtists, topSongs, topSubmitters }: MusicAnalyticsProps) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 200);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="w-full space-y-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <TopArtistsByPoints artists={topArtists} />
-        <MostVotesSingleSubmission topSongs={topSongs} />
-        <SubmitterEfficiency submitters={topSubmitters} />
-        <AveragePointsPerVote artists={topArtists} />
+        <div className={`transition-all duration-700 ease-out transform ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+        }`}>
+          <TopArtistsByPoints artists={topArtists} />
+        </div>
+        <div className={`transition-all duration-700 ease-out transform delay-100 ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+        }`}>
+          <MostVotesSingleSubmission topSongs={topSongs} />
+        </div>
+        <div className={`transition-all duration-700 ease-out transform delay-200 ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+        }`}>
+          <SubmitterEfficiency submitters={topSubmitters} />
+        </div>
+        <div className={`transition-all duration-700 ease-out transform delay-300 ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+        }`}>
+          <AveragePointsPerVote artists={topArtists} />
+        </div>
       </div>
     </div>
   );

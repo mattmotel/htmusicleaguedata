@@ -5,6 +5,7 @@ import MusicAnalytics from '../components/ui/MusicAnalytics';
 import SimpleGlassCard from '../components/ui/SimpleGlassCard';
 import { Trophy, Music, Users, TrendingUp, Mic, Disc3 } from 'lucide-react';
 import { redirect } from 'next/navigation';
+import AnimatedCounter from '../components/ui/AnimatedCounter';
 
 export default async function Home() {
   const dataManager = await getDataManager();
@@ -210,7 +211,9 @@ export default async function Home() {
                   <Music className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-white">{stats.totalSubmissions.toLocaleString()}</p>
+                  <p className="text-2xl font-bold text-white">
+                    <AnimatedCounter value={stats.totalSubmissions} />
+                  </p>
                   <p className="text-sm text-gray-400">Total Submissions</p>
                 </div>
               </div>
@@ -222,7 +225,9 @@ export default async function Home() {
                   <Mic className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-white">{stats.uniqueArtists.toLocaleString()}</p>
+                  <p className="text-2xl font-bold text-white">
+                    <AnimatedCounter value={stats.uniqueArtists} />
+                  </p>
                   <p className="text-sm text-gray-400">Unique Artists</p>
                 </div>
               </div>
@@ -234,7 +239,9 @@ export default async function Home() {
                   <Disc3 className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-white">{stats.uniqueAlbums.toLocaleString()}</p>
+                  <p className="text-2xl font-bold text-white">
+                    <AnimatedCounter value={stats.uniqueAlbums} />
+                  </p>
                   <p className="text-sm text-gray-400">Unique Albums</p>
                 </div>
               </div>
@@ -246,7 +253,9 @@ export default async function Home() {
                   <Trophy className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-white">{votes.length.toLocaleString()}</p>
+                  <p className="text-2xl font-bold text-white">
+                    <AnimatedCounter value={votes.length} />
+                  </p>
                   <p className="text-sm text-gray-400">Total Votes</p>
                 </div>
               </div>
