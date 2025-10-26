@@ -369,10 +369,10 @@ export default async function LeaderboardTabPage({ params }: { params: Promise<{
     .sort((a, b) => b.totalPoints - a.totalPoints)
     .slice(0, 50);
 
-  // Top songs (single submission only)
+  // Top songs (single submission only) - sorted by POINTS
   const topSongsSingleSubmission = Array.from(songGroupedSubmissions.values())
     .filter(song => song.submissions.length === 1)
-    .sort((a, b) => b.totalPoints - a.totalPoints)
+    .sort((a, b) => b.totalPoints - a.totalPoints) // Sort by points descending
     .slice(0, 50);
 
   // Calculate normalized scores with missed votes
