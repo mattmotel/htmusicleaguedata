@@ -61,22 +61,25 @@ export default function SubmissionsTable({ submissions }: SubmissionsTableProps)
 
   return (
     <div className="space-y-8">
-      {/* Expand/Collapse All Buttons */}
-      <div className="flex justify-end space-x-2">
-        <button
-          onClick={expandAll}
-          className="flex items-center space-x-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
-        >
-          <Expand className="w-4 h-4" />
-          <span>Expand All</span>
-        </button>
-        <button
-          onClick={collapseAll}
-          className="flex items-center space-x-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
-        >
-          <Minimize className="w-4 h-4" />
-          <span>Collapse All</span>
-        </button>
+      {/* Header with Expand/Collapse All Buttons */}
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-bold text-white">All Seasons</h2>
+        <div className="flex space-x-2">
+          <button
+            onClick={expandAll}
+            className="flex items-center space-x-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
+          >
+            <Expand className="w-4 h-4" />
+            <span>Expand All</span>
+          </button>
+          <button
+            onClick={collapseAll}
+            className="flex items-center space-x-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
+          >
+            <Minimize className="w-4 h-4" />
+            <span>Collapse All</span>
+          </button>
+        </div>
       </div>
 
       {seasons.map((season) => {

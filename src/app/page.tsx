@@ -199,7 +199,7 @@ export default async function Home() {
         <div className="space-y-8">
           {/* Header */}
           <PageHeader
-            title="Hard Times Music League"
+            title="Overview"
             description="Discover the most popular artists, highest-scoring songs, and most efficient submitters in your music league"
           />
 

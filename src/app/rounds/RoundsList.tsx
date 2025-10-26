@@ -42,8 +42,10 @@ export default function RoundsList({ sortedSeasons, roundsBySeason }: RoundsList
 
   return (
     <div className="space-y-8">
-      {/* Expand/Collapse All Buttons */}
-      <div className="flex justify-end space-x-2">
+      {/* Header with Expand/Collapse All Buttons */}
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-bold text-white">All Rounds</h2>
+        <div className="flex space-x-2">
         <button
           onClick={expandAll}
           className="flex items-center space-x-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
@@ -58,6 +60,7 @@ export default function RoundsList({ sortedSeasons, roundsBySeason }: RoundsList
           <Minimize className="w-4 h-4" />
           <span>Collapse All</span>
         </button>
+        </div>
       </div>
 
       {/* Rounds by Season */}

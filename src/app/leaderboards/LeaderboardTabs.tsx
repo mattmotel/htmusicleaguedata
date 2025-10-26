@@ -104,13 +104,13 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
     <>
       {/* Tabs */}
       <div className="overflow-x-auto scrollbar-hide mb-8 -mx-4 px-4 md:mx-0 md:px-0">
-        <div className="flex justify-center gap-2 min-w-max md:flex-wrap md:min-w-0">
+        <div className="flex border-b border-gray-600 min-w-max md:min-w-0">
         <Link
           href="/leaderboards/artists"
-          className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
+          className={`flex items-center px-6 py-3 font-medium transition-colors border-b-2 ${
             currentTab === 'artists'
-              ? 'bg-emerald-400 text-gray-900'
-              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              ? 'border-emerald-400 text-emerald-400 bg-gray-800'
+              : 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-500'
           }`}
         >
           <Music className="w-4 h-4 mr-2" />
@@ -118,10 +118,10 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
         </Link>
         <Link
           href="/leaderboards/albums"
-          className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
+          className={`flex items-center px-6 py-3 font-medium transition-colors border-b-2 ${
             currentTab === 'albums'
-              ? 'bg-emerald-400 text-gray-900'
-              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              ? 'border-emerald-400 text-emerald-400 bg-gray-800'
+              : 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-500'
           }`}
         >
           <BarChart3 className="w-4 h-4 mr-2" />
@@ -129,10 +129,10 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
         </Link>
         <Link
           href="/leaderboards/songs"
-          className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
+          className={`flex items-center px-6 py-3 font-medium transition-colors border-b-2 ${
             currentTab === 'songs'
-              ? 'bg-emerald-400 text-gray-900'
-              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              ? 'border-emerald-400 text-emerald-400 bg-gray-800'
+              : 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-500'
           }`}
         >
           <Star className="w-4 h-4 mr-2" />
@@ -140,10 +140,10 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
         </Link>
         <Link
           href="/leaderboards/submitters"
-          className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
+          className={`flex items-center px-6 py-3 font-medium transition-colors border-b-2 ${
             currentTab === 'submitters'
-              ? 'bg-emerald-400 text-gray-900'
-              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              ? 'border-emerald-400 text-emerald-400 bg-gray-800'
+              : 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-500'
           }`}
         >
           <Users className="w-4 h-4 mr-2" />
@@ -151,10 +151,10 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
         </Link>
         <Link
           href="/leaderboards/point-average"
-          className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
+          className={`flex items-center px-6 py-3 font-medium transition-colors border-b-2 ${
             currentTab === 'point-average'
-              ? 'bg-emerald-400 text-gray-900'
-              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              ? 'border-emerald-400 text-emerald-400 bg-gray-800'
+              : 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-500'
           }`}
         >
           <TrendingUp className="w-4 h-4 mr-2" />
@@ -162,10 +162,10 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
         </Link>
         <Link
           href="/leaderboards/best-seasons"
-          className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
+          className={`flex items-center px-6 py-3 font-medium transition-colors border-b-2 ${
             currentTab === 'best-seasons'
-              ? 'bg-emerald-400 text-gray-900'
-              : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              ? 'border-emerald-400 text-emerald-400 bg-gray-800'
+              : 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-500'
           }`}
         >
           <Trophy className="w-4 h-4 mr-2" />
