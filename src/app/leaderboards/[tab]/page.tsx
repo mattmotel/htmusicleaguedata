@@ -504,7 +504,7 @@ export default async function LeaderboardTabPage({ params }: { params: Promise<{
   });
 
   const bestSeasonPerformances = seasonPerformances
-    .sort((a, b) => b.normalizedScore - a.normalizedScore)
+    .sort((a, b) => b.rawScore - a.rawScore)
     .slice(0, 50);
 
   const leaderboardData: LeaderboardData = {

@@ -108,6 +108,7 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
         <Link
           href="/leaderboards/artists"
           className={`flex items-center px-6 py-3 font-medium transition-colors border-b-2 ${
+            
             currentTab === 'artists'
               ? 'border-emerald-400 text-emerald-400 bg-gray-800'
               : 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-500'
@@ -547,7 +548,7 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
                   <div className="text-right">
                     <p className="font-bold text-yellow-400">{Math.round(performance.normalizedScore)} pts</p>
                     <p className="text-sm text-gray-400">
-                      {performance.rawScore} raw • {performance.normalizationFactor.toFixed(1)}x
+                      {performance.rawScore} raw • {performance.normalizationFactor.toFixed(3)}x
                     </p>
                   </div>
                 </div>
@@ -587,7 +588,7 @@ export default function LeaderboardTabs({ data, currentTab }: LeaderboardTabsPro
                   <div className="text-right">
                     <p className="font-bold text-orange-400">{performance.rawScore} pts</p>
                     <p className="text-sm text-gray-400">
-                      {Math.round(performance.normalizedScore)} norm • {performance.normalizationFactor.toFixed(1)}x
+                      {Math.round(performance.normalizedScore)} norm • {performance.normalizationFactor.toFixed(3)}x
                     </p>
                   </div>
                 </div>
