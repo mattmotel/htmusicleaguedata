@@ -455,14 +455,39 @@ export default async function LeaderboardTabPage({ params }: { params: Promise<{
     // Track submitter scores for this season
     const seasonSubmitterScores = new Map<string, { rawScore: number; submissions: number }>();
     
+    // Group submissions by submitter first
+    const submissionsBySubmitter = new Map<string, typeof seasonSubmissions>();
     seasonSubmissions.forEach(submission => {
-      const submissionVotes = votes.filter(vote => vote.spotifyUri === submission.spotifyUri);
-      const submissionPoints = submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
+      if (!submissionsBySubmitter.has(submission.submitterName)) {
+        submissionsBySubmitter.set(submission.submitterName, []);
+      }
+      submissionsBySubmitter.get(submission.submitterName)!.push(submission);
+    });
+    
+    // Get rounds in this season
+    const seasonRounds = new Set(seasonSubmissions.map(s => s.roundId));
+    
+    // Get active participants in this season (people who submitted)
+    const activeParticipants = new Set(seasonSubmissions.map(s => s.submitterId));
+    
+    // Calculate total points for each submitter in this season
+    submissionsBySubmitter.forEach((submitterSubmissions, submitterName) => {
+      let totalPoints = 0;
+      submitterSubmissions.forEach(submission => {
+        // Only count votes from active participants in this season AND from rounds in this season
+        const submissionVotes = votes.filter(vote => 
+          vote.spotifyUri === submission.spotifyUri && 
+          activeParticipants.has(vote.voterId) &&
+          seasonRounds.has(vote.roundId)
+        );
+        const submissionPoints = submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
+        totalPoints += submissionPoints;
+      });
       
-      const current = seasonSubmitterScores.get(submission.submitterName) || { rawScore: 0, submissions: 0 };
-      current.rawScore += submissionPoints;
-      current.submissions++;
-      seasonSubmitterScores.set(submission.submitterName, current);
+      seasonSubmitterScores.set(submitterName, {
+        rawScore: totalPoints,
+        submissions: submitterSubmissions.length
+      });
     });
     
     // Add to performances array
