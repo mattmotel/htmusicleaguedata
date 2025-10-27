@@ -161,7 +161,7 @@ export default async function LeaderboardTabPage({ params }: { params: Promise<{
   });
 
   // Calculate equivalized average points (normalized to 30-point system)
-  // First, get season normalization factors
+  // First, get season normalization factors - USE SAME LOGIC AS SEASONS TAB
   const seasonNormalizationFactors = new Map<number, number>();
   const allSeasons = Array.from(new Set(submissions.map(s => s.season)));
   
@@ -171,12 +171,32 @@ export default async function LeaderboardTabPage({ params }: { params: Promise<{
     
     if (seasonSubmissions.length === 0) return;
     
-    // Calculate average points per submission for this season
-    const totalPointsInSeason = seasonVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
-    const avgPointsPerSubmission = totalPointsInSeason / seasonSubmissions.length;
+    // COPY EXACT LOGIC FROM SEASONS TAB
+    const seasonRoundIds = new Set(seasonSubmissions.map(s => s.roundId));
+    const seasonRounds = Array.from(dataManager.getRounds().values()).filter(r => seasonRoundIds.has(r.id));
     
-    // Normalization factor to bring to 30-point system
-    const normalizationFactor = avgPointsPerSubmission > 0 ? 30 / avgPointsPerSubmission : 1;
+    // Find the first round chronologically (earliest timestamp)
+    const firstRound = seasonRounds.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime())[0];
+    let votesPerUser = 0;
+    
+    if (firstRound) {
+      const firstRoundVotesList = seasonVotes.filter(v => v.roundId === firstRound.id);
+      
+      // Find Matt's actual voter ID by looking up his name in competitors
+      let mattVoterId = '';
+      for (const [voterId, voterName] of dataManager.getCompetitors().entries()) {
+        if (voterName === 'Matt McInerney') {
+          mattVoterId = voterId;
+          break;
+        }
+      }
+      
+      // Count total points Matt assigned in the first round
+      votesPerUser = mattVoterId ? firstRoundVotesList.filter(v => v.voterId === mattVoterId).reduce((sum, vote) => sum + vote.pointsAssigned, 0) : 0;
+    }
+    
+    // Use the SAME normalization calculation as Seasons tab: 30 / votesPerUser
+    const normalizationFactor = votesPerUser > 0 ? 30 / votesPerUser : 1;
     seasonNormalizationFactors.set(season, normalizationFactor);
   });
 
@@ -451,6 +471,7 @@ export default async function LeaderboardTabPage({ params }: { params: Promise<{
   seasonsForPerformances.forEach(season => {
     const normalizationFactor = seasonNormalizationFactors.get(season) || 1;
     const seasonSubmissions = submissions.filter(s => s.season === season);
+    const seasonVotes = votes.filter(v => v.season === season); // Define seasonVotes here
     
     // Track submitter scores for this season
     const seasonSubmitterScores = new Map<string, { rawScore: number; submissions: number }>();
@@ -474,12 +495,8 @@ export default async function LeaderboardTabPage({ params }: { params: Promise<{
     submissionsBySubmitter.forEach((submitterSubmissions, submitterName) => {
       let totalPoints = 0;
       submitterSubmissions.forEach(submission => {
-        // Only count votes from active participants in this season AND from rounds in this season
-        const submissionVotes = votes.filter(vote => 
-          vote.spotifyUri === submission.spotifyUri && 
-          activeParticipants.has(vote.voterId) &&
-          seasonRounds.has(vote.roundId)
-        );
+        // Use only votes from this specific season (same as Seasons tab logic)
+        const submissionVotes = seasonVotes.filter(vote => vote.spotifyUri === submission.spotifyUri);
         const submissionPoints = submissionVotes.reduce((sum, vote) => sum + vote.pointsAssigned, 0);
         totalPoints += submissionPoints;
       });
@@ -504,7 +521,7 @@ export default async function LeaderboardTabPage({ params }: { params: Promise<{
   });
 
   const bestSeasonPerformances = seasonPerformances
-    .sort((a, b) => b.rawScore - a.rawScore)
+    .sort((a, b) => b.normalizedScore - a.normalizedScore)
     .slice(0, 50);
 
   const leaderboardData: LeaderboardData = {
