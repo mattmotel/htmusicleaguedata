@@ -1,6 +1,6 @@
 import { getDataManager } from '../../lib/data';
 import { Music } from 'lucide-react';
-import GlassCard from '../../components/ui/GlassCard';
+import SimpleGlassCard from '../../components/ui/SimpleGlassCard';
 import PageHeader from '../../components/ui/PageHeader';
 
 export default async function ArtistsPage() {
@@ -26,7 +26,7 @@ export default async function ArtistsPage() {
           />
 
           {/* Artists List */}
-          <GlassCard variant="elevated" size="lg">
+          <SimpleGlassCard variant="elevated" size="lg">
             <div className="space-y-3">
               {artists.map(([artist, count], index) => (
                 <div key={artist} className="flex items-center justify-between p-4 bg-gray-700/50 rounded-lg border border-gray-600/50 backdrop-blur-sm">
@@ -46,7 +46,7 @@ export default async function ArtistsPage() {
                 </div>
               ))}
             </div>
-          </GlassCard>
+          </SimpleGlassCard>
         </div>
       </div>
     </div>
