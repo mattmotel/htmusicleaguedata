@@ -17,8 +17,8 @@ export default async function ArtistsPage() {
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto py-8">
-        <div className="space-y-8">
+      <div className="container mx-auto py-4 md:py-8">
+        <div className="space-y-4 md:space-y-8">
           {/* Header */}
           <PageHeader
             title="All Artists"
@@ -27,21 +27,21 @@ export default async function ArtistsPage() {
 
           {/* Artists List */}
           <SimpleGlassCard variant="elevated" size="lg">
-            <div className="space-y-3">
+            <div className="space-y-2 md:space-y-3">
               {artists.map(([artist, count], index) => (
-                <div key={artist} className="flex items-center justify-between p-4 bg-gray-700/50 rounded-lg border border-gray-600/50 backdrop-blur-sm">
+                <div key={artist} className="flex items-center justify-between p-2 md:p-4 bg-gray-700/50 rounded-lg border border-gray-600/50 backdrop-blur-sm">
                   <div className="flex items-center">
-                    <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-emerald-400 to-emerald-500 text-gray-900 rounded-full text-sm font-bold mr-4 shadow-lg">
+                    <div className="flex items-center justify-center w-6 h-6 md:w-10 md:h-10 bg-gradient-to-r from-emerald-400 to-emerald-500 text-gray-900 rounded-full text-xs md:text-sm font-bold mr-2 md:mr-4 shadow-lg">
                       {index + 1}
                     </div>
                     <div className="flex items-center">
-                      <Music className="w-5 h-5 text-emerald-400 mr-3" />
-                      <p className="font-medium text-white text-lg">{artist}</p>
+                      <Music className="w-4 h-4 md:w-5 md:h-5 text-emerald-400 mr-2 md:mr-3" />
+                      <p className="font-medium text-white text-sm md:text-lg">{artist}</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-bold text-emerald-400 text-xl">{count}</p>
-                    <p className="text-sm text-gray-400">submissions</p>
+                    <p className="font-bold text-emerald-400 text-sm md:text-xl">{count}</p>
+                    <p className="text-xs md:text-sm text-gray-400">submissions</p>
                   </div>
                 </div>
               ))}
