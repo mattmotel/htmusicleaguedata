@@ -1,7 +1,6 @@
 import { getDataManager } from '../../lib/data';
 import { Lightbulb } from 'lucide-react';
 import SimpleGlassCard from '../../components/ui/SimpleGlassCard';
-import GlassCard from '../../components/ui/GlassCard';
 import PageHeader from '../../components/ui/PageHeader';
 import RoundIdeaGenerator from './RoundIdeaGenerator';
 import RoundsList from './RoundsList';
@@ -53,12 +52,12 @@ export default async function RoundsPage() {
           />
 
           {/* Rounds by Season */}
-          <GlassCard variant="elevated" size="lg">
+          <SimpleGlassCard variant="elevated" size="lg">
             <RoundsList 
               sortedSeasons={sortedSeasons}
               roundsBySeason={roundsBySeason}
             />
-          </GlassCard>
+          </SimpleGlassCard>
 
           {/* AI Round Idea Generator */}
           <SimpleGlassCard variant="elevated" size="lg">

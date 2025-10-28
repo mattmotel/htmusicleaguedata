@@ -1,7 +1,7 @@
 import { getDataManager, Submission } from '../../lib/data';
 import { Users, AlertCircle, CheckCircle } from 'lucide-react';
 import MissingVotesTable from '../../components/MissingVotesTable';
-import GlassCard from '../../components/ui/GlassCard';
+import SimpleGlassCard from '../../components/ui/SimpleGlassCard';
 import PageHeader from '../../components/ui/PageHeader';
 
 export default async function MissingVotesPage() {
@@ -102,7 +102,7 @@ export default async function MissingVotesPage() {
 
           {/* Overall Stats */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <GlassCard variant="elevated" size="md">
+            <SimpleGlassCard variant="elevated" size="md">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm">Total Rounds</p>
@@ -110,9 +110,9 @@ export default async function MissingVotesPage() {
                 </div>
                 <Users className="h-8 w-8 text-emerald-400" />
               </div>
-            </GlassCard>
+            </SimpleGlassCard>
 
-            <GlassCard variant="elevated" size="md">
+            <SimpleGlassCard variant="elevated" size="md">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm">Avg Participation</p>
@@ -120,9 +120,9 @@ export default async function MissingVotesPage() {
                 </div>
                 <CheckCircle className="h-8 w-8 text-emerald-400" />
               </div>
-            </GlassCard>
+            </SimpleGlassCard>
 
-            <GlassCard variant="elevated" size="md">
+            <SimpleGlassCard variant="elevated" size="md">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm">Rounds with Missing</p>
@@ -130,9 +130,9 @@ export default async function MissingVotesPage() {
                 </div>
                 <AlertCircle className="h-8 w-8 text-emerald-400" />
               </div>
-            </GlassCard>
+            </SimpleGlassCard>
 
-            <GlassCard variant="elevated" size="md">
+            <SimpleGlassCard variant="elevated" size="md">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm">Total Missing Votes</p>
@@ -140,13 +140,13 @@ export default async function MissingVotesPage() {
                 </div>
                 <AlertCircle className="h-8 w-8 text-emerald-400" />
               </div>
-            </GlassCard>
+            </SimpleGlassCard>
           </div>
 
           {/* Participation by Season */}
-          <GlassCard variant="elevated" size="lg">
+          <SimpleGlassCard variant="elevated" size="lg">
             <MissingVotesTable participationData={participationData} competitors={competitors} />
-          </GlassCard>
+          </SimpleGlassCard>
         </div>
       </div>
     </div>

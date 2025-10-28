@@ -1,5 +1,5 @@
 import { getDataManager } from '../../lib/data';
-import GlassCard from '../../components/ui/GlassCard';
+import SimpleGlassCard from '../../components/ui/SimpleGlassCard';
 import PageHeader from '../../components/ui/PageHeader';
 import SubmissionsTable from '../../components/SubmissionsTable';
 
@@ -18,9 +18,9 @@ export default async function SubmissionsPage() {
           />
 
           {/* Submissions Table */}
-          <GlassCard variant="elevated" size="lg">
+          <SimpleGlassCard variant="elevated" size="lg">
             <SubmissionsTable submissions={submissions} />
-          </GlassCard>
+          </SimpleGlassCard>
         </div>
       </div>
     </div>

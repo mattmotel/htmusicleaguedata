@@ -74,3 +74,9 @@
 - Use `seasonVotes.filter(vote => vote.spotifyUri === submission.spotifyUri)` for submission votes
 - **NEVER use `votes.filter()` without season filtering - this counts votes from ALL seasons**
 - The variable `seasonVotes` must be defined in scope before using it
+
+## CRITICAL: Server vs Client Components
+- **NEVER use `GlassCard` in server components** - it causes Safari infinite reload issues
+- Always use `SimpleGlassCard` in server components (pages)
+- `GlassCard` is a client component with animations - only use in client components
+- This prevents hydration mismatches and Safari crashes
