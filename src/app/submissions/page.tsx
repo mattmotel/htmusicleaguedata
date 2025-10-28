@@ -9,8 +9,8 @@ export default async function SubmissionsPage() {
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto py-8">
-        <div className="space-y-8">
+      <div className="container mx-auto py-4 md:py-8">
+        <div className="space-y-4 md:space-y-8">
           {/* Header */}
           <PageHeader
             title="All Submissions"
