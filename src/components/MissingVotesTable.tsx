@@ -10,7 +10,10 @@ interface ParticipationData {
   roundName: string;
   submissions: Submission[];
   voters: Set<string>;
+  expectedSubmitters: Set<string>;
+  actualSubmitters: Set<string>;
   expectedVoters: Set<string>;
+  missingSubmitters: string[];
   missingVoters: string[];
   participationRate: number;
 }
@@ -83,7 +86,7 @@ export default function MissingVotesTable({ participationData, competitors }: Mi
         const isExpanded = expandedSeasons.has(season);
         const seasonData = dataBySeason.get(season)!;
         const totalRounds = seasonData.length;
-        const roundsWithMissing = seasonData.filter(data => data.missingVoters.length > 0).length;
+        const roundsWithMissing = seasonData.filter(data => data.missingSubmitters.length > 0 || data.missingVoters.length > 0).length;
         const avgParticipation = seasonData.reduce((sum, data) => sum + data.participationRate, 0) / totalRounds;
 
         return (
@@ -126,31 +129,60 @@ export default function MissingVotesTable({ participationData, competitors }: Mi
                       </div>
                     </div>
 
-                    {data.missingVoters.length > 0 ? (
-                      <div className="bg-gray-600 rounded-lg p-4">
-                        <h5 className="text-md font-semibold text-yellow-400 mb-3">Missing Votes</h5>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                          {data.missingVoters.map(voterId => {
-                            const voterName = competitors.get(voterId) || voterId;
-                            return (
-                              <div key={voterId} className="flex items-center p-2 bg-gray-500 rounded">
-                                <AlertCircle className="h-4 w-4 text-yellow-400 mr-2" />
-                                <span className="text-sm text-white">{voterName}</span>
-                              </div>
-                            );
-                          })}
-                        </div>
+                    {(data.missingSubmitters.length > 0 || data.missingVoters.length > 0) ? (
+                      <div className="space-y-4">
+                        {data.missingSubmitters.length > 0 && (
+                          <div className="bg-gray-600 rounded-lg p-4">
+                            <h5 className="text-md font-semibold text-yellow-400 mb-3">Missing Submissions</h5>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                              {data.missingSubmitters.map(submitterId => {
+                                const submitterName = competitors.get(submitterId) || submitterId;
+                                return (
+                                  <div key={submitterId} className="flex items-center p-2 bg-gray-500 rounded">
+                                    <AlertCircle className="h-4 w-4 text-yellow-400 mr-2" />
+                                    <span className="text-sm text-white">{submitterName}</span>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )}
+                        
+                        {data.missingVoters.length > 0 && (
+                          <div className="bg-gray-600 rounded-lg p-4">
+                            <h5 className="text-md font-semibold text-orange-400 mb-3">Missing Votes</h5>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                              {data.missingVoters.map(voterId => {
+                                const voterName = competitors.get(voterId) || voterId;
+                                return (
+                                  <div key={voterId} className="flex items-center p-2 bg-gray-500 rounded">
+                                    <AlertCircle className="h-4 w-4 text-orange-400 mr-2" />
+                                    <span className="text-sm text-white">{voterName}</span>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     ) : (
                       <div className="bg-gray-600 rounded-lg p-4">
                         <div className="flex items-center">
                           <CheckCircle className="h-5 w-5 text-green-400 mr-2" />
-                          <span className="text-green-400 font-medium">All participants voted!</span>
+                          <span className="text-green-400 font-medium">All participants submitted and voted!</span>
                         </div>
                       </div>
                     )}
 
-                    <div className="mt-4 grid grid-cols-2 gap-4 text-sm">
+                    <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                      <div>
+                        <p className="text-gray-400">Expected Submitters:</p>
+                        <p className="text-white">{data.expectedSubmitters.size}</p>
+                      </div>
+                      <div>
+                        <p className="text-gray-400">Actual Submitters:</p>
+                        <p className="text-white">{data.actualSubmitters.size}</p>
+                      </div>
                       <div>
                         <p className="text-gray-400">Expected Voters:</p>
                         <p className="text-white">{data.expectedVoters.size}</p>

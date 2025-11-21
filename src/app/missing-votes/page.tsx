@@ -33,12 +33,19 @@ export default async function MissingVotesPage() {
     roundName: string;
     submissions: Submission[];
     voters: Set<string>;
+    expectedSubmitters: Set<string>;
+    actualSubmitters: Set<string>;
     expectedVoters: Set<string>;
+    missingSubmitters: string[];
     missingVoters: string[];
     participationRate: number;
   }>();
 
   submissionsBySeason.forEach((roundsMap, season) => {
+    // Get all active participants in this season (people who submitted in ANY round)
+    const seasonSubmissions = Array.from(submissionsBySeason.get(season)?.values() || []).flat();
+    const activeParticipants = new Set(seasonSubmissions.map(sub => sub.submitterId));
+    
     roundsMap.forEach((roundSubmissions, roundNumber) => {
       const roundName = roundSubmissions[0]?.roundName || `Round ${roundNumber}`;
       const roundId = roundSubmissions[0]?.roundId;
@@ -48,14 +55,21 @@ export default async function MissingVotesPage() {
       const voters = new Set(roundVotes.map(vote => vote.voterId));
       
       // Get all submitters for this round
-      const submitters = new Set(roundSubmissions.map(sub => sub.submitterId));
+      const actualSubmitters = new Set(roundSubmissions.map(sub => sub.submitterId));
+      
+      // Expected submitters should be all active participants in this season
+      const expectedSubmitters = new Set(activeParticipants);
+      const missingSubmitters = Array.from(expectedSubmitters).filter(submitterId => !actualSubmitters.has(submitterId));
       
       // Expected voters should be all submitters (they should vote on each other's submissions)
-      const expectedVoters = new Set(submitters);
+      const expectedVoters = new Set(actualSubmitters);
       const missingVoters = Array.from(expectedVoters).filter(voterId => !voters.has(voterId));
       
-      const participationRate = expectedVoters.size > 0 ? 
-        ((expectedVoters.size - missingVoters.length) / expectedVoters.size) * 100 : 100;
+      // Participation rate based on both submissions and votes
+      const totalExpected = expectedSubmitters.size + expectedVoters.size;
+      const totalActual = actualSubmitters.size + voters.size;
+      const participationRate = totalExpected > 0 ? 
+        (totalActual / totalExpected) * 100 : 100;
       
       participationData.set(`${season}-${roundNumber}`, {
         season,
@@ -63,7 +77,10 @@ export default async function MissingVotesPage() {
         roundName,
         submissions: roundSubmissions,
         voters,
+        expectedSubmitters,
+        actualSubmitters,
         expectedVoters,
+        missingSubmitters,
         missingVoters,
         participationRate
       });
@@ -74,15 +91,17 @@ export default async function MissingVotesPage() {
   const overallStats = {
     totalRounds: participationData.size,
     averageParticipation: 0,
-    roundsWithMissingVotes: 0,
+    roundsWithMissing: 0,
+    totalMissingSubmissions: 0,
     totalMissingVotes: 0
   };
 
   let totalParticipation = 0;
   participationData.forEach(data => {
     totalParticipation += data.participationRate;
-    if (data.missingVoters.length > 0) {
-      overallStats.roundsWithMissingVotes++;
+    if (data.missingSubmitters.length > 0 || data.missingVoters.length > 0) {
+      overallStats.roundsWithMissing++;
+      overallStats.totalMissingSubmissions += data.missingSubmitters.length;
       overallStats.totalMissingVotes += data.missingVoters.length;
     }
   });
@@ -101,7 +120,7 @@ export default async function MissingVotesPage() {
           />
 
           {/* Overall Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             <SimpleGlassCard variant="elevated" size="md">
               <div className="flex items-center justify-between">
                 <div>
@@ -126,7 +145,7 @@ export default async function MissingVotesPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-gray-400 text-sm">Rounds with Missing</p>
-                  <p className="text-2xl font-bold text-emerald-400">{overallStats.roundsWithMissingVotes}</p>
+                  <p className="text-2xl font-bold text-emerald-400">{overallStats.roundsWithMissing}</p>
                 </div>
                 <AlertCircle className="h-8 w-8 text-emerald-400" />
               </div>
@@ -135,10 +154,20 @@ export default async function MissingVotesPage() {
             <SimpleGlassCard variant="elevated" size="md">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-gray-400 text-sm">Total Missing Votes</p>
-                  <p className="text-2xl font-bold text-emerald-400">{overallStats.totalMissingVotes}</p>
+                  <p className="text-gray-400 text-sm">Missing Submissions</p>
+                  <p className="text-2xl font-bold text-yellow-400">{overallStats.totalMissingSubmissions}</p>
                 </div>
-                <AlertCircle className="h-8 w-8 text-emerald-400" />
+                <AlertCircle className="h-8 w-8 text-yellow-400" />
+              </div>
+            </SimpleGlassCard>
+
+            <SimpleGlassCard variant="elevated" size="md">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-gray-400 text-sm">Missing Votes</p>
+                  <p className="text-2xl font-bold text-orange-400">{overallStats.totalMissingVotes}</p>
+                </div>
+                <AlertCircle className="h-8 w-8 text-orange-400" />
               </div>
             </SimpleGlassCard>
           </div>
